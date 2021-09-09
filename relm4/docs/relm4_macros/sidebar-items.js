@@ -1,0 +1,1 @@
+initSidebarItems({"attr":[["widget","Macro that implemements relm4::Widgets and generates the corresponding struct."]]});
