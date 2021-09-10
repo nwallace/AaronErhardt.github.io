@@ -815,7 +815,7 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 }
 </code></pre>
 <p>The overall UI is pretty simple: A window that contains a box. This box has two boxes itself for showing the two icons and the two buttons to update those icons.</p>
-<p>There's also something new. With the <code>pre_init()</code> and <code>post_init()</code> functions you can add custom code that will be run either before or after the code the widget macro generates for initialization. In our case, we want to add custom CSS that sets the background color for elements with class name &quot;identical&quot;.</p>
+<p>There's also something new. With the <code>pre_init()</code> and <code>post_init()</code> functions you can add custom code that will be run either before or after the code the widget macro generates for initialization. In our case, we want to add <a href="https://docs.gtk.org/gtk4/css-properties.html">custom CSS</a> that sets the background color for elements with class name &quot;identical&quot;.</p>
 <pre><code class="language-rust no_run noplayground">    fn post_init() {
         relm4::set_global_css(b&quot;.identical { background: #00ad5c; }&quot;);
     }
