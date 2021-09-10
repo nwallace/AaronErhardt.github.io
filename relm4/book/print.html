@@ -828,6 +828,8 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 <pre><code class="language-rust no_run noplayground">            set_class_active: track!(model.changed(AppModel::identical()),
                 &quot;identical&quot;, model.identical),
 </code></pre>
+<p>The <a href="https://aaronerhardt.github.io/docs/relm4/relm4/util/widget_plus/trait.WidgetPlus.html#tymethod.set_class_active"><code>set_class_active</code></a> method is used to either activate or disable a CSS class. It takes two parameters, the first is the class itself and the second is a boolean which specifies if the class should be added (<code>true</code>) or removed (<code>false</code>).</p>
+<p>The first parameter of the <code>track!</code> macro will be used as a condition to check whether something has changed. If this condition is <code>true</code>, the <code>set_class_active</code> method will be called with all the parameters of the <code>track!</code> macro that follow the condition.</p>
 <p>The macro expansion for the <code>track!</code> macro in the generated view function looks roughly like this:</p>
 <pre><code class="language-rust no_run noplayground">if model.changed(AppModel::identical()) {
     self.main_window.set_class_active(&quot;identical&quot;, model.identical);
