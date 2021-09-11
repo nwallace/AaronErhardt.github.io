@@ -647,7 +647,7 @@ fn main() {
 <p>In this chapter we are going to implement a small program using this technique which displays two randomly picked icons on two buttons:</p>
 <p><img src="img/screenshots/tracker-dark-1.png" alt="App screenshot" /></p>
 <p>When pressng a button, its icon will change. The background of the application will become green when the two icons are identical:</p>
-<p><img src="img/screenshots/tracker-dark-2.png" alt="App screenshot with quith equal icons" /></p>
+<p><img src="img/screenshots/tracker-dark-2.png" alt="App screenshot with with equal icons" /></p>
 <h2 id="the-tracker-crate"><a class="header" href="#the-tracker-crate">The tracker crate</a></h2>
 <p>The <code>tracker::track</code> macro implements the following methods for your struct fields:</p>
 <ul>
@@ -849,7 +849,7 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 <p><code>track!(bool_expression, { println!(&quot;Update widget&quot;); argument })</code></p>
 </blockquote>
 <h2 id="the-main-function"><a class="header" href="#the-main-function">The main function</a></h2>
-<p>There's one last thing to point out. When initializing our model, we need to initialize the <code>tracker</code> field as well. The initial value doesn't really matter because we call <code>reset()</code> in the udpate function anyway, but usually <code>0</code> is used.</p>
+<p>There's one last thing to point out. When initializing our model, we need to initialize the <code>tracker</code> field as well. The initial value doesn't really matter because we call <code>reset()</code> in the update function anyway, but usually <code>0</code> is used.</p>
 <pre><code class="language-rust no_run noplayground">fn main() {
     let model = AppModel {
         first_icon: random_icon_name(),
