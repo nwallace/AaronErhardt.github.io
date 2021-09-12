@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - GUI development with Relm4</title>
+        <title>gtk-rs overview - GUI development with Relm4</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html" class="active">Introduction</a></li><li class="chapter-item expanded "><a href="first_app.html"><strong aria-hidden="true">1.</strong> Your first app</a></li><li class="chapter-item expanded "><a href="widget_macro.html"><strong aria-hidden="true">2.</strong> The widget macro</a></li><li class="chapter-item expanded "><a href="efficient_ui.html"><strong aria-hidden="true">3.</strong> Efficient UI updates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tracker.html"><strong aria-hidden="true">3.1.</strong> Tracker</a></li><li class="chapter-item expanded "><a href="factory.html"><strong aria-hidden="true">3.2.</strong> Factories</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="factory_position.html"><strong aria-hidden="true">3.2.1.</strong> The position function</a></li></ol></li><li class="chapter-item expanded "><a href="factory_advanced.html"><strong aria-hidden="true">3.3.</strong> Advanced factories</a></li></ol></li><li class="chapter-item expanded "><a href="components.html"><strong aria-hidden="true">4.</strong> Components</a></li><li class="chapter-item expanded "><a href="worker.html"><strong aria-hidden="true">5.</strong> Workers</a></li><li class="chapter-item expanded "><a href="message_handler.html"><strong aria-hidden="true">6.</strong> Message handlers</a></li><li class="chapter-item expanded "><a href="threads_and_async.html"><strong aria-hidden="true">7.</strong> Threads and async</a></li><li class="chapter-item expanded "><a href="reusable_components.html"><strong aria-hidden="true">8.</strong> Reusable components</a></li><li class="chapter-item expanded "><a href="gtk_rs.html"><strong aria-hidden="true">9.</strong> gtk-rs overview</a></li><li class="chapter-item expanded "><a href="widget_macro_reference.html"><strong aria-hidden="true">10.</strong> Widget macro reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="widget_macro_expansion.html"><strong aria-hidden="true">10.1.</strong> Macro expansion</a></li></ol></li><li class="chapter-item expanded "><a href="templates.html"><strong aria-hidden="true">11.</strong> Templates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="app_template.html"><strong aria-hidden="true">11.1.</strong> App template</a></li><li class="chapter-item expanded "><a href="component_template.html"><strong aria-hidden="true">11.2.</strong> Component template</a></li><li class="chapter-item expanded "><a href="worker_template.html"><strong aria-hidden="true">11.3.</strong> Worker template</a></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="first_app.html"><strong aria-hidden="true">1.</strong> Your first app</a></li><li class="chapter-item expanded "><a href="widget_macro.html"><strong aria-hidden="true">2.</strong> The widget macro</a></li><li class="chapter-item expanded "><a href="efficient_ui.html"><strong aria-hidden="true">3.</strong> Efficient UI updates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tracker.html"><strong aria-hidden="true">3.1.</strong> Tracker</a></li><li class="chapter-item expanded "><a href="factory.html"><strong aria-hidden="true">3.2.</strong> Factories</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="factory_position.html"><strong aria-hidden="true">3.2.1.</strong> The position function</a></li></ol></li><li class="chapter-item expanded "><a href="factory_advanced.html"><strong aria-hidden="true">3.3.</strong> Advanced factories</a></li></ol></li><li class="chapter-item expanded "><a href="components.html"><strong aria-hidden="true">4.</strong> Components</a></li><li class="chapter-item expanded "><a href="worker.html"><strong aria-hidden="true">5.</strong> Workers</a></li><li class="chapter-item expanded "><a href="message_handler.html"><strong aria-hidden="true">6.</strong> Message handlers</a></li><li class="chapter-item expanded "><a href="threads_and_async.html"><strong aria-hidden="true">7.</strong> Threads and async</a></li><li class="chapter-item expanded "><a href="reusable_components.html"><strong aria-hidden="true">8.</strong> Reusable components</a></li><li class="chapter-item expanded "><a href="gtk_rs.html" class="active"><strong aria-hidden="true">9.</strong> gtk-rs overview</a></li><li class="chapter-item expanded "><a href="widget_macro_reference.html"><strong aria-hidden="true">10.</strong> Widget macro reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="widget_macro_expansion.html"><strong aria-hidden="true">10.1.</strong> Macro expansion</a></li></ol></li><li class="chapter-item expanded "><a href="templates.html"><strong aria-hidden="true">11.</strong> Templates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="app_template.html"><strong aria-hidden="true">11.1.</strong> App template</a></li><li class="chapter-item expanded "><a href="component_template.html"><strong aria-hidden="true">11.2.</strong> Component template</a></li><li class="chapter-item expanded "><a href="worker_template.html"><strong aria-hidden="true">11.3.</strong> Worker template</a></li></ol></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -146,68 +146,45 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="about"><a class="header" href="#about">About</a></h1>
-<p>Relm4 is an idiomatic GUI library inspired by <a href="https://elm-lang.org/">Elm</a> and based on <a href="https://crates.io/crates/gtk4">gtk4-rs</a>. 
-It is a new version of <a href="https://github.com/antoyo/relm">relm</a> that's built from scratch and is compatible with <a href="https://www.gtk.org/">GTK4</a> and <a href="https://gitlab.gnome.org/GNOME/libadwaita">libadwaita</a>.</p>
-<h2 id="goals"><a class="header" href="#goals">Goals</a></h2>
-<ul>
-<li>⏱️ <strong>Productivity:</strong> Writing Relm4 applications should be intuitive and efficient</li>
-<li>⚡ <strong>Flexibility:</strong> Anything that’s possible in GTK4 should work well in Relm4, too</li>
-<li>✨ <strong>Simplicity:</strong> Writing applications should be as easy and straightforward as possible</li>
-<li>🔧 <strong>Maintainability</strong>: The Elm programming model used by Relm4 provides a simple and clear structure for app development</li>
-</ul>
-<h2 id="platform-support"><a class="header" href="#platform-support">Platform support</a></h2>
-<p>All platforms supported by GTK4 are available for Relm4 as well:</p>
-<ul>
-<li>Linux</li>
-<li>Windows</li>
-<li>MacOS</li>
-</ul>
-<h2 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h2>
-<p>I can recommend reading the <a href="https://gtk-rs.org/gtk4-rs/git/book/">gtk4-rs book</a> for getting more insight into development with GTK4. Yet, knowledge of GTK4 is not required for this book.</p>
-<ul>
-<li><a href="https://www.gtk.org/docs/installations/">How to install GTK4</a></li>
-<li><a href="https://gtk-rs.org/gtk4-rs/git/book/">gtk4-rs book</a></li>
-<li><a href="https://gtk-rs.org/gtk4-rs/git/docs/gtk4/index.html">gtk4-rs docs</a></li>
-</ul>
-<h3 id="cargo"><a class="header" href="#cargo">Cargo</a></h3>
-<p>Add the packages you need to your Cargo.toml:</p>
-<pre><code class="language-toml">gtk = { version = &quot;0.2&quot;, package = &quot;gtk4&quot; }
-relm4 = &quot;0.1&quot;
-relm4-macros = &quot;0.1&quot;
-relm4-components = &quot;0.1&quot;
-</code></pre>
-<h1 id="examples"><a class="header" href="#examples">Examples</a></h1>
-<p>In order to get you quickly started, we have prepped some better examples to explain the Rem4 features.</p>
-<h2 id="screenshots"><a class="header" href="#screenshots">Screenshots</a></h2>
-<p>As a sneak peak here are some screenshots of applications you will learn to implement yourself:</p>
-<table><thead><tr><th align="center">Light Theme</th><th align="center">Dark Theme</th></tr></thead><tbody>
-<tr><td align="center"><img src="img/screenshots/popover-light.png" alt="Pop Over light" /></td><td align="center"><img src="img/screenshots/popover-dark.png" alt="Pop Over dark" /></td></tr>
-<tr><td align="center"><img src="img/screenshots/factory-advanced-light.png" alt="Factory-Advanced light" /></td><td align="center"><img src="img/screenshots/factory-advanced-dark.png" alt="Factory-Advanced dark" /></td></tr>
-</tbody></table>
-<h2 id="how-to-get-them"><a class="header" href="#how-to-get-them">How to get them</a></h2>
-<p>Many code examples in this book can also be found in the <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-examples">relm4-examples crate</a>. Whenever an example is discussed in the book, the introduction will mention the name of the example and provide a link to it.</p>
-<p>To setup the examples run</p>
-<pre><code class="language-bash">git clone https://github.com/AaronErhardt/relm4.git
-cd relm4
-cd relm4-examples
-</code></pre>
-<p>And to run an example, simply type</p>
-<pre><code>cargo run --example NAME
-</code></pre>
-<h1 id="issues-and-feedback"><a class="header" href="#issues-and-feedback">Issues and feedback</a></h1>
-<p>If you find a mistake or something unclear in Relm4 or this book, let me know! Simply open up an issue over at <a href="https://github.com/AaronErhardt/relm4/issues">GitHub</a> or chat with us on <a href="https://matrix.to/#/#relm4:matrix.org">Matrix</a>.</p>
-<h1 id="special-thanks"><a class="header" href="#special-thanks">Special thanks</a></h1>
-<p>I want to thank all contributors of <a href="https://github.com/antoyo/relm">relm</a> especially <a href="https://github.com/antoyo">antoyo</a> for building relm that inspired much of the work on Relm4.</p>
-<p>Also, I want to thank all contributors of <a href="https://gtk-rs.org/">gtk-rs</a> that put a lot of effort into the project for creating outstanding Rust bindings for GTK4.</p>
-<p>I want to thank <a href="https://github.com/tronta">tronta</a> for contributing a lot of improvements to this book.</p>
+                        <h1 id="gtk-rs-overview"><a class="header" href="#gtk-rs-overview">gtk-rs overview</a></h1>
+<p>So far, we only discussed which features Relm4 provides. Yet, Relm4 is based on GTK, which itself has many useful features. Let’s have a look at it!</p>
+<blockquote>
+<p>This is just an overview. I’ve linked the relevant sections of the <a href="https://gtk-rs.org/gtk4-rs/git/book/">gtk-rs book</a> but if you want to get familiar with all the features, I recommend reading the book from the start.</p>
+</blockquote>
+<h2 id="gobjects"><a class="header" href="#gobjects">GObjects</a></h2>
+<p>GTK is an object-oriented framework that uses the GObject library to implement objects. GObjects have some really useful features that we will discuss in the following sections.</p>
+<h3 id="subclassing"><a class="header" href="#subclassing">Subclassing</a></h3>
+<p>Like many other OOP frameworks or languages, GObjects can inherit from other GObjects. This is called subclassing. In the case of GTK, that’s really helpful because it allows us to create custom widgets. </p>
+<p>For example, you could use subclassing to create your own button widget that acts as a counter. Or you can create a custom application window that better suits your application.</p>
+<p><strong>Read more about sublcassing in the <a href="https://gtk-rs.org/gtk4-rs/git/book/gobject_subclassing.html">gtk-rs book</a></strong>.</p>
+<h3 id="properties"><a class="header" href="#properties">Properties</a></h3>
+<p>Each GObject can have properties that work similar to the fields of a structure in Rust. You can set them and you can read (get) them. But one thing that's particularly cool is that properties can be bound to other properties.</p>
+<p>For example, you could bind the &quot;visible&quot; property of a widget to the &quot;active&quot; property of a <code>gtk::ToggleButton</code>. This would allow you to show or hide the widget using the toggle button and the best part is, that it's done fully automatically!</p>
+<p><strong>Read more about properties in the <a href="https://gtk-rs.org/gtk4-rs/git/book/gobject_properties.html">gtk-rs book</a></strong>.</p>
+<h3 id="signals"><a class="header" href="#signals">Signals</a></h3>
+<p>GObjects can not only have properties but also signals. Actually, we've been using signals all the time, for example, by using the <code>connect_clicked</code> method on a button. This method simply adds an event handler function for the &quot;click&quot; signal.</p>
+<p>You can create your own signals in custom widgets. You can also use <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.ObjectExt.html#tymethod.emit">emit</a> to emit signals on you widgets manually.</p>
+<p><strong>Read more about signals in the <a href="https://gtk-rs.org/gtk4-rs/git/book/gobject_signals.html">gtk-rs book</a></strong>.</p>
+<h2 id="settings"><a class="header" href="#settings">Settings</a></h2>
+<p>Most applications need to store settings at some point. GTK makes that pretty simple. You can use <code>gtk::Settings</code> to store your settings and keep them stored after your app has been closed.</p>
+<p><strong>Read more about settings in the <a href="https://gtk-rs.org/gtk4-rs/git/book/settings.html">gtk-rs book</a></strong>.</p>
+<h2 id="lists"><a class="header" href="#lists">Lists</a></h2>
+<p>Relm4 has factories for generating widgets from collections of data. GTK has a similar mechanism that should be used for large list. Because GTK knows which widgets of a list are actually shown it can optimize the rendering and memory usage a lot better.</p>
+<p><strong>Read more about lists in the <a href="https://gtk-rs.org/gtk4-rs/git/book/lists.html">gtk-rs book</a></strong>.</p>
+<h2 id="interface-builder"><a class="header" href="#interface-builder">Interface builder</a></h2>
+<p>Relm4 leaves it up to you how to create you UI. You can do it manually like in our first app, you can do with the widget macro or you can use the interface builder from GTK.</p>
+<p>With the interface builder, you can use a XML file to specify your widgets and properties.</p>
+<p><strong>Read more about the interface builder in the <a href="https://gtk-rs.org/gtk4-rs/git/book/interface_builder.html">gtk-rs book</a></strong>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="reusable_components.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         
-                                                    <a rel="next" href="first_app.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="widget_macro_reference.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -217,8 +194,11 @@ cd relm4-examples
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="reusable_components.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                                    <a rel="next" href="first_app.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="widget_macro_reference.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
