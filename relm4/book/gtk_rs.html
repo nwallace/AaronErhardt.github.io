@@ -156,7 +156,7 @@
 <h3 id="subclassing"><a class="header" href="#subclassing">Subclassing</a></h3>
 <p>Like many other OOP frameworks or languages, GObjects can inherit from other GObjects. This is called subclassing. In the case of GTK, that’s really helpful because it allows us to create custom widgets. </p>
 <p>For example, you could use subclassing to create your own button widget that acts as a counter. Or you can create a custom application window that better suits your application.</p>
-<p><strong>Read more about sublcassing in the <a href="https://gtk-rs.org/gtk4-rs/git/book/gobject_subclassing.html">gtk-rs book</a></strong>.</p>
+<p><strong>Read more about subclassing in the <a href="https://gtk-rs.org/gtk4-rs/git/book/gobject_subclassing.html">gtk-rs book</a></strong>.</p>
 <h3 id="properties"><a class="header" href="#properties">Properties</a></h3>
 <p>Each GObject can have properties that work similar to the fields of a structure in Rust. You can set them and you can read (get) them. But one thing that's particularly cool is that properties can be bound to other properties.</p>
 <p>For example, you could bind the &quot;visible&quot; property of a widget to the &quot;active&quot; property of a <code>gtk::ToggleButton</code>. This would allow you to show or hide the widget using the toggle button and the best part is, that it's done fully automatically!</p>
