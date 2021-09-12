@@ -3629,7 +3629,8 @@ impl Widgets&lt;ButtonModel, AppModel&gt; for ButtonWidgets {
 }
 
 pub struct AppComponents {
-    button: RelmComponent&lt;ButtonModel, AppModel&gt;,
+    button1: RelmComponent&lt;ButtonModel, AppModel&gt;,
+    button2: RelmComponent&lt;ButtonModel, AppModel&gt;,
 }
 
 impl Components&lt;AppModel&gt; for AppComponents {
@@ -3639,7 +3640,8 @@ impl Components&lt;AppModel&gt; for AppComponents {
         sender: Sender&lt;AppMsg&gt;,
     ) -&gt; Self {
         AppComponents {
-            button: RelmComponent::new(model, parent_widgets, sender),
+            button1: RelmComponent::new(model, parent_widgets, sender.clone()),
+            button2: RelmComponent::new(model, parent_widgets, sender),
         }
     }
 }
