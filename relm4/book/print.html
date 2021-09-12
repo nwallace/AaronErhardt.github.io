@@ -992,7 +992,7 @@ fn main() {
 <p>Factories define how to generate widgets from collections of data. They are used inside GTK as well, but Relm4 uses them a bit differently.</p>
 <p><img src="img/screenshots/factory-dark.png" alt="App screenshot dark" /></p>
 <p>This app will have a dynamic number of counters which can be changed by pressing the add or remove buttons.
-Clicking of the counter will decreased it.</p>
+Clicking of the counter will decrement it.</p>
 <h2 id="factories-in-relm4"><a class="header" href="#factories-in-relm4">Factories in Relm4</a></h2>
 <p>Let's have a look at factories in Relm4. We want to write a simple application that can create and remove many counters. Each counter needs to store its value and display widgets to allow modifying the counter. In this example we will only decrement the counter.</p>
 <blockquote>
@@ -1332,7 +1332,7 @@ fn main() {
 <div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-factories"><a class="header" href="#advanced-factories">Advanced factories</a></h1>
 <p>In this chapter we will build an even more advanced UI for modifying the available counters:</p>
 <p><img src="img/screenshots/factory-advanced-dark.png" alt="App screenshot dark" /></p>
-<p>Additionally one can now remove a certain counter or insert a counter above or below an existing counter.</p>
+<p>Additionally, certain counters can now be removed or inserted above or below an existing counter.</p>
 <blockquote>
 <p>If you're not familiar with the <code>Rc</code> type of the standard library, have a look at <a href="https://doc.rust-lang.org/std/rc/index.html">this</a>.</p>
 </blockquote>
@@ -3246,7 +3246,8 @@ impl Widgets&lt;ButtonModel, AppModel&gt; for ButtonWidgets {
 }
 
 pub struct AppComponents {
-    button: RelmComponent&lt;ButtonModel, AppModel&gt;,
+    button1: RelmComponent&lt;ButtonModel, AppModel&gt;,
+    button2: RelmComponent&lt;ButtonModel, AppModel&gt;,
 }
 </code></pre>
 <h3 id="a-custom-widget-function"><a class="header" href="#a-custom-widget-function">A custom widget function</a></h3>
@@ -3268,7 +3269,8 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
                 set_orientation: gtk::Orientation::Vertical,
                 set_margin_all?: Some(5),
                 set_spacing: 5,
-
+                
+                append: component!(components.button1.root_widget()),
                 append: inc_button = &amp;gtk::Button {
                     set_label: &quot;Increment&quot;,
                     connect_clicked(sender) =&gt; move |_| {
@@ -3301,7 +3303,7 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
                     attach(2, 1, 1, 1) = &amp;gtk::Label {
                         set_label: &quot;grid test 3&quot;,
                     },
-                    attach(2, 2, 1, 1): component!(components.button.root_widget())
+                    attach(2, 2, 1, 1): component!(components.button2.root_widget())
                 }
             },
         }
@@ -3387,16 +3389,11 @@ struct AppWidgets {
 <pre><code class="language-rust no_run noplayground">        gtk::prelude::GtkWindowExt::set_title(&amp;main_window, Some(&quot;Simple app&quot;));
         main_window.set_default_width(300);
         main_window.set_default_height(100);
-        main_window.set_child(Some(&amp;_gtk_box_7));
         _gtk_box_7.set_orientation(gtk::Orientation::Vertical);
         if let Some(__p_assign) = Some(5) {
             _gtk_box_7.set_margin_all(__p_assign);
         }
         _gtk_box_7.set_spacing(5);
-        _gtk_box_7.append(&amp;inc_button);
-        _gtk_box_7.append(&amp;_gtk_button_new_1);
-        _gtk_box_7.append(&amp;_new_label_2);
-        _gtk_box_7.append(&amp;_gtk_grid_6);
         inc_button.set_label(&quot;Increment&quot;);
         for __elem in &amp;model.classes {
             inc_button.add_css_class(__elem);
@@ -3466,15 +3463,27 @@ struct AppWidgets {
         }
     }
 </code></pre>
-<h4 id="components-1"><a class="header" href="#components-1">Components</a></h4>
-<p>In the macro we used the nested <code>component!</code> macro to add a component to our UI.</p>
-<pre><code class="language-rust no_run noplayground">                    attach(2, 2, 1, 1): component!(components.button.root_widget())
-</code></pre>
-<p>This is now packed into the <code>connect_components</code> function.</p>
+<h4 id="assigning-widgets-and-components"><a class="header" href="#assigning-widgets-and-components">Assigning widgets and components</a></h4>
+<p>To keep every widget in order, all widgets are assigned in <code>connect_components</code> function. In the first stable version of Relm4 (0.1.0), regular widgets were already assigned in the <code>init_view</code> function. This caused problems with the ordering of elements because components were added after all other widgets were already in place. For Relm4 0.2 this behavior was changed so that all widgets are now added at the same place so that components keep their correct order.</p>
 <pre><code class="language-rust no_run noplayground">    fn connect_components(&amp;self, components: &amp;&lt;AppModel as ::relm4::Model&gt;::Components) {
+        self.main_window.set_child(Some(&amp;self._gtk_box_7));
+        self._gtk_box_7.append(components.button1.root_widget());
+        self._gtk_box_7.append(&amp;self.inc_button);
+        self._gtk_box_7.append(&amp;self._gtk_button_new_1);
+        self._gtk_box_7.append(&amp;self._new_label_2);
+        self._gtk_box_7.append(&amp;self._gtk_grid_6);
+        self._gtk_grid_6.attach(&amp;self._gtk_label_3, 1, 1, 1, 1);
+        self._gtk_grid_6.attach(&amp;self._gtk_label_4, 1, 2, 1, 1);
+        self._gtk_grid_6.attach(&amp;self._gtk_label_5, 2, 1, 1, 1);
         self._gtk_grid_6
-            .attach(components.button.root_widget(), 2, 2, 1, 1);
+            .attach(components.button2.root_widget(), 2, 2, 1, 1);
     }
+</code></pre>
+<p>At the beginning, we find the code for the <code>set_child</code> property we used in the macro.</p>
+<pre><code class="language-rust no_run noplayground">            set_child = Some(&amp;gtk::Box) {
+</code></pre>
+<p>In the macro we used the nested <code>component!</code> macro to add a component to our UI. This component can now be found in the last line of the <code>connect_components</code> function.</p>
+<pre><code class="language-rust no_run noplayground">                    attach(2, 2, 1, 1): component!(components.button2.root_widget())
 </code></pre>
 <h4 id="root-widget"><a class="header" href="#root-widget">Root widget</a></h4>
 <p>The macro also implements the <code>root_widget</code> function that returns the outermost widget that is also the first we use in the <code>view!</code> macro.</p>
@@ -3683,16 +3692,11 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
         gtk::prelude::GtkWindowExt::set_title(&amp;main_window, Some(&quot;Simple app&quot;));
         main_window.set_default_width(300);
         main_window.set_default_height(100);
-        main_window.set_child(Some(&amp;_gtk_box_7));
         _gtk_box_7.set_orientation(gtk::Orientation::Vertical);
         if let Some(__p_assign) = Some(5) {
             _gtk_box_7.set_margin_all(__p_assign);
         }
         _gtk_box_7.set_spacing(5);
-        _gtk_box_7.append(&amp;inc_button);
-        _gtk_box_7.append(&amp;_gtk_button_new_1);
-        _gtk_box_7.append(&amp;_new_label_2);
-        _gtk_box_7.append(&amp;_gtk_grid_6);
         inc_button.set_label(&quot;Increment&quot;);
         for __elem in &amp;model.classes {
             inc_button.add_css_class(__elem);
@@ -3705,9 +3709,6 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
         _gtk_grid_6.set_row_spacing(10);
         _gtk_grid_6.set_column_spacing(10);
         _gtk_grid_6.set_column_homogeneous(true);
-        _gtk_grid_6.attach(&amp;_gtk_label_3, 1, 1, 1, 1);
-        _gtk_grid_6.attach(&amp;_gtk_label_4, 1, 2, 1, 1);
-        _gtk_grid_6.attach(&amp;_gtk_label_5, 2, 1, 1, 1);
         _gtk_label_3.set_label(&quot;grid test 1&quot;);
         _gtk_label_4.set_label(&quot;grid test 2&quot;);
         _gtk_label_5.set_label(&quot;grid test 3&quot;);
@@ -3743,8 +3744,17 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
     }
 
     fn connect_components(&amp;self, components: &amp;&lt;AppModel as ::relm4::Model&gt;::Components) {
+        self.main_window.set_child(Some(&amp;self._gtk_box_7));
+        self._gtk_box_7.append(components.button1.root_widget());
+        self._gtk_box_7.append(&amp;self.inc_button);
+        self._gtk_box_7.append(&amp;self._gtk_button_new_1);
+        self._gtk_box_7.append(&amp;self._new_label_2);
+        self._gtk_box_7.append(&amp;self._gtk_grid_6);
+        self._gtk_grid_6.attach(&amp;self._gtk_label_3, 1, 1, 1, 1);
+        self._gtk_grid_6.attach(&amp;self._gtk_label_4, 1, 2, 1, 1);
+        self._gtk_grid_6.attach(&amp;self._gtk_label_5, 2, 1, 1, 1);
         self._gtk_grid_6
-            .attach(components.button.root_widget(), 2, 2, 1, 1);
+            .attach(components.button2.root_widget(), 2, 2, 1, 1);
     }
 
     /// Return the root widget.
