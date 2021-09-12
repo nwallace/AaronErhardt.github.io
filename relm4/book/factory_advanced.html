@@ -147,6 +147,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="advanced-factories"><a class="header" href="#advanced-factories">Advanced factories</a></h1>
+<p>In this chapter we will build an even more advanced UI for modifying the available counters:</p>
+<p><img src="img/screenshots/factory-advanced-dark.png" alt="App screenshot dark" /></p>
+<p>Additionally one can now remove a certain counter or insert a counter above or below an existing counter.</p>
 <blockquote>
 <p>If you're not familiar with the <code>Rc</code> type of the standard library, have a look at <a href="https://doc.rust-lang.org/std/rc/index.html">this</a>.</p>
 </blockquote>
@@ -310,9 +313,6 @@ To be able to provide the root widget via the <code>get_root</code> function we 
         }
 </code></pre>
 <p>And that's it! All the other complex operations that keep track of changes are implemented in Relm4 already, we just need to use dynamic indices to make out program work :)</p>
-<h4 id="screenshots"><a class="header" href="#screenshots">Screenshots</a></h4>
-<p><img src="img/screenshots/factory-advanced-light.png" alt="App screenshot light" />
-<img src="img/screenshots/factory-advanced-dark.png" alt="App screenshot dark" /></p>
 <h2 id="the-complete-code"><a class="header" href="#the-complete-code">The complete code</a></h2>
 <p>Let's review our code in one piece one more time to see how all these parts work together:</p>
 <blockquote>

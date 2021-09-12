@@ -179,6 +179,14 @@ relm4-macros = &quot;0.1&quot;
 relm4-components = &quot;0.1&quot;
 </code></pre>
 <h1 id="examples"><a class="header" href="#examples">Examples</a></h1>
+<p>In order to get you quickly started, we have prepped some better examples to explain the Rem4 features.</p>
+<h2 id="screenshots"><a class="header" href="#screenshots">Screenshots</a></h2>
+<p>As a sneak peak here are some screenshots of applications you will learn to implement yourself:</p>
+<table><thead><tr><th align="center">Light Theme</th><th align="center">Dark Theme</th></tr></thead><tbody>
+<tr><td align="center"><img src="img/screenshots/popover-light.png" alt="Pop Over light" /></td><td align="center"><img src="img/screenshots/popover-dark.png" alt="Pop Over dark" /></td></tr>
+<tr><td align="center"><img src="img/screenshots/factory-advanced-light.png" alt="Factory-Advanced light" /></td><td align="center"><img src="img/screenshots/factory-advanced-dark.png" alt="Factory-Advanced dark" /></td></tr>
+</tbody></table>
+<h2 id="how-to-get-them"><a class="header" href="#how-to-get-them">How to get them</a></h2>
 <p>Many code examples in this book can also be found in the <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-examples">relm4-examples crate</a>. Whenever an example is discussed in the book, the introduction will mention the name of the example and provide a link to it.</p>
 <p>To setup the examples run</p>
 <pre><code class="language-bash">git clone https://github.com/AaronErhardt/relm4.git
@@ -196,6 +204,8 @@ cd relm4-examples
 <p>I want to thank <a href="https://github.com/tronta">tronta</a> for contributing a lot of improvements to this book.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="your-first-app"><a class="header" href="#your-first-app">Your first app</a></h1>
 <p>For our first app, let's create something original: A simple counter app.</p>
+<p><img src="img/screenshots/simple-dark.png" alt="App screenshot dark" /></p>
+<p>In this app we will have a counter which can be incremented and decremented by pressing the corresponding buttons.</p>
 <blockquote>
 <p>The app we will write in this chapter is also available <a href="https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/simple_manual.rs">here</a>. Run <code>cargo run --example simple_manual</code> from the <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-examples">example directory</a> if you want to see the code in action.</p>
 </blockquote>
@@ -372,9 +382,6 @@ cd relm4-examples
 <blockquote>
 <p>As you might have noticed, storing inc_button, dec_button and vbox in our widgets struct is not necessary because GTK will keep them alive automatically. Therefore, we can remove them from <code>AppWidgets</code> to avoid compiler warnings.</p>
 </blockquote>
-<h4 id="screenshots"><a class="header" href="#screenshots">Screenshots</a></h4>
-<p><img src="img/screenshots/simple-light.png" alt="App screenshot light" />
-<img src="img/screenshots/simple-dark.png" alt="App screenshot dark" /></p>
 <h2 id="the-complete-code"><a class="header" href="#the-complete-code">The complete code</a></h2>
 <p>Let's review our code in one piece one more time to see how all these parts work together:</p>
 <pre><code class="language-rust no_run noplayground">use gtk::prelude::{BoxExt, ButtonExt, GtkWindowExt};
@@ -485,6 +492,8 @@ fn main() {
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-widget-macro"><a class="header" href="#the-widget-macro">The widget macro</a></h1>
 <p>To simplify the implementation of the <code>Widgets</code> trait, let's use the relm4-macros crate!</p>
+<p><img src="img/screenshots/simple-dark.png" alt="App screenshot dark" /></p>
+<p>The app will look and behave identical to our first app from the previous chapter. Only the implementation is different.</p>
 <blockquote>
 <p>The app we will write in this chapter is also available <a href="https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/simple.rs">here</a>. Run <code>cargo run --example simple</code> from the <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-examples">example directory</a> if you want to see the code in action.</p>
 </blockquote>
@@ -556,9 +565,6 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 <blockquote>
 <p>The full reference for the syntax of the widget macro can be found <a href="https://aaronerhardt.github.io/relm4-book/book/widget_macro_reference.html">here</a>.</p>
 </blockquote>
-<h4 id="screenshots-1"><a class="header" href="#screenshots-1">Screenshots</a></h4>
-<p><img src="img/screenshots/simple-light.png" alt="App screenshot light" />
-<img src="img/screenshots/simple-dark.png" alt="App screenshot dark" /></p>
 <h2 id="the-complete-code-1"><a class="header" href="#the-complete-code-1">The complete code</a></h2>
 <p>Let's review our code in one piece one more time to see how all these parts work together:</p>
 <pre><code class="language-rust no_run noplayground">use gtk::prelude::{BoxExt, ButtonExt, GtkWindowExt, OrientableExt};
@@ -644,9 +650,9 @@ fn main() {
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tracker"><a class="header" href="#tracker">Tracker</a></h1>
 <p>A tracker in this context just means a data type that's able to track changes to itself. For example, if we increment the counter of the model we used for our first app, the model could tell us later that the counter changed during the last update function.</p>
 <p>Relm4 does not promote any implementation of a tracker. You're free to use any implementation you like, you can even implement a tracker yourself. In this example however, we'll use the tracker crate that provides a simple macro that implements a tracker for us automatically.</p>
-<p>In this chapter we are going to implement a small program using this technique which displays two randomly picked icons on two buttons:</p>
+<p>Using this technique, we will implement a small program which displays two randomly picked icons that are controlled by two buttons:</p>
 <p><img src="img/screenshots/tracker-dark-1.png" alt="App screenshot" /></p>
-<p>When pressng a button, its icon will change. The background of the application will become green when the two icons are identical:</p>
+<p>When pressing a button, the icon above it will change. The background of the application will become green when the two icons are identical:</p>
 <p><img src="img/screenshots/tracker-dark-2.png" alt="App screenshot with with equal icons" /></p>
 <h2 id="the-tracker-crate"><a class="header" href="#the-tracker-crate">The tracker crate</a></h2>
 <p>The <code>tracker::track</code> macro implements the following methods for your struct fields:</p>
@@ -984,6 +990,9 @@ fn main() {
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="factory"><a class="header" href="#factory">Factory</a></h1>
 <p>Factories define how to generate widgets from collections of data. They are used inside GTK as well, but Relm4 uses them a bit differently.</p>
+<p><img src="img/screenshots/factory-dark.png" alt="App screenshot dark" /></p>
+<p>This app will have a dynamic number of counters which can be changed by pressing the add or remove buttons.
+Clicking of the counter will decreased it.</p>
 <h2 id="factories-in-relm4"><a class="header" href="#factories-in-relm4">Factories in Relm4</a></h2>
 <p>Let's have a look at factories in Relm4. We want to write a simple application that can create and remove many counters. Each counter needs to store its value and display widgets to allow modifying the counter. In this example we will only decrement the counter.</p>
 <blockquote>
@@ -1144,9 +1153,6 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 <p>The <code>factory!</code> macro simply expands to <code>model.data.generate(&amp;self.gen_box, sender)</code> where <code>gen_box</code> is the <code>gtk::Box</code> we used as a container. The <code>generate</code> function is provided by the <code>Factory</code> trait that's implemented for <code>FactoryVec</code> and similar data structures.</p>
 </blockquote>
 <p>Now to test this, we could add a print statement to the update function. It will show that decrementing one counter will only update the widgets of one counter. Great, that's exactly what we wanted!</p>
-<h4 id="screenshots-2"><a class="header" href="#screenshots-2">Screenshots</a></h4>
-<p><img src="img/screenshots/factory-light.png" alt="App screenshot light" />
-<img src="img/screenshots/factory-dark.png" alt="App screenshot dark" /></p>
 <h2 id="the-complete-code-3"><a class="header" href="#the-complete-code-3">The complete code</a></h2>
 <p>Let's review our code in one piece one more time to see how all these parts work together:</p>
 <pre><code class="language-rust no_run noplayground">use gtk::glib::Sender;
@@ -1324,6 +1330,9 @@ fn main() {
 <p>And as you can see, it works!</p>
 <p><img src="img/chess_grid_screenshot.png" alt="Chess grid layout screenshot" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-factories"><a class="header" href="#advanced-factories">Advanced factories</a></h1>
+<p>In this chapter we will build an even more advanced UI for modifying the available counters:</p>
+<p><img src="img/screenshots/factory-advanced-dark.png" alt="App screenshot dark" /></p>
+<p>Additionally one can now remove a certain counter or insert a counter above or below an existing counter.</p>
 <blockquote>
 <p>If you're not familiar with the <code>Rc</code> type of the standard library, have a look at <a href="https://doc.rust-lang.org/std/rc/index.html">this</a>.</p>
 </blockquote>
@@ -1487,9 +1496,6 @@ To be able to provide the root widget via the <code>get_root</code> function we 
         }
 </code></pre>
 <p>And that's it! All the other complex operations that keep track of changes are implemented in Relm4 already, we just need to use dynamic indices to make out program work :)</p>
-<h4 id="screenshots-3"><a class="header" href="#screenshots-3">Screenshots</a></h4>
-<p><img src="img/screenshots/factory-advanced-light.png" alt="App screenshot light" />
-<img src="img/screenshots/factory-advanced-dark.png" alt="App screenshot dark" /></p>
 <h2 id="the-complete-code-4"><a class="header" href="#the-complete-code-4">The complete code</a></h2>
 <p>Let's review our code in one piece one more time to see how all these parts work together:</p>
 <blockquote>
@@ -1727,6 +1733,9 @@ fn main() {
 <div style="break-before: page; page-break-before: always;"></div><h1 id="components"><a class="header" href="#components">Components</a></h1>
 <p>I've already mentioned components several times in the previous chapters. Now we'll finally have a look at them.</p>
 <p>In short, components are independent parts of your application that can communicate with each other through messages. They are used in a parent-child model: The main app can have components and each component can have child components that again can have child components. This means that each component has a parent, whereas the main app is at the top of this tree structure and therefore does not have a parent. Also, each component can send and receive messages from both parent and children.</p>
+<p>To showcase this, we will create a small application which opens a dialog when it gets closed. The dialog will be implemented as a standalone component. The communication between to the main application will be done via messages.</p>
+<p><img src="img/screenshots/components-dark-1.png" alt="App screenshot dark" /></p>
+<p><img src="img/screenshots/components-dark-2.png" alt="App screenshot dark" /></p>
 <h2 id="when-to-use-components"><a class="header" href="#when-to-use-components">When to use components</a></h2>
 <p>Components are mainly useful for separating parts of the UI into smaller, more manageable parts. They are not necessary but for larger applications, they can be very helpful.</p>
 <h1 id="example-application"><a class="header" href="#example-application">Example application</a></h1>
@@ -1998,11 +2007,6 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 </blockquote>
 <h2 id="conclusion-1"><a class="header" href="#conclusion-1">Conclusion</a></h2>
 <p>You now know most of the secrets that Relm4 offers. Components can be powerful and if they are implemented correctly, they are even reusable across different apps. The relm4-components crate offers several reusable components you can use in your applications. In the following chapters, we'll look at an even simpler component type called worker, how to implement reusable components yourself and how to use components with async code and multiple threads.</p>
-<h4 id="screenshots-4"><a class="header" href="#screenshots-4">Screenshots</a></h4>
-<p><img src="img/screenshots/components-light-1.png" alt="App screenshot light" />
-<img src="img/screenshots/components-light-2.png" alt="App screenshot light" /></p>
-<p><img src="img/screenshots/components-dark-1.png" alt="App screenshot dark" />
-<img src="img/screenshots/components-dark-2.png" alt="App screenshot dark" /></p>
 <h2 id="the-complete-code-5"><a class="header" href="#the-complete-code-5">The complete code</a></h2>
 <p>Let's review our code in one piece one more time to see how all these parts work together:</p>
 <pre><code class="language-rust no_run noplayground">use gtk::prelude::{BoxExt, ButtonExt, DialogExt, GtkWindowExt, ToggleButtonExt, WidgetExt};
@@ -2265,6 +2269,7 @@ fn main() {
 <p>Handling one message at the time is perfectly fine in most cases. However, if you, for example, want to handle a lot of HTTP requests and you send one message to a worker for each request you want to handle, that'd mean that one message is sent after another. This could cause a huge delay. Fortunately, message handlers can solve this issue.</p>
 <h2 id="implementing-a-message-handler"><a class="header" href="#implementing-a-message-handler">Implementing a message handler</a></h2>
 <p>To keep it simple, we will create another counter app. Yet this time, every click will be delayed by one second. If a user clicks the increment button, the counter will be incremented exactly one second later.</p>
+<p><img src="img/screenshots/simple-dark.png" alt="App screenshot dark" /></p>
 <blockquote>
 <p>The app we will write in this chapter is also available <a href="https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/non_blocking_async.rs">here</a>. Run <code>cargo run --example non_blocking_async</code> from the <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-examples">example directory</a> if you want to see the code in action.</p>
 </blockquote>
@@ -2455,9 +2460,6 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 </code></pre>
 <h3 id="conclusion-2"><a class="header" href="#conclusion-2">Conclusion</a></h3>
 <p>That's it! We've implemented our first message handler.</p>
-<h4 id="screenshots-5"><a class="header" href="#screenshots-5">Screenshots</a></h4>
-<p><img src="img/screenshots/simple-light.png" alt="App screenshot light" />
-<img src="img/screenshots/simple-dark.png" alt="App screenshot dark" /></p>
 <h2 id="the-complete-code-6"><a class="header" href="#the-complete-code-6">The complete code</a></h2>
 <p>Let's review our code in one piece one more time to see how all these parts work together:</p>
 <pre><code class="language-rust no_run noplayground">use gtk::prelude::{BoxExt, ButtonExt, GtkWindowExt, OrientableExt};
@@ -2854,7 +2856,7 @@ fn main() {}
 <blockquote>
 <p>You can find more examples of reusable components in the relm4-components crate <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-components">here</a>. You can also contribute your own reusable components to relm4-components :)</p>
 </blockquote>
-<h4 id="screenshots-6"><a class="header" href="#screenshots-6">Screenshots</a></h4>
+<h4 id="screenshots-1"><a class="header" href="#screenshots-1">Screenshots</a></h4>
 <p><img src="img/screenshots/reusable-alert-light-1.png" alt="App screenshot light" />
 <img src="img/screenshots/reusable-alert-light-2.png" alt="App screenshot light" /></p>
 <p><img src="img/screenshots/reusable-alert-dark-1.png" alt="App screenshot dark" />
