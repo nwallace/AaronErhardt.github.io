@@ -2705,10 +2705,14 @@ fn main() {
 <p>GTK uses an event loop from glib to handle asynchronous events. In fact the senders we've been using all the time use channels on that event loop. This event loop also allows us to execute futures. Relm4 provides a <code>spawn_future</code> function to do exactly that. The only drawback of this is that most crates relying on a tokio runtime won't work and that the future is run on the main thread. The <a href="https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/future.rs">&quot;future&quot; example</a> shows how this can be used.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reusable-components"><a class="header" href="#reusable-components">Reusable components</a></h1>
 <p>In this chapter, we will implement a simple alert dialog as a reusable component.</p>
+<p>The alert example in the Relm4 repository implements a simple app for the reusable alert component we will write in this chapter. It's an other variant of a counter app, yet this time a dialog will be displayed if the counter does not match 42 when being closed. The main difference in the implementation is, that the dialog is implemented as component that can be reused in other applications.</p>
+<p><img src="img/screenshots/reusable-alert-dark-1.png" alt="App screenshot dark" /></p>
+<p>This is how the dialog looks like in the alert example:</p>
+<p><img src="img/screenshots/reusable-alert-dark-2.png" alt="App screenshot dark" /></p>
 <blockquote>
 <p>If you want to see an alert component, very similar to the one we will write in this chapter, used inside a Relm4 application have a look at the <a href="https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/alert.rs">“alert” example</a>. Run <code>cargo run --example alert</code> from the <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-examples">example directory</a> if you want to see the code in action.</p>
 </blockquote>
-<p>Reusable components don’t know their parent component at the time they are implemented. So if they want to interact with their parent component, they must assume that their parent model defines a trait as an interface for the component.</p>
+<p>Reusable components don’t know their parent component at the time they are implemented. So if they want to interact with their parent component, they must assume that their parent model implements a trait as an interface for the component.</p>
 <h2 id="the-parent-traits"><a class="header" href="#the-parent-traits">The parent traits</a></h2>
 <p>First, we’ll have a look at the traits the parent component, that will eventually use this component, has to implement.</p>
 <p>Because we want our component to be flexible and able to display different messages, we first define a data type for configuring our component.</p>
@@ -2848,19 +2852,12 @@ where
         }
     }
 }
-
-fn main() {}
 </code></pre>
 <h2 id="conclusion-3"><a class="header" href="#conclusion-3">Conclusion</a></h2>
 <p>We’re done! That’s your first reusable component.</p>
 <blockquote>
 <p>You can find more examples of reusable components in the relm4-components crate <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-components">here</a>. You can also contribute your own reusable components to relm4-components :)</p>
 </blockquote>
-<h4 id="screenshots-1"><a class="header" href="#screenshots-1">Screenshots</a></h4>
-<p><img src="img/screenshots/reusable-alert-light-1.png" alt="App screenshot light" />
-<img src="img/screenshots/reusable-alert-light-2.png" alt="App screenshot light" /></p>
-<p><img src="img/screenshots/reusable-alert-dark-1.png" alt="App screenshot dark" />
-<img src="img/screenshots/reusable-alert-dark-2.png" alt="App screenshot dark" /></p>
 <h2 id="the-complete-code-7"><a class="header" href="#the-complete-code-7">The complete code</a></h2>
 <p>Let’s review our code in one piece one more time to see how all these parts work together:</p>
 <pre><code class="language-rust no_run noplayground">use gtk::prelude::{DialogExt, GtkWindowExt, WidgetExt};
@@ -2998,8 +2995,6 @@ where
         }
     }
 }
-
-fn main() {}
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-widget-macro-reference"><a class="header" href="#the-widget-macro-reference">The widget macro reference</a></h1>
 <p>There are quite a lot of examples where the widget macro is used in this book. Yet, we haven't covered everything in the previous chapters and having all the information in one place is nice, too.</p>
@@ -3359,8 +3354,8 @@ struct AppWidgets {
 <pre><code class="language-rust no_run noplayground">    /// Initialize the UI.
     fn init_view(
         model: &amp;AppModel,
-        parent_widgets: &amp;&lt;() as ::relm4::Model&gt;::Widgets,
-        sender: ::gtk::glib::Sender&lt;&lt;AppModel as ::relm4::Model&gt;::Msg&gt;,
+        parent_widgets: &amp;(),
+        sender: ::gtk::glib::Sender&lt;AppMsg&gt;,
     ) -&gt; Self {
         let mut test_field = 0;
         println!(&quot;Pre init! test_field: {}&quot;, test_field);
@@ -3669,8 +3664,8 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
     /// Initialize the UI.
     fn init_view(
         model: &amp;AppModel,
-        parent_widgets: &amp;&lt;() as ::relm4::Model&gt;::Widgets,
-        sender: ::gtk::glib::Sender&lt;&lt;AppModel as ::relm4::Model&gt;::Msg&gt;,
+        parent_widgets: &amp;(),
+        sender: ::gtk::glib::Sender&lt;AppMsg&gt;,
     ) -&gt; Self {
         let mut test_field = 0;
         println!(&quot;Pre init! test_field: {}&quot;, test_field);

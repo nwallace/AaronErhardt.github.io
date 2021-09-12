@@ -341,8 +341,8 @@ struct AppWidgets {
 <pre><code class="language-rust no_run noplayground">    /// Initialize the UI.
     fn init_view(
         model: &amp;AppModel,
-        parent_widgets: &amp;&lt;() as ::relm4::Model&gt;::Widgets,
-        sender: ::gtk::glib::Sender&lt;&lt;AppModel as ::relm4::Model&gt;::Msg&gt;,
+        parent_widgets: &amp;(),
+        sender: ::gtk::glib::Sender&lt;AppMsg&gt;,
     ) -&gt; Self {
         let mut test_field = 0;
         println!(&quot;Pre init! test_field: {}&quot;, test_field);
@@ -651,8 +651,8 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
     /// Initialize the UI.
     fn init_view(
         model: &amp;AppModel,
-        parent_widgets: &amp;&lt;() as ::relm4::Model&gt;::Widgets,
-        sender: ::gtk::glib::Sender&lt;&lt;AppModel as ::relm4::Model&gt;::Msg&gt;,
+        parent_widgets: &amp;(),
+        sender: ::gtk::glib::Sender&lt;AppMsg&gt;,
     ) -&gt; Self {
         let mut test_field = 0;
         println!(&quot;Pre init! test_field: {}&quot;, test_field);
