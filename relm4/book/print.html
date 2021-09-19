@@ -732,8 +732,10 @@ fn main() {
 ];
 
 fn random_icon_name() -&gt; &amp;'static str {
-    let index: usize = rand::random::&lt;usize&gt;() % ICON_LIST.len();
-    ICON_LIST[index]
+    ICON_LIST
+        .iter()
+        .choose(&amp;mut rand::thread_rng())
+        .expect(&quot;Could not choose a random icon&quot;)
 }
 </code></pre>
 <h2 id="the-model-1"><a class="header" href="#the-model-1">The model</a></h2>
@@ -870,6 +872,7 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 <h2 id="the-complete-code-2"><a class="header" href="#the-complete-code-2">The complete code</a></h2>
 <p>Let's review our code in one piece one more time to see how all these parts work together:</p>
 <pre><code class="language-rust no_run noplayground">use gtk::prelude::{BoxExt, ButtonExt, GtkWindowExt, OrientableExt};
+use rand::prelude::IteratorRandom;
 use relm4::{send, AppUpdate, Model, RelmApp, Sender, WidgetPlus, Widgets};
 
 const ICON_LIST: &amp;[&amp;str] = &amp;[
@@ -885,8 +888,10 @@ const ICON_LIST: &amp;[&amp;str] = &amp;[
 ];
 
 fn random_icon_name() -&gt; &amp;'static str {
-    let index: usize = rand::random::&lt;usize&gt;() % ICON_LIST.len();
-    ICON_LIST[index]
+    ICON_LIST
+        .iter()
+        .choose(&amp;mut rand::thread_rng())
+        .expect(&quot;Could not choose a random icon&quot;)
 }
 
 enum AppMsg {
