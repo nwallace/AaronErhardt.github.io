@@ -150,8 +150,8 @@
 
 <span class="kw">static</span> <span class="ident">APP</span>: <span class="ident">OnceCell</span><span class="op">&lt;</span><span class="ident">Fragile</span><span class="op">&lt;</span><span class="ident">gtk::Application</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">OnceCell::new</span>();
 
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gtk::glib::Sender</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gtk</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gtk::glib::Sender</span>;
 
 <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;tokio-rt&quot;</span>)]</span>
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">doc</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;tokio-rt&quot;</span>)))]</span>

@@ -85,6 +85,12 @@
 <span id="85">85</span>
 <span id="86">86</span>
 <span id="87">87</span>
+<span id="88">88</span>
+<span id="89">89</span>
+<span id="90">90</span>
+<span id="91">91</span>
+<span id="92">92</span>
+<span id="93">93</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib</span>;
 <span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">ApplicationExt</span>, <span class="ident">ApplicationExtManual</span>, <span class="ident">GtkWindowExt</span>, <span class="ident">IsA</span>};
 
@@ -124,10 +130,16 @@
         <span class="self">self</span>.<span class="ident">app</span>.<span class="ident">run</span>();
     }
 
-    <span class="doccomment">/// Create an application.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="kw-2">mut</span> <span class="ident">model</span>: <span class="ident">Model</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="doccomment">/// Create a Relm4 application.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">model</span>: <span class="ident">Model</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
         <span class="ident">gtk::init</span>().<span class="ident">expect</span>(<span class="string">&quot;Couln&#39;t initialize GTK&quot;</span>);
         <span class="kw">let</span> <span class="ident">app</span> <span class="op">=</span> <span class="ident">gtk::Application::builder</span>().<span class="ident">build</span>();
+
+        <span class="ident"><span class="self">Self</span>::with_app</span>(<span class="ident">model</span>, <span class="ident">app</span>)
+    }
+
+    <span class="doccomment">/// Create a new Relm4 application with an existing [`gtk::Application`].</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">with_app</span>(<span class="kw-2">mut</span> <span class="ident">model</span>: <span class="ident">Model</span>, <span class="ident">app</span>: <span class="ident">gtk::Application</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
         <span class="ident"><span class="kw">crate</span>::APP</span>
             .<span class="ident">set</span>(<span class="ident">fragile::Fragile::new</span>(<span class="ident">app</span>.<span class="ident">clone</span>()))
             .<span class="ident">expect</span>(<span class="string">&quot;APP was alredy set&quot;</span>);
@@ -139,7 +151,7 @@
 
         <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">widgets</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
 
-        <span class="ident">widgets</span>.<span class="ident">connect_components</span>(<span class="kw-2">&amp;</span><span class="ident">components</span>);
+        <span class="ident">widgets</span>.<span class="ident">connect_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">components</span>);
 
         <span class="comment">// Initialize GTK</span>
         <span class="ident">app</span>.<span class="ident">connect_activate</span>(<span class="kw">move</span> <span class="op">|</span><span class="ident">app</span><span class="op">|</span> {

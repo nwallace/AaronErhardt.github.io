@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;gtk4-0.2.0&#x2F;src&#x2F;auto&#x2F;tree_view.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>tree_view.rs - source</title><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../../gtk4/index.html'><div class='logo-container rust-logo'><img src='../../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;gtk4-0.3.1&#x2F;src&#x2F;auto&#x2F;tree_view.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>tree_view.rs - source</title><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../../gtk4/index.html'><div class='logo-container rust-logo'><img src='../../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
 <span id="2">   2</span>
 <span id="3">   3</span>
 <span id="4">   4</span>
@@ -3199,8 +3199,6 @@
 <span id="3199">3199</span>
 <span id="3200">3200</span>
 <span id="3201">3201</span>
-<span id="3202">3202</span>
-<span id="3203">3203</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)</span>
 <span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git)</span>
 <span class="comment">// DO NOT EDIT</span>
@@ -3259,7 +3257,7 @@
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_new_with_model&quot;</span>)]</span>
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;new_with_model&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">with_model</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeModel</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="ident">model</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">TreeView</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">with_model</span>(<span class="ident">model</span>: <span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeModel</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">TreeView</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">Widget::from_glib_none</span>(<span class="ident">ffi::gtk_tree_view_new_with_model</span>(
@@ -3566,7 +3564,7 @@
         <span class="self">self</span>
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">model</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeModel</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">model</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">model</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">model</span>: <span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeModel</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
         <span class="self">self</span>.<span class="ident">model</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">model</span>.<span class="ident">clone</span>().<span class="ident">upcast</span>());
         <span class="self">self</span>
     }
@@ -3656,7 +3654,7 @@
         <span class="self">self</span>
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">layout_manager</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">LayoutManager</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">layout_manager</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">layout_manager</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">layout_manager</span>: <span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">LayoutManager</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
         <span class="self">self</span>.<span class="ident">layout_manager</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">layout_manager</span>.<span class="ident">clone</span>().<span class="ident">upcast</span>());
         <span class="self">self</span>
     }
@@ -3746,7 +3744,7 @@
         <span class="self">self</span>
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">hadjustment</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Adjustment</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">hadjustment</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">hadjustment</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">hadjustment</span>: <span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Adjustment</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
         <span class="self">self</span>.<span class="ident">hadjustment</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">hadjustment</span>.<span class="ident">clone</span>().<span class="ident">upcast</span>());
         <span class="self">self</span>
     }
@@ -3756,7 +3754,7 @@
         <span class="self">self</span>
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">vadjustment</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Adjustment</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">vadjustment</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">vadjustment</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">vadjustment</span>: <span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Adjustment</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
         <span class="self">self</span>.<span class="ident">vadjustment</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">vadjustment</span>.<span class="ident">clone</span>().<span class="ident">upcast</span>());
         <span class="self">self</span>
     }
@@ -3977,18 +3975,17 @@
     <span class="kw">fn</span> <span class="ident">insert_column</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">column</span>: <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="ident">position</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span>;
 
     <span class="comment">//#[doc(alias = &quot;gtk_tree_view_insert_column_with_attributes&quot;)]</span>
-    <span class="comment">//fn insert_column_with_attributes&lt;P: IsA&lt;CellRenderer&gt;&gt;(&amp;self, position: i32, title: &amp;str, cell: &amp;P, : /*Unknown conversion*//*Unimplemented*/Fundamental: VarArgs) -&gt; i32;</span>
+    <span class="comment">//fn insert_column_with_attributes(&amp;self, position: i32, title: &amp;str, cell: &amp;impl IsA&lt;CellRenderer&gt;, : /*Unknown conversion*//*Unimplemented*/Fundamental: VarArgs) -&gt; i32;</span>
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_insert_column_with_data_func&quot;</span>)]</span>
     <span class="kw">fn</span> <span class="ident">insert_column_with_data_func</span><span class="op">&lt;</span>
-        <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span>,
-        <span class="ident">Q</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="kw-2">&amp;</span><span class="ident">CellRenderer</span>, <span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
+        <span class="ident">P</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="kw-2">&amp;</span><span class="ident">CellRenderer</span>, <span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
     <span class="op">&gt;</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">position</span>: <span class="ident">i32</span>,
         <span class="ident">title</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>,
-        <span class="ident">cell</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>,
-        <span class="ident">func</span>: <span class="ident">Q</span>,
+        <span class="ident">cell</span>: <span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span>,
+        <span class="ident">func</span>: <span class="ident">P</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span>;
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_is_blank_at_pos&quot;</span>)]</span>
@@ -4011,7 +4008,7 @@
     <span class="kw">fn</span> <span class="ident">remove_column</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">column</span>: <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span>;
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_row_activated&quot;</span>)]</span>
-    <span class="kw">fn</span> <span class="ident">row_activated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="ident">column</span>: <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>);
+    <span class="kw">fn</span> <span class="ident">row_activated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="ident">column</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_row_expanded&quot;</span>)]</span>
     <span class="kw">fn</span> <span class="ident">row_expanded</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
@@ -4052,11 +4049,11 @@
     );
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_set_cursor_on_cell&quot;</span>)]</span>
-    <span class="kw">fn</span> <span class="ident">set_cursor_on_cell</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span><span class="op">&gt;</span>(
+    <span class="kw">fn</span> <span class="ident">set_cursor_on_cell</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>,
         <span class="ident">focus_column</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>,
-        <span class="ident">focus_cell</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">P</span><span class="op">&gt;</span>,
+        <span class="ident">focus_cell</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span><span class="op">&gt;</span>,
         <span class="ident">start_editing</span>: <span class="ident">bool</span>,
     );
 
@@ -4094,7 +4091,7 @@
     <span class="kw">fn</span> <span class="ident">set_level_indentation</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">indentation</span>: <span class="ident">i32</span>);
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_set_model&quot;</span>)]</span>
-    <span class="kw">fn</span> <span class="ident">set_model</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeModel</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">model</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">P</span><span class="op">&gt;</span>);
+    <span class="kw">fn</span> <span class="ident">set_model</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">model</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeModel</span><span class="op">&gt;</span><span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_set_reorderable&quot;</span>)]</span>
     <span class="kw">fn</span> <span class="ident">set_reorderable</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">reorderable</span>: <span class="ident">bool</span>);
@@ -4109,7 +4106,7 @@
     <span class="kw">fn</span> <span class="ident">set_search_column</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">column</span>: <span class="ident">i32</span>);
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_set_search_entry&quot;</span>)]</span>
-    <span class="kw">fn</span> <span class="ident">set_search_entry</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Editable</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">entry</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">P</span><span class="op">&gt;</span>);
+    <span class="kw">fn</span> <span class="ident">set_search_entry</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">entry</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Editable</span><span class="op">&gt;</span><span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_set_search_equal_func&quot;</span>)]</span>
     <span class="kw">fn</span> <span class="ident">set_search_equal_func</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="ident">i32</span>, <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
@@ -4121,12 +4118,12 @@
     <span class="kw">fn</span> <span class="ident">set_show_expanders</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">enabled</span>: <span class="ident">bool</span>);
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_set_tooltip_cell&quot;</span>)]</span>
-    <span class="kw">fn</span> <span class="ident">set_tooltip_cell</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span><span class="op">&gt;</span>(
+    <span class="kw">fn</span> <span class="ident">set_tooltip_cell</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">tooltip</span>: <span class="kw-2">&amp;</span><span class="ident">Tooltip</span>,
         <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreePath</span><span class="op">&gt;</span>,
         <span class="ident">column</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>,
-        <span class="ident">cell</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">P</span><span class="op">&gt;</span>,
+        <span class="ident">cell</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span><span class="op">&gt;</span>,
     );
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;gtk_tree_view_set_tooltip_column&quot;</span>)]</span>
@@ -4176,12 +4173,12 @@
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;row-activated&quot;</span>)]</span>
-    <span class="kw">fn</span> <span class="ident">connect_row_activated</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
+    <span class="kw">fn</span> <span class="ident">connect_row_activated</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">f</span>: <span class="ident">F</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">SignalHandlerId</span>;
 
-    <span class="kw">fn</span> <span class="ident">emit_row_activated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="ident">column</span>: <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>);
+    <span class="kw">fn</span> <span class="ident">emit_row_activated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="ident">column</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>);
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;row-collapsed&quot;</span>)]</span>
     <span class="kw">fn</span> <span class="ident">connect_row_collapsed</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>, <span class="kw-2">&amp;</span><span class="ident">TreePath</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
@@ -4840,24 +4837,22 @@
         }
     }
 
-    <span class="comment">//fn insert_column_with_attributes&lt;P: IsA&lt;CellRenderer&gt;&gt;(&amp;self, position: i32, title: &amp;str, cell: &amp;P, : /*Unknown conversion*//*Unimplemented*/Fundamental: VarArgs) -&gt; i32 {</span>
+    <span class="comment">//fn insert_column_with_attributes(&amp;self, position: i32, title: &amp;str, cell: &amp;impl IsA&lt;CellRenderer&gt;, : /*Unknown conversion*//*Unimplemented*/Fundamental: VarArgs) -&gt; i32 {</span>
     <span class="comment">//    unsafe { TODO: call ffi:gtk_tree_view_insert_column_with_attributes() }</span>
     <span class="comment">//}</span>
 
     <span class="kw">fn</span> <span class="ident">insert_column_with_data_func</span><span class="op">&lt;</span>
-        <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span>,
-        <span class="ident">Q</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="kw-2">&amp;</span><span class="ident">CellRenderer</span>, <span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
+        <span class="ident">P</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="kw-2">&amp;</span><span class="ident">CellRenderer</span>, <span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
     <span class="op">&gt;</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">position</span>: <span class="ident">i32</span>,
         <span class="ident">title</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>,
-        <span class="ident">cell</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>,
-        <span class="ident">func</span>: <span class="ident">Q</span>,
+        <span class="ident">cell</span>: <span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span>,
+        <span class="ident">func</span>: <span class="ident">P</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
-        <span class="kw">let</span> <span class="ident">func_data</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">Q</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box_::new</span>(<span class="ident">func</span>);
+        <span class="kw">let</span> <span class="ident">func_data</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box_::new</span>(<span class="ident">func</span>);
         <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">func_func</span><span class="op">&lt;</span>
-            <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span>,
-            <span class="ident">Q</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="kw-2">&amp;</span><span class="ident">CellRenderer</span>, <span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
+            <span class="ident">P</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="kw-2">&amp;</span><span class="ident">CellRenderer</span>, <span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
         <span class="op">&gt;</span>(
             <span class="ident">tree_column</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi::GtkTreeViewColumn</span>,
             <span class="ident">cell</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi::GtkCellRenderer</span>,
@@ -4869,20 +4864,19 @@
             <span class="kw">let</span> <span class="ident">cell</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">cell</span>);
             <span class="kw">let</span> <span class="ident">tree_model</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">tree_model</span>);
             <span class="kw">let</span> <span class="ident">iter</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">iter</span>);
-            <span class="kw">let</span> <span class="ident">callback</span>: <span class="kw-2">&amp;</span><span class="ident">Q</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw">_</span>);
+            <span class="kw">let</span> <span class="ident">callback</span>: <span class="kw-2">&amp;</span><span class="ident">P</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw">_</span>);
             (<span class="kw-2">*</span><span class="ident">callback</span>)(<span class="kw-2">&amp;</span><span class="ident">tree_column</span>, <span class="kw-2">&amp;</span><span class="ident">cell</span>, <span class="kw-2">&amp;</span><span class="ident">tree_model</span>, <span class="kw-2">&amp;</span><span class="ident">iter</span>);
         }
-        <span class="kw">let</span> <span class="ident">func</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">func_func</span>::<span class="op">&lt;</span><span class="ident">P</span>, <span class="ident">Q</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw">_</span>);
+        <span class="kw">let</span> <span class="ident">func</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">func_func</span>::<span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw">_</span>);
         <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">dnotify_func</span><span class="op">&lt;</span>
-            <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span>,
-            <span class="ident">Q</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="kw-2">&amp;</span><span class="ident">CellRenderer</span>, <span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
+            <span class="ident">P</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>, <span class="kw-2">&amp;</span><span class="ident">CellRenderer</span>, <span class="kw-2">&amp;</span><span class="ident">TreeModel</span>, <span class="kw-2">&amp;</span><span class="ident">TreeIter</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
         <span class="op">&gt;</span>(
             <span class="ident">data</span>: <span class="ident">glib::ffi::gpointer</span>,
         ) {
-            <span class="kw">let</span> <span class="ident">_callback</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">Q</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box_::from_raw</span>(<span class="ident">data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw">_</span>);
+            <span class="kw">let</span> <span class="ident">_callback</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box_::from_raw</span>(<span class="ident">data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw">_</span>);
         }
-        <span class="kw">let</span> <span class="ident">destroy_call6</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">dnotify_func</span>::<span class="op">&lt;</span><span class="ident">P</span>, <span class="ident">Q</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw">_</span>);
-        <span class="kw">let</span> <span class="ident">super_callback0</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">Q</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">func_data</span>;
+        <span class="kw">let</span> <span class="ident">destroy_call6</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">dnotify_func</span>::<span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw">_</span>);
+        <span class="kw">let</span> <span class="ident">super_callback0</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">func_data</span>;
         <span class="kw">unsafe</span> {
             <span class="ident">ffi::gtk_tree_view_insert_column_with_data_func</span>(
                 <span class="self">self</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>,
@@ -4975,7 +4969,7 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">row_activated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="ident">column</span>: <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>) {
+    <span class="kw">fn</span> <span class="ident">row_activated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="ident">column</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>) {
         <span class="kw">unsafe</span> {
             <span class="ident">ffi::gtk_tree_view_row_activated</span>(
                 <span class="self">self</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>,
@@ -5120,11 +5114,11 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">set_cursor_on_cell</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span><span class="op">&gt;</span>(
+    <span class="kw">fn</span> <span class="ident">set_cursor_on_cell</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>,
         <span class="ident">focus_column</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>,
-        <span class="ident">focus_cell</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">P</span><span class="op">&gt;</span>,
+        <span class="ident">focus_cell</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span><span class="op">&gt;</span>,
         <span class="ident">start_editing</span>: <span class="ident">bool</span>,
     ) {
         <span class="kw">unsafe</span> {
@@ -5232,7 +5226,7 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">set_model</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeModel</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">model</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">P</span><span class="op">&gt;</span>) {
+    <span class="kw">fn</span> <span class="ident">set_model</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">model</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeModel</span><span class="op">&gt;</span><span class="op">&gt;</span>) {
         <span class="kw">unsafe</span> {
             <span class="ident">ffi::gtk_tree_view_set_model</span>(
                 <span class="self">self</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>,
@@ -5296,7 +5290,7 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">set_search_entry</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Editable</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">entry</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">P</span><span class="op">&gt;</span>) {
+    <span class="kw">fn</span> <span class="ident">set_search_entry</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">entry</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Editable</span><span class="op">&gt;</span><span class="op">&gt;</span>) {
         <span class="kw">unsafe</span> {
             <span class="ident">ffi::gtk_tree_view_set_search_entry</span>(
                 <span class="self">self</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>,
@@ -5355,12 +5349,12 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">set_tooltip_cell</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span><span class="op">&gt;</span>(
+    <span class="kw">fn</span> <span class="ident">set_tooltip_cell</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">tooltip</span>: <span class="kw-2">&amp;</span><span class="ident">Tooltip</span>,
         <span class="ident">path</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreePath</span><span class="op">&gt;</span>,
         <span class="ident">column</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>,
-        <span class="ident">cell</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">P</span><span class="op">&gt;</span>,
+        <span class="ident">cell</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">CellRenderer</span><span class="op">&gt;</span><span class="op">&gt;</span>,
     ) {
         <span class="kw">unsafe</span> {
             <span class="ident">ffi::gtk_tree_view_set_tooltip_cell</span>(
@@ -5570,13 +5564,13 @@
             .<span class="ident">expect</span>(<span class="string">&quot;Return Value for `emit_move_cursor`&quot;</span>)
     }
 
-    <span class="kw">fn</span> <span class="ident">connect_row_activated</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
+    <span class="kw">fn</span> <span class="ident">connect_row_activated</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">f</span>: <span class="ident">F</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">SignalHandlerId</span> {
         <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">row_activated_trampoline</span><span class="op">&lt;</span>
             <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">TreeView</span><span class="op">&gt;</span>,
-            <span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">P</span>, <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
+            <span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">P</span>, <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
         <span class="op">&gt;</span>(
             <span class="ident">this</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi::GtkTreeView</span>,
             <span class="ident">path</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi::GtkTreePath</span>,
@@ -5587,7 +5581,9 @@
             <span class="ident">f</span>(
                 <span class="ident">TreeView::from_glib_borrow</span>(<span class="ident">this</span>).<span class="ident">unsafe_cast_ref</span>(),
                 <span class="kw-2">&amp;</span><span class="ident">from_glib_borrow</span>(<span class="ident">path</span>),
-                <span class="kw-2">&amp;</span><span class="ident">from_glib_borrow</span>(<span class="ident">column</span>),
+                <span class="prelude-ty">Option</span>::<span class="op">&lt;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span><span class="ident">::from_glib_borrow</span>(<span class="ident">column</span>)
+                    .<span class="ident">as_ref</span>()
+                    .<span class="ident">as_ref</span>(),
             )
         }
         <span class="kw">unsafe</span> {
@@ -5603,7 +5599,7 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">emit_row_activated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="ident">column</span>: <span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span>) {
+    <span class="kw">fn</span> <span class="ident">emit_row_activated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">TreePath</span>, <span class="ident">column</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">TreeViewColumn</span><span class="op">&gt;</span>) {
         <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="kw">unsafe</span> {
             <span class="ident">glib::Object::from_glib_borrow</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">glib::gobject_ffi::GObject</span>)
                 .<span class="ident">emit_by_name</span>(<span class="string">&quot;row-activated&quot;</span>, <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span><span class="ident">path</span>, <span class="kw-2">&amp;</span><span class="ident">column</span>])

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;libadwaita-sys-0.1.0-alpha-3&#x2F;src&#x2F;lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../libadwaita_sys/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;libadwaita-sys-0.1.0-alpha-6&#x2F;src&#x2F;lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../libadwaita_sys/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
 <span id="2">   2</span>
 <span id="3">   3</span>
 <span id="4">   4</span>
@@ -2067,9 +2067,96 @@
 <span id="2067">2067</span>
 <span id="2068">2068</span>
 <span id="2069">2069</span>
-</pre><pre class="rust"><code><span class="comment">// Generated by gir (https://github.com/gtk-rs/gir @ 1bef39f)</span>
+<span id="2070">2070</span>
+<span id="2071">2071</span>
+<span id="2072">2072</span>
+<span id="2073">2073</span>
+<span id="2074">2074</span>
+<span id="2075">2075</span>
+<span id="2076">2076</span>
+<span id="2077">2077</span>
+<span id="2078">2078</span>
+<span id="2079">2079</span>
+<span id="2080">2080</span>
+<span id="2081">2081</span>
+<span id="2082">2082</span>
+<span id="2083">2083</span>
+<span id="2084">2084</span>
+<span id="2085">2085</span>
+<span id="2086">2086</span>
+<span id="2087">2087</span>
+<span id="2088">2088</span>
+<span id="2089">2089</span>
+<span id="2090">2090</span>
+<span id="2091">2091</span>
+<span id="2092">2092</span>
+<span id="2093">2093</span>
+<span id="2094">2094</span>
+<span id="2095">2095</span>
+<span id="2096">2096</span>
+<span id="2097">2097</span>
+<span id="2098">2098</span>
+<span id="2099">2099</span>
+<span id="2100">2100</span>
+<span id="2101">2101</span>
+<span id="2102">2102</span>
+<span id="2103">2103</span>
+<span id="2104">2104</span>
+<span id="2105">2105</span>
+<span id="2106">2106</span>
+<span id="2107">2107</span>
+<span id="2108">2108</span>
+<span id="2109">2109</span>
+<span id="2110">2110</span>
+<span id="2111">2111</span>
+<span id="2112">2112</span>
+<span id="2113">2113</span>
+<span id="2114">2114</span>
+<span id="2115">2115</span>
+<span id="2116">2116</span>
+<span id="2117">2117</span>
+<span id="2118">2118</span>
+<span id="2119">2119</span>
+<span id="2120">2120</span>
+<span id="2121">2121</span>
+<span id="2122">2122</span>
+<span id="2123">2123</span>
+<span id="2124">2124</span>
+<span id="2125">2125</span>
+<span id="2126">2126</span>
+<span id="2127">2127</span>
+<span id="2128">2128</span>
+<span id="2129">2129</span>
+<span id="2130">2130</span>
+<span id="2131">2131</span>
+<span id="2132">2132</span>
+<span id="2133">2133</span>
+<span id="2134">2134</span>
+<span id="2135">2135</span>
+<span id="2136">2136</span>
+<span id="2137">2137</span>
+<span id="2138">2138</span>
+<span id="2139">2139</span>
+<span id="2140">2140</span>
+<span id="2141">2141</span>
+<span id="2142">2142</span>
+<span id="2143">2143</span>
+<span id="2144">2144</span>
+<span id="2145">2145</span>
+<span id="2146">2146</span>
+<span id="2147">2147</span>
+<span id="2148">2148</span>
+<span id="2149">2149</span>
+<span id="2150">2150</span>
+<span id="2151">2151</span>
+<span id="2152">2152</span>
+<span id="2153">2153</span>
+<span id="2154">2154</span>
+<span id="2155">2155</span>
+<span id="2156">2156</span>
+</pre><pre class="rust"><code><span class="comment">// Generated by gir (https://github.com/gtk-rs/gir @ f64f90a)</span>
 <span class="comment">// from</span>
-<span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git @ 6088bb6)</span>
+<span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git @ 8e47c67)</span>
 <span class="comment">// DO NOT EDIT</span>
 
 <span class="attribute">#![<span class="ident">allow</span>(<span class="ident">non_camel_case_types</span>, <span class="ident">non_upper_case_globals</span>, <span class="ident">non_snake_case</span>)]</span>
@@ -2103,6 +2190,13 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_CENTERING_POLICY_LOOSE</span>: <span class="ident">AdwCenteringPolicy</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_CENTERING_POLICY_STRICT</span>: <span class="ident">AdwCenteringPolicy</span> <span class="op">=</span> <span class="number">1</span>;
 
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_COLOR_SCHEME_DEFAULT</span>: <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_COLOR_SCHEME_FORCE_LIGHT</span>: <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_COLOR_SCHEME_PREFER_LIGHT</span>: <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_COLOR_SCHEME_PREFER_DARK</span>: <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_COLOR_SCHEME_FORCE_DARK</span>: <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="number">4</span>;
+
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwFlapFoldPolicy</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_FLAP_FOLD_POLICY_NEVER</span>: <span class="ident">AdwFlapFoldPolicy</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_FLAP_FOLD_POLICY_ALWAYS</span>: <span class="ident">AdwFlapFoldPolicy</span> <span class="op">=</span> <span class="number">1</span>;
@@ -2131,9 +2225,14 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_SQUEEZER_TRANSITION_TYPE_CROSSFADE</span>: <span class="ident">AdwSqueezerTransitionType</span> <span class="op">=</span> <span class="number">1</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="ident">c_int</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VIEW_SWITCHER_POLICY_AUTO</span>: <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="number">0</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VIEW_SWITCHER_POLICY_NARROW</span>: <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="number">1</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VIEW_SWITCHER_POLICY_WIDE</span>: <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VIEW_SWITCHER_POLICY_NARROW</span>: <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VIEW_SWITCHER_POLICY_WIDE</span>: <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="number">1</span>;
+
+<span class="comment">// Constants</span>
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MAJOR_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MICRO_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MINOR_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VERSION_S</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span> <span class="op">=</span> <span class="string">b&quot;1.0.0.alpha.3\0&quot;</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">u8</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
 
 <span class="comment">// Records</span>
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
@@ -2206,6 +2305,20 @@
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwBinClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
         <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwBinClass @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwButtonContentClass</span> {
+    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
+}
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwButtonContentClass</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwButtonContentClass @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
             .<span class="ident">finish</span>()
     }
@@ -2312,13 +2425,13 @@
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListModelClass</span> {
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListItemClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
 
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumListModelClass</span> {
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumListItemClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwEnumListModelClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwEnumListItemClass @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
             .<span class="ident">finish</span>()
     }
@@ -2326,13 +2439,13 @@
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumValueObjectClass</span> {
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListModelClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
 
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumValueObjectClass</span> {
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumListModelClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwEnumValueObjectClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwEnumListModelClass @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
             .<span class="ident">finish</span>()
     }
@@ -2471,6 +2584,20 @@
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSplitButtonClass</span> {
+    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
+}
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSplitButtonClass</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwSplitButtonClass @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezerClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2506,6 +2633,20 @@
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwStatusPageClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
         <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwStatusPageClass @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwStyleManagerClass</span> {
+    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
+}
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwStyleManagerClass</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwStyleManagerClass @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
             .<span class="ident">finish</span>()
     }
@@ -2595,20 +2736,6 @@
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwTabViewClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
         <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwTabViewClass @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
-            .<span class="ident">finish</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwValueObjectClass</span> {
-    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwValueObjectClass</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwValueObjectClass @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
             .<span class="ident">finish</span>()
     }
@@ -2780,6 +2907,16 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwButtonContent</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwButtonContent</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwButtonContent @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarousel</span>(<span class="ident">c_void</span>);
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwCarousel</span> {
@@ -2853,21 +2990,21 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListModel</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListItem</span>(<span class="ident">c_void</span>);
 
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumListModel</span> {
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumListItem</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwEnumListModel @ {:p}&quot;</span>, <span class="self">self</span>))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwEnumListItem @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">finish</span>()
     }
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumValueObject</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListModel</span>(<span class="ident">c_void</span>);
 
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumValueObject</span> {
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumListModel</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwEnumValueObject @ {:p}&quot;</span>, <span class="self">self</span>))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwEnumListModel @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">finish</span>()
     }
 }
@@ -2981,6 +3118,16 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSplitButton</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSplitButton</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwSplitButton @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezer</span>(<span class="ident">c_void</span>);
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSqueezer</span> {
@@ -3006,6 +3153,16 @@
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwStatusPage</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
         <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwStatusPage @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwStyleManager</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwStyleManager</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwStyleManager @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">finish</span>()
     }
 }
@@ -3044,16 +3201,6 @@
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwTabView</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
         <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwTabView @ {:p}&quot;</span>, <span class="self">self</span>)).<span class="ident">finish</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwValueObject</span>(<span class="ident">c_void</span>);
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwValueObject</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">::std::fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwValueObject @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">finish</span>()
     }
 }
 
@@ -3150,6 +3297,11 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_centering_policy_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwColorScheme</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_color_scheme_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwFlapFoldPolicy</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_fold_policy_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
@@ -3217,18 +3369,19 @@
         <span class="ident">application_id</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>,
         <span class="ident">flags</span>: <span class="ident">gio::GApplicationFlags</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwApplication</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_application_get_style_manager</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwApplication</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwApplicationWindow</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_application_window_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_application_window_new</span>(<span class="ident">app</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkApplication</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_application_window_get_child</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_application_window_get_content</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwApplicationWindow</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_application_window_set_child</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_application_window_set_content</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwApplicationWindow</span>,
-        <span class="ident">child</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>,
+        <span class="ident">content</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>,
     );
 
     <span class="comment">//=========================================================================</span>
@@ -3240,11 +3393,10 @@
         <span class="ident">text</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>,
         <span class="ident">show_initials</span>: <span class="ident">gboolean</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_avatar_draw_to_pixbuf</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_avatar_draw_to_texture</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwAvatar</span>,
-        <span class="ident">size</span>: <span class="ident">c_int</span>,
         <span class="ident">scale_factor</span>: <span class="ident">c_int</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gdk_pixbuf::GdkPixbuf</span>;
+    ) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gdk::GdkTexture</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_avatar_get_custom_image</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwAvatar</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gdk::GdkPaintable</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_avatar_get_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwAvatar</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_avatar_get_show_initials</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwAvatar</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
@@ -3263,6 +3415,21 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_bin_new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_bin_get_child</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwBin</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_bin_set_child</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwBin</span>, <span class="ident">child</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>);
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwButtonContent</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_button_content_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_button_content_new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_button_content_get_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwButtonContent</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_button_content_get_label</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwButtonContent</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_button_content_get_use_underline</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwButtonContent</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_button_content_set_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwButtonContent</span>, <span class="ident">icon_name</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_button_content_set_label</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwButtonContent</span>, <span class="ident">label</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_button_content_set_use_underline</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwButtonContent</span>,
+        <span class="ident">use_underline</span>: <span class="ident">gboolean</span>,
+    );
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwCarousel</span>
@@ -3410,20 +3577,20 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_combo_row_set_use_subtitle</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwComboRow</span>, <span class="ident">use_subtitle</span>: <span class="ident">gboolean</span>);
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwEnumListItem</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_list_item_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_list_item_get_name</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumListItem</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_list_item_get_nick</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumListItem</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_list_item_get_value</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumListItem</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">c_int</span>;
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwEnumListModel</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_list_model_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_list_model_new</span>(<span class="ident">enum_type</span>: <span class="ident">GType</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumListModel</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_list_model_find_position</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumListModel</span>, <span class="ident">value</span>: <span class="ident">c_int</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_list_model_get_enum_type</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumListModel</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
-
-    <span class="comment">//=========================================================================</span>
-    <span class="comment">// AdwEnumValueObject</span>
-    <span class="comment">//=========================================================================</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_value_object_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_value_object_get_name</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumValueObject</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_value_object_get_nick</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumValueObject</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_enum_value_object_get_value</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwEnumValueObject</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">c_int</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwExpanderRow</span>
@@ -3541,12 +3708,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_child_transition_running</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_fold_threshold_policy</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">AdwFoldThresholdPolicy</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_folded</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_homogeneous</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>,
-        <span class="ident">folded</span>: <span class="ident">gboolean</span>,
-        <span class="ident">orientation</span>: <span class="ident">gtk::GtkOrientation</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_interpolate_size</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_homogeneous</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_mode_transition_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_page</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>,
@@ -3583,13 +3745,7 @@
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>,
         <span class="ident">policy</span>: <span class="ident">AdwFoldThresholdPolicy</span>,
     );
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_homogeneous</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>,
-        <span class="ident">folded</span>: <span class="ident">gboolean</span>,
-        <span class="ident">orientation</span>: <span class="ident">gtk::GtkOrientation</span>,
-        <span class="ident">homogeneous</span>: <span class="ident">gboolean</span>,
-    );
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_interpolate_size</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>, <span class="ident">interpolate_size</span>: <span class="ident">gboolean</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_homogeneous</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>, <span class="ident">homogeneous</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_mode_transition_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>, <span class="ident">duration</span>: <span class="ident">c_uint</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_transition_type</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwLeaflet</span>,
@@ -3714,6 +3870,31 @@
     );
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwSplitButton</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_get_child</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_get_direction</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gtk::GtkArrowType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_get_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_get_label</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_get_menu_model</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gio::GMenuModel</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_get_popover</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkPopover</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_get_use_underline</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_popdown</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_popup</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_child</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>, <span class="ident">child</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_direction</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>, <span class="ident">direction</span>: <span class="ident">gtk::GtkArrowType</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>, <span class="ident">icon_name</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_label</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>, <span class="ident">label</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_menu_model</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>,
+        <span class="ident">menu_model</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gio::GMenuModel</span>,
+    );
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_popover</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>, <span class="ident">popover</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkPopover</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_use_underline</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSplitButton</span>, <span class="ident">use_underline</span>: <span class="ident">gboolean</span>);
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwSqueezer</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
@@ -3730,6 +3911,9 @@
         <span class="ident">child</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezerPage</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_get_pages</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkSelectionModel</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_get_switch_threshold_policy</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>,
+    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">AdwFoldThresholdPolicy</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_get_transition_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_get_transition_running</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_get_transition_type</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">AdwSqueezerTransitionType</span>;
@@ -3740,6 +3924,10 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_set_allow_none</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>, <span class="ident">allow_none</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_set_homogeneous</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>, <span class="ident">homogeneous</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_set_interpolate_size</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>, <span class="ident">interpolate_size</span>: <span class="ident">gboolean</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_set_switch_threshold_policy</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>,
+        <span class="ident">policy</span>: <span class="ident">AdwFoldThresholdPolicy</span>,
+    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_set_transition_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>, <span class="ident">duration</span>: <span class="ident">c_uint</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_set_transition_type</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwSqueezer</span>,
@@ -3769,6 +3957,25 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_set_description</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStatusPage</span>, <span class="ident">description</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_set_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStatusPage</span>, <span class="ident">icon_name</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_set_title</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStatusPage</span>, <span class="ident">title</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwStyleManager</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_get_default</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_get_for_display</span>(<span class="ident">display</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gdk::GdkDisplay</span>)
+        <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_get_color_scheme</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">AdwColorScheme</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_get_dark</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_get_display</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gdk::GdkDisplay</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_get_high_contrast</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_get_system_supports_color_schemes</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>,
+    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_style_manager_set_color_scheme</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwStyleManager</span>,
+        <span class="ident">color_scheme</span>: <span class="ident">AdwColorScheme</span>,
+    );
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwSwipeTracker</span>
@@ -3929,19 +4136,6 @@
     );
 
     <span class="comment">//=========================================================================</span>
-    <span class="comment">// AdwValueObject</span>
-    <span class="comment">//=========================================================================</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_new</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">gobject::GValue</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwValueObject</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_new_collect</span>(<span class="ident">type_</span>: <span class="ident">GType</span>, ...) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwValueObject</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_new_string</span>(<span class="ident">string</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwValueObject</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_new_take_string</span>(<span class="ident">string</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_char</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwValueObject</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_copy_value</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwValueObject</span>, <span class="ident">dest</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gobject::GValue</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_dup_string</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwValueObject</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_char</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_get_string</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwValueObject</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_value_object_get_value</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwValueObject</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">gobject::GValue</span>;
-
-    <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwViewStack</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
@@ -4020,15 +4214,8 @@
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_get_narrow_ellipsize</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcher</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">pango::PangoEllipsizeMode</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_get_policy</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcher</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">AdwViewSwitcherPolicy</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_get_stack</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcher</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewStack</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_set_narrow_ellipsize</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcher</span>,
-        <span class="ident">mode</span>: <span class="ident">pango::PangoEllipsizeMode</span>,
-    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_set_policy</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcher</span>, <span class="ident">policy</span>: <span class="ident">AdwViewSwitcherPolicy</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_set_stack</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcher</span>, <span class="ident">stack</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewStack</span>);
 
@@ -4037,15 +4224,8 @@
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_bar_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_bar_new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_bar_get_policy</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherBar</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">AdwViewSwitcherPolicy</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_bar_get_reveal</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherBar</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_bar_get_stack</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherBar</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewStack</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_bar_set_policy</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherBar</span>,
-        <span class="ident">policy</span>: <span class="ident">AdwViewSwitcherPolicy</span>,
-    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_bar_set_reveal</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherBar</span>, <span class="ident">reveal</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_bar_set_stack</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherBar</span>,
@@ -4057,9 +4237,6 @@
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_title_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_title_new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_title_get_policy</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherTitle</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">AdwViewSwitcherPolicy</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_title_get_stack</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherTitle</span>)
         <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewStack</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_title_get_subtitle</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherTitle</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
@@ -4068,10 +4245,6 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_title_get_view_switcher_enabled</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherTitle</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_title_set_policy</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherTitle</span>,
-        <span class="ident">policy</span>: <span class="ident">AdwViewSwitcherPolicy</span>,
-    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_title_set_stack</span>(
         <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewSwitcherTitle</span>,
         <span class="ident">stack</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwViewStack</span>,
@@ -4094,8 +4267,8 @@
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_window_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_window_new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_window_get_child</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwWindow</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_window_set_child</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwWindow</span>, <span class="ident">child</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_window_get_content</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwWindow</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_window_set_content</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">AdwWindow</span>, <span class="ident">content</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>);
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwWindowTitle</span>
@@ -4134,6 +4307,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_ease_out_cubic</span>(<span class="ident">t</span>: <span class="ident">c_double</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">c_double</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_get_enable_animations</span>(<span class="ident">widget</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gtk::GtkWidget</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_init</span>();
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_is_initialized</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
 
 }
 </code></pre></div>

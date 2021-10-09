@@ -251,6 +251,16 @@
 <span id="251">251</span>
 <span id="252">252</span>
 <span id="253">253</span>
+<span id="254">254</span>
+<span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
 </pre><pre class="rust"><code><span class="attribute">#![<span class="ident">feature</span>(<span class="ident">doc_cfg</span>)]</span>
 <span class="attribute">#![<span class="ident">doc</span>(
     <span class="ident">html_logo_url</span> <span class="op">=</span> <span class="string">&quot;https://raw.githubusercontent.com/AaronErhardt/relm4/main/assets/Relm_logo.svg&quot;</span>
@@ -284,7 +294,9 @@
 <span class="doccomment">///</span>
 <span class="doccomment">/// # Attributes</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// Use `#[widget(pub)]` to create a public struct.</span>
+<span class="doccomment">/// To create public struct use `#[widget(pub)]` or `#[widget(visibility = pub)]`.</span>
+<span class="doccomment">/// </span>
+<span class="doccomment">/// If you use reexports to provide relm4, then you can use `#[widget(relm4= ::myreexports::my_relm)]` to override relm4 used during generating struct.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// # Example</span>
 <span class="doccomment">///</span>
@@ -357,7 +369,11 @@
 <span class="doccomment">/// ```</span>
 <span class="attribute">#[<span class="ident">proc_macro_attribute</span>]</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">widget</span>(<span class="ident">attributes</span>: <span class="ident">TokenStream</span>, <span class="ident">input</span>: <span class="ident">TokenStream</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">TokenStream</span> {
-    <span class="kw">let</span> <span class="ident">attrs</span> <span class="op">=</span> <span class="macro">parse_macro_input!</span>(<span class="ident">attributes</span> <span class="kw">as</span> <span class="ident">Attrs</span>);
+    <span class="kw">let</span> <span class="ident">Attrs</span>{
+        <span class="ident">visibility</span>,
+        <span class="ident">relm4_path</span>,
+        ..
+    } <span class="op">=</span> <span class="macro">parse_macro_input!</span>(<span class="ident">attributes</span> <span class="kw">as</span> <span class="ident">Attrs</span>);
     <span class="kw">let</span> <span class="ident">data</span> <span class="op">=</span> <span class="macro">parse_macro_input!</span>(<span class="ident">input</span> <span class="kw">as</span> <span class="ident">ItemImpl</span>);
 
     <span class="kw">let</span> <span class="ident">trait_generics</span> <span class="op">=</span> <span class="kw">if</span> <span class="kw">let</span> <span class="ident">PathArguments::AngleBracketed</span>(<span class="ident">generics</span>) <span class="op">=</span>
@@ -397,6 +413,8 @@
     <span class="kw">let</span> <span class="ident">Funcs</span> {
         <span class="ident">pre_init</span>,
         <span class="ident">post_init</span>,
+        <span class="ident">pre_connect_components</span>,
+        <span class="ident">post_connect_components</span>,
         <span class="ident">manual_view</span>,
     } <span class="op">=</span> <span class="kw">match</span> <span class="ident">Funcs::new</span>(<span class="kw-2">&amp;</span><span class="ident">data</span>.<span class="ident">funcs</span>) {
         <span class="prelude-val">Ok</span>(<span class="ident">macros</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">macros</span>,
@@ -428,7 +446,7 @@
         <span class="ident">struct_stream</span>.<span class="ident">extend</span>(<span class="macro">quote_spanned!</span> {
             <span class="ident">w_span</span> <span class="op">=</span><span class="op">&gt;</span>
             <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">missing_docs</span>)]</span>
-            #<span class="ident">attrs</span> #<span class="ident">w_name</span>: #<span class="ident">w_ty</span>,
+            #<span class="ident">visibility</span> #<span class="ident">w_name</span>: #<span class="ident">w_ty</span>,
         });
 
         <span class="ident">init_stream</span>.<span class="ident">extend</span>(<span class="macro">quote_spanned!</span> {
@@ -436,8 +454,8 @@
         });
 
         <span class="ident">return_stream</span>.<span class="ident">extend</span>(<span class="ident">widget</span>.<span class="ident">return_stream</span>());
-        <span class="ident">widget</span>.<span class="ident">property_assign_stream</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">property_stream</span>);
-        <span class="ident">widget</span>.<span class="ident">view_stream</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">view_stream</span>);
+        <span class="ident">widget</span>.<span class="ident">property_assign_stream</span>(<span class="kw-2">&amp;</span><span class="ident">relm4_path</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">property_stream</span>);
+        <span class="ident">widget</span>.<span class="ident">view_stream</span>(<span class="kw-2">&amp;</span><span class="ident">relm4_path</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">view_stream</span>);
         <span class="ident">connect_stream</span>.<span class="ident">extend</span>(<span class="ident">widget</span>.<span class="ident">connect_stream</span>());
         <span class="ident">track_stream</span>.<span class="ident">extend</span>(<span class="ident">widget</span>.<span class="ident">track_stream</span>());
         <span class="ident">component_stream</span>.<span class="ident">extend</span>(<span class="ident">widget</span>.<span class="ident">component_stream</span>());
@@ -462,7 +480,7 @@
     <span class="kw">let</span> <span class="ident">out</span> <span class="op">=</span> <span class="macro">quote!</span> {
         <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">dead_code</span>)]</span>
         #<span class="ident">outer_attrs</span>
-        #<span class="ident">attrs</span> <span class="kw">struct</span> #<span class="ident">ty</span> {
+        #<span class="ident">visibility</span> <span class="kw">struct</span> #<span class="ident">ty</span> {
             #<span class="ident">struct_stream</span>
             #<span class="ident">additional_fields</span>
         }
@@ -471,7 +489,7 @@
             <span class="kw">type</span> <span class="ident">Root</span> <span class="op">=</span> #<span class="ident">root_widget_type</span>;
 
             <span class="doccomment">/// Initialize the UI.</span>
-            <span class="kw">fn</span> <span class="ident">init_view</span>(<span class="ident">model</span>: <span class="kw-2">&amp;</span>#<span class="ident">model</span>, <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span>#<span class="ident">parent_model</span> <span class="kw">as</span> <span class="ident">::relm4::Model</span><span class="op">&gt;</span><span class="ident">::Widgets</span>, <span class="ident">sender</span>: <span class="ident">::gtk::glib::Sender</span><span class="op">&lt;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> <span class="ident">::relm4::Model</span><span class="op">&gt;</span><span class="ident">::Msg</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+            <span class="kw">fn</span> <span class="ident">init_view</span>(<span class="ident">model</span>: <span class="kw-2">&amp;</span>#<span class="ident">model</span>, <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span>#<span class="ident">parent_model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Widgets</span>, <span class="ident">sender</span>: #<span class="ident">relm4_path::Sender</span><span class="op">&lt;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Msg</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
                 #<span class="ident">pre_init</span>
                 #<span class="ident">init_stream</span>
                 #<span class="ident">property_stream</span>
@@ -483,9 +501,11 @@
                 }
             }
 
-            <span class="kw">fn</span> <span class="ident">connect_components</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> <span class="ident">::relm4::Model</span><span class="op">&gt;</span><span class="ident">::Components</span>) {
+            <span class="kw">fn</span> <span class="ident">connect_components</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">model</span>: <span class="kw-2">&amp;</span>#<span class="ident">model</span>, <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Components</span>) {
+                #<span class="ident">pre_connect_components</span>
                 #<span class="ident">component_stream</span>
                 #<span class="ident">connect_component_stream</span>
+                #<span class="ident">post_connect_components</span>
             }
 
             <span class="doccomment">/// Return the root widget.</span>
@@ -494,7 +514,7 @@
             }
 
             <span class="doccomment">/// Update the view to represent the updated model.</span>
-            <span class="kw">fn</span> <span class="ident">view</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">model</span>: <span class="kw-2">&amp;</span>#<span class="ident">model</span>, <span class="ident">sender</span>: <span class="ident">::gtk::glib::Sender</span><span class="op">&lt;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> <span class="ident">::relm4::Model</span><span class="op">&gt;</span><span class="ident">::Msg</span><span class="op">&gt;</span>) {
+            <span class="kw">fn</span> <span class="ident">view</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">model</span>: <span class="kw-2">&amp;</span>#<span class="ident">model</span>, <span class="ident">sender</span>: #<span class="ident">relm4_path::Sender</span><span class="op">&lt;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Msg</span><span class="op">&gt;</span>) {
                 #<span class="ident">manual_view</span>
                 #<span class="ident">view_stream</span>
                 #<span class="ident">track_stream</span>

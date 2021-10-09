@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;gdk4-sys-0.2.0&#x2F;src&#x2F;lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../gdk4_sys/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;gdk4-sys-0.3.1&#x2F;src&#x2F;lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../gdk4_sys/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
 <span id="2">   2</span>
 <span id="3">   3</span>
 <span id="4">   4</span>
@@ -4694,6 +4694,36 @@
 <span id="4694">4694</span>
 <span id="4695">4695</span>
 <span id="4696">4696</span>
+<span id="4697">4697</span>
+<span id="4698">4698</span>
+<span id="4699">4699</span>
+<span id="4700">4700</span>
+<span id="4701">4701</span>
+<span id="4702">4702</span>
+<span id="4703">4703</span>
+<span id="4704">4704</span>
+<span id="4705">4705</span>
+<span id="4706">4706</span>
+<span id="4707">4707</span>
+<span id="4708">4708</span>
+<span id="4709">4709</span>
+<span id="4710">4710</span>
+<span id="4711">4711</span>
+<span id="4712">4712</span>
+<span id="4713">4713</span>
+<span id="4714">4714</span>
+<span id="4715">4715</span>
+<span id="4716">4716</span>
+<span id="4717">4717</span>
+<span id="4718">4718</span>
+<span id="4719">4719</span>
+<span id="4720">4720</span>
+<span id="4721">4721</span>
+<span id="4722">4722</span>
+<span id="4723">4723</span>
+<span id="4724">4724</span>
+<span id="4725">4725</span>
+<span id="4726">4726</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)</span>
 <span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git)</span>
 <span class="comment">// DO NOT EDIT</span>
@@ -4882,6 +4912,11 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GDK_SURFACE_EDGE_SOUTH_WEST</span>: <span class="ident">GdkSurfaceEdge</span> <span class="op">=</span> <span class="number">5</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GDK_SURFACE_EDGE_SOUTH</span>: <span class="ident">GdkSurfaceEdge</span> <span class="op">=</span> <span class="number">6</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GDK_SURFACE_EDGE_SOUTH_EAST</span>: <span class="ident">GdkSurfaceEdge</span> <span class="op">=</span> <span class="number">7</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GdkTitlebarGesture</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GDK_TITLEBAR_GESTURE_DOUBLE_CLICK</span>: <span class="ident">GdkTitlebarGesture</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GDK_TITLEBAR_GESTURE_RIGHT_CLICK</span>: <span class="ident">GdkTitlebarGesture</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GDK_TITLEBAR_GESTURE_MIDDLE_CLICK</span>: <span class="ident">GdkTitlebarGesture</span> <span class="op">=</span> <span class="number">3</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GdkTouchpadGesturePhase</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GDK_TOUCHPAD_GESTURE_PHASE_BEGIN</span>: <span class="ident">GdkTouchpadGesturePhase</span> <span class="op">=</span> <span class="number">0</span>;
@@ -8070,6 +8105,11 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_surface_edge_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// GdkTitlebarGesture</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_titlebar_gesture_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// GdkTouchpadGesturePhase</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_touchpad_gesture_phase_get_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">GType</span>;
@@ -8178,6 +8218,9 @@
         <span class="ident">formats</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkContentFormats</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkContentFormats</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_content_formats_unref</span>(<span class="ident">formats</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkContentFormats</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_4&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_4&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_content_formats_parse</span>(<span class="ident">string</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkContentFormats</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// GdkContentFormatsBuilder</span>
@@ -8640,6 +8683,9 @@
         <span class="ident">win_x</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_double</span>,
         <span class="ident">win_y</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_double</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkSurface</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_2&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_2&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_device_get_timestamp</span>(<span class="ident">device</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkDevice</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_device_get_vendor_id</span>(<span class="ident">device</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkDevice</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_device_has_bidi_layouts</span>(<span class="ident">device</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkDevice</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
 
@@ -8700,6 +8746,12 @@
         <span class="ident">n_keys</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_int</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_display_notify_startup_complete</span>(<span class="ident">display</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkDisplay</span>, <span class="ident">startup_id</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_4&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_4&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_display_prepare_gl</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkDisplay</span>,
+        <span class="ident">error</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">glib::GError</span>,
+    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_display_put_event</span>(<span class="ident">display</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkDisplay</span>, <span class="ident">event</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkEvent</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_display_supports_input_shapes</span>(<span class="ident">display</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkDisplay</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_display_sync</span>(<span class="ident">display</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkDisplay</span>);
@@ -8905,6 +8957,10 @@
         <span class="ident">minor</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_int</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_gl_context_is_legacy</span>(<span class="ident">context</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkGLContext</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_4&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_4&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_gl_context_is_shared</span>(<span class="ident">self_</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkGLContext</span>, <span class="ident">other</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkGLContext</span>)
+        <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_gl_context_make_current</span>(<span class="ident">context</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkGLContext</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_gl_context_realize</span>(
         <span class="ident">context</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkGLContext</span>,
@@ -9270,6 +9326,10 @@
         <span class="ident">event</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkEvent</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_toplevel_supports_edge_constraints</span>(<span class="ident">toplevel</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkToplevel</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gdk_toplevel_titlebar_gesture</span>(
+        <span class="ident">toplevel</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GdkToplevel</span>,
+        <span class="ident">gesture</span>: <span class="ident">GdkTitlebarGesture</span>,
+    ) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">gboolean</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// Other functions</span>
