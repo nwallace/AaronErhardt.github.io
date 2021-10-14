@@ -820,14 +820,14 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">CenteringPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;CenteringPolicy::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::Loose</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Loose&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Strict</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Strict&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Loose</span> =&gt; <span class="string">&quot;Loose&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Strict</span> =&gt; <span class="string">&quot;Strict&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -837,29 +837,29 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">CenteringPolicy</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwCenteringPolicy</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwCenteringPolicy</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwCenteringPolicy</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Loose</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_CENTERING_POLICY_LOOSE</span>,
-            <span class="ident"><span class="self">Self</span>::Strict</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_CENTERING_POLICY_STRICT</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::Loose</span> =&gt; <span class="ident">ffi::ADW_CENTERING_POLICY_LOOSE</span>,
+            <span class="ident"><span class="self">Self</span>::Strict</span> =&gt; <span class="ident">ffi::ADW_CENTERING_POLICY_STRICT</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwCenteringPolicy</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">CenteringPolicy</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwCenteringPolicy</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwCenteringPolicy</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_CENTERING_POLICY_LOOSE</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Loose</span>,
-            <span class="ident">ffi::ADW_CENTERING_POLICY_STRICT</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Strict</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_CENTERING_POLICY_LOOSE</span> =&gt; <span class="ident"><span class="self">Self</span>::Loose</span>,
+            <span class="ident">ffi::ADW_CENTERING_POLICY_STRICT</span> =&gt; <span class="ident"><span class="self">Self</span>::Strict</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">CenteringPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_centering_policy_get_type</span>()) }
     }
 }
@@ -871,14 +871,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">CenteringPolicy</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">CenteringPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -886,7 +886,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }
@@ -910,17 +910,17 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">ColorScheme</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;ColorScheme::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::Default</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Default&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::ForceLight</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;ForceLight&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::PreferLight</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;PreferLight&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::PreferDark</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;PreferDark&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::ForceDark</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;ForceDark&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Default</span> =&gt; <span class="string">&quot;Default&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::ForceLight</span> =&gt; <span class="string">&quot;ForceLight&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::PreferLight</span> =&gt; <span class="string">&quot;PreferLight&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::PreferDark</span> =&gt; <span class="string">&quot;PreferDark&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::ForceDark</span> =&gt; <span class="string">&quot;ForceDark&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -930,35 +930,35 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">ColorScheme</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwColorScheme</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwColorScheme</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwColorScheme</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Default</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_COLOR_SCHEME_DEFAULT</span>,
-            <span class="ident"><span class="self">Self</span>::ForceLight</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_COLOR_SCHEME_FORCE_LIGHT</span>,
-            <span class="ident"><span class="self">Self</span>::PreferLight</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_COLOR_SCHEME_PREFER_LIGHT</span>,
-            <span class="ident"><span class="self">Self</span>::PreferDark</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_COLOR_SCHEME_PREFER_DARK</span>,
-            <span class="ident"><span class="self">Self</span>::ForceDark</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_COLOR_SCHEME_FORCE_DARK</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::Default</span> =&gt; <span class="ident">ffi::ADW_COLOR_SCHEME_DEFAULT</span>,
+            <span class="ident"><span class="self">Self</span>::ForceLight</span> =&gt; <span class="ident">ffi::ADW_COLOR_SCHEME_FORCE_LIGHT</span>,
+            <span class="ident"><span class="self">Self</span>::PreferLight</span> =&gt; <span class="ident">ffi::ADW_COLOR_SCHEME_PREFER_LIGHT</span>,
+            <span class="ident"><span class="self">Self</span>::PreferDark</span> =&gt; <span class="ident">ffi::ADW_COLOR_SCHEME_PREFER_DARK</span>,
+            <span class="ident"><span class="self">Self</span>::ForceDark</span> =&gt; <span class="ident">ffi::ADW_COLOR_SCHEME_FORCE_DARK</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwColorScheme</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">ColorScheme</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwColorScheme</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwColorScheme</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_COLOR_SCHEME_DEFAULT</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Default</span>,
-            <span class="ident">ffi::ADW_COLOR_SCHEME_FORCE_LIGHT</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::ForceLight</span>,
-            <span class="ident">ffi::ADW_COLOR_SCHEME_PREFER_LIGHT</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::PreferLight</span>,
-            <span class="ident">ffi::ADW_COLOR_SCHEME_PREFER_DARK</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::PreferDark</span>,
-            <span class="ident">ffi::ADW_COLOR_SCHEME_FORCE_DARK</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::ForceDark</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_COLOR_SCHEME_DEFAULT</span> =&gt; <span class="ident"><span class="self">Self</span>::Default</span>,
+            <span class="ident">ffi::ADW_COLOR_SCHEME_FORCE_LIGHT</span> =&gt; <span class="ident"><span class="self">Self</span>::ForceLight</span>,
+            <span class="ident">ffi::ADW_COLOR_SCHEME_PREFER_LIGHT</span> =&gt; <span class="ident"><span class="self">Self</span>::PreferLight</span>,
+            <span class="ident">ffi::ADW_COLOR_SCHEME_PREFER_DARK</span> =&gt; <span class="ident"><span class="self">Self</span>::PreferDark</span>,
+            <span class="ident">ffi::ADW_COLOR_SCHEME_FORCE_DARK</span> =&gt; <span class="ident"><span class="self">Self</span>::ForceDark</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">ColorScheme</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_color_scheme_get_type</span>()) }
     }
 }
@@ -970,14 +970,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">ColorScheme</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">ColorScheme</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -985,7 +985,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }
@@ -1005,15 +1005,15 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">FlapFoldPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;FlapFoldPolicy::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::Never</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Never&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Always</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Always&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Auto</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Auto&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Never</span> =&gt; <span class="string">&quot;Never&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Always</span> =&gt; <span class="string">&quot;Always&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Auto</span> =&gt; <span class="string">&quot;Auto&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -1023,31 +1023,31 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">FlapFoldPolicy</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwFlapFoldPolicy</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwFlapFoldPolicy</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwFlapFoldPolicy</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Never</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_NEVER</span>,
-            <span class="ident"><span class="self">Self</span>::Always</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_ALWAYS</span>,
-            <span class="ident"><span class="self">Self</span>::Auto</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_AUTO</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::Never</span> =&gt; <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_NEVER</span>,
+            <span class="ident"><span class="self">Self</span>::Always</span> =&gt; <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_ALWAYS</span>,
+            <span class="ident"><span class="self">Self</span>::Auto</span> =&gt; <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_AUTO</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwFlapFoldPolicy</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">FlapFoldPolicy</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwFlapFoldPolicy</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwFlapFoldPolicy</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_NEVER</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Never</span>,
-            <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_ALWAYS</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Always</span>,
-            <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_AUTO</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Auto</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_NEVER</span> =&gt; <span class="ident"><span class="self">Self</span>::Never</span>,
+            <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_ALWAYS</span> =&gt; <span class="ident"><span class="self">Self</span>::Always</span>,
+            <span class="ident">ffi::ADW_FLAP_FOLD_POLICY_AUTO</span> =&gt; <span class="ident"><span class="self">Self</span>::Auto</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">FlapFoldPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_flap_fold_policy_get_type</span>()) }
     }
 }
@@ -1059,14 +1059,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">FlapFoldPolicy</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">FlapFoldPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -1074,7 +1074,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }
@@ -1094,15 +1094,15 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">FlapTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;FlapTransitionType::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::Over</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Over&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Under</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Under&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Slide</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Slide&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Over</span> =&gt; <span class="string">&quot;Over&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Under</span> =&gt; <span class="string">&quot;Under&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Slide</span> =&gt; <span class="string">&quot;Slide&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -1112,31 +1112,31 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">FlapTransitionType</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwFlapTransitionType</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwFlapTransitionType</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwFlapTransitionType</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Over</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_OVER</span>,
-            <span class="ident"><span class="self">Self</span>::Under</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_UNDER</span>,
-            <span class="ident"><span class="self">Self</span>::Slide</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_SLIDE</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::Over</span> =&gt; <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_OVER</span>,
+            <span class="ident"><span class="self">Self</span>::Under</span> =&gt; <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_UNDER</span>,
+            <span class="ident"><span class="self">Self</span>::Slide</span> =&gt; <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_SLIDE</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwFlapTransitionType</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">FlapTransitionType</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwFlapTransitionType</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwFlapTransitionType</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_OVER</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Over</span>,
-            <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_UNDER</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Under</span>,
-            <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_SLIDE</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Slide</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_OVER</span> =&gt; <span class="ident"><span class="self">Self</span>::Over</span>,
+            <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_UNDER</span> =&gt; <span class="ident"><span class="self">Self</span>::Under</span>,
+            <span class="ident">ffi::ADW_FLAP_TRANSITION_TYPE_SLIDE</span> =&gt; <span class="ident"><span class="self">Self</span>::Slide</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">FlapTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_flap_transition_type_get_type</span>()) }
     }
 }
@@ -1148,14 +1148,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">FlapTransitionType</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">FlapTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -1163,7 +1163,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }
@@ -1181,14 +1181,14 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">FoldThresholdPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;FoldThresholdPolicy::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::Minimum</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Minimum&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Natural</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Natural&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Minimum</span> =&gt; <span class="string">&quot;Minimum&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Natural</span> =&gt; <span class="string">&quot;Natural&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -1198,29 +1198,29 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">FoldThresholdPolicy</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwFoldThresholdPolicy</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwFoldThresholdPolicy</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwFoldThresholdPolicy</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Minimum</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_FOLD_THRESHOLD_POLICY_MINIMUM</span>,
-            <span class="ident"><span class="self">Self</span>::Natural</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_FOLD_THRESHOLD_POLICY_NATURAL</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::Minimum</span> =&gt; <span class="ident">ffi::ADW_FOLD_THRESHOLD_POLICY_MINIMUM</span>,
+            <span class="ident"><span class="self">Self</span>::Natural</span> =&gt; <span class="ident">ffi::ADW_FOLD_THRESHOLD_POLICY_NATURAL</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwFoldThresholdPolicy</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">FoldThresholdPolicy</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwFoldThresholdPolicy</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwFoldThresholdPolicy</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_FOLD_THRESHOLD_POLICY_MINIMUM</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Minimum</span>,
-            <span class="ident">ffi::ADW_FOLD_THRESHOLD_POLICY_NATURAL</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Natural</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_FOLD_THRESHOLD_POLICY_MINIMUM</span> =&gt; <span class="ident"><span class="self">Self</span>::Minimum</span>,
+            <span class="ident">ffi::ADW_FOLD_THRESHOLD_POLICY_NATURAL</span> =&gt; <span class="ident"><span class="self">Self</span>::Natural</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">FoldThresholdPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_fold_threshold_policy_get_type</span>()) }
     }
 }
@@ -1232,14 +1232,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">FoldThresholdPolicy</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">FoldThresholdPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -1247,7 +1247,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }
@@ -1267,15 +1267,15 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">LeafletTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;LeafletTransitionType::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::Over</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Over&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Under</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Under&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Slide</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Slide&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Over</span> =&gt; <span class="string">&quot;Over&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Under</span> =&gt; <span class="string">&quot;Under&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Slide</span> =&gt; <span class="string">&quot;Slide&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -1285,31 +1285,31 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">LeafletTransitionType</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwLeafletTransitionType</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwLeafletTransitionType</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwLeafletTransitionType</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Over</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_OVER</span>,
-            <span class="ident"><span class="self">Self</span>::Under</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_UNDER</span>,
-            <span class="ident"><span class="self">Self</span>::Slide</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_SLIDE</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::Over</span> =&gt; <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_OVER</span>,
+            <span class="ident"><span class="self">Self</span>::Under</span> =&gt; <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_UNDER</span>,
+            <span class="ident"><span class="self">Self</span>::Slide</span> =&gt; <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_SLIDE</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwLeafletTransitionType</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">LeafletTransitionType</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwLeafletTransitionType</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwLeafletTransitionType</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_OVER</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Over</span>,
-            <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_UNDER</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Under</span>,
-            <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_SLIDE</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Slide</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_OVER</span> =&gt; <span class="ident"><span class="self">Self</span>::Over</span>,
+            <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_UNDER</span> =&gt; <span class="ident"><span class="self">Self</span>::Under</span>,
+            <span class="ident">ffi::ADW_LEAFLET_TRANSITION_TYPE_SLIDE</span> =&gt; <span class="ident"><span class="self">Self</span>::Slide</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">LeafletTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_leaflet_transition_type_get_type</span>()) }
     }
 }
@@ -1321,14 +1321,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">LeafletTransitionType</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">LeafletTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -1336,7 +1336,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }
@@ -1354,14 +1354,14 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">NavigationDirection</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;NavigationDirection::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::Back</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Back&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Forward</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Forward&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Back</span> =&gt; <span class="string">&quot;Back&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Forward</span> =&gt; <span class="string">&quot;Forward&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -1371,29 +1371,29 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">NavigationDirection</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwNavigationDirection</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwNavigationDirection</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwNavigationDirection</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Back</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_NAVIGATION_DIRECTION_BACK</span>,
-            <span class="ident"><span class="self">Self</span>::Forward</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_NAVIGATION_DIRECTION_FORWARD</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::Back</span> =&gt; <span class="ident">ffi::ADW_NAVIGATION_DIRECTION_BACK</span>,
+            <span class="ident"><span class="self">Self</span>::Forward</span> =&gt; <span class="ident">ffi::ADW_NAVIGATION_DIRECTION_FORWARD</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwNavigationDirection</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">NavigationDirection</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwNavigationDirection</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwNavigationDirection</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_NAVIGATION_DIRECTION_BACK</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Back</span>,
-            <span class="ident">ffi::ADW_NAVIGATION_DIRECTION_FORWARD</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Forward</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_NAVIGATION_DIRECTION_BACK</span> =&gt; <span class="ident"><span class="self">Self</span>::Back</span>,
+            <span class="ident">ffi::ADW_NAVIGATION_DIRECTION_FORWARD</span> =&gt; <span class="ident"><span class="self">Self</span>::Forward</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">NavigationDirection</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_navigation_direction_get_type</span>()) }
     }
 }
@@ -1405,14 +1405,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">NavigationDirection</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">NavigationDirection</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -1420,7 +1420,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }
@@ -1438,14 +1438,14 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">SqueezerTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;SqueezerTransitionType::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::None</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;None&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Crossfade</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Crossfade&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::None</span> =&gt; <span class="string">&quot;None&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Crossfade</span> =&gt; <span class="string">&quot;Crossfade&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -1455,29 +1455,29 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">SqueezerTransitionType</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwSqueezerTransitionType</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwSqueezerTransitionType</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwSqueezerTransitionType</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::None</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_SQUEEZER_TRANSITION_TYPE_NONE</span>,
-            <span class="ident"><span class="self">Self</span>::Crossfade</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_SQUEEZER_TRANSITION_TYPE_CROSSFADE</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::None</span> =&gt; <span class="ident">ffi::ADW_SQUEEZER_TRANSITION_TYPE_NONE</span>,
+            <span class="ident"><span class="self">Self</span>::Crossfade</span> =&gt; <span class="ident">ffi::ADW_SQUEEZER_TRANSITION_TYPE_CROSSFADE</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwSqueezerTransitionType</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">SqueezerTransitionType</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwSqueezerTransitionType</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwSqueezerTransitionType</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_SQUEEZER_TRANSITION_TYPE_NONE</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::None</span>,
-            <span class="ident">ffi::ADW_SQUEEZER_TRANSITION_TYPE_CROSSFADE</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Crossfade</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_SQUEEZER_TRANSITION_TYPE_NONE</span> =&gt; <span class="ident"><span class="self">Self</span>::None</span>,
+            <span class="ident">ffi::ADW_SQUEEZER_TRANSITION_TYPE_CROSSFADE</span> =&gt; <span class="ident"><span class="self">Self</span>::Crossfade</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">SqueezerTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_squeezer_transition_type_get_type</span>()) }
     }
 }
@@ -1489,14 +1489,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">SqueezerTransitionType</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">SqueezerTransitionType</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -1504,7 +1504,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }
@@ -1522,14 +1522,14 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">ViewSwitcherPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(
             <span class="ident">f</span>,
             <span class="string">&quot;ViewSwitcherPolicy::{}&quot;</span>,
             <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-                <span class="ident"><span class="self">Self</span>::Narrow</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Narrow&quot;</span>,
-                <span class="ident"><span class="self">Self</span>::Wide</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Wide&quot;</span>,
-                <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Narrow</span> =&gt; <span class="string">&quot;Narrow&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Wide</span> =&gt; <span class="string">&quot;Wide&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
         )
     }
@@ -1539,29 +1539,29 @@
 <span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">ViewSwitcherPolicy</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::AdwViewSwitcherPolicy</span>;
 
-    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">ffi::AdwViewSwitcherPolicy</span> {
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::AdwViewSwitcherPolicy</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident"><span class="self">Self</span>::Narrow</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_VIEW_SWITCHER_POLICY_NARROW</span>,
-            <span class="ident"><span class="self">Self</span>::Wide</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">ffi::ADW_VIEW_SWITCHER_POLICY_WIDE</span>,
-            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">value</span>,
+            <span class="ident"><span class="self">Self</span>::Narrow</span> =&gt; <span class="ident">ffi::ADW_VIEW_SWITCHER_POLICY_NARROW</span>,
+            <span class="ident"><span class="self">Self</span>::Wide</span> =&gt; <span class="ident">ffi::ADW_VIEW_SWITCHER_POLICY_WIDE</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
         }
     }
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::AdwViewSwitcherPolicy</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">ViewSwitcherPolicy</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwViewSwitcherPolicy</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::AdwViewSwitcherPolicy</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">match</span> <span class="ident">value</span> {
-            <span class="ident">ffi::ADW_VIEW_SWITCHER_POLICY_NARROW</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Narrow</span>,
-            <span class="ident">ffi::ADW_VIEW_SWITCHER_POLICY_WIDE</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Wide</span>,
-            <span class="ident">value</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+            <span class="ident">ffi::ADW_VIEW_SWITCHER_POLICY_NARROW</span> =&gt; <span class="ident"><span class="self">Self</span>::Narrow</span>,
+            <span class="ident">ffi::ADW_VIEW_SWITCHER_POLICY_WIDE</span> =&gt; <span class="ident"><span class="self">Self</span>::Wide</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">ViewSwitcherPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Type</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_view_switcher_policy_get_type</span>()) }
     }
 }
@@ -1573,14 +1573,14 @@
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">ViewSwitcherPolicy</span> {
     <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">ViewSwitcherPolicy</span> {
-    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Value</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
@@ -1588,7 +1588,7 @@
         <span class="ident">value</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">glib::Type</span> {
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
         <span class="ident"><span class="self">Self</span>::static_type</span>()
     }
 }

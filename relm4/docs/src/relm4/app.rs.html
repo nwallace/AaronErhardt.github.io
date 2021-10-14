@@ -96,7 +96,7 @@
 
 <span class="kw">use</span> <span class="ident">std::marker::PhantomData</span>;
 
-<span class="kw">use</span> <span class="kw">crate</span>::{<span class="ident">AppUpdate</span>, <span class="ident">Components</span>, <span class="ident">Model</span> <span class="kw">as</span> <span class="ident">ModelTrait</span>, <span class="ident">Widgets</span> <span class="kw">as</span> <span class="ident">WidgetsTrait</span>};
+<span class="kw">use</span> <span class="kw">crate</span>::{<span class="ident">AppUpdate</span>, <span class="ident">Components</span>, <span class="ident">Model</span> <span class="kw">as</span> <span class="ident">ModelTrait</span>, <span class="ident">Widgets</span> <span class="kw">as</span> <span class="ident">WidgetsTrait</span>, <span class="ident">Application</span>};
 
 <span class="doccomment">/// The app that runs the main application.</span>
 <span class="doccomment">/// A [`RelmApp`] consists of a model that stores the application state</span>
@@ -114,7 +114,7 @@
     <span class="ident">Model::Components</span>: <span class="ident">Components</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
 {
     <span class="ident">model</span>: <span class="ident">PhantomData</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span>,
-    <span class="ident">app</span>: <span class="ident">gtk::Application</span>,
+    <span class="ident">app</span>: <span class="ident">Application</span>,
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span> <span class="ident">RelmApp</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span>
@@ -131,15 +131,15 @@
     }
 
     <span class="doccomment">/// Create a Relm4 application.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">model</span>: <span class="ident">Model</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">model</span>: <span class="ident">Model</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">gtk::init</span>().<span class="ident">expect</span>(<span class="string">&quot;Couln&#39;t initialize GTK&quot;</span>);
-        <span class="kw">let</span> <span class="ident">app</span> <span class="op">=</span> <span class="ident">gtk::Application::builder</span>().<span class="ident">build</span>();
+        <span class="kw">let</span> <span class="ident">app</span> <span class="op">=</span> <span class="ident">Application::builder</span>().<span class="ident">build</span>();
 
         <span class="ident"><span class="self">Self</span>::with_app</span>(<span class="ident">model</span>, <span class="ident">app</span>)
     }
 
     <span class="doccomment">/// Create a new Relm4 application with an existing [`gtk::Application`].</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">with_app</span>(<span class="kw-2">mut</span> <span class="ident">model</span>: <span class="ident">Model</span>, <span class="ident">app</span>: <span class="ident">gtk::Application</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">with_app</span>(<span class="kw-2">mut</span> <span class="ident">model</span>: <span class="ident">Model</span>, <span class="ident">app</span>: <span class="ident">Application</span>) -&gt; <span class="self">Self</span> {
         <span class="ident"><span class="kw">crate</span>::APP</span>
             .<span class="ident">set</span>(<span class="ident">fragile::Fragile::new</span>(<span class="ident">app</span>.<span class="ident">clone</span>()))
             .<span class="ident">expect</span>(<span class="string">&quot;APP was alredy set&quot;</span>);

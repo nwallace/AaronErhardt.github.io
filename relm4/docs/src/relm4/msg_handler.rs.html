@@ -74,7 +74,7 @@
     <span class="ident">ParentModel</span>: <span class="ident">Model</span>,
 {
     <span class="doccomment">/// Create a new [`RelmMsgHandler`].</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>, <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>, <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> <span class="ident">data</span> <span class="op">=</span> <span class="ident">Data::init</span>(<span class="ident">parent_model</span>, <span class="ident">parent_sender</span>);
 
         <span class="ident">RelmMsgHandler</span> {
@@ -90,7 +90,7 @@
     }
 
     <span class="doccomment">/// Get a sender to send messages to this message handler.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">sender</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">Data::Sender</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">sender</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">Data::Sender</span> {
         <span class="self">self</span>.<span class="ident">data</span>.<span class="ident">sender</span>()
     }
 }

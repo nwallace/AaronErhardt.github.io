@@ -235,7 +235,7 @@
         <span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>,
         <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel::Widgets</span>,
         <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    ) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
@@ -279,14 +279,14 @@
 
     <span class="doccomment">/// Send a message to this component.</span>
     <span class="doccomment">/// This can be used by the parent to send messages to this component.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">sender</span>.<span class="ident">send</span>(<span class="ident">msg</span>)
     }
 
     <span class="doccomment">/// Returns the root widget of this component&#39;s widgets.</span>
     <span class="doccomment">/// Can be used by the parent [`Widgets::connect_components`](fn@crate::Widgets::connect_components) to connect the root widget</span>
     <span class="doccomment">/// to the parent&#39;s widgets.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">&amp;</span><span class="op">&lt;</span><span class="ident">Model::Widgets</span> <span class="kw">as</span> <span class="ident">WidgetsTrait</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Root</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="op">&lt;</span><span class="ident">Model::Widgets</span> <span class="kw">as</span> <span class="ident">WidgetsTrait</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Root</span> {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">root_widget</span>
     }
 
@@ -295,7 +295,7 @@
     <span class="doccomment">///</span>
     <span class="doccomment">/// Use this carefully and make sure the reference to the widgets is dropped after use because</span>
     <span class="doccomment">/// otherwise the view function can&#39;t be called as long you own the widgets (it uses [`RefCell`] internally).</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">widgets</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">RefMut</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span>, <span class="ident">Model::Widgets</span><span class="op">&gt;</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">widgets</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">RefMut</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span>, <span class="ident">Model::Widgets</span><span class="op">&gt;</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">shared_widgets</span>
             .<span class="ident">as_ref</span>()
             .<span class="ident">expect</span>(<span class="string">&quot;Component wasn&#39;t initialized correctly: shared widgets are missing&quot;</span>)
@@ -323,7 +323,7 @@
         <span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>,
         <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel::Widgets</span>,
         <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    ) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> (<span class="ident">global_sender</span>, <span class="ident">global_receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
 

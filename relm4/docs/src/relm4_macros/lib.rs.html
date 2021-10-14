@@ -295,7 +295,7 @@
 <span class="doccomment">/// # Attributes</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// To create public struct use `#[widget(pub)]` or `#[widget(visibility = pub)]`.</span>
-<span class="doccomment">/// </span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// If you use reexports to provide relm4, then you can use `#[widget(relm4= ::myreexports::my_relm)]` to override relm4 used during generating struct.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// # Example</span>
@@ -368,8 +368,8 @@
 <span class="doccomment">/// }</span>
 <span class="doccomment">/// ```</span>
 <span class="attribute">#[<span class="ident">proc_macro_attribute</span>]</span>
-<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">widget</span>(<span class="ident">attributes</span>: <span class="ident">TokenStream</span>, <span class="ident">input</span>: <span class="ident">TokenStream</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">TokenStream</span> {
-    <span class="kw">let</span> <span class="ident">Attrs</span>{
+<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">widget</span>(<span class="ident">attributes</span>: <span class="ident">TokenStream</span>, <span class="ident">input</span>: <span class="ident">TokenStream</span>) -&gt; <span class="ident">TokenStream</span> {
+    <span class="kw">let</span> <span class="ident">Attrs</span> {
         <span class="ident">visibility</span>,
         <span class="ident">relm4_path</span>,
         ..
@@ -394,8 +394,8 @@
         <span class="ident">model</span>,
         <span class="ident">parent_model</span>,
     } <span class="op">=</span> <span class="kw">match</span> <span class="ident">ModelTypes::new</span>(<span class="ident">trait_generics</span>) {
-        <span class="prelude-val">Ok</span>(<span class="ident">model</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">model</span>,
-        <span class="prelude-val">Err</span>(<span class="ident">err</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="kw">return</span> <span class="ident">TokenStream::from</span>(<span class="ident">err</span>.<span class="ident">to_compile_error</span>()),
+        <span class="prelude-val">Ok</span>(<span class="ident">model</span>) =&gt; <span class="ident">model</span>,
+        <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="ident">TokenStream::from</span>(<span class="ident">err</span>.<span class="ident">to_compile_error</span>()),
     };
 
     <span class="kw">let</span> <span class="ident">trt</span> <span class="op">=</span> <span class="ident">data</span>.<span class="ident">trait_</span>;
@@ -406,8 +406,8 @@
         <span class="ident">widgets</span>,
         <span class="ident">additional_fields</span>,
     } <span class="op">=</span> <span class="kw">match</span> <span class="ident">Macros::new</span>(<span class="kw-2">&amp;</span><span class="ident">data</span>.<span class="ident">macros</span>, <span class="ident">data</span>.<span class="ident">brace_span</span>.<span class="ident">unwrap</span>()) {
-        <span class="prelude-val">Ok</span>(<span class="ident">macros</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">macros</span>,
-        <span class="prelude-val">Err</span>(<span class="ident">err</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="kw">return</span> <span class="ident">TokenStream::from</span>(<span class="ident">err</span>.<span class="ident">to_compile_error</span>()),
+        <span class="prelude-val">Ok</span>(<span class="ident">macros</span>) =&gt; <span class="ident">macros</span>,
+        <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="ident">TokenStream::from</span>(<span class="ident">err</span>.<span class="ident">to_compile_error</span>()),
     };
 
     <span class="kw">let</span> <span class="ident">Funcs</span> {
@@ -417,8 +417,8 @@
         <span class="ident">post_connect_components</span>,
         <span class="ident">manual_view</span>,
     } <span class="op">=</span> <span class="kw">match</span> <span class="ident">Funcs::new</span>(<span class="kw-2">&amp;</span><span class="ident">data</span>.<span class="ident">funcs</span>) {
-        <span class="prelude-val">Ok</span>(<span class="ident">macros</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">macros</span>,
-        <span class="prelude-val">Err</span>(<span class="ident">err</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="kw">return</span> <span class="ident">TokenStream::from</span>(<span class="ident">err</span>.<span class="ident">to_compile_error</span>()),
+        <span class="prelude-val">Ok</span>(<span class="ident">macros</span>) =&gt; <span class="ident">macros</span>,
+        <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="ident">TokenStream::from</span>(<span class="ident">err</span>.<span class="ident">to_compile_error</span>()),
     };
 
     <span class="kw">let</span> <span class="ident">root_widget_name</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">widgets</span>.<span class="ident">name</span>;
@@ -444,13 +444,13 @@
         <span class="kw">let</span> <span class="ident">w_func</span> <span class="op">=</span> <span class="ident">widget</span>.<span class="ident">func</span>.<span class="ident">func_token_stream</span>();
 
         <span class="ident">struct_stream</span>.<span class="ident">extend</span>(<span class="macro">quote_spanned!</span> {
-            <span class="ident">w_span</span> <span class="op">=</span><span class="op">&gt;</span>
+            <span class="ident">w_span</span> =&gt;
             <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">missing_docs</span>)]</span>
             #<span class="ident">visibility</span> #<span class="ident">w_name</span>: #<span class="ident">w_ty</span>,
         });
 
         <span class="ident">init_stream</span>.<span class="ident">extend</span>(<span class="macro">quote_spanned!</span> {
-            <span class="ident">w_span</span> <span class="op">=</span><span class="op">&gt;</span> <span class="kw">let</span> #<span class="ident">w_name</span> <span class="op">=</span> #<span class="ident">w_func</span>;
+            <span class="ident">w_span</span> =&gt; <span class="kw">let</span> #<span class="ident">w_name</span> <span class="op">=</span> #<span class="ident">w_func</span>;
         });
 
         <span class="ident">return_stream</span>.<span class="ident">extend</span>(<span class="ident">widget</span>.<span class="ident">return_stream</span>());
@@ -489,7 +489,7 @@
             <span class="kw">type</span> <span class="ident">Root</span> <span class="op">=</span> #<span class="ident">root_widget_type</span>;
 
             <span class="doccomment">/// Initialize the UI.</span>
-            <span class="kw">fn</span> <span class="ident">init_view</span>(<span class="ident">model</span>: <span class="kw-2">&amp;</span>#<span class="ident">model</span>, <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span>#<span class="ident">parent_model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Widgets</span>, <span class="ident">sender</span>: #<span class="ident">relm4_path::Sender</span><span class="op">&lt;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Msg</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+            <span class="kw">fn</span> <span class="ident">init_view</span>(<span class="ident">model</span>: <span class="kw-2">&amp;</span>#<span class="ident">model</span>, <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span>#<span class="ident">parent_model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Widgets</span>, <span class="ident">sender</span>: #<span class="ident">relm4_path::Sender</span><span class="op">&lt;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Msg</span><span class="op">&gt;</span>) -&gt; <span class="self">Self</span> {
                 #<span class="ident">pre_init</span>
                 #<span class="ident">init_stream</span>
                 #<span class="ident">property_stream</span>
@@ -509,7 +509,7 @@
             }
 
             <span class="doccomment">/// Return the root widget.</span>
-            <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident"><span class="self">Self</span>::Root</span> {
+            <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident"><span class="self">Self</span>::Root</span> {
                 <span class="self">self</span>.#<span class="ident">root_widget_name</span>.<span class="ident">clone</span>()
             }
 

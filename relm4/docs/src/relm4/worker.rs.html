@@ -227,7 +227,7 @@
     <span class="ident">ParentModel</span>: <span class="ident">ModelTrait</span>,
 {
     <span class="doccomment">/// Create a new [`RelmWorker`] that runs on the main thread.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>, <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>, <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
@@ -256,7 +256,7 @@
 
     <span class="doccomment">/// Send a message to this component.</span>
     <span class="doccomment">/// This can be used by the parent to send messages to this worker.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">sender</span>.<span class="ident">send</span>(<span class="ident">msg</span>)
     }
 }
@@ -273,7 +273,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">with_new_thread</span>(
         <span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>,
         <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    ) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
@@ -344,7 +344,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">with_new_tokio_rt</span>(
         <span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>,
         <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>,
-    ) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+    ) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
@@ -384,7 +384,7 @@
 
     <span class="doccomment">/// Send a message to this component.</span>
     <span class="doccomment">/// This can be used by the parent to send messages to this worker.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">sender</span>.<span class="ident">send</span>(<span class="ident">msg</span>)
     }
 }
