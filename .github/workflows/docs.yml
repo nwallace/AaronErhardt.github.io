@@ -12,12 +12,13 @@ jobs:
     name: build
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: docs
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
           toolchain: nightly
           override: true
-          ref: docs
 
       - run: ./install_libadwaita.sh
         working-directory: docs
