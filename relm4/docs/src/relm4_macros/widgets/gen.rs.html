@@ -436,11 +436,283 @@
 <span id="436">436</span>
 <span id="437">437</span>
 <span id="438">438</span>
-</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2::TokenStream</span> <span class="kw">as</span> <span class="ident">TokenStream2</span>;
+<span id="439">439</span>
+<span id="440">440</span>
+<span id="441">441</span>
+<span id="442">442</span>
+<span id="443">443</span>
+<span id="444">444</span>
+<span id="445">445</span>
+<span id="446">446</span>
+<span id="447">447</span>
+<span id="448">448</span>
+<span id="449">449</span>
+<span id="450">450</span>
+<span id="451">451</span>
+<span id="452">452</span>
+<span id="453">453</span>
+<span id="454">454</span>
+<span id="455">455</span>
+<span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
+<span id="461">461</span>
+<span id="462">462</span>
+<span id="463">463</span>
+<span id="464">464</span>
+<span id="465">465</span>
+<span id="466">466</span>
+<span id="467">467</span>
+<span id="468">468</span>
+<span id="469">469</span>
+<span id="470">470</span>
+<span id="471">471</span>
+<span id="472">472</span>
+<span id="473">473</span>
+<span id="474">474</span>
+<span id="475">475</span>
+<span id="476">476</span>
+<span id="477">477</span>
+<span id="478">478</span>
+<span id="479">479</span>
+<span id="480">480</span>
+<span id="481">481</span>
+<span id="482">482</span>
+<span id="483">483</span>
+<span id="484">484</span>
+<span id="485">485</span>
+<span id="486">486</span>
+<span id="487">487</span>
+<span id="488">488</span>
+<span id="489">489</span>
+<span id="490">490</span>
+<span id="491">491</span>
+<span id="492">492</span>
+<span id="493">493</span>
+<span id="494">494</span>
+<span id="495">495</span>
+<span id="496">496</span>
+<span id="497">497</span>
+<span id="498">498</span>
+<span id="499">499</span>
+<span id="500">500</span>
+<span id="501">501</span>
+<span id="502">502</span>
+<span id="503">503</span>
+<span id="504">504</span>
+<span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
+<span id="529">529</span>
+<span id="530">530</span>
+<span id="531">531</span>
+<span id="532">532</span>
+<span id="533">533</span>
+<span id="534">534</span>
+<span id="535">535</span>
+<span id="536">536</span>
+<span id="537">537</span>
+<span id="538">538</span>
+<span id="539">539</span>
+<span id="540">540</span>
+<span id="541">541</span>
+<span id="542">542</span>
+<span id="543">543</span>
+<span id="544">544</span>
+<span id="545">545</span>
+<span id="546">546</span>
+<span id="547">547</span>
+<span id="548">548</span>
+<span id="549">549</span>
+<span id="550">550</span>
+<span id="551">551</span>
+<span id="552">552</span>
+<span id="553">553</span>
+<span id="554">554</span>
+<span id="555">555</span>
+<span id="556">556</span>
+<span id="557">557</span>
+<span id="558">558</span>
+<span id="559">559</span>
+<span id="560">560</span>
+<span id="561">561</span>
+<span id="562">562</span>
+<span id="563">563</span>
+<span id="564">564</span>
+<span id="565">565</span>
+<span id="566">566</span>
+<span id="567">567</span>
+<span id="568">568</span>
+<span id="569">569</span>
+<span id="570">570</span>
+<span id="571">571</span>
+<span id="572">572</span>
+<span id="573">573</span>
+<span id="574">574</span>
+<span id="575">575</span>
+<span id="576">576</span>
+<span id="577">577</span>
+<span id="578">578</span>
+<span id="579">579</span>
+<span id="580">580</span>
+<span id="581">581</span>
+<span id="582">582</span>
+<span id="583">583</span>
+<span id="584">584</span>
+<span id="585">585</span>
+<span id="586">586</span>
+<span id="587">587</span>
+<span id="588">588</span>
+<span id="589">589</span>
+<span id="590">590</span>
+<span id="591">591</span>
+<span id="592">592</span>
+<span id="593">593</span>
+<span id="594">594</span>
+</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2</span>::{<span class="ident">Span</span> <span class="kw">as</span> <span class="ident">Span2</span>, <span class="ident">TokenStream</span> <span class="kw">as</span> <span class="ident">TokenStream2</span>};
 <span class="kw">use</span> <span class="ident">quote</span>::{<span class="ident">quote</span>, <span class="ident">quote_spanned</span>, <span class="ident">ToTokens</span>};
-<span class="kw">use</span> <span class="ident">syn</span>::{<span class="ident">spanned::Spanned</span>, <span class="ident">Error</span>, <span class="ident">Ident</span>, <span class="ident">Path</span>};
+<span class="kw">use</span> <span class="ident">syn</span>::{<span class="ident">spanned::Spanned</span>, <span class="ident">Error</span>, <span class="ident">ExprCall</span>, <span class="ident">ExprField</span>, <span class="ident">ExprPath</span>, <span class="ident">Ident</span>, <span class="ident">Member</span>, <span class="ident">Path</span>, <span class="ident">Type</span>};
 
-<span class="kw">use</span> <span class="kw">super</span>::{<span class="ident">Property</span>, <span class="ident">PropertyName</span>, <span class="ident">PropertyType</span>, <span class="ident">Tracker</span>, <span class="ident">Widget</span>, <span class="ident">WidgetFunc</span>, <span class="ident">Generics</span>};
+<span class="kw">use</span> <span class="kw">super</span>::{<span class="ident">Expr</span>, <span class="ident">Generics</span>, <span class="ident">Property</span>, <span class="ident">PropertyName</span>, <span class="ident">PropertyType</span>, <span class="ident">Tracker</span>, <span class="ident">Widget</span>, <span class="ident">WidgetFunc</span>};
+
+<span class="doccomment">/// Helper function for the tracker macro.</span>
+<span class="kw">fn</span> <span class="ident">expr_field_from_expr_call</span>(<span class="ident">call_expr</span>: <span class="kw-2">&amp;</span><span class="ident">ExprCall</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">ExprField</span><span class="op">&gt;</span> {
+    <span class="kw">let</span> <span class="ident">first_expr</span> <span class="op">=</span> <span class="ident">call_expr</span>.<span class="ident">args</span>.<span class="ident">iter</span>().<span class="ident">next</span>()<span class="question-mark">?</span>;
+    <span class="kw">if</span> <span class="kw">let</span> <span class="ident">Expr::Field</span>(<span class="ident">expr_field</span>) <span class="op">=</span> <span class="ident">first_expr</span> {
+        <span class="prelude-val">Some</span>(<span class="ident">expr_field</span>)
+    } <span class="kw">else</span> {
+        <span class="prelude-val">None</span>
+    }
+}
+
+<span class="kw">fn</span> <span class="ident">generate_tracker_from_expression</span>(
+    <span class="ident">expression</span>: <span class="kw-2">&amp;</span><span class="ident">Expr</span>,
+    <span class="ident">model_name</span>: <span class="kw-2">&amp;</span><span class="ident">Type</span>,
+) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">TokenStream2</span>, (<span class="ident">Span2</span>, <span class="ident">String</span>)<span class="op">&gt;</span> {
+    <span class="kw">let</span> <span class="ident">error_fn</span> <span class="op">=</span> <span class="kw">move</span> <span class="op">|</span><span class="ident">span</span>, <span class="ident">msg</span>: <span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">|</span> {
+        <span class="kw">let</span> <span class="ident">error_msg</span> <span class="op">=</span>
+                    <span class="string">&quot;Unable to generate tracker function. Please pass a tracker function as the first parameter to the `track!` macro.\n\
+                    Usage: track!(TRACK_CONDITION: bool, FIRST_ARG, SECOND_ARG, ...)&quot;</span>;
+        <span class="prelude-val">Err</span>((<span class="ident">span</span>, <span class="macro">format!</span>(<span class="string">&quot;{}\nHint:  {}&quot;</span>, <span class="ident">error_msg</span>, <span class="ident">msg</span>)))
+    };
+
+    <span class="kw">let</span> <span class="ident">unref_expr</span>: <span class="kw-2">&amp;</span><span class="ident">Expr</span> <span class="op">=</span> <span class="kw">if</span> <span class="kw">let</span> <span class="ident">Expr::Reference</span>(<span class="ident">expr_ref</span>) <span class="op">=</span> <span class="ident">expression</span> {
+        <span class="kw-2">&amp;</span><span class="ident">expr_ref</span>.<span class="ident">expr</span>
+    } <span class="kw">else</span> {
+        <span class="ident">expression</span>
+    };
+
+    <span class="kw">let</span> <span class="ident">expr_field_opt</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">unref_expr</span> {
+        <span class="ident">Expr::Call</span>(<span class="ident">call_expr</span>) =&gt; <span class="ident">expr_field_from_expr_call</span>(<span class="ident">call_expr</span>),
+        <span class="ident">Expr::MethodCall</span>(<span class="ident">expr_method_call</span>) =&gt; {
+            <span class="kw">if</span> <span class="kw">let</span> <span class="ident">Expr::Field</span>(<span class="kw-2">ref</span> <span class="ident">expr_field</span>) <span class="op">=</span> <span class="kw-2">*</span><span class="ident">expr_method_call</span>.<span class="ident">receiver</span> {
+                <span class="prelude-val">Some</span>(<span class="ident">expr_field</span>)
+            } <span class="kw">else</span> {
+                <span class="prelude-val">None</span>
+            }
+        }
+        <span class="kw">_</span> =&gt; <span class="prelude-val">None</span>,
+    };
+
+    <span class="kw">let</span> <span class="ident">expr_field</span> <span class="op">=</span> <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">expr_field</span>) <span class="op">=</span> <span class="ident">expr_field_opt</span> {
+        <span class="ident">expr_field</span>
+    } <span class="kw">else</span> {
+        <span class="kw">return</span> <span class="ident">error_fn</span>(
+            <span class="ident">unref_expr</span>.<span class="ident">span</span>(),
+            <span class="string">&quot;Couldn&#39;t find find a call or method expression.&quot;</span>,
+        );
+    };
+
+    <span class="kw">let</span> <span class="ident">base_is_model</span> <span class="op">=</span> <span class="kw">if</span> <span class="kw">let</span> <span class="ident">Expr::Path</span>(<span class="ident">expr_path</span>) <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">expr_field</span>.<span class="ident">base</span> {
+        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">ident</span>) <span class="op">=</span> <span class="ident">expr_path</span>.<span class="ident">path</span>.<span class="ident">get_ident</span>() {
+            <span class="ident">ident</span> <span class="op">==</span> <span class="string">&quot;model&quot;</span>
+        } <span class="kw">else</span> {
+            <span class="bool-val">false</span>
+        }
+    } <span class="kw">else</span> {
+        <span class="bool-val">false</span>
+    };
+
+    <span class="kw">if</span> <span class="op">!</span><span class="ident">base_is_model</span> {
+        <span class="kw">return</span> <span class="ident">error_fn</span>(
+            <span class="ident">expr_field</span>.<span class="ident">base</span>.<span class="ident">span</span>(),
+            <span class="string">&quot;Couldn&#39;t find a reference to `model`.&quot;</span>,
+        );
+    }
+
+    <span class="kw">let</span> <span class="ident">ident</span> <span class="op">=</span> <span class="kw">if</span> <span class="kw">let</span> <span class="ident">Member::Named</span>(<span class="ident">ident</span>) <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">expr_field</span>.<span class="ident">member</span> {
+        <span class="ident">ident</span>.<span class="ident">clone</span>()
+    } <span class="kw">else</span> {
+        <span class="kw">return</span> <span class="ident">error_fn</span>(<span class="ident">expr_field</span>.<span class="ident">member</span>.<span class="ident">span</span>(), <span class="string">&quot;Expected a named member&quot;</span>);
+    };
+
+    <span class="kw">let</span> <span class="ident">bool_stream</span> <span class="op">=</span>
+        <span class="macro">quote_spanned!</span> { <span class="ident">expr_field</span>.<span class="ident">span</span>() =&gt; <span class="ident">model</span>.<span class="ident">changed</span>( #<span class="ident">model_name</span>::#<span class="ident">ident</span>() ) };
+    <span class="prelude-val">Ok</span>(<span class="ident">bool_stream</span>)
+}
+
+<span class="kw">fn</span> <span class="ident">component_ident</span>(<span class="ident">path</span>: <span class="kw-2">&amp;</span><span class="ident">ExprPath</span>) -&gt; <span class="ident">TokenStream2</span> {
+    <span class="kw">if</span> <span class="ident">path</span>.<span class="ident">path</span>.<span class="ident">segments</span>.<span class="ident">len</span>() <span class="op">==</span> <span class="number">1</span> {
+        <span class="kw">let</span> <span class="ident">ident</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">path</span>.<span class="ident">path</span>.<span class="ident">segments</span>.<span class="ident">first</span>().<span class="ident">unwrap</span>().<span class="ident">ident</span>;
+        <span class="macro">quote_spanned!</span> { <span class="ident">path</span>.<span class="ident">span</span>() =&gt; <span class="ident">components</span>.#<span class="ident">ident</span>.<span class="ident">root_widget</span>() }
+    } <span class="kw">else</span> {
+        <span class="ident">path</span>.<span class="ident">to_token_stream</span>()
+    }
+}
+
+<span class="kw">fn</span> <span class="ident">component_tokens</span>(<span class="ident">expr</span>: <span class="kw-2">&amp;</span><span class="ident">Expr</span>) -&gt; <span class="ident">TokenStream2</span> {
+    <span class="kw">match</span> <span class="ident">expr</span> {
+        <span class="ident">Expr::Call</span>(<span class="ident">call</span>) =&gt; {
+            <span class="kw">if</span> <span class="kw">let</span> <span class="ident">Expr::Path</span>(<span class="ident">path</span>) <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">call</span>.<span class="ident">func</span> {
+                <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">segs</span>) <span class="op">=</span> <span class="ident">path</span>.<span class="ident">path</span>.<span class="ident">segments</span>.<span class="ident">first</span>() {
+                    <span class="kw">if</span> <span class="ident">segs</span>.<span class="ident">ident</span> <span class="op">==</span> <span class="string">&quot;Some&quot;</span> {
+                        <span class="kw">if</span> <span class="ident">call</span>.<span class="ident">args</span>.<span class="ident">len</span>() <span class="op">==</span> <span class="number">1</span> {
+                            <span class="kw">if</span> <span class="kw">let</span> <span class="ident">Expr::Path</span>(<span class="ident">args_path</span>) <span class="op">=</span> <span class="ident">call</span>.<span class="ident">args</span>.<span class="ident">first</span>().<span class="ident">unwrap</span>() {
+                                <span class="kw">let</span> <span class="ident">arg_tokens</span> <span class="op">=</span> <span class="ident">component_ident</span>(<span class="ident">args_path</span>);
+                                <span class="macro">quote_spanned!</span> { <span class="ident">path</span>.<span class="ident">span</span>() =&gt; <span class="prelude-val">Some</span>(#<span class="ident">arg_tokens</span>) }
+                            } <span class="kw">else</span> {
+                                <span class="ident">expr</span>.<span class="ident">to_token_stream</span>()
+                            }
+                        } <span class="kw">else</span> {
+                            <span class="ident">expr</span>.<span class="ident">to_token_stream</span>()
+                        }
+                    } <span class="kw">else</span> {
+                        <span class="ident">expr</span>.<span class="ident">to_token_stream</span>()
+                    }
+                } <span class="kw">else</span> {
+                    <span class="ident">expr</span>.<span class="ident">to_token_stream</span>()
+                }
+            } <span class="kw">else</span> {
+                <span class="ident">expr</span>.<span class="ident">to_token_stream</span>()
+            }
+        }
+        <span class="ident">Expr::Path</span>(<span class="ident">path</span>) =&gt; <span class="ident">component_ident</span>(<span class="ident">path</span>),
+        <span class="kw">_</span> =&gt; <span class="ident">expr</span>.<span class="ident">to_token_stream</span>(),
+    }
+}
 
 <span class="kw">impl</span> <span class="ident">PropertyType</span> {
     <span class="kw">fn</span> <span class="ident">init_assign_tokens</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">TokenStream2</span><span class="op">&gt;</span> {
@@ -449,7 +721,14 @@
             <span class="ident">PropertyType::Value</span>(<span class="ident">lit</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">lit</span>.<span class="ident">to_token_stream</span>()),
             <span class="ident">PropertyType::Watch</span>(<span class="ident">tokens</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">tokens</span>.<span class="ident">to_token_stream</span>()),
             <span class="ident">PropertyType::Args</span>(<span class="ident">args</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">args</span>.<span class="ident">to_token_stream</span>()),
-            <span class="ident">PropertyType::Track</span>(<span class="ident">Tracker</span> { <span class="ident">update_fns</span>, .. }) =&gt; <span class="prelude-val">Some</span>(<span class="macro">quote!</span> { #(#<span class="ident">update_fns</span>),<span class="op">*</span> }),
+            <span class="ident">PropertyType::Track</span>(<span class="ident">Tracker</span> {
+                <span class="ident">bool_fn</span>,
+                <span class="ident">update_fns</span>,
+            }) =&gt; <span class="prelude-val">Some</span>(<span class="kw">if</span> <span class="ident">update_fns</span>.<span class="ident">is_empty</span>() {
+                <span class="macro">quote!</span> { #<span class="ident">bool_fn</span> }
+            } <span class="kw">else</span> {
+                <span class="macro">quote!</span> { #(#<span class="ident">update_fns</span>),<span class="op">*</span> }
+            }),
             <span class="kw">_</span> =&gt; <span class="prelude-val">None</span>,
         }
     }
@@ -469,12 +748,45 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">track_tokens</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span>(<span class="ident">TokenStream2</span>, <span class="ident">TokenStream2</span>)<span class="op">&gt;</span> {
-        <span class="kw">if</span> <span class="kw">let</span> <span class="ident">PropertyType::Track</span>(<span class="ident">tracker</span>) <span class="op">=</span> <span class="self">self</span> {
-            <span class="kw">let</span> <span class="ident">update_fns</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">tracker</span>.<span class="ident">update_fns</span>;
-            <span class="kw">let</span> <span class="ident">update_stream</span> <span class="op">=</span> <span class="macro">quote!</span> { #(#<span class="ident">update_fns</span>),<span class="op">*</span> };
-            <span class="kw">let</span> <span class="ident">bool_stream</span> <span class="op">=</span> <span class="ident">tracker</span>.<span class="ident">bool_fn</span>.<span class="ident">to_token_stream</span>();
-            <span class="prelude-val">Some</span>((<span class="ident">bool_stream</span>, <span class="ident">update_stream</span>))
+    <span class="kw">fn</span> <span class="ident">track_tokens</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">model_name</span>: <span class="kw-2">&amp;</span><span class="ident">Type</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span>(<span class="ident">TokenStream2</span>, <span class="ident">TokenStream2</span>)<span class="op">&gt;</span> {
+        <span class="kw">if</span> <span class="kw">let</span> <span class="ident">PropertyType::Track</span>(<span class="ident">Tracker</span> {
+            <span class="ident">update_fns</span>,
+            <span class="ident">bool_fn</span>,
+        }) <span class="op">=</span> <span class="self">self</span>
+        {
+            <span class="comment">// Only one parameter passed. Try to generate tracker.</span>
+            <span class="kw">if</span> <span class="ident">update_fns</span>.<span class="ident">is_empty</span>() {
+                <span class="kw">let</span> <span class="ident">bool_stream</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">generate_tracker_from_expression</span>(<span class="ident">bool_fn</span>, <span class="ident">model_name</span>) {
+                    <span class="prelude-val">Ok</span>(<span class="ident">bool_tokens</span>) =&gt; <span class="ident">bool_tokens</span>,
+                    <span class="prelude-val">Err</span>((<span class="ident">span</span>, <span class="ident">msg</span>)) =&gt; {
+                        <span class="kw">return</span> <span class="prelude-val">Some</span>((
+                            <span class="ident">Error::new</span>(<span class="ident">span</span>, <span class="kw-2">&amp;</span><span class="ident">msg</span>).<span class="ident">to_compile_error</span>(),
+                            <span class="ident">TokenStream2::new</span>(),
+                        ));
+                    }
+                };
+                <span class="prelude-val">Some</span>((<span class="ident">bool_stream</span>, <span class="ident">bool_fn</span>.<span class="ident">to_token_stream</span>()))
+            } <span class="kw">else</span> {
+                <span class="kw">let</span> <span class="ident">update_stream</span> <span class="op">=</span> <span class="macro">quote!</span> { #(#<span class="ident">update_fns</span>),<span class="op">*</span> };
+                <span class="kw">let</span> <span class="ident">bool_stream</span> <span class="op">=</span> <span class="ident">bool_fn</span>.<span class="ident">to_token_stream</span>();
+
+                <span class="comment">// TODO: Uncomment this and add a warning once proc-macro warning are stable</span>
+                <span class="comment">/*if update_fns.len() == 1 {
+                    if let Ok(auto_bool_stream) =
+                        generate_tracker_from_expression(&amp;update_fns[0], model_name)
+                    {
+                        if auto_bool_stream.to_string() == bool_stream.to_string() {
+                            let error_msg = &quot;Consider removing the first parameter because the macro would generate the same code.\n&quot;;
+                            /*println!(Some((
+                                Error::new(bool_fn.span(), error_msg).to_compile_error(),
+                                update_stream,
+                            ));*/
+                        }
+                    }
+                }*/</span>
+
+                <span class="prelude-val">Some</span>((<span class="ident">bool_stream</span>, <span class="ident">update_stream</span>))
+            }
         } <span class="kw">else</span> {
             <span class="prelude-val">None</span>
         }
@@ -491,7 +803,7 @@
     <span class="kw">fn</span> <span class="ident">component_tokens</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">TokenStream2</span><span class="op">&gt;</span> {
         <span class="kw">match</span> <span class="self">self</span> {
             <span class="ident">PropertyType::Widget</span>(<span class="ident">widget</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">widget</span>.<span class="ident">widget_assignment</span>()),
-            <span class="ident">PropertyType::Component</span>(<span class="ident">expr</span>) =&gt; <span class="prelude-val">Some</span>(<span class="macro">quote_spanned!</span> { <span class="ident">expr</span>.<span class="ident">span</span>() =&gt; #<span class="ident">expr</span> }),
+            <span class="ident">PropertyType::Component</span>(<span class="ident">expr</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">component_tokens</span>(<span class="ident">expr</span>)),
             <span class="kw">_</span> =&gt; <span class="prelude-val">None</span>,
         }
     }
@@ -658,7 +970,7 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">view_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">relm4_path</span>: <span class="kw-2">&amp;</span><span class="ident">Path</span>, <span class="ident">property_stream</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">TokenStream2</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">view_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">relm4_path</span>: <span class="kw-2">&amp;</span><span class="ident">Path</span>, <span class="ident">property_stream</span>: <span class="kw-2">&amp;mut</span> <span class="ident">TokenStream2</span>) {
         <span class="kw">let</span> <span class="ident">w_name</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>;
 
         <span class="kw">for</span> <span class="ident">prop</span> <span class="kw">in</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">properties</span>.<span class="ident">properties</span> {
@@ -686,7 +998,7 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">property_assign_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">relm4_path</span>: <span class="kw-2">&amp;</span><span class="ident">Path</span>, <span class="ident">property_stream</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">TokenStream2</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">property_assign_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">relm4_path</span>: <span class="kw-2">&amp;</span><span class="ident">Path</span>, <span class="ident">property_stream</span>: <span class="kw-2">&amp;mut</span> <span class="ident">TokenStream2</span>) {
         <span class="kw">let</span> <span class="ident">w_name</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>;
 
         <span class="kw">for</span> <span class="ident">prop</span> <span class="kw">in</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">properties</span>.<span class="ident">properties</span> {
@@ -785,12 +1097,12 @@
         <span class="ident">stream</span>
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">track_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">TokenStream2</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">track_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">ty</span>: <span class="kw-2">&amp;</span><span class="ident">Type</span>) -&gt; <span class="ident">TokenStream2</span> {
         <span class="kw">let</span> <span class="ident">w_name</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>;
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">stream</span> <span class="op">=</span> <span class="ident">TokenStream2::new</span>();
 
         <span class="kw">for</span> <span class="ident">prop</span> <span class="kw">in</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">properties</span>.<span class="ident">properties</span> {
-            <span class="kw">let</span> <span class="ident">p_assign_opt</span> <span class="op">=</span> <span class="ident">prop</span>.<span class="ident">ty</span>.<span class="ident">track_tokens</span>();
+            <span class="kw">let</span> <span class="ident">p_assign_opt</span> <span class="op">=</span> <span class="ident">prop</span>.<span class="ident">ty</span>.<span class="ident">track_tokens</span>(<span class="ident">ty</span>);
             <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>((<span class="ident">bool_stream</span>, <span class="ident">update_stream</span>)) <span class="op">=</span> <span class="ident">p_assign_opt</span> {
                 <span class="kw">let</span> <span class="ident">p_name</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">prop</span>.<span class="ident">name</span>;
                 <span class="kw">let</span> <span class="ident">p_span</span> <span class="op">=</span> <span class="ident">p_name</span>.<span class="ident">span</span>().<span class="ident">unwrap</span>().<span class="ident">into</span>();
@@ -820,7 +1132,7 @@
                 <span class="kw">let</span> <span class="ident">self_assign_args</span> <span class="op">=</span> <span class="ident">prop</span>.<span class="ident">name</span>.<span class="ident">self_assign_args_stream</span>(<span class="ident">w_name</span>);
 
                 <span class="ident">property_assign_tokens</span>(
-                    <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">stream</span>,
+                    <span class="kw-2">&amp;mut</span> <span class="ident">stream</span>,
                     <span class="ident">prop</span>,
                     <span class="ident">assign_fn</span>,
                     <span class="ident">self_assign_args</span>,
@@ -834,7 +1146,7 @@
 }
 
 <span class="kw">fn</span> <span class="ident">property_assign_tokens</span>(
-    <span class="ident">stream</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">TokenStream2</span>,
+    <span class="ident">stream</span>: <span class="kw-2">&amp;mut</span> <span class="ident">TokenStream2</span>,
     <span class="ident">prop</span>: <span class="kw-2">&amp;</span><span class="ident">Property</span>,
     <span class="ident">assign_fn</span>: <span class="ident">TokenStream2</span>,
     <span class="ident">self_assign_args</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">TokenStream2</span><span class="op">&gt;</span>,

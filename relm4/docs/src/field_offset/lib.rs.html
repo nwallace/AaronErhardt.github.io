@@ -600,7 +600,7 @@
     <span class="comment">// Use MaybeUninit to get a fake T</span>
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">fieldoffset_maybe_uninit</span>)]</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">with_uninit_ptr</span><span class="op">&lt;</span><span class="ident">R</span>, <span class="ident">F</span>: <span class="ident">FnOnce</span>(<span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>) -&gt; <span class="ident">R</span><span class="op">&gt;</span>(<span class="ident">f</span>: <span class="ident">F</span>) -&gt; <span class="ident">R</span> {
+    <span class="kw">fn</span> <span class="ident">with_uninit_ptr</span><span class="op">&lt;</span><span class="ident">R</span>, <span class="ident">F</span>: <span class="ident">FnOnce</span>(<span class="kw-2">*const</span> <span class="ident">T</span>) -&gt; <span class="ident">R</span><span class="op">&gt;</span>(<span class="ident">f</span>: <span class="ident">F</span>) -&gt; <span class="ident">R</span> {
         <span class="kw">let</span> <span class="ident">uninit</span> <span class="op">=</span> <span class="ident">mem::MaybeUninit</span>::<span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span><span class="ident">::uninit</span>();
         <span class="ident">f</span>(<span class="ident">uninit</span>.<span class="ident">as_ptr</span>())
     }
@@ -608,8 +608,8 @@
     <span class="comment">// Use a dangling pointer to get a fake T</span>
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">not</span>(<span class="ident">fieldoffset_maybe_uninit</span>))]</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">with_uninit_ptr</span><span class="op">&lt;</span><span class="ident">R</span>, <span class="ident">F</span>: <span class="ident">FnOnce</span>(<span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>) -&gt; <span class="ident">R</span><span class="op">&gt;</span>(<span class="ident">f</span>: <span class="ident">F</span>) -&gt; <span class="ident">R</span> {
-        <span class="ident">f</span>(<span class="ident">mem::align_of</span>::<span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>)
+    <span class="kw">fn</span> <span class="ident">with_uninit_ptr</span><span class="op">&lt;</span><span class="ident">R</span>, <span class="ident">F</span>: <span class="ident">FnOnce</span>(<span class="kw-2">*const</span> <span class="ident">T</span>) -&gt; <span class="ident">R</span><span class="op">&gt;</span>(<span class="ident">f</span>: <span class="ident">F</span>) -&gt; <span class="ident">R</span> {
+        <span class="ident">f</span>(<span class="ident">mem::align_of</span>::<span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>() <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">T</span>)
     }
 
     <span class="doccomment">/// Construct a field offset via a lambda which returns a reference</span>
@@ -624,7 +624,7 @@
     <span class="doccomment">/// must be valid for *any* instance of `T`. For example, returning a pointer</span>
     <span class="doccomment">/// to a field from an enum with multiple variants will produce a `FieldOffset`</span>
     <span class="doccomment">/// which is unsafe to use.</span>
-    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">new</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="kw">for</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FnOnce</span>(<span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>) -&gt; <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">U</span><span class="op">&gt;</span>(<span class="ident">f</span>: <span class="ident">F</span>) -&gt; <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">new</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="kw">for</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FnOnce</span>(<span class="kw-2">*const</span> <span class="ident">T</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">U</span><span class="op">&gt;</span>(<span class="ident">f</span>: <span class="ident">F</span>) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> <span class="ident">offset</span> <span class="op">=</span> <span class="ident"><span class="self">Self</span>::with_uninit_ptr</span>(<span class="op">|</span><span class="ident">base_ptr</span><span class="op">|</span> {
             <span class="kw">let</span> <span class="ident">field_ptr</span> <span class="op">=</span> <span class="ident">f</span>(<span class="ident">base_ptr</span>);
             (<span class="ident">field_ptr</span> <span class="kw">as</span> <span class="ident">usize</span>).<span class="ident">wrapping_sub</span>(<span class="ident">base_ptr</span> <span class="kw">as</span> <span class="ident">usize</span>)
@@ -663,13 +663,13 @@
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>, <span class="ident">U</span>, <span class="ident">PinFlag</span><span class="op">&gt;</span> <span class="ident">FieldOffset</span><span class="op">&lt;</span><span class="ident">T</span>, <span class="ident">U</span>, <span class="ident">PinFlag</span><span class="op">&gt;</span> {
     <span class="doccomment">/// Apply the field offset to a native pointer.</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">apply_ptr</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>) -&gt; <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">U</span> {
-        ((<span class="ident">x</span> <span class="kw">as</span> <span class="ident">usize</span>) <span class="op">+</span> <span class="self">self</span>.<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">U</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">apply_ptr</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">*const</span> <span class="ident">T</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">U</span> {
+        ((<span class="ident">x</span> <span class="kw">as</span> <span class="ident">usize</span>) <span class="op">+</span> <span class="self">self</span>.<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">U</span>
     }
     <span class="doccomment">/// Apply the field offset to a native mutable pointer.</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">apply_ptr_mut</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>) -&gt; <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">U</span> {
-        ((<span class="ident">x</span> <span class="kw">as</span> <span class="ident">usize</span>) <span class="op">+</span> <span class="self">self</span>.<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">U</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">apply_ptr_mut</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">*mut</span> <span class="ident">T</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">U</span> {
+        ((<span class="ident">x</span> <span class="kw">as</span> <span class="ident">usize</span>) <span class="op">+</span> <span class="self">self</span>.<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*mut</span> <span class="ident">U</span>
     }
     <span class="doccomment">/// Apply the field offset to a reference.</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
@@ -679,7 +679,7 @@
     <span class="doccomment">/// Apply the field offset to a mutable reference.</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">apply_mut</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">T</span>) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">U</span> {
-        <span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">apply_ptr_mut</span>(<span class="ident">x</span>) }
+        <span class="kw">unsafe</span> { <span class="kw-2">&amp;mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">apply_ptr_mut</span>(<span class="ident">x</span>) }
     }
     <span class="doccomment">/// Get the raw byte offset for this field offset.</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
@@ -702,8 +702,8 @@
     <span class="doccomment">/// dereference the resulting pointer even if it points to a valid</span>
     <span class="doccomment">/// location, due to the presence of other live references.</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">unapply_ptr</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">U</span>) -&gt; <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span> {
-        ((<span class="ident">x</span> <span class="kw">as</span> <span class="ident">usize</span>) <span class="op">-</span> <span class="self">self</span>.<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>
+    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">unapply_ptr</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">*const</span> <span class="ident">U</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">T</span> {
+        ((<span class="ident">x</span> <span class="kw">as</span> <span class="ident">usize</span>) <span class="op">-</span> <span class="self">self</span>.<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">T</span>
     }
     <span class="doccomment">/// Unapply the field offset to a native mutable pointer.</span>
     <span class="doccomment">///</span>
@@ -718,8 +718,8 @@
     <span class="doccomment">/// dereference the resulting pointer even if it points to a valid</span>
     <span class="doccomment">/// location, due to the presence of other live references.</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">unapply_ptr_mut</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">U</span>) -&gt; <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span> {
-        ((<span class="ident">x</span> <span class="kw">as</span> <span class="ident">usize</span>) <span class="op">-</span> <span class="self">self</span>.<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>
+    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">unapply_ptr_mut</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">*mut</span> <span class="ident">U</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">T</span> {
+        ((<span class="ident">x</span> <span class="kw">as</span> <span class="ident">usize</span>) <span class="op">-</span> <span class="self">self</span>.<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*mut</span> <span class="ident">T</span>
     }
     <span class="doccomment">/// Unapply the field offset to a reference.</span>
     <span class="doccomment">///</span>
@@ -751,7 +751,7 @@
     <span class="doccomment">/// to the presence of other live references.</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">unapply_mut</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span>(<span class="self">self</span>, <span class="ident">x</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">U</span>) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">T</span> {
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">unapply_ptr_mut</span>(<span class="ident">x</span>)
+        <span class="kw-2">&amp;mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">unapply_ptr_mut</span>(<span class="ident">x</span>)
     }
 
     <span class="doccomment">/// Convert this offset to an offset that is allowed to go from `Pin&lt;&amp;T&gt;`</span>
@@ -843,7 +843,7 @@
 
 <span class="doccomment">/// The debug implementation prints the byte offset of the field in hexadecimal.</span>
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>, <span class="ident">U</span>, <span class="ident">Flag</span><span class="op">&gt;</span> <span class="ident">fmt::Debug</span> <span class="kw">for</span> <span class="ident">FieldOffset</span><span class="op">&lt;</span><span class="ident">T</span>, <span class="ident">U</span>, <span class="ident">Flag</span><span class="op">&gt;</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">fmt::Error</span><span class="op">&gt;</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">fmt::Error</span><span class="op">&gt;</span> {
         <span class="macro">write!</span>(<span class="ident">f</span>, <span class="string">&quot;FieldOffset({:#x})&quot;</span>, <span class="self">self</span>.<span class="number">0</span>)
     }
 }
@@ -940,7 +940,7 @@
 
         <span class="comment">// Apply the pointer to get at `b` and mutate it</span>
         {
-            <span class="kw">let</span> <span class="ident">y</span> <span class="op">=</span> <span class="ident">foo_b</span>.<span class="ident">apply_mut</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">x</span>);
+            <span class="kw">let</span> <span class="ident">y</span> <span class="op">=</span> <span class="ident">foo_b</span>.<span class="ident">apply_mut</span>(<span class="kw-2">&amp;mut</span> <span class="ident">x</span>);
             <span class="kw-2">*</span><span class="ident">y</span> <span class="op">=</span> <span class="number">42.0</span>;
         }
         <span class="macro">assert!</span>(<span class="ident">x</span>.<span class="ident">b</span> <span class="op">==</span> <span class="number">42.0</span>);
@@ -962,7 +962,7 @@
 
         <span class="comment">// Apply the pointer to get at `b` and mutate it</span>
         {
-            <span class="kw">let</span> <span class="ident">y</span> <span class="op">=</span> <span class="ident">tuple_1</span>.<span class="ident">apply_mut</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">x</span>);
+            <span class="kw">let</span> <span class="ident">y</span> <span class="op">=</span> <span class="ident">tuple_1</span>.<span class="ident">apply_mut</span>(<span class="kw-2">&amp;mut</span> <span class="ident">x</span>);
             <span class="kw-2">*</span><span class="ident">y</span> <span class="op">=</span> <span class="number">5.0</span>;
         }
         <span class="macro">assert!</span>(<span class="ident">x</span>.<span class="number">1</span> <span class="op">==</span> <span class="number">5.0</span>);
@@ -985,7 +985,7 @@
 
         <span class="comment">// Apply the pointer to get at `b` and mutate it</span>
         {
-            <span class="kw">let</span> <span class="ident">y</span> <span class="op">=</span> <span class="ident">bar_y_b</span>.<span class="ident">apply_mut</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">x</span>);
+            <span class="kw">let</span> <span class="ident">y</span> <span class="op">=</span> <span class="ident">bar_y_b</span>.<span class="ident">apply_mut</span>(<span class="kw-2">&amp;mut</span> <span class="ident">x</span>);
             <span class="kw-2">*</span><span class="ident">y</span> <span class="op">=</span> <span class="number">42.0</span>;
         }
         <span class="macro">assert!</span>(<span class="ident">x</span>.<span class="ident">y</span>.<span class="ident">b</span> <span class="op">==</span> <span class="number">42.0</span>);

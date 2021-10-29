@@ -181,7 +181,7 @@
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AlertModel</span><span class="op">&lt;</span><span class="ident">Conf</span>: <span class="ident">AlertConfig</span><span class="op">&gt;</span> {
     <span class="ident">settings</span>: <span class="ident">AlertSettings</span>,
     <span class="ident">is_active</span>: <span class="ident">bool</span>,
-    <span class="ident">_conf_provider</span>: <span class="ident">PhantomData</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw">const</span> <span class="ident">Conf</span><span class="op">&gt;</span>,
+    <span class="ident">_conf_provider</span>: <span class="ident">PhantomData</span><span class="op">&lt;</span><span class="kw-2">*const</span> <span class="ident">Conf</span><span class="op">&gt;</span>,
 }
 
 <span class="doccomment">/// Messages that can be sent to the alert dialog component</span>
@@ -236,7 +236,7 @@
     }
 
     <span class="kw">fn</span> <span class="ident">update</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>,
+        <span class="kw-2">&amp;mut</span> <span class="self">self</span>,
         <span class="ident">msg</span>: <span class="ident">AlertMsg</span>,
         <span class="ident">_components</span>: <span class="kw-2">&amp;</span>(),
         <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AlertMsg</span><span class="op">&gt;</span>,

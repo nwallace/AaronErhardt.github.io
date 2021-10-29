@@ -231,9 +231,9 @@
     <span class="ident">gtk::glib::MainContext::ref_thread_default</span>().<span class="ident">spawn</span>(<span class="ident">f</span>);
 }
 
-<span class="doccomment">/// Send a message with a sender.</span>
+<span class="doccomment">/// A short macro for conveniently sending messages.</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// The sender is automatically cloned and the [`Result`] is unwrapped.</span>
+<span class="doccomment">/// The message is sent using the sender and the [`Result`] is unwrapped automatically.</span>
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="macro">macro_rules!</span> <span class="ident">send</span> {
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">sender</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">msg</span>:<span class="ident">expr</span>) =&gt; {

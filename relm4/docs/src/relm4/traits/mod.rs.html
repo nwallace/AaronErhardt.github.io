@@ -379,7 +379,7 @@
     <span class="doccomment">/// Components and sender don&#39;t need to be used but help you sending messages to</span>
     <span class="doccomment">/// your components or queuing messages for self.</span>
     <span class="kw">fn</span> <span class="ident">update</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>,
+        <span class="kw-2">&amp;mut</span> <span class="self">self</span>,
         <span class="ident">msg</span>: <span class="ident"><span class="self">Self</span>::Msg</span>,
         <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Components</span>,
         <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Msg</span><span class="op">&gt;</span>,
@@ -402,7 +402,7 @@
     <span class="doccomment">///</span>
     <span class="doccomment">/// The parent sender allows to send messages to the parent component which for also can be the main app.</span>
     <span class="kw">fn</span> <span class="ident">update</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>,
+        <span class="kw-2">&amp;mut</span> <span class="self">self</span>,
         <span class="ident">msg</span>: <span class="ident"><span class="self">Self</span>::Msg</span>,
         <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Components</span>,
         <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Msg</span><span class="op">&gt;</span>,
@@ -464,7 +464,7 @@
     <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident"><span class="self">Self</span>::Root</span>;
 
     <span class="doccomment">/// Update the view to represent the updated model.</span>
-    <span class="kw">fn</span> <span class="ident">view</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">model</span>: <span class="kw-2">&amp;</span><span class="ident">ModelType</span>, <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ModelType::Msg</span><span class="op">&gt;</span>);
+    <span class="kw">fn</span> <span class="ident">view</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">model</span>: <span class="kw-2">&amp;</span><span class="ident">ModelType</span>, <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ModelType::Msg</span><span class="op">&gt;</span>);
 }
 
 <span class="doccomment">/// Define how to initialize one or more components.</span>
@@ -573,7 +573,7 @@
 
     <span class="doccomment">/// Update the model. The parent_sender allows to send messages to the parent.</span>
     <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">update</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>,
+        <span class="kw-2">&amp;mut</span> <span class="self">self</span>,
         <span class="ident">msg</span>: <span class="ident"><span class="self">Self</span>::Msg</span>,
         <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Components</span>,
         <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Msg</span><span class="op">&gt;</span>,

@@ -1731,7 +1731,7 @@
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clear_error</span>() -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident"><span class="kw">crate</span>::Error</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">error</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
-        <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">ffi::g_clear_error</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>);
+        <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">ffi::g_clear_error</span>(<span class="kw-2">&amp;mut</span> <span class="ident">error</span>);
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(())
         } <span class="kw">else</span> {
@@ -2039,9 +2039,9 @@
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">error</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
         <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">ffi::g_file_get_contents</span>(
             <span class="ident">filename</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-            <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">contents</span>,
+            <span class="kw-2">&amp;mut</span> <span class="ident">contents</span>,
             <span class="ident">length</span>.<span class="ident">as_mut_ptr</span>(),
-            <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>,
+            <span class="kw-2">&amp;mut</span> <span class="ident">error</span>,
         );
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(<span class="ident">FromGlibContainer::from_glib_full_num</span>(
@@ -2061,7 +2061,7 @@
     <span class="kw">unsafe</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">name_used</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">error</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
-        <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi::g_file_open_tmp</span>(<span class="ident">tmpl</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">name_used</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>);
+        <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi::g_file_open_tmp</span>(<span class="ident">tmpl</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;mut</span> <span class="ident">name_used</span>, <span class="kw-2">&amp;mut</span> <span class="ident">error</span>);
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>((<span class="ident">ret</span>, <span class="ident">from_glib_full</span>(<span class="ident">name_used</span>)))
         } <span class="kw">else</span> {
@@ -2076,7 +2076,7 @@
 ) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">std::path::PathBuf</span>, <span class="ident"><span class="kw">crate</span>::Error</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">error</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
-        <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi::g_file_read_link</span>(<span class="ident">filename</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>);
+        <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi::g_file_read_link</span>(<span class="ident">filename</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;mut</span> <span class="ident">error</span>);
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(<span class="ident">from_glib_full</span>(<span class="ident">ret</span>))
         } <span class="kw">else</span> {
@@ -2097,7 +2097,7 @@
             <span class="ident">filename</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>,
             <span class="ident">contents</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
             <span class="ident">length</span>,
-            <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>,
+            <span class="kw-2">&amp;mut</span> <span class="ident">error</span>,
         );
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(())
@@ -2125,7 +2125,7 @@
             <span class="ident">length</span>,
             <span class="ident">flags</span>.<span class="ident">into_glib</span>(),
             <span class="ident">mode</span>,
-            <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>,
+            <span class="kw-2">&amp;mut</span> <span class="ident">error</span>,
         );
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(())
@@ -2202,7 +2202,7 @@
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">console_charset</span>() -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident"><span class="kw">crate</span>::GString</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">charset</span> <span class="op">=</span> <span class="ident">ptr::null</span>();
-        <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi::g_get_console_charset</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">charset</span>));
+        <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi::g_get_console_charset</span>(<span class="kw-2">&amp;mut</span> <span class="ident">charset</span>));
         <span class="kw">if</span> <span class="ident">ret</span> {
             <span class="prelude-val">Some</span>(<span class="ident">from_glib_none</span>(<span class="ident">charset</span>))
         } <span class="kw">else</span> {
@@ -2741,8 +2741,8 @@
         <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">ffi::g_shell_parse_argv</span>(
             <span class="ident">command_line</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>,
             <span class="ident">argcp</span>.<span class="ident">as_mut_ptr</span>(),
-            <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">argvp</span>,
-            <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>,
+            <span class="kw-2">&amp;mut</span> <span class="ident">argvp</span>,
+            <span class="kw-2">&amp;mut</span> <span class="ident">error</span>,
         );
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(<span class="ident">FromGlibContainer::from_glib_full_num</span>(
@@ -2770,7 +2770,7 @@
 ) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">std::ffi::OsString</span>, <span class="ident"><span class="kw">crate</span>::Error</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">error</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
-        <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi::g_shell_unquote</span>(<span class="ident">quoted_string</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>);
+        <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi::g_shell_unquote</span>(<span class="ident">quoted_string</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;mut</span> <span class="ident">error</span>);
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(<span class="ident">from_glib_full</span>(<span class="ident">ret</span>))
         } <span class="kw">else</span> {
@@ -2840,7 +2840,7 @@
     <span class="kw">let</span> <span class="ident">child_setup_data</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box_</span><span class="op">&lt;</span><span class="kw">dyn</span> <span class="ident">FnOnce</span>() <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box_::new</span>(<span class="ident">child_setup</span>);
     <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">child_setup_func</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">AsRef</span><span class="op">&lt;</span><span class="ident">std::path::Path</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="ident">user_data</span>: <span class="ident">ffi::gpointer</span>) {
         <span class="kw">let</span> <span class="ident">callback</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box_</span><span class="op">&lt;</span><span class="kw">dyn</span> <span class="ident">FnOnce</span>() <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="op">=</span>
-            <span class="ident">Box_::from_raw</span>(<span class="ident">user_data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw">_</span>);
+            <span class="ident">Box_::from_raw</span>(<span class="ident">user_data</span> <span class="kw">as</span> <span class="kw-2">*mut</span> <span class="kw">_</span>);
         <span class="kw">let</span> <span class="ident">callback</span> <span class="op">=</span> (<span class="kw-2">*</span><span class="ident">callback</span>).<span class="ident">expect</span>(<span class="string">&quot;cannot get closure...&quot;</span>);
         <span class="ident">callback</span>()
     }
@@ -2859,9 +2859,9 @@
             <span class="ident">envp</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
             <span class="ident">flags</span>.<span class="ident">into_glib</span>(),
             <span class="ident">child_setup</span>,
-            <span class="ident">Box_::into_raw</span>(<span class="ident">super_callback0</span>) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw">_</span>,
+            <span class="ident">Box_::into_raw</span>(<span class="ident">super_callback0</span>) <span class="kw">as</span> <span class="kw-2">*mut</span> <span class="kw">_</span>,
             <span class="ident">child_pid</span>.<span class="ident">as_mut_ptr</span>(),
-            <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>,
+            <span class="kw-2">&amp;mut</span> <span class="ident">error</span>,
         );
         <span class="kw">let</span> <span class="ident">child_pid</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">child_pid</span>.<span class="ident">assume_init</span>());
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
@@ -2876,7 +2876,7 @@
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">spawn_check_exit_status</span>(<span class="ident">exit_status</span>: <span class="ident">i32</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident"><span class="kw">crate</span>::Error</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">error</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
-        <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">ffi::g_spawn_check_exit_status</span>(<span class="ident">exit_status</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>);
+        <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">ffi::g_spawn_check_exit_status</span>(<span class="ident">exit_status</span>, <span class="kw-2">&amp;mut</span> <span class="ident">error</span>);
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(())
         } <span class="kw">else</span> {
@@ -2893,7 +2893,7 @@
 ) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident"><span class="kw">crate</span>::Error</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">error</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
-        <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">ffi::g_spawn_command_line_async</span>(<span class="ident">command_line</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">error</span>);
+        <span class="kw">let</span> <span class="kw">_</span> <span class="op">=</span> <span class="ident">ffi::g_spawn_command_line_async</span>(<span class="ident">command_line</span>.<span class="ident">as_ref</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;mut</span> <span class="ident">error</span>);
         <span class="kw">if</span> <span class="ident">error</span>.<span class="ident">is_null</span>() {
             <span class="prelude-val">Ok</span>(())
         } <span class="kw">else</span> {

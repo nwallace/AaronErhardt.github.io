@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;cairo-rs-0.14.7&#x2F;src&#x2F;patterns.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>patterns.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../cairo/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">  1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;cairo-rs-0.14.9&#x2F;src&#x2F;patterns.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>patterns.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../cairo/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">  1</span>
 <span id="2">  2</span>
 <span id="3">  3</span>
 <span id="4">  4</span>
@@ -556,11 +556,11 @@
 <span class="comment">// See https://cairographics.org/manual/bindings-patterns.html for more info</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Pattern</span> {
-    <span class="ident">pointer</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">cairo_pattern_t</span>,
+    <span class="ident">pointer</span>: <span class="kw-2">*mut</span> <span class="ident">cairo_pattern_t</span>,
 }
 
 <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">Pattern</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
         <span class="macro">write!</span>(<span class="ident">f</span>, <span class="string">&quot;Pattern&quot;</span>)
     }
 }
@@ -571,16 +571,16 @@
         <span class="ident">ffi::cairo_pattern_set_user_data</span>,
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_raw_none</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">cairo_pattern_t</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_raw_none</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">cairo_pattern_t</span> {
         <span class="self">self</span>.<span class="ident">pointer</span>
     }
 
-    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_raw_none</span>(<span class="ident">pointer</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">cairo_pattern_t</span>) -&gt; <span class="ident">Pattern</span> {
+    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_raw_none</span>(<span class="ident">pointer</span>: <span class="kw-2">*mut</span> <span class="ident">cairo_pattern_t</span>) -&gt; <span class="ident">Pattern</span> {
         <span class="ident">ffi::cairo_pattern_reference</span>(<span class="ident">pointer</span>);
         <span class="ident"><span class="self">Self</span>::from_raw_full</span>(<span class="ident">pointer</span>)
     }
 
-    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_raw_full</span>(<span class="ident">pointer</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">cairo_pattern_t</span>) -&gt; <span class="ident">Pattern</span> {
+    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_raw_full</span>(<span class="ident">pointer</span>: <span class="kw-2">*mut</span> <span class="ident">cairo_pattern_t</span>) -&gt; <span class="ident">Pattern</span> {
         <span class="self">Self</span> { <span class="ident">pointer</span> }
     }
 
@@ -649,7 +649,7 @@
 }
 
 <span class="kw">impl</span> <span class="ident">Drop</span> <span class="kw">for</span> <span class="ident">Pattern</span> {
-    <span class="kw">fn</span> <span class="ident">drop</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) {
+    <span class="kw">fn</span> <span class="ident">drop</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>) {
         <span class="kw">unsafe</span> { <span class="ident">ffi::cairo_pattern_destroy</span>(<span class="self">self</span>.<span class="ident">pointer</span>) }
     }
 }
@@ -690,7 +690,7 @@
         }
 
         <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">pattern_type</span> {
-            <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
+            <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
                 <span class="macro">write!</span>(<span class="ident">f</span>, <span class="macro">stringify!</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">pattern_type</span>))
             }
         }
@@ -733,10 +733,10 @@
 
             <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_pattern_get_rgba</span>(
                 <span class="self">self</span>.<span class="ident">pointer</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">red</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">green</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">blue</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">alpha</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">red</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">green</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">blue</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">alpha</span>,
             );
             <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
 
@@ -766,7 +766,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">color_stop_count</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">isize</span>, <span class="ident">Error</span><span class="op">&gt;</span> {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">count</span> <span class="op">=</span> <span class="number">0</span>;
-            <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_pattern_get_color_stop_count</span>(<span class="self">self</span>.<span class="ident">pointer</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">count</span>);
+            <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_pattern_get_color_stop_count</span>(<span class="self">self</span>.<span class="ident">pointer</span>, <span class="kw-2">&amp;mut</span> <span class="ident">count</span>);
 
             <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
             <span class="prelude-val">Ok</span>(<span class="ident">count</span> <span class="kw">as</span> <span class="ident">isize</span>)
@@ -786,11 +786,11 @@
             <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_pattern_get_color_stop_rgba</span>(
                 <span class="self">self</span>.<span class="ident">pointer</span>,
                 <span class="ident">index</span> <span class="kw">as</span> <span class="ident">c_int</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">offset</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">red</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">green</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">blue</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">alpha</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">offset</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">red</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">green</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">blue</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">alpha</span>,
             );
             <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
             <span class="prelude-val">Ok</span>((<span class="ident">offset</span>, <span class="ident">red</span>, <span class="ident">green</span>, <span class="ident">blue</span>, <span class="ident">alpha</span>))
@@ -812,7 +812,7 @@
         }
 
         <span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">gradient_type</span> {
-            <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
+            <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
                 <span class="macro">write!</span>(<span class="ident">f</span>, <span class="macro">stringify!</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">gradient_type</span>))
             }
         }
@@ -845,10 +845,10 @@
 
             <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_pattern_get_linear_points</span>(
                 <span class="self">self</span>.<span class="ident">pointer</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">x0</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">y0</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">x1</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">y1</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">x0</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">y0</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">x1</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">y1</span>,
             );
             <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
             <span class="prelude-val">Ok</span>((<span class="ident">x0</span>, <span class="ident">y0</span>, <span class="ident">x1</span>, <span class="ident">y1</span>))
@@ -881,12 +881,12 @@
 
             <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_pattern_get_radial_circles</span>(
                 <span class="self">self</span>.<span class="ident">pointer</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">x0</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">y0</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">r0</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">x1</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">y1</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">r1</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">x0</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">y0</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">r0</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">x1</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">y1</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">r1</span>,
             );
             <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
             <span class="prelude-val">Ok</span>((<span class="ident">x0</span>, <span class="ident">y0</span>, <span class="ident">r0</span>, <span class="ident">x1</span>, <span class="ident">y1</span>, <span class="ident">r1</span>))
@@ -910,8 +910,8 @@
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;get_surface&quot;</span>)]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">surface</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">Surface</span>, <span class="ident">Error</span><span class="op">&gt;</span> {
         <span class="kw">unsafe</span> {
-            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">surface_ptr</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">cairo_surface_t</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
-            <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_pattern_get_surface</span>(<span class="self">self</span>.<span class="ident">pointer</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">surface_ptr</span>);
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">surface_ptr</span>: <span class="kw-2">*mut</span> <span class="ident">cairo_surface_t</span> <span class="op">=</span> <span class="ident">ptr::null_mut</span>();
+            <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_pattern_get_surface</span>(<span class="self">self</span>.<span class="ident">pointer</span>, <span class="kw-2">&amp;mut</span> <span class="ident">surface_ptr</span>);
             <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
             <span class="prelude-val">Ok</span>(<span class="ident">Surface::from_raw_none</span>(<span class="ident">surface_ptr</span>))
         }
@@ -967,8 +967,8 @@
                 <span class="self">self</span>.<span class="ident">pointer</span>,
                 <span class="ident">patch_num</span> <span class="kw">as</span> <span class="ident">c_uint</span>,
                 <span class="ident">corner</span>.<span class="ident">into</span>(),
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">x</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">y</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">x</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">y</span>,
             )
         };
         <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
@@ -1026,10 +1026,10 @@
                 <span class="self">self</span>.<span class="ident">pointer</span>,
                 <span class="ident">patch_num</span> <span class="kw">as</span> <span class="ident">c_uint</span>,
                 <span class="ident">corner</span>.<span class="ident">into</span>(),
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">red</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">green</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">blue</span>,
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">alpha</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">red</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">green</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">blue</span>,
+                <span class="kw-2">&amp;mut</span> <span class="ident">alpha</span>,
             )
         };
         <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
@@ -1041,7 +1041,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">patch_count</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">usize</span>, <span class="ident">Error</span><span class="op">&gt;</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">count</span>: <span class="ident">c_uint</span> <span class="op">=</span> <span class="number">0</span>;
         <span class="kw">unsafe</span> {
-            <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_mesh_pattern_get_patch_count</span>(<span class="self">self</span>.<span class="ident">pointer</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">count</span>);
+            <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="ident">ffi::cairo_mesh_pattern_get_patch_count</span>(<span class="self">self</span>.<span class="ident">pointer</span>, <span class="kw-2">&amp;mut</span> <span class="ident">count</span>);
             <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;
         }
         <span class="prelude-val">Ok</span>(<span class="ident">count</span> <span class="kw">as</span> <span class="ident">usize</span>)
@@ -1057,7 +1057,7 @@
             ))
         };
         <span class="kw">let</span> <span class="ident">status</span> <span class="op">=</span> <span class="kw">unsafe</span> {
-            <span class="kw">let</span> <span class="ident">ptr</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi::cairo_path_t</span> <span class="op">=</span> <span class="ident">path</span>.<span class="ident">as_ptr</span>();
+            <span class="kw">let</span> <span class="ident">ptr</span>: <span class="kw-2">*mut</span> <span class="ident">ffi::cairo_path_t</span> <span class="op">=</span> <span class="ident">path</span>.<span class="ident">as_ptr</span>();
             (<span class="kw-2">*</span><span class="ident">ptr</span>).<span class="ident">status</span>
         };
         <span class="ident">status_to_result</span>(<span class="ident">status</span>)<span class="question-mark">?</span>;

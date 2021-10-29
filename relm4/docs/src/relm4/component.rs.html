@@ -195,6 +195,11 @@
 <span id="195">195</span>
 <span id="196">196</span>
 <span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
+<span id="202">202</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib</span>::{<span class="self">self</span>, <span class="ident">Sender</span>};
 
 <span class="kw">use</span> <span class="ident">std::cell</span>::{<span class="ident">RefCell</span>, <span class="ident">RefMut</span>};
@@ -281,6 +286,11 @@
     <span class="doccomment">/// This can be used by the parent to send messages to this component.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">sender</span>.<span class="ident">send</span>(<span class="ident">msg</span>)
+    }
+
+    <span class="doccomment">/// Get a sender to send messages to this component.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">sender</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span> {
+        <span class="self">self</span>.<span class="ident">sender</span>.<span class="ident">clone</span>()
     }
 
     <span class="doccomment">/// Returns the root widget of this component&#39;s widgets.</span>
