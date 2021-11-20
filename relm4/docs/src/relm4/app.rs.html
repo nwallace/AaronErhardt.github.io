@@ -146,12 +146,12 @@
 
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
 
-        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">widgets</span> <span class="op">=</span> <span class="ident">Model::Widgets::init_view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span>(), <span class="ident">sender</span>.<span class="ident">clone</span>());
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
+
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">widgets</span> <span class="op">=</span> <span class="ident">Model::Widgets::init_view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">components</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
         <span class="kw">let</span> <span class="ident">root</span> <span class="op">=</span> <span class="ident">widgets</span>.<span class="ident">root_widget</span>();
 
-        <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">widgets</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
-
-        <span class="ident">widgets</span>.<span class="ident">connect_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">components</span>);
+        <span class="ident">components</span>.<span class="ident">connect_parent</span>(<span class="kw-2">&amp;</span><span class="ident">widgets</span>);
 
         <span class="comment">// Initialize GTK</span>
         <span class="ident">app</span>.<span class="ident">connect_activate</span>(<span class="kw">move</span> <span class="op">|</span><span class="ident">app</span><span class="op">|</span> {

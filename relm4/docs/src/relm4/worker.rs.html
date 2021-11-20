@@ -193,6 +193,12 @@
 <span id="193">193</span>
 <span id="194">194</span>
 <span id="195">195</span>
+<span id="196">196</span>
+<span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib</span>::{<span class="self">self</span>, <span class="ident">Sender</span>};
 
 <span class="kw">use</span> <span class="ident">std::marker</span>::{<span class="ident">PhantomData</span>, <span class="ident">Send</span>};
@@ -232,8 +238,10 @@
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
 
-        <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span>(), <span class="ident">sender</span>.<span class="ident">clone</span>());
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
         <span class="kw">let</span> <span class="ident">cloned_sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
+
+        <span class="ident">components</span>.<span class="ident">connect_parent</span>(<span class="kw-2">&amp;</span>());
 
         {
             <span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">glib::MainContext::default</span>();
@@ -278,8 +286,10 @@
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
 
-        <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span>(), <span class="ident">sender</span>.<span class="ident">clone</span>());
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
         <span class="kw">let</span> <span class="ident">cloned_sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
+
+        <span class="ident">components</span>.<span class="ident">connect_parent</span>(<span class="kw-2">&amp;</span>());
 
         <span class="ident">std::thread::spawn</span>(<span class="kw">move</span> <span class="op">|</span><span class="op">|</span> {
             <span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">glib::MainContext::new</span>();
@@ -349,8 +359,10 @@
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
 
-        <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span>(), <span class="ident">sender</span>.<span class="ident">clone</span>());
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
         <span class="kw">let</span> <span class="ident">cloned_sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
+
+        <span class="ident">components</span>.<span class="ident">connect_parent</span>(<span class="kw-2">&amp;</span>());
 
         <span class="ident">std::thread::spawn</span>(<span class="kw">move</span> <span class="op">|</span><span class="op">|</span> {
             <span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">glib::MainContext::new</span>();

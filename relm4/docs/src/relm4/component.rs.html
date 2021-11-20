@@ -200,12 +200,25 @@
 <span id="200">200</span>
 <span id="201">201</span>
 <span id="202">202</span>
+<span id="203">203</span>
+<span id="204">204</span>
+<span id="205">205</span>
+<span id="206">206</span>
+<span id="207">207</span>
+<span id="208">208</span>
+<span id="209">209</span>
+<span id="210">210</span>
+<span id="211">211</span>
+<span id="212">212</span>
+<span id="213">213</span>
+<span id="214">214</span>
+<span id="215">215</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib</span>::{<span class="self">self</span>, <span class="ident">Sender</span>};
 
 <span class="kw">use</span> <span class="ident">std::cell</span>::{<span class="ident">RefCell</span>, <span class="ident">RefMut</span>};
-<span class="kw">use</span> <span class="ident">std::marker</span>::{<span class="ident">PhantomData</span>, <span class="ident">Send</span>};
+<span class="kw">use</span> <span class="ident">std::marker::PhantomData</span>;
 <span class="kw">use</span> <span class="ident">std::rc::Rc</span>;
-<span class="kw">use</span> <span class="ident">std::sync::mpsc::channel</span>;
+<span class="comment">// use std::sync::mpsc::channel;</span>
 
 <span class="kw">use</span> <span class="kw">crate</span>::{<span class="ident">ComponentUpdate</span>, <span class="ident">Components</span>, <span class="ident">Model</span> <span class="kw">as</span> <span class="ident">ModelTrait</span>, <span class="ident">Widgets</span> <span class="kw">as</span> <span class="ident">WidgetsTrait</span>};
 
@@ -224,9 +237,10 @@
 {
     <span class="ident">model</span>: <span class="ident">PhantomData</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span>,
     <span class="ident">parent_model</span>: <span class="ident">PhantomData</span><span class="op">&lt;</span><span class="ident">ParentModel</span><span class="op">&gt;</span>,
+    <span class="ident">components</span>: <span class="ident">Rc</span><span class="op">&lt;</span><span class="ident">RefCell</span><span class="op">&lt;</span><span class="ident">Model::Components</span><span class="op">&gt;</span><span class="op">&gt;</span>,
     <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span>,
     <span class="ident">root_widget</span>: <span class="op">&lt;</span><span class="ident">Model::Widgets</span> <span class="kw">as</span> <span class="ident">WidgetsTrait</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Root</span>,
-    <span class="ident">shared_widgets</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Rc</span><span class="op">&lt;</span><span class="ident">RefCell</span><span class="op">&lt;</span><span class="ident">Model::Widgets</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span>,
+    <span class="ident">shared_widgets</span>: <span class="ident">Rc</span><span class="op">&lt;</span><span class="ident">RefCell</span><span class="op">&lt;</span><span class="ident">Model::Widgets</span><span class="op">&gt;</span><span class="op">&gt;</span>,
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span> <span class="ident">RelmComponent</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span>
@@ -236,22 +250,19 @@
     <span class="ident">Model</span>: <span class="ident">ComponentUpdate</span><span class="op">&lt;</span><span class="ident">ParentModel</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
 {
     <span class="doccomment">/// Create a new [`RelmComponent`].</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(
-        <span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>,
-        <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel::Widgets</span>,
-        <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>,
-    ) -&gt; <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>, <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
+        <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
 
-        <span class="kw">let</span> <span class="ident">widgets</span> <span class="op">=</span> <span class="ident">Model::Widgets::init_view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">parent_widgets</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
+        <span class="kw">let</span> <span class="ident">widgets</span> <span class="op">=</span> <span class="ident">Model::Widgets::init_view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">components</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
         <span class="kw">let</span> <span class="ident">root_widget</span> <span class="op">=</span> <span class="ident">widgets</span>.<span class="ident">root_widget</span>();
 
-        <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">widgets</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
-        <span class="kw">let</span> <span class="ident">cloned_sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
+        <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Rc::new</span>(<span class="ident">RefCell::new</span>(<span class="ident">components</span>));
+        <span class="kw">let</span> <span class="ident">handler_components</span> <span class="op">=</span> <span class="ident">components</span>.<span class="ident">clone</span>();
 
-        <span class="ident">widgets</span>.<span class="ident">connect_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">components</span>);
+        <span class="kw">let</span> <span class="ident">cloned_sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
 
         <span class="kw">let</span> <span class="ident">shared_widgets</span> <span class="op">=</span> <span class="ident">Rc::new</span>(<span class="ident">RefCell::new</span>(<span class="ident">widgets</span>));
         <span class="kw">let</span> <span class="ident">handler_widgets</span> <span class="op">=</span> <span class="ident">shared_widgets</span>.<span class="ident">clone</span>();
@@ -263,7 +274,8 @@
                 .<span class="ident">expect</span>(<span class="string">&quot;Couldn&#39;t acquire glib main context&quot;</span>);
             <span class="comment">// The main loop executes the closure as soon as it receives the message</span>
             <span class="ident">receiver</span>.<span class="ident">attach</span>(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><span class="ident">context</span>), <span class="kw">move</span> <span class="op">|</span><span class="ident">msg</span>: <span class="ident">Model::Msg</span><span class="op">|</span> {
-                <span class="ident">model</span>.<span class="ident">update</span>(<span class="ident">msg</span>, <span class="kw-2">&amp;</span><span class="ident">components</span>, <span class="ident">sender</span>.<span class="ident">clone</span>(), <span class="ident">parent_sender</span>.<span class="ident">clone</span>());
+                <span class="kw">let</span> <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="ident">Model::Components</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">handler_components</span>.<span class="ident">borrow</span>();
+                <span class="ident">model</span>.<span class="ident">update</span>(<span class="ident">msg</span>, <span class="ident">components</span>, <span class="ident">sender</span>.<span class="ident">clone</span>(), <span class="ident">parent_sender</span>.<span class="ident">clone</span>());
                 <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Ok</span>(<span class="kw-2">ref</span> <span class="kw-2">mut</span> <span class="ident">widgets</span>) <span class="op">=</span> <span class="ident">handler_widgets</span>.<span class="ident">try_borrow_mut</span>() {
                     <span class="ident">widgets</span>.<span class="ident">view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
                 } <span class="kw">else</span> {
@@ -276,10 +288,21 @@
         <span class="ident">RelmComponent</span> {
             <span class="ident">model</span>: <span class="ident">PhantomData</span>,
             <span class="ident">parent_model</span>: <span class="ident">PhantomData</span>,
+            <span class="ident">components</span>,
             <span class="ident">sender</span>: <span class="ident">cloned_sender</span>,
             <span class="ident">root_widget</span>,
-            <span class="ident">shared_widgets</span>: <span class="prelude-val">Some</span>(<span class="ident">shared_widgets</span>),
+            <span class="ident">shared_widgets</span>,
         }
+    }
+
+    <span class="doccomment">/// Connect the widgets to the widgets of the parent widget.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">connect_parent</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel::Widgets</span>) {
+        <span class="self">self</span>.<span class="ident">widgets</span>()
+            .<span class="ident">expect</span>(<span class="string">&quot;TODO: ADD MESSAGE&quot;</span>)
+            .<span class="ident">connect_parent</span>(<span class="ident">parent_widgets</span>);
+        <span class="self">self</span>.<span class="ident">components</span>
+            .<span class="ident">borrow_mut</span>()
+            .<span class="ident">connect_parent</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">shared_widgets</span>.<span class="ident">borrow</span>());
     }
 
     <span class="doccomment">/// Send a message to this component.</span>
@@ -307,101 +330,104 @@
     <span class="doccomment">/// otherwise the view function can&#39;t be called as long you own the widgets (it uses [`RefCell`] internally).</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">widgets</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">RefMut</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span>, <span class="ident">Model::Widgets</span><span class="op">&gt;</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">shared_widgets</span>
-            .<span class="ident">as_ref</span>()
-            .<span class="ident">expect</span>(<span class="string">&quot;Component wasn&#39;t initialized correctly: shared widgets are missing&quot;</span>)
+            <span class="comment">// .as_ref()</span>
+            <span class="comment">// .expect(&quot;Component wasn&#39;t initialized correctly: shared widgets are missing&quot;)</span>
             .<span class="ident">try_borrow_mut</span>()
             .<span class="ident">ok</span>()
     }
 }
 
-<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span> <span class="ident">RelmComponent</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span>
-<span class="kw">where</span>
-    <span class="ident">Model</span>: <span class="ident">ComponentUpdate</span><span class="op">&lt;</span><span class="ident">ParentModel</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">Send</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
-    <span class="ident">Model::Widgets</span>: <span class="ident">WidgetsTrait</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
-    <span class="ident">Model::Components</span>: <span class="ident">Send</span>,
-    <span class="ident">Model::Msg</span>: <span class="ident">Send</span>,
-    <span class="ident">ParentModel</span>: <span class="ident">ModelTrait</span>,
-    <span class="ident">ParentModel::Msg</span>: <span class="ident">Send</span>,
+<span class="comment">/*
+impl&lt;Model, ParentModel&gt; RelmComponent&lt;Model, ParentModel&gt;
+where
+    Model: ComponentUpdate&lt;ParentModel&gt; + Send + &#39;static,
+    Model::Widgets: WidgetsTrait&lt;Model, ParentModel&gt; + &#39;static,
+    Model::Components: Send + Sync,
+    Model::Msg: Send,
+    ParentModel: ModelTrait,
+    ParentModel::Msg: Send,
 {
-    <span class="doccomment">/// Create a new [`RelmComponent`] that runs the [`ComponentUpdate::update`] function in another thread.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Because GTK4 widgets are neither [`Send`] nor [`Sync`] we must still run the [`Widgets::view`](WidgetsTrait::view) function</span>
-    <span class="doccomment">/// on the main thread.</span>
-    <span class="doccomment">/// Also the model needs to be sent between threads to run the update and view functions.</span>
-    <span class="doccomment">/// So if you look want to send a lot of messages to self using a [`RelmWorker`](crate::RelmWorker) will perform better.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">with_new_thread</span>(
-        <span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel</span>,
-        <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="ident">ParentModel::Widgets</span>,
-        <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">ParentModel::Msg</span><span class="op">&gt;</span>,
-    ) -&gt; <span class="self">Self</span> {
-        <span class="kw">let</span> (<span class="ident">global_sender</span>, <span class="ident">global_receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
-        <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
+    /// Create a new [`RelmComponent`] that runs the [`ComponentUpdate::update`] function in another thread.
+    ///
+    /// Because GTK4 widgets are neither [`Send`] nor [`Sync`] we must still run the [`Widgets::view`](WidgetsTrait::view) function
+    /// on the main thread.
+    /// Also the model needs to be sent between threads to run the update and view functions.
+    /// So if you look want to send a lot of messages to self using a [`RelmWorker`](crate::RelmWorker) will perform better.
+    pub fn with_new_thread(
+        parent_model: &amp;ParentModel,
+        parent_sender: Sender&lt;ParentModel::Msg&gt;,
+    ) -&gt; Self {
+        let (global_sender, global_receiver) = glib::MainContext::channel(glib::PRIORITY_DEFAULT);
+        let (sender, receiver) = glib::MainContext::channel(glib::PRIORITY_DEFAULT);
 
-        <span class="kw">let</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">Model::init_model</span>(<span class="ident">parent_model</span>);
+        let model = Model::init_model(parent_model);
+        let mut components = Model::Components::init_components(&amp;model, sender.clone());
 
-        <span class="kw">let</span> <span class="ident">widgets</span> <span class="op">=</span> <span class="ident">Model::Widgets::init_view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">parent_widgets</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
-        <span class="kw">let</span> <span class="ident">root_widget</span> <span class="op">=</span> <span class="ident">widgets</span>.<span class="ident">root_widget</span>();
+        let widgets = Model::Widgets::init_view(&amp;model, &amp;components, sender.clone());
+        let root_widget = widgets.root_widget();
 
-        <span class="kw">let</span> <span class="ident">components</span> <span class="op">=</span> <span class="ident">Model::Components::init_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">widgets</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
-        <span class="kw">let</span> <span class="ident">cloned_sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
+        //components.connect_parent(&amp;widgets);
+        let components = Arc::new(components);
 
-        <span class="ident">widgets</span>.<span class="ident">connect_components</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="kw-2">&amp;</span><span class="ident">components</span>);
+        let cloned_sender = sender.clone();
 
-        <span class="kw">let</span> <span class="ident">shared_widgets</span> <span class="op">=</span> <span class="ident">Rc::new</span>(<span class="ident">RefCell::new</span>(<span class="ident">widgets</span>));
-        <span class="kw">let</span> <span class="ident">handler_widgets</span> <span class="op">=</span> <span class="ident">shared_widgets</span>.<span class="ident">clone</span>();
+        let shared_widgets = Rc::new(RefCell::new(widgets));
+        let handler_widgets = shared_widgets.clone();
 
-        <span class="kw">let</span> <span class="ident">update_sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
-        <span class="kw">let</span> <span class="ident">view_sender</span> <span class="op">=</span> <span class="ident">sender</span>;
+        let update_sender = sender.clone();
+        let view_sender = sender;
 
-        <span class="kw">let</span> (<span class="ident">model_tx</span>, <span class="ident">model_rx</span>) <span class="op">=</span> <span class="ident">channel</span>();
-        <span class="ident">model_tx</span>.<span class="ident">send</span>(<span class="ident">model</span>).<span class="ident">unwrap</span>();
+        let (model_tx, model_rx) = channel();
+        model_tx.send(model).unwrap();
 
-        <span class="ident">std::thread::spawn</span>(<span class="kw">move</span> <span class="op">|</span><span class="op">|</span> {
-            <span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">glib::MainContext::new</span>();
-            <span class="ident">context</span>.<span class="ident">push_thread_default</span>();
-            <span class="kw">let</span> <span class="ident">_guard</span> <span class="op">=</span> <span class="ident">context</span>
-                .<span class="ident">acquire</span>()
-                .<span class="ident">expect</span>(<span class="string">&quot;Couldn&#39;t acquire glib main context&quot;</span>);
+        std::thread::spawn(move || {
+            let context = glib::MainContext::new();
+            context.push_thread_default();
+            let _guard = context
+                .acquire()
+                .expect(&quot;Couldn&#39;t acquire glib main context&quot;);
 
-            <span class="comment">// The main loop executes the closure as soon as it receives the message</span>
-            <span class="ident">receiver</span>.<span class="ident">attach</span>(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><span class="ident">context</span>), <span class="kw">move</span> <span class="op">|</span><span class="ident">msg</span>: <span class="ident">Model::Msg</span><span class="op">|</span> {
-                <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span>: <span class="ident">Model</span> <span class="op">=</span> <span class="ident">model_rx</span>.<span class="ident">recv</span>().<span class="ident">unwrap</span>();
-                <span class="ident">model</span>.<span class="ident">update</span>(
-                    <span class="ident">msg</span>,
-                    <span class="kw-2">&amp;</span><span class="ident">components</span>,
-                    <span class="ident">update_sender</span>.<span class="ident">clone</span>(),
-                    <span class="ident">parent_sender</span>.<span class="ident">clone</span>(),
+            // The main loop executes the closure as soon as it receives the message
+            receiver.attach(Some(&amp;context), move |msg: Model::Msg| {
+                let mut model: Model = model_rx.recv().unwrap();
+                model.update(
+                    msg,
+                    &amp;components,
+                    update_sender.clone(),
+                    parent_sender.clone(),
                 );
-                <span class="ident">global_sender</span>.<span class="ident">send</span>(<span class="ident">model</span>).<span class="ident">unwrap</span>();
-                <span class="ident">glib::Continue</span>(<span class="bool-val">true</span>)
+                global_sender.send(model).unwrap();
+                glib::Continue(true)
             });
 
-            <span class="kw">let</span> <span class="ident">main_loop</span> <span class="op">=</span> <span class="ident">glib::MainLoop::new</span>(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><span class="ident">context</span>), <span class="bool-val">true</span>);
-            <span class="ident">main_loop</span>.<span class="ident">run</span>();
-            <span class="ident">context</span>.<span class="ident">pop_thread_default</span>();
+            let main_loop = glib::MainLoop::new(Some(&amp;context), true);
+            main_loop.run();
+            context.pop_thread_default();
         });
 
-        <span class="kw">let</span> <span class="ident">global_context</span> <span class="op">=</span> <span class="ident">glib::MainContext::default</span>();
-        <span class="kw">let</span> <span class="ident">_global_guard</span> <span class="op">=</span> <span class="ident">global_context</span>.<span class="ident">acquire</span>().<span class="ident">unwrap</span>();
-        <span class="ident">global_receiver</span>.<span class="ident">attach</span>(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><span class="ident">global_context</span>), <span class="kw">move</span> <span class="op">|</span><span class="ident">model</span>: <span class="ident">Model</span><span class="op">|</span> {
-            <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Ok</span>(<span class="kw-2">ref</span> <span class="kw-2">mut</span> <span class="ident">widgets</span>) <span class="op">=</span> <span class="ident">handler_widgets</span>.<span class="ident">try_borrow_mut</span>() {
-                <span class="ident">widgets</span>.<span class="ident">view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">view_sender</span>.<span class="ident">clone</span>());
-            } <span class="kw">else</span> {
-                <span class="macro">log::warn!</span>(<span class="string">&quot;Could not mutably borrow the widgets. Make sure you drop all references to widgets after use&quot;</span>);
+        let global_context = glib::MainContext::default();
+        let _global_guard = global_context.acquire().unwrap();
+        global_receiver.attach(Some(&amp;global_context), move |model: Model| {
+            if let Ok(ref mut widgets) = handler_widgets.try_borrow_mut() {
+                widgets.view(&amp;model, view_sender.clone());
+            } else {
+                log::warn!(&quot;Could not mutably borrow the widgets. Make sure you drop all references to widgets after use&quot;);
             }
-            <span class="ident">model_tx</span>.<span class="ident">send</span>(<span class="ident">model</span>).<span class="ident">unwrap</span>();
-            <span class="ident">glib::Continue</span>(<span class="bool-val">true</span>)
+            model_tx.send(model).unwrap();
+            glib::Continue(true)
         });
 
-        <span class="ident">RelmComponent</span> {
-            <span class="ident">model</span>: <span class="ident">PhantomData</span>,
-            <span class="ident">parent_model</span>: <span class="ident">PhantomData</span>,
-            <span class="ident">sender</span>: <span class="ident">cloned_sender</span>,
-            <span class="ident">root_widget</span>,
-            <span class="ident">shared_widgets</span>: <span class="prelude-val">Some</span>(<span class="ident">shared_widgets</span>),
+        RelmComponent {
+            model: PhantomData,
+            parent_model: PhantomData,
+            components,
+            sender: cloned_sender,
+            root_widget,
+            shared_widgets,
         }
     }
 }
+*/</span>
 </code></pre></div>
 </section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
     <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>

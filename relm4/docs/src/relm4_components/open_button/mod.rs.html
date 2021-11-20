@@ -300,6 +300,13 @@
 <span id="300">300</span>
 <span id="301">301</span>
 <span id="302">302</span>
+<span id="303">303</span>
+<span id="304">304</span>
+<span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Reusable and easily configurable open button dialog component.</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! **[Example implementation](https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/open_button.rs)**</span>
@@ -518,12 +525,15 @@
 {
     <span class="kw">fn</span> <span class="ident">init_components</span>(
         <span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">OpenButtonModel</span><span class="op">&lt;</span><span class="ident">Conf</span><span class="op">&gt;</span>,
-        <span class="ident">parent_widget</span>: <span class="kw-2">&amp;</span><span class="ident">OpenButtonWidgets</span>,
         <span class="ident">parent_sender</span>: <span class="ident">relm4::Sender</span><span class="op">&lt;</span><span class="ident">OpenButtonMsg</span><span class="op">&gt;</span>,
     ) -&gt; <span class="self">Self</span> {
         <span class="self">Self</span> {
-            <span class="ident">dialog</span>: <span class="ident">RelmComponent::new</span>(<span class="ident">parent_model</span>, <span class="ident">parent_widget</span>, <span class="ident">parent_sender</span>),
+            <span class="ident">dialog</span>: <span class="ident">RelmComponent::new</span>(<span class="ident">parent_model</span>, <span class="ident">parent_sender</span>),
         }
+    }
+
+    <span class="kw">fn</span> <span class="ident">connect_parent</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="ident">OpenButtonWidgets</span>) {
+        <span class="self">self</span>.<span class="ident">dialog</span>.<span class="ident">connect_parent</span>(<span class="ident">parent_widgets</span>);
     }
 }
 
@@ -555,7 +565,7 @@
     }
 
     <span class="kw">fn</span> <span class="ident">post_init</span>() {
-        <span class="kw">let</span> <span class="ident">parent_window</span> <span class="op">=</span> <span class="ident">parent_widgets</span>.<span class="ident">parent_window</span>();
+        <span class="kw">let</span> <span class="ident">parent_window</span> <span class="op">=</span> <span class="prelude-val">None</span>; <span class="comment">//parent_widgets.parent_window();</span>
 
         <span class="kw">let</span> (<span class="ident">view</span>, <span class="ident">popover</span>, <span class="ident">scroll_window</span>) <span class="op">=</span> <span class="kw">if</span> <span class="ident">model</span>.<span class="ident">config</span>.<span class="ident">recently_opened_files</span>.<span class="ident">is_some</span>() {
             <span class="kw">let</span> <span class="ident">drop_down_button</span> <span class="op">=</span> <span class="ident">gtk::MenuButton::new</span>();
@@ -584,6 +594,10 @@
         } <span class="kw">else</span> {
             (<span class="prelude-val">None</span>, <span class="prelude-val">None</span>, <span class="prelude-val">None</span>)
         };
+    }
+
+    <span class="kw">fn</span> <span class="ident">pre_connect_parent</span>() {
+        <span class="self">self</span>.<span class="ident">parent_window</span> <span class="op">=</span> <span class="ident">parent_widgets</span>.<span class="ident">parent_window</span>();
     }
 
     <span class="kw">fn</span> <span class="ident">manual_view</span>() {

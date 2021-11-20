@@ -270,7 +270,7 @@
 {
     <span class="macro">view!</span> {
         <span class="ident">dialog</span> <span class="op">=</span> <span class="ident">gtk::MessageDialog</span> {
-            <span class="ident">set_transient_for</span>: <span class="ident">parent_widgets</span>.<span class="ident">parent_window</span>().<span class="ident">as_ref</span>(),
+            <span class="ident">set_transient_for</span>: <span class="macro">parent!</span>(<span class="ident">parent_widgets</span>.<span class="ident">parent_window</span>().<span class="ident">as_ref</span>()),
             <span class="ident">set_message_type</span>: <span class="ident">gtk::MessageType::Question</span>,
             <span class="ident">set_visible</span>: <span class="macro">watch!</span>(<span class="ident">model</span>.<span class="ident">is_active</span>),
             <span class="ident">connect_response</span>(<span class="ident">sender</span>) =&gt; <span class="kw">move</span> <span class="op">|</span><span class="kw">_</span>, <span class="ident">response</span><span class="op">|</span> {

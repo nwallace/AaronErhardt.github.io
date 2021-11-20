@@ -99,21 +99,8 @@
 <span id="99"> 99</span>
 <span id="100">100</span>
 <span id="101">101</span>
-<span id="102">102</span>
-<span id="103">103</span>
-<span id="104">104</span>
-<span id="105">105</span>
-<span id="106">106</span>
-<span id="107">107</span>
-<span id="108">108</span>
-<span id="109">109</span>
-<span id="110">110</span>
-<span id="111">111</span>
-</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2::Span</span> <span class="kw">as</span> <span class="ident">Span2</span>;
-<span class="kw">use</span> <span class="ident">proc_macro2::TokenStream</span> <span class="kw">as</span> <span class="ident">TokenStream2</span>;
-<span class="kw">use</span> <span class="ident">syn</span>::{
-    <span class="ident">punctuated::Punctuated</span>, <span class="ident">spanned::Spanned</span>, <span class="ident">token</span>, <span class="ident">Expr</span>, <span class="ident">ExprClosure</span>, <span class="ident">Generics</span>, <span class="ident">Ident</span>, <span class="ident">Lit</span>, <span class="ident">Path</span>,
-};
+</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2::TokenStream</span> <span class="kw">as</span> <span class="ident">TokenStream2</span>;
+<span class="kw">use</span> <span class="ident">syn</span>::{<span class="ident">punctuated::Punctuated</span>, <span class="ident">token</span>, <span class="ident">Expr</span>, <span class="ident">ExprClosure</span>, <span class="ident">Generics</span>, <span class="ident">Ident</span>, <span class="ident">Lit</span>, <span class="ident">Path</span>};
 
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::args::Args</span>;
 
@@ -122,15 +109,26 @@
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Default</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">TokenStreams</span> {
+    <span class="doccomment">/// The tokens for the struct fields -&gt; name: Type,</span>
     <span class="kw">pub</span> <span class="ident">struct_fields</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The tokens initializing the widgets.</span>
     <span class="kw">pub</span> <span class="ident">init_widgets</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The tokens connecting widgets.</span>
+    <span class="kw">pub</span> <span class="ident">connect_widgets</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The tokens initializing the properties.</span>
     <span class="kw">pub</span> <span class="ident">init_properties</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The tokens for the returned struct fields -&gt; name,</span>
     <span class="kw">pub</span> <span class="ident">return_fields</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The view tokens (watch! macro)</span>
     <span class="kw">pub</span> <span class="ident">view</span>: <span class="ident">TokenStream2</span>,
-    <span class="kw">pub</span> <span class="ident">connect</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The view tokens (track! macro)</span>
     <span class="kw">pub</span> <span class="ident">track</span>: <span class="ident">TokenStream2</span>,
-    <span class="kw">pub</span> <span class="ident">components</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The tokens for connecting events.</span>
+    <span class="kw">pub</span> <span class="ident">connect</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The tokens for connecting events to components.</span>
     <span class="kw">pub</span> <span class="ident">connect_components</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The tokens for using the parent stream.</span>
+    <span class="kw">pub</span> <span class="ident">parent</span>: <span class="ident">TokenStream2</span>,
 }
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
@@ -144,7 +142,7 @@
     <span class="ident">Expr</span>(<span class="ident">Expr</span>),
     <span class="ident">Value</span>(<span class="ident">Lit</span>),
     <span class="ident">Track</span>(<span class="ident">Tracker</span>),
-    <span class="ident">Component</span>(<span class="ident">Expr</span>),
+    <span class="ident">Parent</span>(<span class="ident">Expr</span>),
     <span class="ident">Args</span>(<span class="ident">Args</span><span class="op">&lt;</span><span class="ident">Expr</span><span class="op">&gt;</span>),
     <span class="ident">Connect</span>(<span class="ident">ExprClosure</span>),
     <span class="ident">ConnectComponent</span>(<span class="ident">ExprClosure</span>),
@@ -197,28 +195,10 @@
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
 <span class="kw">pub</span>(<span class="kw">super</span>) <span class="kw">struct</span> <span class="ident">ReturnedWidget</span> {
-    <span class="kw">pub</span> <span class="ident">name</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Ident</span><span class="op">&gt;</span>,
+    <span class="kw">pub</span> <span class="ident">name</span>: <span class="ident">Ident</span>,
     <span class="kw">pub</span> <span class="ident">ty</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Path</span><span class="op">&gt;</span>,
     <span class="kw">pub</span> <span class="ident">properties</span>: <span class="ident">Properties</span>,
     <span class="kw">pub</span> <span class="ident">is_optional</span>: <span class="ident">bool</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">Spanned</span> <span class="kw">for</span> <span class="ident">PropertyName</span> {
-    <span class="kw">fn</span> <span class="ident">span</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">Span2</span> {
-        <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident">PropertyName::Ident</span>(<span class="ident">ident</span>) =&gt; <span class="ident">ident</span>.<span class="ident">span</span>(),
-            <span class="ident">PropertyName::Path</span>(<span class="ident">path</span>) =&gt; <span class="ident">path</span>.<span class="ident">span</span>(),
-        }
-    }
-}
-
-<span class="kw">impl</span> <span class="ident">Spanned</span> <span class="kw">for</span> <span class="ident">WidgetFunc</span> {
-    <span class="kw">fn</span> <span class="ident">span</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">Span2</span> {
-        <span class="self">self</span>.<span class="ident">path_segments</span>
-            .<span class="ident">first</span>()
-            .<span class="ident">expect</span>(<span class="string">&quot;Expected path segments in WidgetFunc&quot;</span>)
-            .<span class="ident">span</span>()
-    }
 }
 </code></pre></div>
 </section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="relm4_macros" data-search-index-js="../../../search-index.js" data-search-js="../../../search.js"></div>

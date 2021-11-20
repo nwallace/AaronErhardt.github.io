@@ -303,7 +303,7 @@
             <span class="ident">set_cancel_label</span>: <span class="prelude-val">Some</span>(<span class="ident">model</span>.<span class="ident">settings</span>.<span class="ident">cancel_label</span>),
             <span class="ident">set_accept_label</span>: <span class="prelude-val">Some</span>(<span class="ident">model</span>.<span class="ident">settings</span>.<span class="ident">accept_label</span>),
             <span class="ident">set_modal</span>: <span class="ident">model</span>.<span class="ident">settings</span>.<span class="ident">is_modal</span>,
-            <span class="ident">set_transient_for</span>: <span class="ident">parent_widgets</span>.<span class="ident">parent_window</span>().<span class="ident">as_ref</span>(),
+            <span class="ident">set_transient_for</span>: <span class="macro">parent!</span>(<span class="ident">parent_widgets</span>.<span class="ident">parent_window</span>().<span class="ident">as_ref</span>()),
             <span class="ident">connect_response</span> =&gt; <span class="kw">move</span> <span class="op">|</span><span class="ident">dialog</span>, <span class="ident">res_ty</span><span class="op">|</span> {
                 <span class="kw">match</span> <span class="ident">res_ty</span> {
                     <span class="ident">gtk::ResponseType::Accept</span> =&gt; {
