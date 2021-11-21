@@ -220,31 +220,23 @@
 <span id="220">220</span>
 <span id="221">221</span>
 <span id="222">222</span>
-<span id="223">223</span>
-<span id="224">224</span>
-<span id="225">225</span>
-<span id="226">226</span>
-<span id="227">227</span>
-<span id="228">228</span>
-<span id="229">229</span>
-<span id="230">230</span>
-<span id="231">231</span>
-<span id="232">232</span>
-<span id="233">233</span>
-<span id="234">234</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib</span>::{<span class="self">self</span>, <span class="ident">Sender</span>};
+<span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">IsA</span>, <span class="ident">WidgetExt</span>};
 
 <span class="kw">use</span> <span class="ident">std</span>::{
-    <span class="ident">cell</span>::{<span class="ident">BorrowError</span>, <span class="ident">BorrowMutError</span>, <span class="ident">Ref</span>, <span class="ident">RefCell</span>, <span class="ident">RefMut</span>}, 
-    <span class="ident">fmt</span>::{<span class="ident">Debug</span>, <span class="ident">Display</span>}, 
-    <span class="ident">rc::Rc</span>
+    <span class="ident">cell</span>::{<span class="ident">BorrowError</span>, <span class="ident">BorrowMutError</span>, <span class="ident">Ref</span>, <span class="ident">RefCell</span>, <span class="ident">RefMut</span>},
+    <span class="ident">fmt</span>::{<span class="ident">Debug</span>, <span class="ident">Display</span>},
+    <span class="ident">rc::Rc</span>,
 };
 
+<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::WidgetPlus</span>;
+
 <span class="doccomment">/// Errors which might get returned from [`MicroComponent::update_view`] method</span>
-<span class="doccomment">/// </span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// Both [`std::fmt::Display`] and [`std::fmt::Debug`] are implemented for this</span>
 <span class="doccomment">/// enum so if you just would like to show an error you don&#39;t need to do the</span>
 <span class="doccomment">/// matching.</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">MicroComponentError</span> {
     <span class="doccomment">/// Error returned if borrow failed</span>
     <span class="ident">Borrow</span>(<span class="ident">BorrowError</span>),
@@ -267,55 +259,28 @@
 }
 
 <span class="doccomment">/// Formats [`MicroComponentError`] for empty format `{}`</span>
-<span class="doccomment">/// </span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// This allows you to print errors without doing `matching` or `if let` statements</span>
 <span class="kw">impl</span> <span class="ident">Display</span> <span class="kw">for</span> <span class="ident">MicroComponentError</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">std::fmt::Formatter</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span><span class="op">&gt;</span>) -&gt; <span class="ident">std::fmt::Result</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident">MicroComponentError::Borrow</span>(<span class="ident">err</span>) =&gt; {
-                <span class="ident">f</span>.<span class="ident">write_fmt</span>(<span class="macro">format_args!</span>(<span class="string">&quot;{}&quot;</span>, <span class="ident">err</span>))
-            },
-            <span class="ident">MicroComponentError::BorrowMut</span>(<span class="ident">err</span>) =&gt; {
-                <span class="ident">f</span>.<span class="ident">write_fmt</span>(<span class="macro">format_args!</span>(<span class="string">&quot;{}&quot;</span>, <span class="ident">err</span>))
-            }
+            <span class="ident">MicroComponentError::Borrow</span>(<span class="ident">err</span>) =&gt; <span class="ident">f</span>.<span class="ident">write_fmt</span>(<span class="macro">format_args!</span>(<span class="string">&quot;{}&quot;</span>, <span class="ident">err</span>)),
+            <span class="ident">MicroComponentError::BorrowMut</span>(<span class="ident">err</span>) =&gt; <span class="ident">f</span>.<span class="ident">write_fmt</span>(<span class="macro">format_args!</span>(<span class="string">&quot;{}&quot;</span>, <span class="ident">err</span>)),
         }
     }
 }
 
-<span class="doccomment">/// Formats [`MicroComponentError`] for debug format `{:?}`</span>
-<span class="doccomment">/// </span>
-<span class="doccomment">/// This allows you to print errors without doing `matching` or `if let` statements</span>
-<span class="kw">impl</span> <span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">MicroComponentError</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">std::fmt::Formatter</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span><span class="op">&gt;</span>) -&gt; <span class="ident">std::fmt::Result</span> {
-        <span class="kw">match</span> <span class="self">self</span> {
-            <span class="ident">MicroComponentError::Borrow</span>(<span class="ident">err</span>) =&gt; {
-                <span class="ident">f</span>.<span class="ident">debug_tuple</span>(<span class="string">&quot;MicroComponentError::Borrow&quot;</span>)
-                    .<span class="ident">field</span>(<span class="ident">err</span>)
-                    .<span class="ident">finish</span>()
-            },
-            <span class="ident">MicroComponentError::BorrowMut</span>(<span class="ident">err</span>) =&gt; {
-                <span class="ident">f</span>.<span class="ident">debug_tuple</span>(<span class="string">&quot;MicroComponentError::BorrowMut&quot;</span>)
-                    .<span class="ident">field</span>(<span class="ident">err</span>)
-                    .<span class="ident">finish</span>()
-            }
-        }
-    }
-}
-
-<span class="doccomment">/// MicroComponent is a small component that lives in their parents model, can be modified from their </span>
+<span class="doccomment">/// MicroComponent is a small component that lives in their parents model, can be modified from their</span>
 <span class="doccomment">/// parents model but at the same time have their own widgets and update function</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">MicroComponent</span><span class="op">&lt;</span><span class="ident">Model</span>: <span class="ident">MicroModel</span><span class="op">&gt;</span> {
     <span class="ident">model</span>: <span class="ident">Rc</span><span class="op">&lt;</span><span class="ident">RefCell</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span><span class="op">&gt;</span>,
     <span class="ident">widgets</span>: <span class="ident">Rc</span><span class="op">&lt;</span><span class="ident">RefCell</span><span class="op">&lt;</span><span class="ident">Model::Widgets</span><span class="op">&gt;</span><span class="op">&gt;</span>,
     <span class="ident">root_widget</span>: <span class="op">&lt;</span><span class="ident">Model::Widgets</span> <span class="kw">as</span> <span class="ident">MicroWidgets</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Root</span>,
-    <span class="doccomment">/// for additional data such as senders to other components</span>
-    <span class="comment">// data: Rc&lt;RefCell&lt;Model::Data&gt;&gt;, </span>
     <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span>,
 }
 
-
-<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span> <span class="ident">MicroComponent</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span> 
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span> <span class="ident">MicroComponent</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span>
 <span class="kw">where</span>
     <span class="ident">Model::Widgets</span>: <span class="ident">MicroWidgets</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
     <span class="ident">Model::Msg</span>: <span class="lifetime">&#39;static</span>,
@@ -323,18 +288,16 @@
     <span class="ident">Model</span>: <span class="ident">MicroModel</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
 {
     <span class="doccomment">/// Creates new [`MicroComponent`]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">model</span>: <span class="ident">Model</span>, <span class="ident">data</span>: <span class="ident">Model::Data</span>) -&gt; <span class="self">Self</span> { 
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">model</span>: <span class="ident">Model</span>, <span class="ident">data</span>: <span class="ident">Model::Data</span>) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
         <span class="kw">let</span> <span class="ident">widgets</span> <span class="op">=</span> <span class="ident">Model::Widgets::init_view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
         <span class="kw">let</span> <span class="ident">root_widget</span> <span class="op">=</span> <span class="ident">widgets</span>.<span class="ident">root_widget</span>();
-        
+
         <span class="kw">let</span> <span class="ident">cloned_sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
         <span class="kw">let</span> <span class="ident">shared_widgets</span> <span class="op">=</span> <span class="ident">Rc::new</span>(<span class="ident">RefCell::new</span>(<span class="ident">widgets</span>));
         <span class="kw">let</span> <span class="ident">handler_widgets</span> <span class="op">=</span> <span class="ident">shared_widgets</span>.<span class="ident">clone</span>();
         <span class="kw">let</span> <span class="ident">shared_model</span> <span class="op">=</span> <span class="ident">Rc::new</span>(<span class="ident">RefCell::new</span>(<span class="ident">model</span>));
         <span class="kw">let</span> <span class="ident">handler_model</span> <span class="op">=</span> <span class="ident">shared_model</span>.<span class="ident">clone</span>();
-        <span class="comment">// let shared_data = Rc::new(RefCell::new(data));</span>
-        <span class="comment">// let handler_data = shared_data.clone();</span>
 
         {
             <span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">glib::MainContext::default</span>();
@@ -344,19 +307,13 @@
             <span class="comment">// The main loop executes the closure as soon as it receives the message</span>
             <span class="ident">receiver</span>.<span class="ident">attach</span>(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><span class="ident">context</span>), <span class="kw">move</span> <span class="op">|</span><span class="ident">msg</span>: <span class="ident">Model::Msg</span><span class="op">|</span> {
                 <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Ok</span>(<span class="kw-2">ref</span> <span class="kw-2">mut</span> <span class="ident">model</span>) <span class="op">=</span> <span class="ident">handler_model</span>.<span class="ident">try_borrow_mut</span>() {
-                    <span class="comment">// if let Ok(ref data) = handler_data.try_borrow() {</span>
-                        <span class="ident">model</span>.<span class="ident">update</span>(<span class="ident">msg</span>, <span class="kw-2">&amp;</span><span class="ident">data</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
-                        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Ok</span>(<span class="kw-2">ref</span> <span class="kw-2">mut</span> <span class="ident">widgets</span>) <span class="op">=</span> <span class="ident">handler_widgets</span>.<span class="ident">try_borrow_mut</span>() {
-                            <span class="ident">widgets</span>.<span class="ident">view</span>(<span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
-                        } <span class="kw">else</span> {
-                            <span class="macro">log::warn!</span>(<span class="string">&quot;Could not mutably borrow the widgets. Make sure you drop all references to widgets after use&quot;</span>);
-                        }
-                    <span class="comment">// }</span>
-                    <span class="comment">// else {</span>
-                    <span class="comment">//     log::warn!(&quot;Could not borrow the data. Make sure you drop all references to data after use&quot;);</span>
-                    <span class="comment">// }</span>
-                }
-                <span class="kw">else</span> {
+                    <span class="ident">model</span>.<span class="ident">update</span>(<span class="ident">msg</span>, <span class="kw-2">&amp;</span><span class="ident">data</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
+                    <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Ok</span>(<span class="kw-2">ref</span> <span class="kw-2">mut</span> <span class="ident">widgets</span>) <span class="op">=</span> <span class="ident">handler_widgets</span>.<span class="ident">try_borrow_mut</span>() {
+                        <span class="ident">widgets</span>.<span class="ident">view</span>(<span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
+                    } <span class="kw">else</span> {
+                        <span class="macro">log::warn!</span>(<span class="string">&quot;Could not mutably borrow the widgets. Make sure you drop all references to widgets after use&quot;</span>);
+                    }
+                } <span class="kw">else</span> {
                     <span class="macro">log::warn!</span>(<span class="string">&quot;Could not mutably borrow the model. Make sure you drop all references to model after use&quot;</span>)
                 }
 
@@ -368,59 +325,52 @@
             <span class="ident">model</span>: <span class="ident">shared_model</span>,
             <span class="ident">widgets</span>: <span class="ident">shared_widgets</span>,
             <span class="ident">root_widget</span>,
-            <span class="comment">// data: shared_data,</span>
             <span class="ident">sender</span>: <span class="ident">cloned_sender</span>,
         }
     }
 
     <span class="doccomment">/// Updates a view of this [`MicroComponent`]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">update_view</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">MicroComponentError</span><span class="op">&gt;</span> { 
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">update_view</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">MicroComponentError</span><span class="op">&gt;</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">widgets</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">widgets</span>()<span class="question-mark">?</span>;
         <span class="kw">let</span> <span class="ident">model</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">model</span>()<span class="question-mark">?</span>;
 
         <span class="ident">widgets</span>.<span class="ident">view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="self">self</span>.<span class="ident">sender</span>());
 
-        <span class="ident">Result::Ok</span>( () )
+        <span class="ident">Result::Ok</span>(())
     }
 
     <span class="doccomment">/// Returns model for this [`MicroComponent`]</span>
-    <span class="doccomment">/// </span>
+    <span class="doccomment">///</span>
     <span class="doccomment">/// Use this carefully and make sure reference is dropped. It&#39;s using [`RefCell`] internally.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">model</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">Ref</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span>, <span class="ident">Model</span><span class="op">&gt;</span>, <span class="ident">BorrowError</span><span class="op">&gt;</span> {
-        <span class="self">self</span>.<span class="ident">model</span>
-            .<span class="ident">as_ref</span>()
-            .<span class="ident">try_borrow</span>()
+        <span class="self">self</span>.<span class="ident">model</span>.<span class="ident">as_ref</span>().<span class="ident">try_borrow</span>()
     }
 
     <span class="doccomment">/// Returns mutable reference to model for this [`MicroComponent`]</span>
-    <span class="doccomment">/// </span>
+    <span class="doccomment">///</span>
     <span class="doccomment">/// Use this carefully and make sure reference is dropped. It&#39;s using [`RefCell`] internally.</span>
     <span class="doccomment">/// If you don&#39;t drop the reference any call to [`MicroComponent::update_view`] will fail.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">model_mut</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">RefMut</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span>, <span class="ident">Model</span><span class="op">&gt;</span>, <span class="ident">BorrowMutError</span><span class="op">&gt;</span> { 
-        <span class="self">self</span>.<span class="ident">model</span>
-            .<span class="ident">as_ref</span>()
-            .<span class="ident">try_borrow_mut</span>()
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">model_mut</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">RefMut</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span>, <span class="ident">Model</span><span class="op">&gt;</span>, <span class="ident">BorrowMutError</span><span class="op">&gt;</span> {
+        <span class="self">self</span>.<span class="ident">model</span>.<span class="ident">as_ref</span>().<span class="ident">try_borrow_mut</span>()
     }
 
     <span class="doccomment">/// Returns a mutable reference to the widgets of this [`MicroComponent`] or will fail</span>
     <span class="doccomment">/// when you already have a reference to the widgets</span>
-    <span class="doccomment">/// </span>
+    <span class="doccomment">///</span>
     <span class="doccomment">/// Use this carefully and make sure the reference to the widgets is dropped after use because</span>
     <span class="doccomment">/// otherwise the view function can&#39;t be called as long you own the widgets (it uses [`RefCell`] internally).</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">widgets</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">RefMut</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span>, <span class="ident">Model::Widgets</span><span class="op">&gt;</span>, <span class="ident">BorrowMutError</span><span class="op">&gt;</span> { 
-        <span class="self">self</span>.<span class="ident">widgets</span>
-            .<span class="ident">as_ref</span>()
-            .<span class="ident">try_borrow_mut</span>()
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">widgets</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">RefMut</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span>, <span class="ident">Model::Widgets</span><span class="op">&gt;</span>, <span class="ident">BorrowMutError</span><span class="op">&gt;</span> {
+        <span class="self">self</span>.<span class="ident">widgets</span>.<span class="ident">as_ref</span>().<span class="ident">try_borrow_mut</span>()
     }
 
     <span class="doccomment">/// Send a message to this [`MicroComponent`].</span>
     <span class="doccomment">/// This can be used by the parent to send messages to this.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> { 
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">send</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">Model::Msg</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">std::sync::mpsc::SendError</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">sender</span>.<span class="ident">send</span>(<span class="ident">msg</span>)
     }
 
     <span class="doccomment">/// Get a sender to send messages to this [`MicroComponent`].</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">sender</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span> { 
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">sender</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">Model::Msg</span><span class="op">&gt;</span> {
         <span class="self">self</span>.<span class="ident">sender</span>.<span class="ident">clone</span>()
     }
 
@@ -430,9 +380,35 @@
     }
 }
 
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span> <span class="ident">MicroComponent</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span>
+<span class="kw">where</span>
+    <span class="ident">Model::Widgets</span>: <span class="ident">MicroWidgets</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
+    <span class="ident">Model::Msg</span>: <span class="lifetime">&#39;static</span>,
+    <span class="ident">Model::Data</span>: <span class="lifetime">&#39;static</span>,
+    <span class="ident">Model</span>: <span class="ident">MicroModel</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
+    <span class="op">&lt;</span><span class="ident">Model::Widgets</span> <span class="kw">as</span> <span class="ident">MicroWidgets</span><span class="op">&lt;</span><span class="ident">Model</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Root</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">gtk::Widget</span><span class="op">&gt;</span>,
+{
+    <span class="doccomment">/// Returns [`true`] of the root widget is connected to a parent widget.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_connected</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">bool</span> {
+        <span class="self">self</span>.<span class="ident">root_widget</span>.<span class="ident">parent</span>().<span class="ident">is_some</span>()
+    }
+
+    <span class="doccomment">/// Tries to diconnect the root widget from its parent widget.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Returns [`true`] of the root widget was disconnected from the parent widget</span>
+    <span class="doccomment">/// and [`false`] if nothing was done.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">try_diconnect_root</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">bool</span> {
+        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">parent</span>) <span class="op">=</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">root_widget</span>.<span class="ident">parent</span>() {
+            <span class="ident">parent</span>.<span class="ident">try_remove</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">root_widget</span>)
+        } <span class="kw">else</span> {
+            <span class="bool-val">false</span>
+        }
+    }
+}
+
 <span class="doccomment">/// Trait that defines the types associated with model used by [`MicroComponent`]</span>
-<span class="doccomment">/// </span>
-<span class="doccomment">/// It can be anything that stores application state. </span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// It can be anything that stores application state.</span>
 <span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">MicroModel</span> {
     <span class="doccomment">/// The message type that defines the messages that can be sent to modify the model.</span>
     <span class="kw">type</span> <span class="ident">Msg</span>: <span class="lifetime">&#39;static</span>;
@@ -442,9 +418,9 @@
     <span class="doccomment">/// If you don&#39;t want any widgets (for example for defining a worker), just use `()` here.</span>
     <span class="kw">type</span> <span class="ident">Widgets</span>: <span class="ident">MicroWidgets</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">Debug</span>;
 
-    <span class="doccomment">/// Data that can be used to store senders and other stuff according to the needs of the user </span>
+    <span class="doccomment">/// Data that can be used to store senders and other stuff according to the needs of the user</span>
     <span class="kw">type</span> <span class="ident">Data</span>;
-    
+
     <span class="doccomment">/// Updates the model.</span>
     <span class="doccomment">/// Typically a `match` statement is used to process the message.</span>
     <span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">msg</span>: <span class="ident"><span class="self">Self</span>::Msg</span>, <span class="ident">data</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Data</span>, <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Msg</span><span class="op">&gt;</span>);
@@ -454,7 +430,7 @@
 <span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">MicroWidgets</span><span class="op">&lt;</span><span class="ident">Model</span>: <span class="ident">MicroModel</span> <span class="op">+</span> <span class="question-mark">?</span><span class="ident">Sized</span><span class="op">&gt;</span> {
     <span class="doccomment">/// The root represents the first widget that all other widgets of this [`MicroComponent`] are attached to.</span>
     <span class="kw">type</span> <span class="ident">Root</span>: <span class="ident">std::fmt::Debug</span>;
-    
+
     <span class="doccomment">/// Initialize the UI.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// Use the sender to connect UI events and send messages back to modify the model.</span>
@@ -465,7 +441,8 @@
 
     <span class="doccomment">/// Return a clone of the root widget. This is typically a GTK4 widget.</span>
     <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident"><span class="self">Self</span>::Root</span>;
-}</code></pre></div>
+}
+</code></pre></div>
 </section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
     <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>
 </body></html>
