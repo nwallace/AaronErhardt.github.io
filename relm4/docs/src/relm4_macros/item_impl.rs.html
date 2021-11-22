@@ -68,6 +68,7 @@
 <span id="68">68</span>
 <span id="69">69</span>
 <span id="70">70</span>
+<span id="71">71</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2</span>::{<span class="ident">Span</span>, <span class="ident">TokenStream</span> <span class="kw">as</span> <span class="ident">TokenStream2</span>};
 <span class="kw">use</span> <span class="ident">quote::quote</span>;
 <span class="kw">use</span> <span class="ident">syn</span>::{
@@ -116,6 +117,7 @@
 
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">macros</span> <span class="op">=</span> <span class="ident">Vec::new</span>();
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">funcs</span> <span class="op">=</span> <span class="ident">Vec::new</span>();
+
         <span class="kw">while</span> <span class="op">!</span><span class="ident">braced_input</span>.<span class="ident">is_empty</span>() {
             <span class="kw">if</span> <span class="ident">braced_input</span>.<span class="ident">peek2</span>(<span class="macro">Token!</span>[<span class="op">!</span>]) {
                 <span class="ident">macros</span>.<span class="ident">push</span>(<span class="ident">braced_input</span>.<span class="ident">parse</span>()<span class="question-mark">?</span>);

@@ -282,6 +282,12 @@
 <span id="282">282</span>
 <span id="283">283</span>
 <span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
+<span id="287">287</span>
+<span id="288">288</span>
+<span id="289">289</span>
+<span id="290">290</span>
 </pre><pre class="rust"><code><span class="attribute">#![<span class="ident">feature</span>(<span class="ident">doc_cfg</span>)]</span>
 <span class="attribute">#![<span class="ident">doc</span>(
     <span class="ident">html_logo_url</span> <span class="op">=</span> <span class="string">&quot;https://raw.githubusercontent.com/AaronErhardt/relm4/main/assets/Relm_logo.svg&quot;</span>
@@ -302,6 +308,7 @@
 <span class="kw">mod</span> <span class="ident">funcs</span>;
 <span class="kw">mod</span> <span class="ident">item_impl</span>;
 <span class="kw">mod</span> <span class="ident">macros</span>;
+<span class="kw">mod</span> <span class="ident">menu</span>;
 <span class="kw">mod</span> <span class="ident">types</span>;
 <span class="kw">mod</span> <span class="ident">util</span>;
 <span class="kw">mod</span> <span class="ident">widgets</span>;
@@ -457,10 +464,14 @@
     <span class="kw">let</span> <span class="ident">Macros</span> {
         <span class="ident">widgets</span>,
         <span class="ident">additional_fields</span>,
+        <span class="ident">menus</span>,
     } <span class="op">=</span> <span class="kw">match</span> <span class="ident">Macros::new</span>(<span class="kw-2">&amp;</span><span class="ident">data</span>.<span class="ident">macros</span>, <span class="ident">data</span>.<span class="ident">brace_span</span>.<span class="ident">unwrap</span>()) {
         <span class="prelude-val">Ok</span>(<span class="ident">macros</span>) =&gt; <span class="ident">macros</span>,
         <span class="prelude-val">Err</span>(<span class="ident">err</span>) =&gt; <span class="kw">return</span> <span class="ident">TokenStream::from</span>(<span class="ident">err</span>.<span class="ident">to_compile_error</span>()),
     };
+
+    <span class="comment">// Generate menu tokens</span>
+    <span class="kw">let</span> <span class="ident">menus_stream</span> <span class="op">=</span> <span class="ident">menus</span>.<span class="ident">map</span>(<span class="op">|</span><span class="ident">m</span><span class="op">|</span> <span class="ident">m</span>.<span class="ident">menus_stream</span>(<span class="kw-2">&amp;</span><span class="ident">relm4_path</span>));
 
     <span class="kw">let</span> <span class="ident">Funcs</span> {
         <span class="ident">pre_init</span>,
@@ -523,6 +534,7 @@
                 #<span class="ident">pre_init</span>
                 #<span class="ident">init_widgets</span>
                 #<span class="ident">connect_widgets</span>
+                #<span class="ident">menus_stream</span>
                 #<span class="ident">init_properties</span>
                 #<span class="ident">connect</span>
                 #<span class="ident">connect_components</span>
