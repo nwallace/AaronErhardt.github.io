@@ -1,5 +1,5 @@
 var N = null;var sourcesIndex = {};
-sourcesIndex["anyhow"] = {"name":"","files":["backtrace.rs","chain.rs","context.rs","error.rs","fmt.rs","kind.rs","lib.rs","macros.rs","ptr.rs","wrapper.rs"]};
+sourcesIndex["anyhow"] = {"name":"","files":["backtrace.rs","chain.rs","context.rs","ensure.rs","error.rs","fmt.rs","kind.rs","lib.rs","macros.rs","ptr.rs","wrapper.rs"]};
 sourcesIndex["async_trait"] = {"name":"","files":["args.rs","expand.rs","lib.rs","lifetime.rs","parse.rs","receiver.rs"]};
 sourcesIndex["bitflags"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cairo"] = {"name":"","dirs":[{"name":"font","files":["font_face.rs","font_options.rs","mod.rs","scaled_font.rs"]}],"files":["constants.rs","context.rs","device.rs","enums.rs","error.rs","image_surface.rs","lib.rs","matrices.rs","paths.rs","patterns.rs","recording_surface.rs","rectangle.rs","rectangle_int.rs","region.rs","surface.rs","surface_macros.rs","user_data.rs","utils.rs"]};
