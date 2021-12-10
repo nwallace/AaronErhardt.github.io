@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;libadwaita-sys-0.1.0-alpha-6&#x2F;src&#x2F;lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;libadwaita-sys-0.1.0-beta-1&#x2F;src&#x2F;lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a class="sidebar-logo" href='../../libadwaita_sys/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container rust-logo" href='../../libadwaita_sys/index.html'><img src='../../rust-logo.png' alt='logo'></a><nav class="sub"><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
 <span id="2">   2</span>
 <span id="3">   3</span>
@@ -2155,9 +2155,359 @@
 <span id="2154">2154</span>
 <span id="2155">2155</span>
 <span id="2156">2156</span>
-</pre><pre class="rust"><code><span class="comment">// Generated by gir (https://github.com/gtk-rs/gir @ f64f90a)</span>
+<span id="2157">2157</span>
+<span id="2158">2158</span>
+<span id="2159">2159</span>
+<span id="2160">2160</span>
+<span id="2161">2161</span>
+<span id="2162">2162</span>
+<span id="2163">2163</span>
+<span id="2164">2164</span>
+<span id="2165">2165</span>
+<span id="2166">2166</span>
+<span id="2167">2167</span>
+<span id="2168">2168</span>
+<span id="2169">2169</span>
+<span id="2170">2170</span>
+<span id="2171">2171</span>
+<span id="2172">2172</span>
+<span id="2173">2173</span>
+<span id="2174">2174</span>
+<span id="2175">2175</span>
+<span id="2176">2176</span>
+<span id="2177">2177</span>
+<span id="2178">2178</span>
+<span id="2179">2179</span>
+<span id="2180">2180</span>
+<span id="2181">2181</span>
+<span id="2182">2182</span>
+<span id="2183">2183</span>
+<span id="2184">2184</span>
+<span id="2185">2185</span>
+<span id="2186">2186</span>
+<span id="2187">2187</span>
+<span id="2188">2188</span>
+<span id="2189">2189</span>
+<span id="2190">2190</span>
+<span id="2191">2191</span>
+<span id="2192">2192</span>
+<span id="2193">2193</span>
+<span id="2194">2194</span>
+<span id="2195">2195</span>
+<span id="2196">2196</span>
+<span id="2197">2197</span>
+<span id="2198">2198</span>
+<span id="2199">2199</span>
+<span id="2200">2200</span>
+<span id="2201">2201</span>
+<span id="2202">2202</span>
+<span id="2203">2203</span>
+<span id="2204">2204</span>
+<span id="2205">2205</span>
+<span id="2206">2206</span>
+<span id="2207">2207</span>
+<span id="2208">2208</span>
+<span id="2209">2209</span>
+<span id="2210">2210</span>
+<span id="2211">2211</span>
+<span id="2212">2212</span>
+<span id="2213">2213</span>
+<span id="2214">2214</span>
+<span id="2215">2215</span>
+<span id="2216">2216</span>
+<span id="2217">2217</span>
+<span id="2218">2218</span>
+<span id="2219">2219</span>
+<span id="2220">2220</span>
+<span id="2221">2221</span>
+<span id="2222">2222</span>
+<span id="2223">2223</span>
+<span id="2224">2224</span>
+<span id="2225">2225</span>
+<span id="2226">2226</span>
+<span id="2227">2227</span>
+<span id="2228">2228</span>
+<span id="2229">2229</span>
+<span id="2230">2230</span>
+<span id="2231">2231</span>
+<span id="2232">2232</span>
+<span id="2233">2233</span>
+<span id="2234">2234</span>
+<span id="2235">2235</span>
+<span id="2236">2236</span>
+<span id="2237">2237</span>
+<span id="2238">2238</span>
+<span id="2239">2239</span>
+<span id="2240">2240</span>
+<span id="2241">2241</span>
+<span id="2242">2242</span>
+<span id="2243">2243</span>
+<span id="2244">2244</span>
+<span id="2245">2245</span>
+<span id="2246">2246</span>
+<span id="2247">2247</span>
+<span id="2248">2248</span>
+<span id="2249">2249</span>
+<span id="2250">2250</span>
+<span id="2251">2251</span>
+<span id="2252">2252</span>
+<span id="2253">2253</span>
+<span id="2254">2254</span>
+<span id="2255">2255</span>
+<span id="2256">2256</span>
+<span id="2257">2257</span>
+<span id="2258">2258</span>
+<span id="2259">2259</span>
+<span id="2260">2260</span>
+<span id="2261">2261</span>
+<span id="2262">2262</span>
+<span id="2263">2263</span>
+<span id="2264">2264</span>
+<span id="2265">2265</span>
+<span id="2266">2266</span>
+<span id="2267">2267</span>
+<span id="2268">2268</span>
+<span id="2269">2269</span>
+<span id="2270">2270</span>
+<span id="2271">2271</span>
+<span id="2272">2272</span>
+<span id="2273">2273</span>
+<span id="2274">2274</span>
+<span id="2275">2275</span>
+<span id="2276">2276</span>
+<span id="2277">2277</span>
+<span id="2278">2278</span>
+<span id="2279">2279</span>
+<span id="2280">2280</span>
+<span id="2281">2281</span>
+<span id="2282">2282</span>
+<span id="2283">2283</span>
+<span id="2284">2284</span>
+<span id="2285">2285</span>
+<span id="2286">2286</span>
+<span id="2287">2287</span>
+<span id="2288">2288</span>
+<span id="2289">2289</span>
+<span id="2290">2290</span>
+<span id="2291">2291</span>
+<span id="2292">2292</span>
+<span id="2293">2293</span>
+<span id="2294">2294</span>
+<span id="2295">2295</span>
+<span id="2296">2296</span>
+<span id="2297">2297</span>
+<span id="2298">2298</span>
+<span id="2299">2299</span>
+<span id="2300">2300</span>
+<span id="2301">2301</span>
+<span id="2302">2302</span>
+<span id="2303">2303</span>
+<span id="2304">2304</span>
+<span id="2305">2305</span>
+<span id="2306">2306</span>
+<span id="2307">2307</span>
+<span id="2308">2308</span>
+<span id="2309">2309</span>
+<span id="2310">2310</span>
+<span id="2311">2311</span>
+<span id="2312">2312</span>
+<span id="2313">2313</span>
+<span id="2314">2314</span>
+<span id="2315">2315</span>
+<span id="2316">2316</span>
+<span id="2317">2317</span>
+<span id="2318">2318</span>
+<span id="2319">2319</span>
+<span id="2320">2320</span>
+<span id="2321">2321</span>
+<span id="2322">2322</span>
+<span id="2323">2323</span>
+<span id="2324">2324</span>
+<span id="2325">2325</span>
+<span id="2326">2326</span>
+<span id="2327">2327</span>
+<span id="2328">2328</span>
+<span id="2329">2329</span>
+<span id="2330">2330</span>
+<span id="2331">2331</span>
+<span id="2332">2332</span>
+<span id="2333">2333</span>
+<span id="2334">2334</span>
+<span id="2335">2335</span>
+<span id="2336">2336</span>
+<span id="2337">2337</span>
+<span id="2338">2338</span>
+<span id="2339">2339</span>
+<span id="2340">2340</span>
+<span id="2341">2341</span>
+<span id="2342">2342</span>
+<span id="2343">2343</span>
+<span id="2344">2344</span>
+<span id="2345">2345</span>
+<span id="2346">2346</span>
+<span id="2347">2347</span>
+<span id="2348">2348</span>
+<span id="2349">2349</span>
+<span id="2350">2350</span>
+<span id="2351">2351</span>
+<span id="2352">2352</span>
+<span id="2353">2353</span>
+<span id="2354">2354</span>
+<span id="2355">2355</span>
+<span id="2356">2356</span>
+<span id="2357">2357</span>
+<span id="2358">2358</span>
+<span id="2359">2359</span>
+<span id="2360">2360</span>
+<span id="2361">2361</span>
+<span id="2362">2362</span>
+<span id="2363">2363</span>
+<span id="2364">2364</span>
+<span id="2365">2365</span>
+<span id="2366">2366</span>
+<span id="2367">2367</span>
+<span id="2368">2368</span>
+<span id="2369">2369</span>
+<span id="2370">2370</span>
+<span id="2371">2371</span>
+<span id="2372">2372</span>
+<span id="2373">2373</span>
+<span id="2374">2374</span>
+<span id="2375">2375</span>
+<span id="2376">2376</span>
+<span id="2377">2377</span>
+<span id="2378">2378</span>
+<span id="2379">2379</span>
+<span id="2380">2380</span>
+<span id="2381">2381</span>
+<span id="2382">2382</span>
+<span id="2383">2383</span>
+<span id="2384">2384</span>
+<span id="2385">2385</span>
+<span id="2386">2386</span>
+<span id="2387">2387</span>
+<span id="2388">2388</span>
+<span id="2389">2389</span>
+<span id="2390">2390</span>
+<span id="2391">2391</span>
+<span id="2392">2392</span>
+<span id="2393">2393</span>
+<span id="2394">2394</span>
+<span id="2395">2395</span>
+<span id="2396">2396</span>
+<span id="2397">2397</span>
+<span id="2398">2398</span>
+<span id="2399">2399</span>
+<span id="2400">2400</span>
+<span id="2401">2401</span>
+<span id="2402">2402</span>
+<span id="2403">2403</span>
+<span id="2404">2404</span>
+<span id="2405">2405</span>
+<span id="2406">2406</span>
+<span id="2407">2407</span>
+<span id="2408">2408</span>
+<span id="2409">2409</span>
+<span id="2410">2410</span>
+<span id="2411">2411</span>
+<span id="2412">2412</span>
+<span id="2413">2413</span>
+<span id="2414">2414</span>
+<span id="2415">2415</span>
+<span id="2416">2416</span>
+<span id="2417">2417</span>
+<span id="2418">2418</span>
+<span id="2419">2419</span>
+<span id="2420">2420</span>
+<span id="2421">2421</span>
+<span id="2422">2422</span>
+<span id="2423">2423</span>
+<span id="2424">2424</span>
+<span id="2425">2425</span>
+<span id="2426">2426</span>
+<span id="2427">2427</span>
+<span id="2428">2428</span>
+<span id="2429">2429</span>
+<span id="2430">2430</span>
+<span id="2431">2431</span>
+<span id="2432">2432</span>
+<span id="2433">2433</span>
+<span id="2434">2434</span>
+<span id="2435">2435</span>
+<span id="2436">2436</span>
+<span id="2437">2437</span>
+<span id="2438">2438</span>
+<span id="2439">2439</span>
+<span id="2440">2440</span>
+<span id="2441">2441</span>
+<span id="2442">2442</span>
+<span id="2443">2443</span>
+<span id="2444">2444</span>
+<span id="2445">2445</span>
+<span id="2446">2446</span>
+<span id="2447">2447</span>
+<span id="2448">2448</span>
+<span id="2449">2449</span>
+<span id="2450">2450</span>
+<span id="2451">2451</span>
+<span id="2452">2452</span>
+<span id="2453">2453</span>
+<span id="2454">2454</span>
+<span id="2455">2455</span>
+<span id="2456">2456</span>
+<span id="2457">2457</span>
+<span id="2458">2458</span>
+<span id="2459">2459</span>
+<span id="2460">2460</span>
+<span id="2461">2461</span>
+<span id="2462">2462</span>
+<span id="2463">2463</span>
+<span id="2464">2464</span>
+<span id="2465">2465</span>
+<span id="2466">2466</span>
+<span id="2467">2467</span>
+<span id="2468">2468</span>
+<span id="2469">2469</span>
+<span id="2470">2470</span>
+<span id="2471">2471</span>
+<span id="2472">2472</span>
+<span id="2473">2473</span>
+<span id="2474">2474</span>
+<span id="2475">2475</span>
+<span id="2476">2476</span>
+<span id="2477">2477</span>
+<span id="2478">2478</span>
+<span id="2479">2479</span>
+<span id="2480">2480</span>
+<span id="2481">2481</span>
+<span id="2482">2482</span>
+<span id="2483">2483</span>
+<span id="2484">2484</span>
+<span id="2485">2485</span>
+<span id="2486">2486</span>
+<span id="2487">2487</span>
+<span id="2488">2488</span>
+<span id="2489">2489</span>
+<span id="2490">2490</span>
+<span id="2491">2491</span>
+<span id="2492">2492</span>
+<span id="2493">2493</span>
+<span id="2494">2494</span>
+<span id="2495">2495</span>
+<span id="2496">2496</span>
+<span id="2497">2497</span>
+<span id="2498">2498</span>
+<span id="2499">2499</span>
+<span id="2500">2500</span>
+<span id="2501">2501</span>
+<span id="2502">2502</span>
+<span id="2503">2503</span>
+<span id="2504">2504</span>
+<span id="2505">2505</span>
+<span id="2506">2506</span>
+</pre><pre class="rust"><code><span class="comment">// Generated by gir (https://github.com/gtk-rs/gir @ 8891a2f2c34b)</span>
 <span class="comment">// from</span>
-<span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git @ 8e47c67)</span>
+<span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git @ 46f24acbe4c2)</span>
 <span class="comment">// DO NOT EDIT</span>
 
 <span class="attribute">#![<span class="ident">allow</span>(<span class="ident">non_camel_case_types</span>, <span class="ident">non_upper_case_globals</span>, <span class="ident">non_snake_case</span>)]</span>
@@ -2169,13 +2519,11 @@
 )]</span>
 <span class="attribute">#![<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">feature</span>(<span class="ident">doc_cfg</span>))]</span>
 
-<span class="kw">use</span> <span class="ident">gdk_pixbuf_sys</span> <span class="kw">as</span> <span class="ident">gdk_pixbuf</span>;
 <span class="kw">use</span> <span class="ident">gdk_sys</span> <span class="kw">as</span> <span class="ident">gdk</span>;
 <span class="kw">use</span> <span class="ident">gio_sys</span> <span class="kw">as</span> <span class="ident">gio</span>;
 <span class="kw">use</span> <span class="ident">glib_sys</span> <span class="kw">as</span> <span class="ident">glib</span>;
 <span class="kw">use</span> <span class="ident">gobject_sys</span> <span class="kw">as</span> <span class="ident">gobject</span>;
 <span class="kw">use</span> <span class="ident">gtk_sys</span> <span class="kw">as</span> <span class="ident">gtk</span>;
-<span class="kw">use</span> <span class="ident">pango_sys</span> <span class="kw">as</span> <span class="ident">pango</span>;
 
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
 <span class="kw">use</span> <span class="ident">libc</span>::{
@@ -2187,6 +2535,12 @@
 <span class="kw">use</span> <span class="ident">glib</span>::{<span class="ident">gboolean</span>, <span class="ident">gconstpointer</span>, <span class="ident">gpointer</span>, <span class="ident">GType</span>};
 
 <span class="comment">// Enums</span>
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwAnimationState</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_ANIMATION_IDLE</span>: <span class="ident">AdwAnimationState</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_ANIMATION_PAUSED</span>: <span class="ident">AdwAnimationState</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_ANIMATION_PLAYING</span>: <span class="ident">AdwAnimationState</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_ANIMATION_FINISHED</span>: <span class="ident">AdwAnimationState</span> <span class="op">=</span> <span class="number">3</span>;
+
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwCenteringPolicy</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_CENTERING_POLICY_LOOSE</span>: <span class="ident">AdwCenteringPolicy</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_CENTERING_POLICY_STRICT</span>: <span class="ident">AdwCenteringPolicy</span> <span class="op">=</span> <span class="number">1</span>;
@@ -2197,6 +2551,39 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_COLOR_SCHEME_PREFER_LIGHT</span>: <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="number">2</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_COLOR_SCHEME_PREFER_DARK</span>: <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="number">3</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_COLOR_SCHEME_FORCE_DARK</span>: <span class="ident">AdwColorScheme</span> <span class="op">=</span> <span class="number">4</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_LINEAR</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_QUAD</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_QUAD</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_QUAD</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_CUBIC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_CUBIC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">5</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_CUBIC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">6</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_QUART</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">7</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_QUART</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">8</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_QUART</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">9</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_QUINT</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">10</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_QUINT</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">11</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_QUINT</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">12</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_SINE</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">13</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_SINE</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">14</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_SINE</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">15</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_EXPO</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">16</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_EXPO</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">17</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_EXPO</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">18</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_CIRC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">19</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_CIRC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">20</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_CIRC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">21</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_ELASTIC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">22</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_ELASTIC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">23</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_ELASTIC</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">24</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_BACK</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">25</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_BACK</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">26</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_BACK</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">27</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_BOUNCE</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">28</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_OUT_BOUNCE</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">29</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_EASE_IN_OUT_BOUNCE</span>: <span class="ident">AdwEasing</span> <span class="op">=</span> <span class="number">30</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwFlapFoldPolicy</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_FLAP_FOLD_POLICY_NEVER</span>: <span class="ident">AdwFlapFoldPolicy</span> <span class="op">=</span> <span class="number">0</span>;
@@ -2225,15 +2612,23 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_SQUEEZER_TRANSITION_TYPE_NONE</span>: <span class="ident">AdwSqueezerTransitionType</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_SQUEEZER_TRANSITION_TYPE_CROSSFADE</span>: <span class="ident">AdwSqueezerTransitionType</span> <span class="op">=</span> <span class="number">1</span>;
 
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwToastPriority</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_TOAST_PRIORITY_NORMAL</span>: <span class="ident">AdwToastPriority</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_TOAST_PRIORITY_HIGH</span>: <span class="ident">AdwToastPriority</span> <span class="op">=</span> <span class="number">1</span>;
+
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VIEW_SWITCHER_POLICY_NARROW</span>: <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VIEW_SWITCHER_POLICY_WIDE</span>: <span class="ident">AdwViewSwitcherPolicy</span> <span class="op">=</span> <span class="number">1</span>;
 
 <span class="comment">// Constants</span>
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_DURATION_INFINITE</span>: <span class="ident">c_uint</span> <span class="op">=</span> <span class="number">4294967295</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MAJOR_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">1</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MICRO_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MINOR_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">0</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VERSION_S</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span> <span class="op">=</span> <span class="string">b&quot;1.0.0.alpha.3\0&quot;</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">u8</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VERSION_S</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span> <span class="op">=</span> <span class="string">b&quot;1.0.0.beta.1\0&quot;</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">u8</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>;
+
+<span class="comment">// Callbacks</span>
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwAnimationTargetFunc</span> <span class="op">=</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="ident">c_double</span>, <span class="ident">gpointer</span>)<span class="op">&gt;</span>;
 
 <span class="comment">// Records</span>
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
@@ -2252,6 +2647,16 @@
             .<span class="ident">finish</span>()
     }
 }
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwAnimationClass</span>(<span class="ident">c_void</span>);
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwAnimationClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwAnimationClass</span>;
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwAnimationTargetClass</span>(<span class="ident">c_void</span>);
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwAnimationTargetClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwAnimationTargetClass</span>;
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
@@ -2324,6 +2729,11 @@
             .<span class="ident">finish</span>()
     }
 }
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwCallbackAnimationTargetClass</span>(<span class="ident">c_void</span>);
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwCallbackAnimationTargetClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwCallbackAnimationTargetClass</span>;
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
@@ -2598,6 +3008,21 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwSpringAnimationClass</span>(<span class="ident">c_void</span>);
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwSpringAnimationClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwSpringAnimationClass</span>;
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSpringParams</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSpringParams</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwSpringParams @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezerClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
@@ -2743,6 +3168,39 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwTimedAnimationClass</span>(<span class="ident">c_void</span>);
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwTimedAnimationClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwTimedAnimationClass</span>;
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToastClass</span> {
+    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
+}
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwToastClass</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwToastClass @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToastOverlayClass</span> {
+    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
+}
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwToastOverlayClass</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwToastOverlayClass @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewStackClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
@@ -2858,6 +3316,30 @@
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwAnimation</span> {
+    <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
+}
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwAnimation</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwAnimation @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwAnimationTarget</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwAnimationTarget</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwAnimationTarget @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwApplication</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gtk::GtkApplication</span>,
 }
@@ -2913,6 +3395,16 @@
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwButtonContent</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
         <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwButtonContent @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCallbackAnimationTarget</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwCallbackAnimationTarget</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwCallbackAnimationTarget @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">finish</span>()
     }
 }
@@ -3129,6 +3621,16 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSpringAnimation</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSpringAnimation</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwSpringAnimation @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezer</span>(<span class="ident">c_void</span>);
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSqueezer</span> {
@@ -3202,6 +3704,35 @@
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwTabView</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
         <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwTabView @ {:p}&quot;</span>, <span class="self">self</span>)).<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTimedAnimation</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwTimedAnimation</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwTimedAnimation @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToast</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwToast</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwToast @ {:p}&quot;</span>, <span class="self">self</span>)).<span class="ident">finish</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToastOverlay</span>(<span class="ident">c_void</span>);
+
+<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwToastOverlay</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;AdwToastOverlay @ {:p}&quot;</span>, <span class="self">self</span>))
+            .<span class="ident">finish</span>()
     }
 }
 
@@ -3293,6 +3824,11 @@
 <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> {
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwAnimationState</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_state_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwCenteringPolicy</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_centering_policy_get_type</span>() -&gt; <span class="ident">GType</span>;
@@ -3301,6 +3837,12 @@
     <span class="comment">// AdwColorScheme</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_color_scheme_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwEasing</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_easing_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_easing_ease</span>(<span class="ident">self_</span>: <span class="ident">AdwEasing</span>, <span class="ident">value</span>: <span class="ident">c_double</span>) -&gt; <span class="ident">c_double</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwFlapFoldPolicy</span>
@@ -3333,9 +3875,35 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_squeezer_transition_type_get_type</span>() -&gt; <span class="ident">GType</span>;
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwToastPriority</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_priority_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwViewSwitcherPolicy</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_switcher_policy_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwSpringParams</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_new</span>(
+        <span class="ident">damping_ratio</span>: <span class="ident">c_double</span>,
+        <span class="ident">mass</span>: <span class="ident">c_double</span>,
+        <span class="ident">stiffness</span>: <span class="ident">c_double</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_new_full</span>(
+        <span class="ident">damping</span>: <span class="ident">c_double</span>,
+        <span class="ident">mass</span>: <span class="ident">c_double</span>,
+        <span class="ident">stiffness</span>: <span class="ident">c_double</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_get_damping</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_get_damping_ratio</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_get_mass</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_get_stiffness</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_ref</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_params_unref</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>);
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwActionRow</span>
@@ -3350,7 +3918,6 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_get_subtitle</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_get_subtitle_lines</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_get_title_lines</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>) -&gt; <span class="ident">c_int</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_get_use_underline</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_remove</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>, <span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_set_activatable_widget</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>,
@@ -3360,7 +3927,25 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_set_subtitle</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>, <span class="ident">subtitle</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_set_subtitle_lines</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>, <span class="ident">subtitle_lines</span>: <span class="ident">c_int</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_set_title_lines</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>, <span class="ident">title_lines</span>: <span class="ident">c_int</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_action_row_set_use_underline</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>, <span class="ident">use_underline</span>: <span class="ident">gboolean</span>);
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwAnimation</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_get_state</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>) -&gt; <span class="ident">AdwAnimationState</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_get_target</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwAnimationTarget</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_get_value</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_get_widget</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_pause</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_play</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_reset</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_resume</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_skip</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>);
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwAnimationTarget</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_animation_target_get_type</span>() -&gt; <span class="ident">GType</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwApplication</span>
@@ -3433,6 +4018,16 @@
     );
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwCallbackAnimationTarget</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_callback_animation_target_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_callback_animation_target_new</span>(
+        <span class="ident">callback</span>: <span class="ident">AdwAnimationTargetFunc</span>,
+        <span class="ident">user_data</span>: <span class="ident">gpointer</span>,
+        <span class="ident">destroy</span>: <span class="ident">glib::GDestroyNotify</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwAnimationTarget</span>;
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwCarousel</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_type</span>() -&gt; <span class="ident">GType</span>;
@@ -3441,12 +4036,12 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_allow_long_swipes</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_allow_mouse_drag</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_allow_scroll_wheel</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_animation_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_interactive</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_n_pages</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_nth_page</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">n</span>: <span class="ident">c_uint</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_position</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">c_double</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_reveal_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">c_uint</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_scroll_params</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_get_spacing</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>) -&gt; <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_insert</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>,
@@ -3460,11 +4055,10 @@
         <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>,
         <span class="ident">position</span>: <span class="ident">c_int</span>,
     );
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_scroll_to</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_scroll_to_full</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_scroll_to</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>,
         <span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>,
-        <span class="ident">duration</span>: <span class="ident">i64</span>,
+        <span class="ident">animate</span>: <span class="ident">gboolean</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_set_allow_long_swipes</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">allow_long_swipes</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_set_allow_mouse_drag</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">allow_mouse_drag</span>: <span class="ident">gboolean</span>);
@@ -3472,9 +4066,9 @@
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>,
         <span class="ident">allow_scroll_wheel</span>: <span class="ident">gboolean</span>,
     );
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_set_animation_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">duration</span>: <span class="ident">c_uint</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_set_interactive</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">interactive</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_set_reveal_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">reveal_duration</span>: <span class="ident">c_uint</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_set_scroll_params</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">params</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_carousel_set_spacing</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwCarousel</span>, <span class="ident">spacing</span>: <span class="ident">c_uint</span>);
 
     <span class="comment">//=========================================================================</span>
@@ -3598,15 +4192,14 @@
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_get_type</span>() -&gt; <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_new</span>() -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_add</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>, <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_add_action</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>, <span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_add_prefix</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>, <span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_add_row</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>, <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_get_enable_expansion</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_get_expanded</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_get_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_get_show_enable_switch</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_get_subtitle</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_get_use_underline</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_remove</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>, <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_set_enable_expansion</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>,
@@ -3619,7 +4212,6 @@
         <span class="ident">show_enable_switch</span>: <span class="ident">gboolean</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_set_subtitle</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>, <span class="ident">subtitle</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_expander_row_set_use_underline</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwExpanderRow</span>, <span class="ident">use_underline</span>: <span class="ident">gboolean</span>);
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwFlap</span>
@@ -3635,8 +4227,8 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_folded</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_locked</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_modal</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_reveal_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_reveal_flap</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_reveal_params</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_reveal_progress</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="ident">c_double</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_separator</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_get_swipe_to_close</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>) -&gt; <span class="ident">gboolean</span>;
@@ -3650,8 +4242,8 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_fold_threshold_policy</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">policy</span>: <span class="ident">AdwFoldThresholdPolicy</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_locked</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">locked</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_modal</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">modal</span>: <span class="ident">gboolean</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_reveal_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">duration</span>: <span class="ident">c_uint</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_reveal_flap</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">reveal_flap</span>: <span class="ident">gboolean</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_reveal_params</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">params</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_separator</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">separator</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_swipe_to_close</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">swipe_to_close</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_flap_set_swipe_to_open</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwFlap</span>, <span class="ident">swipe_to_open</span>: <span class="ident">gboolean</span>);
@@ -3698,14 +4290,14 @@
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>,
         <span class="ident">direction</span>: <span class="ident">AdwNavigationDirection</span>,
     ) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_can_swipe_back</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_can_swipe_forward</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_can_navigate_back</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_can_navigate_forward</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_can_unfold</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_child_by_name</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>,
         <span class="ident">name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
     ) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_child_transition_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">c_uint</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_child_transition_params</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_child_transition_running</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_fold_threshold_policy</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">AdwFoldThresholdPolicy</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_get_folded</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>) -&gt; <span class="ident">gboolean</span>;
@@ -3738,10 +4330,16 @@
         <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>,
         <span class="ident">sibling</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>,
     );
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_can_swipe_back</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>, <span class="ident">can_swipe_back</span>: <span class="ident">gboolean</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_can_swipe_forward</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>, <span class="ident">can_swipe_forward</span>: <span class="ident">gboolean</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_can_navigate_back</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>, <span class="ident">can_navigate_back</span>: <span class="ident">gboolean</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_can_navigate_forward</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>,
+        <span class="ident">can_navigate_forward</span>: <span class="ident">gboolean</span>,
+    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_can_unfold</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>, <span class="ident">can_unfold</span>: <span class="ident">gboolean</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_child_transition_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>, <span class="ident">duration</span>: <span class="ident">c_uint</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_child_transition_params</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>,
+        <span class="ident">params</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>,
+    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_leaflet_set_fold_threshold_policy</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwLeaflet</span>,
         <span class="ident">policy</span>: <span class="ident">AdwFoldThresholdPolicy</span>,
@@ -3836,8 +4434,11 @@
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>,
         <span class="ident">page</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesPage</span>,
     );
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_add_toast</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>, <span class="ident">toast</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_close_subpage</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_get_can_swipe_back</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_get_can_navigate_back</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>,
+    ) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_get_search_enabled</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_get_visible_page</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>,
@@ -3853,9 +4454,9 @@
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>,
         <span class="ident">page</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesPage</span>,
     );
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_set_can_swipe_back</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_set_can_navigate_back</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>,
-        <span class="ident">can_swipe_back</span>: <span class="ident">gboolean</span>,
+        <span class="ident">can_navigate_back</span>: <span class="ident">gboolean</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_preferences_window_set_search_enabled</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwPreferencesWindow</span>,
@@ -3894,6 +4495,40 @@
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_popover</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSplitButton</span>, <span class="ident">popover</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkPopover</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_split_button_set_use_underline</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSplitButton</span>, <span class="ident">use_underline</span>: <span class="ident">gboolean</span>);
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwSpringAnimation</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_new</span>(
+        <span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>,
+        <span class="ident">from</span>: <span class="ident">c_double</span>,
+        <span class="ident">to</span>: <span class="ident">c_double</span>,
+        <span class="ident">spring_params</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>,
+        <span class="ident">target</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimationTarget</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_clamp</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_epsilon</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_estimated_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>) -&gt; <span class="ident">c_uint</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_initial_velocity</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_spring_params</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_value_from</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_value_to</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_get_velocity</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_set_clamp</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>, <span class="ident">clamp</span>: <span class="ident">gboolean</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_set_epsilon</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>, <span class="ident">epsilon</span>: <span class="ident">c_double</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_set_initial_velocity</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>,
+        <span class="ident">velocity</span>: <span class="ident">c_double</span>,
+    );
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_set_spring_params</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>,
+        <span class="ident">spring_params</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringParams</span>,
+    );
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_set_value_from</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>, <span class="ident">value</span>: <span class="ident">c_double</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_spring_animation_set_value_to</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwSpringAnimation</span>, <span class="ident">value</span>: <span class="ident">c_double</span>);
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwSqueezer</span>
@@ -3953,10 +4588,15 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_get_child</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_get_description</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_get_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_get_paintable</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gdk::GdkPaintable</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_get_title</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_set_child</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>, <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_set_description</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>, <span class="ident">description</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_set_icon_name</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>, <span class="ident">icon_name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_set_paintable</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>,
+        <span class="ident">paintable</span>: <span class="kw-2">*mut</span> <span class="ident">gdk::GdkPaintable</span>,
+    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_status_page_set_title</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwStatusPage</span>, <span class="ident">title</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
 
     <span class="comment">//=========================================================================</span>
@@ -4089,7 +4729,6 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_tab_view_get_page_position</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>, <span class="ident">page</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabPage</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_tab_view_get_pages</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkSelectionModel</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_tab_view_get_selected_page</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwTabPage</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_tab_view_get_shortcut_widget</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_tab_view_insert</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>,
         <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>,
@@ -4128,13 +4767,77 @@
         <span class="ident">pinned</span>: <span class="ident">gboolean</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_tab_view_set_selected_page</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>, <span class="ident">selected_page</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabPage</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_tab_view_set_shortcut_widget</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>, <span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_tab_view_transfer_page</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>,
         <span class="ident">page</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabPage</span>,
         <span class="ident">other_view</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTabView</span>,
         <span class="ident">position</span>: <span class="ident">c_int</span>,
     );
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwTimedAnimation</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_new</span>(
+        <span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>,
+        <span class="ident">from</span>: <span class="ident">c_double</span>,
+        <span class="ident">to</span>: <span class="ident">c_double</span>,
+        <span class="ident">duration</span>: <span class="ident">c_uint</span>,
+        <span class="ident">target</span>: <span class="kw-2">*mut</span> <span class="ident">AdwAnimationTarget</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwAnimation</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_get_alternate</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_get_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>) -&gt; <span class="ident">c_uint</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_get_easing</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>) -&gt; <span class="ident">AdwEasing</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_get_repeat_count</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>) -&gt; <span class="ident">c_uint</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_get_reverse</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_get_value_from</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_get_value_to</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>) -&gt; <span class="ident">c_double</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_set_alternate</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>, <span class="ident">alternate</span>: <span class="ident">gboolean</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_set_duration</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>, <span class="ident">duration</span>: <span class="ident">c_uint</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_set_easing</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>, <span class="ident">easing</span>: <span class="ident">AdwEasing</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_set_repeat_count</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>,
+        <span class="ident">repeat_count</span>: <span class="ident">c_uint</span>,
+    );
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_set_reverse</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>, <span class="ident">reverse</span>: <span class="ident">gboolean</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_set_value_from</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>, <span class="ident">value</span>: <span class="ident">c_double</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_timed_animation_set_value_to</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwTimedAnimation</span>, <span class="ident">value</span>: <span class="ident">c_double</span>);
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwToast</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_new</span>(<span class="ident">title</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_dismiss</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_get_action_name</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_get_action_target_value</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">glib::GVariant</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_get_button_label</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_get_priority</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>) -&gt; <span class="ident">AdwToastPriority</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_get_timeout</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>) -&gt; <span class="ident">c_uint</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_get_title</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_set_action_name</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>, <span class="ident">action_name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_set_action_target</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>, <span class="ident">format_string</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>, ...);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_set_action_target_value</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>,
+        <span class="ident">action_target</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GVariant</span>,
+    );
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_set_button_label</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>, <span class="ident">button_label</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_set_detailed_action_name</span>(
+        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>,
+        <span class="ident">detailed_action_name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
+    );
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_set_priority</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>, <span class="ident">priority</span>: <span class="ident">AdwToastPriority</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_set_timeout</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>, <span class="ident">timeout</span>: <span class="ident">c_uint</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_set_title</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>, <span class="ident">title</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// AdwToastOverlay</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_overlay_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_overlay_new</span>() -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_overlay_add_toast</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToastOverlay</span>, <span class="ident">toast</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToast</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_overlay_get_child</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToastOverlay</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_toast_overlay_set_child</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwToastOverlay</span>, <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// AdwViewStack</span>
@@ -4161,22 +4864,16 @@
         <span class="ident">name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
     ) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_hhomogeneous</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>) -&gt; <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_interpolate_size</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_page</span>(
         <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>,
         <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>,
     ) -&gt; <span class="kw-2">*mut</span> <span class="ident">AdwViewStackPage</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_pages</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkSelectionModel</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_transition_running</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_vhomogeneous</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_visible_child</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_get_visible_child_name</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_remove</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>, <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_set_hhomogeneous</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>, <span class="ident">hhomogeneous</span>: <span class="ident">gboolean</span>);
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_set_interpolate_size</span>(
-        <span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>,
-        <span class="ident">interpolate_size</span>: <span class="ident">gboolean</span>,
-    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_set_vhomogeneous</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>, <span class="ident">vhomogeneous</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_set_visible_child</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>, <span class="ident">child</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_view_stack_set_visible_child_name</span>(<span class="ident">self_</span>: <span class="kw-2">*mut</span> <span class="ident">AdwViewStack</span>, <span class="ident">name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>);
@@ -4305,12 +5002,15 @@
     <span class="comment">//=========================================================================</span>
     <span class="comment">// Other functions</span>
     <span class="comment">//=========================================================================</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_ease_out_cubic</span>(<span class="ident">t</span>: <span class="ident">c_double</span>) -&gt; <span class="ident">c_double</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_get_enable_animations</span>(<span class="ident">widget</span>: <span class="kw-2">*mut</span> <span class="ident">gtk::GtkWidget</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_get_major_version</span>() -&gt; <span class="ident">c_uint</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_get_micro_version</span>() -&gt; <span class="ident">c_uint</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_get_minor_version</span>() -&gt; <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_init</span>();
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_is_initialized</span>() -&gt; <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">adw_lerp</span>(<span class="ident">a</span>: <span class="ident">c_double</span>, <span class="ident">b</span>: <span class="ident">c_double</span>, <span class="ident">t</span>: <span class="ident">c_double</span>) -&gt; <span class="ident">c_double</span>;
 
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="libadwaita_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.59.0-nightly (e6b883c74 2021-12-08)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="libadwaita_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.59.0-nightly (0b42deacc 2021-12-09)" ></div>
 </body></html>

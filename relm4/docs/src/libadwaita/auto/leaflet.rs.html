@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;libadwaita-0.1.0-alpha-6&#x2F;src&#x2F;auto&#x2F;leaflet.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>leaflet.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><script defer src="../../../main.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `&#x2F;github&#x2F;home&#x2F;.cargo&#x2F;registry&#x2F;src&#x2F;github.com-1ecc6299db9ec823&#x2F;libadwaita-0.1.0-beta-1&#x2F;src&#x2F;auto&#x2F;leaflet.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>leaflet.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><script defer src="../../../main.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a class="sidebar-logo" href='../../../libadwaita/index.html'><div class='logo-container rust-logo'><img src='../../../rust-logo.png' alt='logo'></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container rust-logo" href='../../../libadwaita/index.html'><img src='../../../rust-logo.png' alt='logo'></a><nav class="sub"><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
 <span id="2">   2</span>
 <span id="3">   3</span>
@@ -1042,6 +1042,24 @@
 <span id="1041">1041</span>
 <span id="1042">1042</span>
 <span id="1043">1043</span>
+<span id="1044">1044</span>
+<span id="1045">1045</span>
+<span id="1046">1046</span>
+<span id="1047">1047</span>
+<span id="1048">1048</span>
+<span id="1049">1049</span>
+<span id="1050">1050</span>
+<span id="1051">1051</span>
+<span id="1052">1052</span>
+<span id="1053">1053</span>
+<span id="1054">1054</span>
+<span id="1055">1055</span>
+<span id="1056">1056</span>
+<span id="1057">1057</span>
+<span id="1058">1058</span>
+<span id="1059">1059</span>
+<span id="1060">1060</span>
+<span id="1061">1061</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)</span>
 <span class="comment">// from</span>
 <span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git)</span>
@@ -1051,6 +1069,7 @@
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::LeafletPage</span>;
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::LeafletTransitionType</span>;
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::NavigationDirection</span>;
+<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::SpringParams</span>;
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::Swipeable</span>;
 <span class="kw">use</span> <span class="ident">glib::object::Cast</span>;
 <span class="kw">use</span> <span class="ident">glib::object::IsA</span>;
@@ -1109,17 +1128,21 @@
         }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_get_can_swipe_back&quot;</span>)]</span>
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;get_can_swipe_back&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_swipe_back</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">bool</span> {
-        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::adw_leaflet_get_can_swipe_back</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)) }
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_get_can_navigate_back&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;get_can_navigate_back&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_navigate_back</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">bool</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib</span>(<span class="ident">ffi::adw_leaflet_get_can_navigate_back</span>(
+                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+            ))
+        }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_get_can_swipe_forward&quot;</span>)]</span>
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;get_can_swipe_forward&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_swipe_forward</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">bool</span> {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_get_can_navigate_forward&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;get_can_navigate_forward&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_navigate_forward</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">bool</span> {
         <span class="kw">unsafe</span> {
-            <span class="ident">from_glib</span>(<span class="ident">ffi::adw_leaflet_get_can_swipe_forward</span>(
+            <span class="ident">from_glib</span>(<span class="ident">ffi::adw_leaflet_get_can_navigate_forward</span>(
                 <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
             ))
         }
@@ -1142,10 +1165,14 @@
         }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_get_child_transition_duration&quot;</span>)]</span>
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;get_child_transition_duration&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">child_transition_duration</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">u32</span> {
-        <span class="kw">unsafe</span> { <span class="ident">ffi::adw_leaflet_get_child_transition_duration</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>) }
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_get_child_transition_params&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;get_child_transition_params&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">child_transition_params</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">SpringParams</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi::adw_leaflet_get_child_transition_params</span>(
+                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+            ))
+        }
     }
 
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_get_child_transition_running&quot;</span>)]</span>
@@ -1282,19 +1309,22 @@
         }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_set_can_swipe_back&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_can_swipe_back</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">can_swipe_back</span>: <span class="ident">bool</span>) {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_set_can_navigate_back&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_can_navigate_back</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">can_navigate_back</span>: <span class="ident">bool</span>) {
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi::adw_leaflet_set_can_swipe_back</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">can_swipe_back</span>.<span class="ident">into_glib</span>());
+            <span class="ident">ffi::adw_leaflet_set_can_navigate_back</span>(
+                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                <span class="ident">can_navigate_back</span>.<span class="ident">into_glib</span>(),
+            );
         }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_set_can_swipe_forward&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_can_swipe_forward</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">can_swipe_forward</span>: <span class="ident">bool</span>) {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_set_can_navigate_forward&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_can_navigate_forward</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">can_navigate_forward</span>: <span class="ident">bool</span>) {
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi::adw_leaflet_set_can_swipe_forward</span>(
+            <span class="ident">ffi::adw_leaflet_set_can_navigate_forward</span>(
                 <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">can_swipe_forward</span>.<span class="ident">into_glib</span>(),
+                <span class="ident">can_navigate_forward</span>.<span class="ident">into_glib</span>(),
             );
         }
     }
@@ -1306,10 +1336,13 @@
         }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_set_child_transition_duration&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_child_transition_duration</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">duration</span>: <span class="ident">u32</span>) {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;adw_leaflet_set_child_transition_params&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_child_transition_params</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">params</span>: <span class="kw-2">&amp;</span><span class="ident">SpringParams</span>) {
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi::adw_leaflet_set_child_transition_duration</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">duration</span>);
+            <span class="ident">ffi::adw_leaflet_set_child_transition_params</span>(
+                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                <span class="ident">params</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+            );
         }
     }
 
@@ -1358,9 +1391,12 @@
         }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;can-swipe-back&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">connect_can_swipe_back_notify</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="ident">F</span>) -&gt; <span class="ident">SignalHandlerId</span> {
-        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">notify_can_swipe_back_trampoline</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">Leaflet</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;can-navigate-back&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">connect_can_navigate_back_notify</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
+        <span class="kw-2">&amp;</span><span class="self">self</span>,
+        <span class="ident">f</span>: <span class="ident">F</span>,
+    ) -&gt; <span class="ident">SignalHandlerId</span> {
+        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">notify_can_navigate_back_trampoline</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">Leaflet</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
             <span class="ident">this</span>: <span class="kw-2">*mut</span> <span class="ident">ffi::AdwLeaflet</span>,
             <span class="ident">_param_spec</span>: <span class="ident">glib::ffi::gpointer</span>,
             <span class="ident">f</span>: <span class="ident">glib::ffi::gpointer</span>,
@@ -1372,21 +1408,21 @@
             <span class="kw">let</span> <span class="ident">f</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box_::new</span>(<span class="ident">f</span>);
             <span class="ident">connect_raw</span>(
                 <span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*mut</span> <span class="kw">_</span>,
-                <span class="string">b&quot;notify::can-swipe-back\0&quot;</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*const</span> <span class="kw">_</span>,
+                <span class="string">b&quot;notify::can-navigate-back\0&quot;</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*const</span> <span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(<span class="ident">transmute</span>::<span class="op">&lt;</span><span class="kw">_</span>, <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>()<span class="op">&gt;</span>(
-                    <span class="ident">notify_can_swipe_back_trampoline</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw-2">*const</span> (),
+                    <span class="ident">notify_can_navigate_back_trampoline</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw-2">*const</span> (),
                 )),
                 <span class="ident">Box_::into_raw</span>(<span class="ident">f</span>),
             )
         }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;can-swipe-forward&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">connect_can_swipe_forward_notify</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;can-navigate-forward&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">connect_can_navigate_forward_notify</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">f</span>: <span class="ident">F</span>,
     ) -&gt; <span class="ident">SignalHandlerId</span> {
-        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">notify_can_swipe_forward_trampoline</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">Leaflet</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
+        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">notify_can_navigate_forward_trampoline</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">Leaflet</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
             <span class="ident">this</span>: <span class="kw-2">*mut</span> <span class="ident">ffi::AdwLeaflet</span>,
             <span class="ident">_param_spec</span>: <span class="ident">glib::ffi::gpointer</span>,
             <span class="ident">f</span>: <span class="ident">glib::ffi::gpointer</span>,
@@ -1398,9 +1434,9 @@
             <span class="kw">let</span> <span class="ident">f</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box_::new</span>(<span class="ident">f</span>);
             <span class="ident">connect_raw</span>(
                 <span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*mut</span> <span class="kw">_</span>,
-                <span class="string">b&quot;notify::can-swipe-forward\0&quot;</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*const</span> <span class="kw">_</span>,
+                <span class="string">b&quot;notify::can-navigate-forward\0&quot;</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*const</span> <span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(<span class="ident">transmute</span>::<span class="op">&lt;</span><span class="kw">_</span>, <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>()<span class="op">&gt;</span>(
-                    <span class="ident">notify_can_swipe_forward_trampoline</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw-2">*const</span> (),
+                    <span class="ident">notify_can_navigate_forward_trampoline</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw-2">*const</span> (),
                 )),
                 <span class="ident">Box_::into_raw</span>(<span class="ident">f</span>),
             )
@@ -1430,12 +1466,12 @@
         }
     }
 
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;child-transition-duration&quot;</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">connect_child_transition_duration_notify</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;child-transition-params&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">connect_child_transition_params_notify</span><span class="op">&lt;</span><span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="self">Self</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">f</span>: <span class="ident">F</span>,
     ) -&gt; <span class="ident">SignalHandlerId</span> {
-        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">notify_child_transition_duration_trampoline</span><span class="op">&lt;</span>
+        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">notify_child_transition_params_trampoline</span><span class="op">&lt;</span>
             <span class="ident">F</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">Leaflet</span>) <span class="op">+</span> <span class="lifetime">&#39;static</span>,
         <span class="op">&gt;</span>(
             <span class="ident">this</span>: <span class="kw-2">*mut</span> <span class="ident">ffi::AdwLeaflet</span>,
@@ -1449,9 +1485,9 @@
             <span class="kw">let</span> <span class="ident">f</span>: <span class="ident">Box_</span><span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box_::new</span>(<span class="ident">f</span>);
             <span class="ident">connect_raw</span>(
                 <span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*mut</span> <span class="kw">_</span>,
-                <span class="string">b&quot;notify::child-transition-duration\0&quot;</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*const</span> <span class="kw">_</span>,
+                <span class="string">b&quot;notify::child-transition-params\0&quot;</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*const</span> <span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(<span class="ident">transmute</span>::<span class="op">&lt;</span><span class="kw">_</span>, <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>()<span class="op">&gt;</span>(
-                    <span class="ident">notify_child_transition_duration_trampoline</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw-2">*const</span> (),
+                    <span class="ident">notify_child_transition_params_trampoline</span>::<span class="op">&lt;</span><span class="ident">F</span><span class="op">&gt;</span> <span class="kw">as</span> <span class="kw-2">*const</span> (),
                 )),
                 <span class="ident">Box_::into_raw</span>(<span class="ident">f</span>),
             )
@@ -1694,10 +1730,10 @@
 <span class="doccomment">///</span>
 <span class="doccomment">/// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">LeafletBuilder</span> {
-    <span class="ident">can_swipe_back</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="ident">can_swipe_forward</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
+    <span class="ident">can_navigate_back</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
+    <span class="ident">can_navigate_forward</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
     <span class="ident">can_unfold</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
-    <span class="ident">child_transition_duration</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">u32</span><span class="op">&gt;</span>,
+    <span class="ident">child_transition_params</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">SpringParams</span><span class="op">&gt;</span>,
     <span class="ident">fold_threshold_policy</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">FoldThresholdPolicy</span><span class="op">&gt;</span>,
     <span class="ident">homogeneous</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>,
     <span class="ident">mode_transition_duration</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">u32</span><span class="op">&gt;</span>,
@@ -1748,17 +1784,17 @@
     <span class="doccomment">/// Build the [`Leaflet`].</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">build</span>(<span class="self">self</span>) -&gt; <span class="ident">Leaflet</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">properties</span>: <span class="ident">Vec</span><span class="op">&lt;</span>(<span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="kw-2">&amp;</span><span class="kw">dyn</span> <span class="ident">ToValue</span>)<span class="op">&gt;</span> <span class="op">=</span> <span class="macro">vec!</span>[];
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">can_swipe_back</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">can_swipe_back</span> {
-            <span class="ident">properties</span>.<span class="ident">push</span>((<span class="string">&quot;can-swipe-back&quot;</span>, <span class="ident">can_swipe_back</span>));
+        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">can_navigate_back</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">can_navigate_back</span> {
+            <span class="ident">properties</span>.<span class="ident">push</span>((<span class="string">&quot;can-navigate-back&quot;</span>, <span class="ident">can_navigate_back</span>));
         }
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">can_swipe_forward</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">can_swipe_forward</span> {
-            <span class="ident">properties</span>.<span class="ident">push</span>((<span class="string">&quot;can-swipe-forward&quot;</span>, <span class="ident">can_swipe_forward</span>));
+        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">can_navigate_forward</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">can_navigate_forward</span> {
+            <span class="ident">properties</span>.<span class="ident">push</span>((<span class="string">&quot;can-navigate-forward&quot;</span>, <span class="ident">can_navigate_forward</span>));
         }
         <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">can_unfold</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">can_unfold</span> {
             <span class="ident">properties</span>.<span class="ident">push</span>((<span class="string">&quot;can-unfold&quot;</span>, <span class="ident">can_unfold</span>));
         }
-        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">child_transition_duration</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">child_transition_duration</span> {
-            <span class="ident">properties</span>.<span class="ident">push</span>((<span class="string">&quot;child-transition-duration&quot;</span>, <span class="ident">child_transition_duration</span>));
+        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">child_transition_params</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">child_transition_params</span> {
+            <span class="ident">properties</span>.<span class="ident">push</span>((<span class="string">&quot;child-transition-params&quot;</span>, <span class="ident">child_transition_params</span>));
         }
         <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">fold_threshold_policy</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">fold_threshold_policy</span> {
             <span class="ident">properties</span>.<span class="ident">push</span>((<span class="string">&quot;fold-threshold-policy&quot;</span>, <span class="ident">fold_threshold_policy</span>));
@@ -1874,13 +1910,13 @@
         <span class="ident">glib::Object::new</span>::<span class="op">&lt;</span><span class="ident">Leaflet</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="ident">properties</span>).<span class="ident">expect</span>(<span class="string">&quot;Failed to create an instance of Leaflet&quot;</span>)
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_swipe_back</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">can_swipe_back</span>: <span class="ident">bool</span>) -&gt; <span class="self">Self</span> {
-        <span class="self">self</span>.<span class="ident">can_swipe_back</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">can_swipe_back</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_navigate_back</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">can_navigate_back</span>: <span class="ident">bool</span>) -&gt; <span class="self">Self</span> {
+        <span class="self">self</span>.<span class="ident">can_navigate_back</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">can_navigate_back</span>);
         <span class="self">self</span>
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_swipe_forward</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">can_swipe_forward</span>: <span class="ident">bool</span>) -&gt; <span class="self">Self</span> {
-        <span class="self">self</span>.<span class="ident">can_swipe_forward</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">can_swipe_forward</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">can_navigate_forward</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">can_navigate_forward</span>: <span class="ident">bool</span>) -&gt; <span class="self">Self</span> {
+        <span class="self">self</span>.<span class="ident">can_navigate_forward</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">can_navigate_forward</span>);
         <span class="self">self</span>
     }
 
@@ -1889,8 +1925,8 @@
         <span class="self">self</span>
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">child_transition_duration</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">child_transition_duration</span>: <span class="ident">u32</span>) -&gt; <span class="self">Self</span> {
-        <span class="self">self</span>.<span class="ident">child_transition_duration</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">child_transition_duration</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">child_transition_params</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">child_transition_params</span>: <span class="kw-2">&amp;</span><span class="ident">SpringParams</span>) -&gt; <span class="self">Self</span> {
+        <span class="self">self</span>.<span class="ident">child_transition_params</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">child_transition_params</span>.<span class="ident">clone</span>());
         <span class="self">self</span>
     }
 
@@ -2086,5 +2122,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="libadwaita" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.59.0-nightly (e6b883c74 2021-12-08)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="libadwaita" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.59.0-nightly (0b42deacc 2021-12-09)" ></div>
 </body></html>

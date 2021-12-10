@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["ease_out_cubic",""],["init",""],["is_animations_enabled",""],["is_initialized",""]]});
+initSidebarItems({"fn":[["init",""],["is_animations_enabled",""],["is_initialized",""],["lerp",""],["major_version",""],["micro_version",""],["minor_version",""]]});
