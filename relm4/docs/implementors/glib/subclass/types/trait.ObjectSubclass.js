@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["list"] = [{"text":"impl <a class=\"trait\" href=\"glib/subclass/types/trait.ObjectSubclass.html\" title=\"trait glib::subclass::types::ObjectSubclass\">ObjectSubclass</a> for <a class=\"struct\" href=\"list/struct.GIntegerObject.html\" title=\"struct list::GIntegerObject\">GIntegerObject</a>","synthetic":false,"types":["list::GIntegerObject"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
