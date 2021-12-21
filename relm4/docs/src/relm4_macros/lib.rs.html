@@ -290,6 +290,7 @@
 <span id="288">288</span>
 <span id="289">289</span>
 <span id="290">290</span>
+<span id="291">291</span>
 </pre><pre class="rust"><code><span class="attribute">#![<span class="ident">feature</span>(<span class="ident">doc_cfg</span>)]</span>
 <span class="attribute">#![<span class="ident">doc</span>(
     <span class="ident">html_logo_url</span> <span class="op">=</span> <span class="string">&quot;https://raw.githubusercontent.com/AaronErhardt/relm4/main/assets/Relm_logo.svg&quot;</span>
@@ -560,7 +561,8 @@
 
             <span class="doccomment">/// Update the view to represent the updated model.</span>
             <span class="kw">fn</span> <span class="ident">view</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">model</span>: <span class="kw-2">&amp;</span>#<span class="ident">model</span>, <span class="ident">sender</span>: #<span class="ident">relm4_path::Sender</span><span class="op">&lt;</span><span class="op">&lt;</span>#<span class="ident">model</span> <span class="kw">as</span> #<span class="ident">relm4_path::Model</span><span class="op">&gt;</span><span class="ident">::Msg</span><span class="op">&gt;</span>) {
-                #<span class="ident">manual_view</span>
+                <span class="comment">// Wrap manual view code to prevent early returns from skipping other view code.</span>
+                (<span class="op">|</span><span class="op">|</span> { #<span class="ident">manual_view</span> })();
                 #<span class="ident">view</span>
                 #<span class="ident">track</span>
             }
@@ -581,5 +583,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.59.0-nightly (e95e084a1 2021-12-19)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.59.0-nightly (23f69235a 2021-12-20)" ></div>
 </body></html>
