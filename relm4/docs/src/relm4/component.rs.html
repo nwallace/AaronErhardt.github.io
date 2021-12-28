@@ -319,7 +319,7 @@
     }
 
     <span class="doccomment">/// Returns the root widget of this component&#39;s widgets.</span>
-    <span class="doccomment">/// Can be used by the parent [`Widgets::connect_components`](fn@crate::Widgets::connect_components) to connect the root widget</span>
+    <span class="doccomment">/// Can be used by the parent to connect the root widget</span>
     <span class="doccomment">/// to the parent&#39;s widgets.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="op">&lt;</span><span class="ident">Model::Widgets</span> <span class="kw">as</span> <span class="ident">WidgetsTrait</span><span class="op">&lt;</span><span class="ident">Model</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Root</span> {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">root_widget</span>

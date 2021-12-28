@@ -308,7 +308,6 @@
 <span id="306">306</span>
 <span id="307">307</span>
 <span id="308">308</span>
-<span id="309">309</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Reusable and easily configurable open button dialog component.</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! **[Example implementation](https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/open_button.rs)**</span>
@@ -324,7 +323,6 @@
 <span class="kw">use</span> <span class="ident">std::io::Read</span>;
 <span class="kw">use</span> <span class="ident">std::marker::PhantomData</span>;
 <span class="kw">use</span> <span class="ident">std::path::PathBuf</span>;
-<span class="kw">use</span> <span class="ident">std::rc::Rc</span>;
 
 <span class="kw">mod</span> <span class="ident">factory</span>;
 
@@ -382,7 +380,7 @@
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">OpenButtonMsg</span> {
     <span class="ident">Open</span>(<span class="ident">PathBuf</span>),
-    <span class="ident">OpenRecent</span>(<span class="ident">Rc</span><span class="op">&lt;</span><span class="ident">DynamicIndex</span><span class="op">&gt;</span>),
+    <span class="ident">OpenRecent</span>(<span class="ident">DynamicIndex</span>),
     <span class="ident">ShowDialog</span>,
     <span class="ident">Ignore</span>,
 }
