@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["FixedPosition","Position used for [`gtk::Fixed`]."],["GridPosition","Storing information about where new widgets can be placed inside a [`gtk::Grid`]."],["StackPageInfo","Position or rather information for a stack page inside a factory."]]});

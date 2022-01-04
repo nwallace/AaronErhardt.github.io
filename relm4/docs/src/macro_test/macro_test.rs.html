@@ -359,7 +359,7 @@
         <span class="macro">println!</span>(<span class="string">&quot;Post init! test_field: {}&quot;</span>, <span class="ident">test_field</span>);
     }
 
-    <span class="kw">fn</span> <span class="ident">manual_view</span>() {
+    <span class="kw">fn</span> <span class="ident">pre_view</span>() {
         <span class="self">self</span>.<span class="ident">test_page</span>.<span class="ident">set_title</span>(<span class="string">&quot;Manually set title in view!&quot;</span>);
         <span class="self">self</span>.<span class="ident">test_field</span> <span class="op">+</span><span class="op">=</span> <span class="number">1</span>;
         <span class="macro">println!</span>(<span class="string">&quot;Manual view! test_field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">test_field</span>);
