@@ -233,7 +233,7 @@
 
         <span class="kw">let</span> <span class="ident">group</span> <span class="op">=</span> <span class="ident">RelmActionGroup</span>::<span class="op">&lt;</span><span class="ident">WindowActionGroup</span><span class="op">&gt;</span><span class="ident">::new</span>();
 
-        <span class="kw">let</span> <span class="ident">action</span>: <span class="ident">RelmAction</span><span class="op">&lt;</span><span class="ident">TestAction</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">RelmAction::new_statelesss</span>(<span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
+        <span class="kw">let</span> <span class="ident">action</span>: <span class="ident">RelmAction</span><span class="op">&lt;</span><span class="ident">TestAction</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">RelmAction::new_stateless</span>(<span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
             <span class="macro">println!</span>(<span class="string">&quot;Statelesss action!&quot;</span>);
             <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::Increment</span>);
         });
@@ -255,8 +255,8 @@
 
 <span class="macro">relm4::new_action_group!</span>(<span class="ident">WindowActionGroup</span>, <span class="string">&quot;win&quot;</span>);
 
-<span class="macro">relm4::new_statless_action!</span>(<span class="ident">TestAction</span>, <span class="ident">WindowActionGroup</span>, <span class="string">&quot;test&quot;</span>);
-<span class="macro">relm4::new_statful_action!</span>(<span class="ident">TestU8Action</span>, <span class="ident">WindowActionGroup</span>, <span class="string">&quot;test2&quot;</span>, <span class="ident">u8</span>, <span class="ident">u8</span>);
+<span class="macro">relm4::new_stateless_action!</span>(<span class="ident">TestAction</span>, <span class="ident">WindowActionGroup</span>, <span class="string">&quot;test&quot;</span>);
+<span class="macro">relm4::new_stateful_action!</span>(<span class="ident">TestU8Action</span>, <span class="ident">WindowActionGroup</span>, <span class="string">&quot;test2&quot;</span>, <span class="ident">u8</span>, <span class="ident">u8</span>);
 
 <span class="kw">fn</span> <span class="ident">main</span>() {
     <span class="kw">let</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">AppModel::default</span>();
