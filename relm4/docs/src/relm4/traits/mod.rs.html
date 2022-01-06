@@ -291,6 +291,11 @@
 <span id="289">289</span>
 <span id="290">290</span>
 <span id="291">291</span>
+<span id="292">292</span>
+<span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib::Sender</span>;
 
 <span class="kw">mod</span> <span class="ident">impls</span>;
@@ -545,11 +550,16 @@
 <span class="doccomment">/// }</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// impl Components&lt;AppModel&gt; for AppComponents {</span>
-<span class="doccomment">///     fn init_components(parent_model: &amp;AppModel, parent_widgets: &amp;AppWidgets, parent_sender: Sender&lt;AppMsg&gt;) -&gt; Self {</span>
+<span class="doccomment">///     fn init_components(parent_model: &amp;AppModel, parent_sender: Sender&lt;AppMsg&gt;) -&gt; Self {</span>
 <span class="doccomment">///         AppComponents {</span>
-<span class="doccomment">///             comp1: RelmComponent::with_new_thread(parent_model, parent_widgets, parent_sender.clone()),</span>
-<span class="doccomment">///             comp2: RelmComponent::new(parent_model, parent_widgets, parent_sender),</span>
+<span class="doccomment">///             comp1: RelmComponent::new(parent_model, parent_sender.clone()),</span>
+<span class="doccomment">///             comp2: RelmComponent::new(parent_model, parent_sender),</span>
 <span class="doccomment">///         }</span>
+<span class="doccomment">///     }</span>
+<span class="doccomment">///</span>
+<span class="doccomment">///     fn connect_parent(&amp;mut self, parent_widgets: &amp;AppWidgets) {</span>
+<span class="doccomment">///         self.comp1.connect_parent(parent_widgets);</span>
+<span class="doccomment">///         self.comp2.connect_parent(parent_widgets);</span>
 <span class="doccomment">///     }</span>
 <span class="doccomment">/// }</span>
 <span class="doccomment">/// ```</span>
