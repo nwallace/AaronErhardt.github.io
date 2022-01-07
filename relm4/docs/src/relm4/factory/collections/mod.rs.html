@@ -38,6 +38,11 @@
 <span id="36">36</span>
 <span id="37">37</span>
 <span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Containers similar to [`std::collections`] that implement the [`Factory`](super::Factory) trait.</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! # Which factory type to use</span>
@@ -54,6 +59,11 @@
 <span class="doccomment">//! for adding and removing widgets at arbitrary positions.</span>
 <span class="doccomment">//! [`gtk::Grid`] for example only works with [`FactoryVec`] but not with</span>
 <span class="doccomment">//! [`FactoryVecDeque`] because widgets can&#39;t be inserted at arbitrary positions.</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! Another difference is that [`FactoryVecDeque`] will insert widgets</span>
+<span class="doccomment">//! at the beginning if the container used for the factory contains other widgets</span>
+<span class="doccomment">//! that were inserted independently from the factory.</span>
+<span class="doccomment">//! Yet, [`FactoryVec`] will insert widgets at the end in the same scenario.</span>
 
 <span class="kw">mod</span> <span class="ident">factory_vec</span>;
 <span class="kw">mod</span> <span class="ident">factory_vec_deque</span>;

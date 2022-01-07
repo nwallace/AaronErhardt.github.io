@@ -88,6 +88,7 @@
 <span id="86">86</span>
 <span id="87">87</span>
 <span id="88">88</span>
+<span id="89">89</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Trait that extends [`gtk::prelude::WidgetExt`].</span>
 
 <span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">BoxExt</span>, <span class="ident">Cast</span>, <span class="ident">FixedExt</span>, <span class="ident">GridExt</span>, <span class="ident">IsA</span>, <span class="ident">StyleContextExt</span>, <span class="ident">TextViewExt</span>, <span class="ident">WidgetExt</span>};
@@ -111,6 +112,7 @@
     <span class="doccomment">/// # gtk::init().unwrap();</span>
     <span class="doccomment">/// # let widget = gtk::Button::new();</span>
     <span class="doccomment">/// widget.inline_css(b&quot;border: 1px solid red&quot;);</span>
+    <span class="doccomment">/// ```</span>
     <span class="kw">fn</span> <span class="ident">inline_css</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">style_data</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>]);
 
     <span class="doccomment">/// Try to remove a widget from a widget.</span>

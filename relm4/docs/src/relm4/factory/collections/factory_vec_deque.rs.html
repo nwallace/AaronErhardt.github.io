@@ -480,6 +480,14 @@
 <span id="478">478</span>
 <span id="479">479</span>
 <span id="480">480</span>
+<span id="481">481</span>
+<span id="482">482</span>
+<span id="483">483</span>
+<span id="484">484</span>
+<span id="485">485</span>
+<span id="486">486</span>
+<span id="487">487</span>
+<span id="488">488</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib::Sender</span>;
 
 <span class="kw">use</span> <span class="ident">std::cell::RefCell</span>;
@@ -507,6 +515,10 @@
 <span class="doccomment">///</span>
 <span class="doccomment">/// In short: only call [`current_index`](DynamicIndex::current_index) from the update function</span>
 <span class="doccomment">/// where you actually need the index as [`usize`].</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// # Panics</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// Sending a [`DynamicIndex`] to a different thread and accessing it will panic.</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DynamicIndex</span> {
     <span class="ident">inner</span>: <span class="ident">Fragile</span><span class="op">&lt;</span><span class="ident">Rc</span><span class="op">&lt;</span><span class="ident">RefCell</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span>,
@@ -561,6 +573,10 @@
 <span class="doccomment">/// A weak index is preferred for sending in messages because messages can be stale by the time they</span>
 <span class="doccomment">/// are handled and the element already deleted. A weak reference doesn&#39;t keep the index alive</span>
 <span class="doccomment">/// if the element was deleted which allows you to properly handle invalid indices.</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// # Panics</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// Sending a [`WeakDynamicIndex`] to a different thread and accessing it will panic.</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">WeakDynamicIndex</span> {
     <span class="ident">inner</span>: <span class="ident">Fragile</span><span class="op">&lt;</span><span class="ident">Weak</span><span class="op">&lt;</span><span class="ident">RefCell</span><span class="op">&lt;</span><span class="ident">usize</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span>,
