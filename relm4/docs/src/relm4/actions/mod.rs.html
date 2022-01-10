@@ -248,8 +248,8 @@
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="doccomment">/// Create a new type that implements [`ActionGroupName`].</span>
 <span class="macro">macro_rules!</span> <span class="ident">new_action_group</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>) =&gt; {
-        <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span>:<span class="ident">vis</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>) =&gt; {
+        <span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span> <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
 
         <span class="kw">impl</span> <span class="ident">ActionGroupName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
             <span class="kw">fn</span> <span class="ident">group_name</span>() -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span> {
@@ -262,8 +262,8 @@
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="doccomment">/// Create a new type that implements [`ActionGroupName`].</span>
 <span class="macro">macro_rules!</span> <span class="ident">new_stateless_action</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>) =&gt; {
-        <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span>:<span class="ident">vis</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>) =&gt; {
+        <span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span> <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
 
         <span class="kw">impl</span> <span class="ident">ActionName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
             <span class="kw">type</span> <span class="ident">Group</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>;
@@ -280,8 +280,8 @@
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="doccomment">/// Create a new type that implements [`ActionGroupName`].</span>
 <span class="macro">macro_rules!</span> <span class="ident">new_stateful_action</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">value</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">state</span>:<span class="ident">ty</span>) =&gt; {
-        <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span>:<span class="ident">vis</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">value</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">state</span>:<span class="ident">ty</span>) =&gt; {
+        <span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span> <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
 
         <span class="kw">impl</span> <span class="ident">ActionName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
             <span class="kw">type</span> <span class="ident">Group</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>;
