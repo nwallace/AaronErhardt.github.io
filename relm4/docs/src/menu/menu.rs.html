@@ -133,6 +133,27 @@
 <span id="130">130</span>
 <span id="131">131</span>
 <span id="132">132</span>
+<span id="133">133</span>
+<span id="134">134</span>
+<span id="135">135</span>
+<span id="136">136</span>
+<span id="137">137</span>
+<span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">BoxExt</span>, <span class="ident">ButtonExt</span>, <span class="ident">GtkWindowExt</span>, <span class="ident">OrientableExt</span>, <span class="ident">WidgetExt</span>};
 <span class="kw">use</span> <span class="ident">relm4</span>::{
     <span class="ident">actions</span>::{
@@ -223,12 +244,33 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">post_init</span>() {
-        <span class="comment">// main_menu.append(Some(&quot;Stateless&quot;), Some(&amp;TestAction::action_name()));</span>
-        <span class="comment">// let entry = gtk::gio::MenuItem::new(Some(&quot;Test&quot;), Some(&amp;TestU8Action::action_name()));</span>
-        <span class="comment">// entry.set_action_and_target_value(Some(&amp;TestU8Action::action_name()), Some(&amp;1_u8.to_variant()));</span>
-        <span class="comment">// main_menu.append_item(&amp;entry);</span>
+    <span class="comment">// ============================================================</span>
+    <span class="comment">//</span>
+    <span class="comment">// You can also use menu! outside of the widget macro.</span>
+    <span class="comment">// This is the manual equivalent to the the menu! macro above.</span>
+    <span class="comment">//</span>
+    <span class="comment">// ============================================================</span>
+    <span class="comment">//</span>
+    <span class="comment">// fn pre_init() {</span>
+    <span class="comment">//     relm4_macros::menu! {</span>
+    <span class="comment">//         main_menu: {</span>
+    <span class="comment">//             &quot;Test&quot; =&gt; TestAction,</span>
+    <span class="comment">//             &quot;Test2&quot; =&gt; TestAction,</span>
+    <span class="comment">//             &quot;Test toggle&quot; =&gt; TestU8Action(1_u8),</span>
+    <span class="comment">//             section! {</span>
+    <span class="comment">//                 &quot;Section test&quot; =&gt; TestAction,</span>
+    <span class="comment">//                 &quot;Test toggle&quot; =&gt; TestU8Action(1_u8),</span>
+    <span class="comment">//             },</span>
+    <span class="comment">//             section! {</span>
+    <span class="comment">//                 &quot;Test&quot; =&gt; TestAction,</span>
+    <span class="comment">//                 &quot;Test2&quot; =&gt; TestAction,</span>
+    <span class="comment">//                 &quot;Test Value&quot; =&gt; TestU8Action(1_u8),</span>
+    <span class="comment">//             }</span>
+    <span class="comment">//         }</span>
+    <span class="comment">//     };</span>
+    <span class="comment">// }</span>
 
+    <span class="kw">fn</span> <span class="ident">post_init</span>() {
         <span class="kw">let</span> <span class="ident">app</span> <span class="op">=</span> <span class="ident">relm4::gtk_application</span>();
         <span class="ident">app</span>.<span class="ident">set_accelerators_for_action</span>::<span class="op">&lt;</span><span class="ident">TestAction</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span>[<span class="string">&quot;&lt;primary&gt;W&quot;</span>]);
 
@@ -241,7 +283,6 @@
 
         <span class="kw">let</span> <span class="ident">action2</span>: <span class="ident">RelmAction</span><span class="op">&lt;</span><span class="ident">TestU8Action</span><span class="op">&gt;</span> <span class="op">=</span>
             <span class="ident">RelmAction::new_stateful_with_target_value</span>(<span class="kw-2">&amp;</span><span class="number">0</span>, <span class="op">|</span><span class="kw">_</span>, <span class="ident">state</span>, <span class="ident">_value</span><span class="op">|</span> {
-                <span class="comment">//println!(&quot;Stateful action -&gt; state: {}, value: {}&quot;, state, value);</span>
                 <span class="kw-2">*</span><span class="ident">state</span> <span class="op">^</span><span class="op">=</span> <span class="number">1</span>;
                 <span class="macro">dbg!</span>(<span class="ident">state</span>);
             });
@@ -259,6 +300,7 @@
 <span class="macro">relm4::new_stateless_action!</span>(<span class="ident">TestAction</span>, <span class="ident">WindowActionGroup</span>, <span class="string">&quot;test&quot;</span>);
 <span class="macro">relm4::new_stateful_action!</span>(<span class="ident">TestU8Action</span>, <span class="ident">WindowActionGroup</span>, <span class="string">&quot;test2&quot;</span>, <span class="ident">u8</span>, <span class="ident">u8</span>);
 
+
 <span class="kw">fn</span> <span class="ident">main</span>() {
     <span class="kw">let</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">AppModel::default</span>();
 
@@ -266,5 +308,5 @@
     <span class="ident">app</span>.<span class="ident">run</span>();
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="menu" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (1409c015b 2022-01-11)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="menu" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (1bd4fdc94 2022-01-12)" ></div>
 </body></html>

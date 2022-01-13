@@ -294,6 +294,15 @@
 <span id="291">291</span>
 <span id="292">292</span>
 <span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
+<span id="297">297</span>
+<span id="298">298</span>
+<span id="299">299</span>
+<span id="300">300</span>
+<span id="301">301</span>
+<span id="302">302</span>
 </pre><pre class="rust"><code><span class="attribute">#![<span class="ident">feature</span>(<span class="ident">doc_cfg</span>)]</span>
 <span class="attribute">#![<span class="ident">doc</span>(
     <span class="ident">html_logo_url</span> <span class="op">=</span> <span class="string">&quot;https://raw.githubusercontent.com/AaronErhardt/relm4/main/assets/Relm_logo.svg&quot;</span>
@@ -323,6 +332,7 @@
 <span class="kw">use</span> <span class="ident">funcs::Funcs</span>;
 <span class="kw">use</span> <span class="ident">item_impl::ItemImpl</span>;
 <span class="kw">use</span> <span class="ident">macros::Macros</span>;
+<span class="kw">use</span> <span class="ident">menu::Menus</span>;
 <span class="kw">use</span> <span class="ident">types::ModelTypes</span>;
 
 <span class="doccomment">/// Macro that implemements [relm4::Widgets](https://aaronerhardt.github.io/docs/relm4/relm4/trait.Widgets.html) and generates the corresponding struct.</span>
@@ -587,6 +597,14 @@
         <span class="prelude-val">Err</span>(<span class="ident">error</span>) =&gt; <span class="ident">error</span>.<span class="ident">into_compile_error</span>().<span class="ident">into</span>(),
     }
 }
+
+<span class="attribute">#[<span class="ident">proc_macro</span>]</span>
+<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">menu</span>(<span class="ident">input</span>: <span class="ident">TokenStream</span>) -&gt; <span class="ident">TokenStream</span> {
+    <span class="kw">let</span> <span class="ident">menus</span> <span class="op">=</span> <span class="macro">parse_macro_input!</span>(<span class="ident">input</span> <span class="kw">as</span> <span class="ident">Menus</span>);
+    <span class="kw">let</span> <span class="ident">default_relm4_path</span> <span class="op">=</span> <span class="ident">util::default_relm4_path</span>();
+
+    <span class="ident">menus</span>.<span class="ident">menus_stream</span>(<span class="kw-2">&amp;</span><span class="ident">default_relm4_path</span>).<span class="ident">into</span>()
+}
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (1409c015b 2022-01-11)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (1bd4fdc94 2022-01-12)" ></div>
 </body></html>
