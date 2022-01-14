@@ -1,1 +1,0 @@
-initSidebarItems({"trait":[["ActionRowExt",""],["AdwApplicationExt",""],["AnimationExt",""],["ApplicationWindowExt",""],["BinExt",""],["ComboRowExt",""],["ComboRowExtManual",""],["ExpanderRowExt",""],["PreferencesGroupExt",""],["PreferencesPageExt",""],["PreferencesRowExt",""],["PreferencesWindowExt",""],["SwipeableExt",""],["WindowExt",""]]});

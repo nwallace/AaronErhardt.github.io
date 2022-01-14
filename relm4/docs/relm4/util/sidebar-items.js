@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["widget_plus","Trait that extends [`gtk::prelude::WidgetExt`]."]]});
