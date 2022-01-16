@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="first_app.html"><strong aria-hidden="true">1.</strong> Your first app</a></li><li class="chapter-item expanded "><a href="widget_macro.html"><strong aria-hidden="true">2.</strong> The widget macro</a></li><li class="chapter-item expanded "><a href="efficient_ui.html"><strong aria-hidden="true">3.</strong> Efficient UI updates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tracker.html"><strong aria-hidden="true">3.1.</strong> Tracker</a></li><li class="chapter-item expanded "><a href="factory.html"><strong aria-hidden="true">3.2.</strong> Factories</a></li><li class="chapter-item expanded "><a href="factory_position.html"><strong aria-hidden="true">3.3.</strong> The position function</a></li><li class="chapter-item expanded "><a href="factory_advanced.html"><strong aria-hidden="true">3.4.</strong> Advanced factories</a></li></ol></li><li class="chapter-item expanded "><a href="components.html"><strong aria-hidden="true">4.</strong> Components</a></li><li class="chapter-item expanded "><a href="worker.html"><strong aria-hidden="true">5.</strong> Workers</a></li><li class="chapter-item expanded "><a href="message_handler.html"><strong aria-hidden="true">6.</strong> Message handlers</a></li><li class="chapter-item expanded "><a href="threads_and_async.html"><strong aria-hidden="true">7.</strong> Threads and async</a></li><li class="chapter-item expanded "><a href="reusable_components.html"><strong aria-hidden="true">8.</strong> Reusable components</a></li><li class="chapter-item expanded "><a href="gtk_rs.html"><strong aria-hidden="true">9.</strong> gtk-rs overview</a></li><li class="chapter-item expanded "><a href="widget_macro_reference.html"><strong aria-hidden="true">10.</strong> Widget macro reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="widget_macro_expansion.html"><strong aria-hidden="true">10.1.</strong> Macro expansion</a></li></ol></li><li class="chapter-item expanded "><a href="templates.html"><strong aria-hidden="true">11.</strong> Templates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="app_template.html"><strong aria-hidden="true">11.1.</strong> App template</a></li><li class="chapter-item expanded "><a href="component_template.html"><strong aria-hidden="true">11.2.</strong> Component template</a></li><li class="chapter-item expanded "><a href="worker_template.html"><strong aria-hidden="true">11.3.</strong> Worker template</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="first_app.html"><strong aria-hidden="true">1.</strong> Your first app</a></li><li class="chapter-item expanded "><a href="widget_macro.html"><strong aria-hidden="true">2.</strong> The widget macro</a></li><li class="chapter-item expanded "><a href="efficient_ui.html"><strong aria-hidden="true">3.</strong> Efficient UI updates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tracker.html"><strong aria-hidden="true">3.1.</strong> Tracker</a></li><li class="chapter-item expanded "><a href="factory.html"><strong aria-hidden="true">3.2.</strong> Factories</a></li><li class="chapter-item expanded "><a href="factory_position.html"><strong aria-hidden="true">3.3.</strong> The position function</a></li><li class="chapter-item expanded "><a href="factory_advanced.html"><strong aria-hidden="true">3.4.</strong> Advanced factories</a></li></ol></li><li class="chapter-item expanded "><a href="components.html"><strong aria-hidden="true">4.</strong> Components</a></li><li class="chapter-item expanded "><a href="worker.html"><strong aria-hidden="true">5.</strong> Workers</a></li><li class="chapter-item expanded "><a href="message_handler.html"><strong aria-hidden="true">6.</strong> Message handlers</a></li><li class="chapter-item expanded "><a href="threads_and_async.html"><strong aria-hidden="true">7.</strong> Threads and async</a></li><li class="chapter-item expanded "><a href="reusable_components.html"><strong aria-hidden="true">8.</strong> Reusable components</a></li><li class="chapter-item expanded "><a href="gtk_rs.html"><strong aria-hidden="true">9.</strong> gtk-rs overview</a></li><li class="chapter-item expanded "><a href="widget_macro_reference.html"><strong aria-hidden="true">10.</strong> Widget macro reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="widget_macro_expansion.html"><strong aria-hidden="true">10.1.</strong> Macro expansion</a></li></ol></li><li class="chapter-item expanded "><a href="templates.html"><strong aria-hidden="true">11.</strong> Templates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="app_template.html"><strong aria-hidden="true">11.1.</strong> App template</a></li><li class="chapter-item expanded "><a href="component_template.html"><strong aria-hidden="true">11.2.</strong> Component template</a></li><li class="chapter-item expanded "><a href="worker_template.html"><strong aria-hidden="true">11.3.</strong> Worker template</a></li></ol></li><li class="chapter-item expanded "><a href="migration.html"><strong aria-hidden="true">12.</strong> Migration guides</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0_2_to_0_4.html"><strong aria-hidden="true">12.1.</strong> 0.2 to 0.4</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -3942,6 +3942,43 @@ impl ComponentUpdate&lt;AppModel&gt; for WorkerModel {
     }
 }
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="migration-guides"><a class="header" href="#migration-guides">Migration guides</a></h1>
+<p>The sections of this chapter will help you to migrate your code from a previous version of Relm4 to the latest version.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="migration-from-v02-to-v04"><a class="header" href="#migration-from-v02-to-v04">Migration from v0.2 to v0.4</a></h1>
+<p>Fortunately, there aren't many big breaking changes in version 0.4 despite a lot of improvements under the hood.</p>
+<h2 id="factoryprototype"><a class="header" href="#factoryprototype">FactoryPrototype</a></h2>
+<p>The methods of <a href="https://aaronerhardt.github.io/docs/relm4/relm4/factory/trait.FactoryPrototype.html"><code>FactoryPrototype</code></a> were renamed to better match the rest of Relm4's traits.</p>
+<ul>
+<li><code>generate</code> =&gt; <code>init_view</code></li>
+<li><code>update</code> =&gt; <code>view</code></li>
+<li><code>get_root</code> =&gt; <code>root_widget</code></li>
+</ul>
+<h2 id="widget-macro"><a class="header" href="#widget-macro"><code>widget</code> macro</a></h2>
+<ul>
+<li><code>manual_view</code> was renamed to <code>post_view</code> and <code>pre_view</code> was added to run code before the macro generated code in the view function.</li>
+<li><code>component!</code> was removed, components are now accessible without extra code.</li>
+<li><code>parent!</code> was added to access the parent widgets which previously required no extra code.</li>
+</ul>
+<h2 id="components-1"><a class="header" href="#components-1">Components</a></h2>
+<p>The <a href="https://aaronerhardt.github.io/docs/relm4/relm4/trait.Components.html"><code>Components</code></a> trait now has a new method called <code>connect_parent</code>.
+This method doesn't do much more than passing the parent widgets down to individual components and originated unintentionally in the rework of the initialization process.
+Because this method is usually just repetitive code, you can now use the derive macro instead:</p>
+<pre><pre class="playground"><code class="language-rust  no_run">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(relm4::Components)]
+struct AppComponents {
+    header: RelmComponent&lt;HeaderModel, AppModel&gt;,
+    dialog: RelmComponent&lt;DialogModel, AppModel&gt;,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>The derive macro will always use <code>RelmWorker::with_new_thread()</code> for workers.</p>
+<p>Also, <code>RelmComponent::with_new_thread()</code> was removed due to the restructuring. 
+It's recommended to use workers or message handlers for blocking operations instead.</p>
+<blockquote>
+<p>If there's anything missing, let me know. You can simply open an issue on <a href="https://github.com/AaronErhardt/Relm4">GitHub</a> or write a message in the <a href="https://matrix.to/#/#relm4:matrix.org">Matrix room</a>.</p>
+</blockquote>
 
                     </main>
 
