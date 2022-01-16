@@ -120,7 +120,7 @@
     <span class="ident">actions</span>::{
         <span class="ident">AccelsPlus</span>, <span class="ident">ActionGroupName</span>, <span class="ident">ActionName</span>, <span class="ident">ActionablePlus</span>, <span class="ident">RelmAction</span>, <span class="ident">RelmActionGroup</span>,
     },
-    <span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Sender</span>, <span class="ident">WidgetPlus</span>, <span class="ident">Widgets</span>,
+    <span class="ident">gtk</span>, <span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Sender</span>, <span class="ident">WidgetPlus</span>, <span class="ident">Widgets</span>,
 };
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Default</span>)]</span>
@@ -153,7 +153,7 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">relm4_macros::widget</span>]</span>
+<span class="attribute">#[<span class="ident">relm4::widget</span>]</span>
 <span class="kw">impl</span> <span class="ident">Widgets</span><span class="op">&lt;</span><span class="ident">AppModel</span>, ()<span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">AppWidgets</span> {
     <span class="macro">view!</span> {
         <span class="ident">main_window</span> <span class="op">=</span> <span class="ident">gtk::ApplicationWindow</span> {

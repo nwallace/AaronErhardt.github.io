@@ -281,13 +281,15 @@
 <span id="278">278</span>
 <span id="279">279</span>
 <span id="280">280</span>
-</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">adw::traits::ApplicationWindowExt</span>;
+<span id="281">281</span>
+</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">adw::prelude::AdwApplicationWindowExt</span>;
 <span class="kw">use</span> <span class="ident">gtk::glib::BindingFlags</span>;
 <span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">BoxExt</span>, <span class="ident">ButtonExt</span>, <span class="ident">GtkWindowExt</span>, <span class="ident">ObjectExt</span>, <span class="ident">OrientableExt</span>, <span class="ident">ToggleButtonExt</span>};
 
 <span class="kw">use</span> <span class="ident">relm4</span>::{
+    <span class="ident">adw</span>,
     <span class="ident">factory</span>::{<span class="ident">positions::StackPageInfo</span>, <span class="ident">FactoryPrototype</span>, <span class="ident">FactoryVec</span>},
-    <span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Sender</span>, <span class="ident">WidgetPlus</span>, <span class="ident">Widgets</span>,
+    <span class="ident">gtk</span>, <span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Sender</span>, <span class="ident">WidgetPlus</span>, <span class="ident">Widgets</span>,
 };
 
 <span class="kw">use</span> <span class="ident">std::time</span>::{<span class="ident">SystemTime</span>, <span class="ident">UNIX_EPOCH</span>};
@@ -333,7 +335,7 @@
     <span class="kw">type</span> <span class="ident">View</span> <span class="op">=</span> <span class="ident">gtk::Stack</span>;
     <span class="kw">type</span> <span class="ident">Msg</span> <span class="op">=</span> <span class="ident">AppMsg</span>;
 
-    <span class="kw">fn</span> <span class="ident">generate</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_key</span>: <span class="kw-2">&amp;</span><span class="ident">usize</span>, <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident"><span class="self">Self</span>::Widgets</span> {
+    <span class="kw">fn</span> <span class="ident">init_view</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_key</span>: <span class="kw-2">&amp;</span><span class="ident">usize</span>, <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident"><span class="self">Self</span>::Widgets</span> {
         <span class="comment">// Create widgets.</span>
         <span class="kw">let</span> <span class="ident">root</span> <span class="op">=</span> <span class="ident">gtk::Stack::builder</span>()
             .<span class="ident">vexpand</span>(<span class="bool-val">true</span>)
@@ -390,11 +392,11 @@
         }
     }
 
-    <span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_key</span>: <span class="kw-2">&amp;</span><span class="ident">usize</span>, <span class="ident">widgets</span>: <span class="kw-2">&amp;</span><span class="ident">CalendarWidgets</span>) {
+    <span class="kw">fn</span> <span class="ident">view</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_key</span>: <span class="kw-2">&amp;</span><span class="ident">usize</span>, <span class="ident">widgets</span>: <span class="kw-2">&amp;</span><span class="ident">CalendarWidgets</span>) {
         <span class="ident">widgets</span>.<span class="ident">update</span>(<span class="self">self</span>.<span class="ident">time_left</span>);
     }
 
-    <span class="kw">fn</span> <span class="ident">get_root</span>(<span class="ident">widgets</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Widgets</span>) -&gt; <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Root</span> {
+    <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="ident">widgets</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Widgets</span>) -&gt; <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Root</span> {
         <span class="kw-2">&amp;</span><span class="ident">widgets</span>.<span class="ident">root</span>
     }
 }
@@ -440,7 +442,7 @@
     <span class="ident">adw::ApplicationWindow::builder</span>().<span class="ident">build</span>()
 }
 
-<span class="attribute">#[<span class="ident">relm4_macros::widget</span>]</span>
+<span class="attribute">#[<span class="ident">relm4::widget</span>]</span>
 <span class="kw">impl</span> <span class="ident">Widgets</span><span class="op">&lt;</span><span class="ident">AppModel</span>, ()<span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">AppWidgets</span> {
     <span class="macro">view!</span> {
         <span class="ident">main_window</span> <span class="op">=</span> <span class="ident">application_window</span>() -&gt; <span class="ident">adw::ApplicationWindow</span> {
@@ -515,18 +517,18 @@
         (<span class="string">&quot;Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.&quot;</span>, <span class="string">&quot;John 8, 12&quot;</span>),
         (<span class="string">&quot;Rejoice in the Lord alway: and again I say, Rejoice. Let your moderation be known unto all men. The Lord is at hand.&quot;</span>, <span class="string">&quot;Philippians 4, 4-5&quot;</span>),
         (<span class="string">&quot;For the word of God is quick, and powerful, and sharper than any twoedged sword, piercing even to the dividing asunder of soul and spirit, and of the joints and marrow, and is a discerner of the thoughts and intents of the heart.&quot;</span>, <span class="string">&quot;Hebrews 4, 12&quot;</span>),
-        (<span class="string">&quot;V13&quot;</span>, <span class="string">&quot;P13&quot;</span>),
-        (<span class="string">&quot;V14&quot;</span>, <span class="string">&quot;P14&quot;</span>),
-        (<span class="string">&quot;V15&quot;</span>, <span class="string">&quot;P15&quot;</span>),
-        (<span class="string">&quot;V16&quot;</span>, <span class="string">&quot;P16&quot;</span>),
-        (<span class="string">&quot;V17&quot;</span>, <span class="string">&quot;P17&quot;</span>),
-        (<span class="string">&quot;V18&quot;</span>, <span class="string">&quot;P18&quot;</span>),
-        (<span class="string">&quot;V19&quot;</span>, <span class="string">&quot;P19&quot;</span>),
-        (<span class="string">&quot;V20&quot;</span>, <span class="string">&quot;P20&quot;</span>),
-        (<span class="string">&quot;V21&quot;</span>, <span class="string">&quot;P21&quot;</span>),
-        (<span class="string">&quot;V22&quot;</span>, <span class="string">&quot;P22&quot;</span>),
-        (<span class="string">&quot;V23&quot;</span>, <span class="string">&quot;P23&quot;</span>),
-        (<span class="string">&quot;V24&quot;</span>, <span class="string">&quot;P24&quot;</span>),
+        (<span class="string">&quot;Commit to the Lord whatever you do, and he will establish your plans.&quot;</span>, <span class="string">&quot;Proverbs 16:3&quot;</span>),
+        (<span class="string">&quot;Let the morning bring me word of your unfailing love, for I have put my trust in you. Show me the way I should go, for to you I entrust my life.&quot;</span>, <span class="string">&quot;Psalm 143:8&quot;</span>),
+        (<span class="string">&quot;Be completely humble and gentle; be patient, bearing with one another in love.&quot;</span>, <span class="string">&quot;Ephesians 4:2&quot;</span>),
+        (<span class="string">&quot;Whatever you do, work at it with all your heart, as working for the Lord, not for human masters, since you know that you will receive an inheritance from the Lord as a reward. It is the Lord Christ you are serving.&quot;</span>, <span class="string">&quot;Colossians 3:23-24&quot;</span>),
+        (<span class="string">&quot;Let love and faithfulness never leave you;bind them around your neck, write them on the tablet of your heart. Then you will win favor and a good name in the sight of God and man.&quot;</span>, <span class="string">&quot;Proverbs 3:3-4&quot;</span>),
+        (<span class="string">&quot;So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.&quot;</span>, <span class="string">&quot;Isaiah 41:10&quot;</span>),
+        (<span class="string">&quot;But blessed is the one who trusts in the Lord, whose confidence is in him. They will be like a tree planted by the water that sends out its roots by the stream. It does not fear when heat comes; its leaves are always green. It has no worries in a year of drought and never fails to bear fruit.&quot;</span>, <span class="string">&quot;Jeremiah 17:7-8&quot;</span>),
+        (<span class="string">&quot;Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.&quot;</span>, <span class="string">&quot;1 Corinthians 13:4-5&quot;</span>),
+        (<span class="string">&quot;Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.&quot;</span>, <span class="string">&quot;Philippians 4:6-7&quot;</span>),
+        (<span class="string">&quot;These commandments that I give you today are to be on your hearts. Impress them on your children. Talk about them when you sit at home and when you walk along the road, when you lie down and when you get up.&quot;</span>, <span class="string">&quot;Deuteronomy 6:6-7&quot;</span>),
+        (<span class="string">&quot;But blessed is the one who trusts in the Lord, whose confidence is in him. They will be like a tree planted by the water that sends out its roots by the stream. It does not fear when heat comes; its leaves are always green. It has no worries in a year of drought and never fails to bear fruit.&quot;</span>, <span class="string">&quot;Jeremiah 17:7-8&quot;</span>),
+        (<span class="string">&quot;The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace.&quot;</span>, <span class="string">&quot;Numbers 6:24-26&quot;</span>),
     ];
 
     <span class="comment">// Fill factory with the verses</span>

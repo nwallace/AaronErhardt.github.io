@@ -316,7 +316,7 @@
 <span class="doccomment">//! **[Example implementation](https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/open_button.rs)**</span>
 <span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">BoxExt</span>, <span class="ident">ButtonExt</span>, <span class="ident">PopoverExt</span>, <span class="ident">WidgetExt</span>};
 <span class="kw">use</span> <span class="ident">relm4::factory</span>::{<span class="ident">DynamicIndex</span>, <span class="ident">Factory</span>, <span class="ident">FactoryVecDeque</span>};
-<span class="kw">use</span> <span class="ident">relm4</span>::{<span class="ident">send</span>, <span class="ident">ComponentUpdate</span>, <span class="ident">Components</span>, <span class="ident">Model</span>, <span class="ident">RelmComponent</span>, <span class="ident">Widgets</span>};
+<span class="kw">use</span> <span class="ident">relm4</span>::{<span class="ident">gtk</span>, <span class="ident">send</span>, <span class="ident">ComponentUpdate</span>, <span class="ident">Components</span>, <span class="ident">Model</span>, <span class="ident">RelmComponent</span>, <span class="ident">Widgets</span>};
 
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::open_dialog</span>::{
     <span class="ident">OpenDialogConfig</span>, <span class="ident">OpenDialogModel</span>, <span class="ident">OpenDialogMsg</span>, <span class="ident">OpenDialogParent</span>, <span class="ident">OpenDialogSettings</span>,
@@ -540,7 +540,7 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">relm4_macros::widget</span>(<span class="kw">pub</span>)]</span>
+<span class="attribute">#[<span class="ident">relm4::widget</span>(<span class="kw">pub</span>)]</span>
 <span class="doccomment">/// Widgets of the open button component</span>
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">ParentModel</span>, <span class="ident">Conf</span><span class="op">&gt;</span> <span class="ident">Widgets</span><span class="op">&lt;</span><span class="ident">OpenButtonModel</span><span class="op">&lt;</span><span class="ident">Conf</span><span class="op">&gt;</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">OpenButtonWidgets</span>
 <span class="kw">where</span>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/gtk4-0.3.1/src/auto/enums.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>enums.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><script defer src="../../../main.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/gtk4-0.4.1/src/auto/enums.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>enums.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><script defer src="../../../main.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div>
         </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><div>
                                 <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
@@ -9785,6 +9785,221 @@
 <span id="9782">9782</span>
 <span id="9783">9783</span>
 <span id="9784">9784</span>
+<span id="9785">9785</span>
+<span id="9786">9786</span>
+<span id="9787">9787</span>
+<span id="9788">9788</span>
+<span id="9789">9789</span>
+<span id="9790">9790</span>
+<span id="9791">9791</span>
+<span id="9792">9792</span>
+<span id="9793">9793</span>
+<span id="9794">9794</span>
+<span id="9795">9795</span>
+<span id="9796">9796</span>
+<span id="9797">9797</span>
+<span id="9798">9798</span>
+<span id="9799">9799</span>
+<span id="9800">9800</span>
+<span id="9801">9801</span>
+<span id="9802">9802</span>
+<span id="9803">9803</span>
+<span id="9804">9804</span>
+<span id="9805">9805</span>
+<span id="9806">9806</span>
+<span id="9807">9807</span>
+<span id="9808">9808</span>
+<span id="9809">9809</span>
+<span id="9810">9810</span>
+<span id="9811">9811</span>
+<span id="9812">9812</span>
+<span id="9813">9813</span>
+<span id="9814">9814</span>
+<span id="9815">9815</span>
+<span id="9816">9816</span>
+<span id="9817">9817</span>
+<span id="9818">9818</span>
+<span id="9819">9819</span>
+<span id="9820">9820</span>
+<span id="9821">9821</span>
+<span id="9822">9822</span>
+<span id="9823">9823</span>
+<span id="9824">9824</span>
+<span id="9825">9825</span>
+<span id="9826">9826</span>
+<span id="9827">9827</span>
+<span id="9828">9828</span>
+<span id="9829">9829</span>
+<span id="9830">9830</span>
+<span id="9831">9831</span>
+<span id="9832">9832</span>
+<span id="9833">9833</span>
+<span id="9834">9834</span>
+<span id="9835">9835</span>
+<span id="9836">9836</span>
+<span id="9837">9837</span>
+<span id="9838">9838</span>
+<span id="9839">9839</span>
+<span id="9840">9840</span>
+<span id="9841">9841</span>
+<span id="9842">9842</span>
+<span id="9843">9843</span>
+<span id="9844">9844</span>
+<span id="9845">9845</span>
+<span id="9846">9846</span>
+<span id="9847">9847</span>
+<span id="9848">9848</span>
+<span id="9849">9849</span>
+<span id="9850">9850</span>
+<span id="9851">9851</span>
+<span id="9852">9852</span>
+<span id="9853">9853</span>
+<span id="9854">9854</span>
+<span id="9855">9855</span>
+<span id="9856">9856</span>
+<span id="9857">9857</span>
+<span id="9858">9858</span>
+<span id="9859">9859</span>
+<span id="9860">9860</span>
+<span id="9861">9861</span>
+<span id="9862">9862</span>
+<span id="9863">9863</span>
+<span id="9864">9864</span>
+<span id="9865">9865</span>
+<span id="9866">9866</span>
+<span id="9867">9867</span>
+<span id="9868">9868</span>
+<span id="9869">9869</span>
+<span id="9870">9870</span>
+<span id="9871">9871</span>
+<span id="9872">9872</span>
+<span id="9873">9873</span>
+<span id="9874">9874</span>
+<span id="9875">9875</span>
+<span id="9876">9876</span>
+<span id="9877">9877</span>
+<span id="9878">9878</span>
+<span id="9879">9879</span>
+<span id="9880">9880</span>
+<span id="9881">9881</span>
+<span id="9882">9882</span>
+<span id="9883">9883</span>
+<span id="9884">9884</span>
+<span id="9885">9885</span>
+<span id="9886">9886</span>
+<span id="9887">9887</span>
+<span id="9888">9888</span>
+<span id="9889">9889</span>
+<span id="9890">9890</span>
+<span id="9891">9891</span>
+<span id="9892">9892</span>
+<span id="9893">9893</span>
+<span id="9894">9894</span>
+<span id="9895">9895</span>
+<span id="9896">9896</span>
+<span id="9897">9897</span>
+<span id="9898">9898</span>
+<span id="9899">9899</span>
+<span id="9900">9900</span>
+<span id="9901">9901</span>
+<span id="9902">9902</span>
+<span id="9903">9903</span>
+<span id="9904">9904</span>
+<span id="9905">9905</span>
+<span id="9906">9906</span>
+<span id="9907">9907</span>
+<span id="9908">9908</span>
+<span id="9909">9909</span>
+<span id="9910">9910</span>
+<span id="9911">9911</span>
+<span id="9912">9912</span>
+<span id="9913">9913</span>
+<span id="9914">9914</span>
+<span id="9915">9915</span>
+<span id="9916">9916</span>
+<span id="9917">9917</span>
+<span id="9918">9918</span>
+<span id="9919">9919</span>
+<span id="9920">9920</span>
+<span id="9921">9921</span>
+<span id="9922">9922</span>
+<span id="9923">9923</span>
+<span id="9924">9924</span>
+<span id="9925">9925</span>
+<span id="9926">9926</span>
+<span id="9927">9927</span>
+<span id="9928">9928</span>
+<span id="9929">9929</span>
+<span id="9930">9930</span>
+<span id="9931">9931</span>
+<span id="9932">9932</span>
+<span id="9933">9933</span>
+<span id="9934">9934</span>
+<span id="9935">9935</span>
+<span id="9936">9936</span>
+<span id="9937">9937</span>
+<span id="9938">9938</span>
+<span id="9939">9939</span>
+<span id="9940">9940</span>
+<span id="9941">9941</span>
+<span id="9942">9942</span>
+<span id="9943">9943</span>
+<span id="9944">9944</span>
+<span id="9945">9945</span>
+<span id="9946">9946</span>
+<span id="9947">9947</span>
+<span id="9948">9948</span>
+<span id="9949">9949</span>
+<span id="9950">9950</span>
+<span id="9951">9951</span>
+<span id="9952">9952</span>
+<span id="9953">9953</span>
+<span id="9954">9954</span>
+<span id="9955">9955</span>
+<span id="9956">9956</span>
+<span id="9957">9957</span>
+<span id="9958">9958</span>
+<span id="9959">9959</span>
+<span id="9960">9960</span>
+<span id="9961">9961</span>
+<span id="9962">9962</span>
+<span id="9963">9963</span>
+<span id="9964">9964</span>
+<span id="9965">9965</span>
+<span id="9966">9966</span>
+<span id="9967">9967</span>
+<span id="9968">9968</span>
+<span id="9969">9969</span>
+<span id="9970">9970</span>
+<span id="9971">9971</span>
+<span id="9972">9972</span>
+<span id="9973">9973</span>
+<span id="9974">9974</span>
+<span id="9975">9975</span>
+<span id="9976">9976</span>
+<span id="9977">9977</span>
+<span id="9978">9978</span>
+<span id="9979">9979</span>
+<span id="9980">9980</span>
+<span id="9981">9981</span>
+<span id="9982">9982</span>
+<span id="9983">9983</span>
+<span id="9984">9984</span>
+<span id="9985">9985</span>
+<span id="9986">9986</span>
+<span id="9987">9987</span>
+<span id="9988">9988</span>
+<span id="9989">9989</span>
+<span id="9990">9990</span>
+<span id="9991">9991</span>
+<span id="9992">9992</span>
+<span id="9993">9993</span>
+<span id="9994">9994</span>
+<span id="9995">9995</span>
+<span id="9996">9996</span>
+<span id="9997">9997</span>
+<span id="9998">9998</span>
+<span id="9999">9999</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)</span>
 <span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git)</span>
 <span class="comment">// DO NOT EDIT</span>
@@ -14751,6 +14966,111 @@
     }
 }
 
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
+<span class="attribute">#[<span class="ident">non_exhaustive</span>]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GtkNaturalWrapMode&quot;</span>)]</span>
+<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">NaturalWrapMode</span> {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTK_NATURAL_WRAP_INHERIT&quot;</span>)]</span>
+    <span class="ident">Inherit</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTK_NATURAL_WRAP_NONE&quot;</span>)]</span>
+    <span class="prelude-val">None</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTK_NATURAL_WRAP_WORD&quot;</span>)]</span>
+    <span class="ident">Word</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+    <span class="ident">__Unknown</span>(<span class="ident">i32</span>),
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">NaturalWrapMode</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
+        <span class="macro">write!</span>(
+            <span class="ident">f</span>,
+            <span class="string">&quot;NaturalWrapMode::{}&quot;</span>,
+            <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
+                <span class="ident"><span class="self">Self</span>::Inherit</span> =&gt; <span class="string">&quot;Inherit&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::None</span> =&gt; <span class="string">&quot;None&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Word</span> =&gt; <span class="string">&quot;Word&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
+            }
+        )
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">NaturalWrapMode</span> {
+    <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::GtkNaturalWrapMode</span>;
+
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::GtkNaturalWrapMode</span> {
+        <span class="kw">match</span> <span class="self">self</span> {
+            <span class="ident"><span class="self">Self</span>::Inherit</span> =&gt; <span class="ident">ffi::GTK_NATURAL_WRAP_INHERIT</span>,
+            <span class="ident"><span class="self">Self</span>::None</span> =&gt; <span class="ident">ffi::GTK_NATURAL_WRAP_NONE</span>,
+            <span class="ident"><span class="self">Self</span>::Word</span> =&gt; <span class="ident">ffi::GTK_NATURAL_WRAP_WORD</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
+        }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::GtkNaturalWrapMode</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">NaturalWrapMode</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::GtkNaturalWrapMode</span>) -&gt; <span class="self">Self</span> {
+        <span class="macro">skip_assert_initialized!</span>();
+        <span class="kw">match</span> <span class="ident">value</span> {
+            <span class="ident">ffi::GTK_NATURAL_WRAP_INHERIT</span> =&gt; <span class="ident"><span class="self">Self</span>::Inherit</span>,
+            <span class="ident">ffi::GTK_NATURAL_WRAP_NONE</span> =&gt; <span class="ident"><span class="self">Self</span>::None</span>,
+            <span class="ident">ffi::GTK_NATURAL_WRAP_WORD</span> =&gt; <span class="ident"><span class="self">Self</span>::Word</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+        }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">NaturalWrapMode</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::gtk_natural_wrap_mode_get_type</span>()) }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">glib::value::ValueType</span> <span class="kw">for</span> <span class="ident">NaturalWrapMode</span> {
+    <span class="kw">type</span> <span class="ident">Type</span> <span class="op">=</span> <span class="self">Self</span>;
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">NaturalWrapMode</span> {
+    <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
+
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
+        <span class="macro">skip_assert_initialized!</span>();
+        <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">NaturalWrapMode</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
+        <span class="kw">unsafe</span> {
+            <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
+        }
+        <span class="ident">value</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
+        <span class="ident"><span class="self">Self</span>::static_type</span>()
+    }
+}
+
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
 <span class="attribute">#[<span class="ident">non_exhaustive</span>]</span>
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GtkNotebookTab&quot;</span>)]</span>
@@ -18632,6 +18952,116 @@
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">StringFilterMatchMode</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
+        <span class="kw">unsafe</span> {
+            <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
+        }
+        <span class="ident">value</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
+        <span class="ident"><span class="self">Self</span>::static_type</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
+<span class="attribute">#[<span class="ident">non_exhaustive</span>]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GtkSymbolicColor&quot;</span>)]</span>
+<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">SymbolicColor</span> {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTK_SYMBOLIC_COLOR_FOREGROUND&quot;</span>)]</span>
+    <span class="ident">Foreground</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTK_SYMBOLIC_COLOR_ERROR&quot;</span>)]</span>
+    <span class="ident">Error</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTK_SYMBOLIC_COLOR_WARNING&quot;</span>)]</span>
+    <span class="ident">Warning</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTK_SYMBOLIC_COLOR_SUCCESS&quot;</span>)]</span>
+    <span class="ident">Success</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+    <span class="ident">__Unknown</span>(<span class="ident">i32</span>),
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">SymbolicColor</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
+        <span class="macro">write!</span>(
+            <span class="ident">f</span>,
+            <span class="string">&quot;SymbolicColor::{}&quot;</span>,
+            <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
+                <span class="ident"><span class="self">Self</span>::Foreground</span> =&gt; <span class="string">&quot;Foreground&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Error</span> =&gt; <span class="string">&quot;Error&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Warning</span> =&gt; <span class="string">&quot;Warning&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Success</span> =&gt; <span class="string">&quot;Success&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
+            }
+        )
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">SymbolicColor</span> {
+    <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::GtkSymbolicColor</span>;
+
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::GtkSymbolicColor</span> {
+        <span class="kw">match</span> <span class="self">self</span> {
+            <span class="ident"><span class="self">Self</span>::Foreground</span> =&gt; <span class="ident">ffi::GTK_SYMBOLIC_COLOR_FOREGROUND</span>,
+            <span class="ident"><span class="self">Self</span>::Error</span> =&gt; <span class="ident">ffi::GTK_SYMBOLIC_COLOR_ERROR</span>,
+            <span class="ident"><span class="self">Self</span>::Warning</span> =&gt; <span class="ident">ffi::GTK_SYMBOLIC_COLOR_WARNING</span>,
+            <span class="ident"><span class="self">Self</span>::Success</span> =&gt; <span class="ident">ffi::GTK_SYMBOLIC_COLOR_SUCCESS</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
+        }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::GtkSymbolicColor</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">SymbolicColor</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::GtkSymbolicColor</span>) -&gt; <span class="self">Self</span> {
+        <span class="macro">skip_assert_initialized!</span>();
+        <span class="kw">match</span> <span class="ident">value</span> {
+            <span class="ident">ffi::GTK_SYMBOLIC_COLOR_FOREGROUND</span> =&gt; <span class="ident"><span class="self">Self</span>::Foreground</span>,
+            <span class="ident">ffi::GTK_SYMBOLIC_COLOR_ERROR</span> =&gt; <span class="ident"><span class="self">Self</span>::Error</span>,
+            <span class="ident">ffi::GTK_SYMBOLIC_COLOR_WARNING</span> =&gt; <span class="ident"><span class="self">Self</span>::Warning</span>,
+            <span class="ident">ffi::GTK_SYMBOLIC_COLOR_SUCCESS</span> =&gt; <span class="ident"><span class="self">Self</span>::Success</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+        }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">SymbolicColor</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::gtk_symbolic_color_get_type</span>()) }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">glib::value::ValueType</span> <span class="kw">for</span> <span class="ident">SymbolicColor</span> {
+    <span class="kw">type</span> <span class="ident">Type</span> <span class="op">=</span> <span class="self">Self</span>;
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">SymbolicColor</span> {
+    <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
+
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
+        <span class="macro">skip_assert_initialized!</span>();
+        <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v4_6&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">SymbolicColor</span> {
     <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {

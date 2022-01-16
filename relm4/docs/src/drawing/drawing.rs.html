@@ -191,7 +191,7 @@
 <span class="kw">use</span> <span class="ident">gtk::prelude</span>::{
     <span class="ident">BoxExt</span>, <span class="ident">DrawingAreaExt</span>, <span class="ident">GestureSingleExt</span>, <span class="ident">GtkWindowExt</span>, <span class="ident">OrientableExt</span>, <span class="ident">WidgetExt</span>,
 };
-<span class="kw">use</span> <span class="ident">relm4</span>::{<span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Sender</span>, <span class="ident">WidgetPlus</span>, <span class="ident">Widgets</span>};
+<span class="kw">use</span> <span class="ident">relm4</span>::{<span class="ident">gtk</span>, <span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Sender</span>, <span class="ident">WidgetPlus</span>, <span class="ident">Widgets</span>};
 
 <span class="kw">enum</span> <span class="ident">AppMsg</span> {
     <span class="ident">AddPoint</span>((<span class="ident">f64</span>, <span class="ident">f64</span>)),
@@ -303,7 +303,7 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">relm4_macros::widget</span>]</span>
+<span class="attribute">#[<span class="ident">relm4::widget</span>]</span>
 <span class="kw">impl</span> <span class="ident">Widgets</span><span class="op">&lt;</span><span class="ident">AppModel</span>, ()<span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">AppWidgets</span> {
     <span class="macro">view!</span> {
       <span class="ident">main_window</span> <span class="op">=</span> <span class="ident">gtk::ApplicationWindow</span> {

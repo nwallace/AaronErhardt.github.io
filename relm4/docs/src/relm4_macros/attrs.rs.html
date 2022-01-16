@@ -134,8 +134,6 @@
 <span id="129">129</span>
 <span id="130">130</span>
 <span id="131">131</span>
-<span id="132">132</span>
-<span id="133">133</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2::Span</span>;
 <span class="kw">use</span> <span class="ident">syn</span>::{
     <span class="ident">parse</span>::{<span class="ident">Parse</span>, <span class="ident">ParseStream</span>},
@@ -161,16 +159,6 @@
     <span class="doccomment">///</span>
     <span class="doccomment">/// Defaults to `::relm4`</span>
     <span class="kw">pub</span> <span class="ident">relm4_path</span>: <span class="ident">Path</span>,
-
-    <span class="doccomment">/// Allows to track if relm4 path was already set</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// You can&#39;t set relm4 path twice</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// ```rust, ignore</span>
-    <span class="doccomment">/// #[widget(relm4 = ::my::path, relm4 = ::my::other::path ) ]</span>
-    <span class="doccomment">/// ```</span>
-    <span class="doccomment">/// is illegal</span>
-    <span class="ident">relm4_path_set</span>: <span class="ident">bool</span>,
 }
 
 <span class="kw">impl</span> <span class="ident">Attrs</span> {
@@ -178,21 +166,29 @@
         <span class="ident">Attrs</span> {
             <span class="ident">visibility</span>: <span class="prelude-val">None</span>,
             <span class="ident">relm4_path</span>: <span class="ident">default_relm4_path</span>(),
-            <span class="ident">relm4_path_set</span>: <span class="bool-val">false</span>,
         }
     }
 }
 
 <span class="kw">impl</span> <span class="ident">Parse</span> <span class="kw">for</span> <span class="ident">Attrs</span> {
-    <span class="doccomment">/// Rules for parsing attributes</span>
+    <span class="doccomment">/// Rules for parsing attributes.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// 1. It&#39;s fine if visibility is used unnamed so `#[widget(pub)]` must be valid but thats the only case</span>
-    <span class="doccomment">/// 2. Widget visibility might be named `#[widget(visibility = pub)]`</span>
-    <span class="doccomment">/// 3. `relm4` argument must be named. Always</span>
+    <span class="doccomment">/// 1. It&#39;s fine if visibility is used unnamed so `#[widget(pub)]` must be valid but thats the only case.</span>
+    <span class="doccomment">/// 2. Widget visibility might be named `#[widget(visibility = pub)]`.</span>
+    <span class="doccomment">/// 3. `relm4` argument must be named. Always.</span>
     <span class="doccomment">///</span>
     <span class="kw">fn</span> <span class="ident">parse</span>(<span class="ident">input</span>: <span class="ident">ParseStream</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">attrs</span> <span class="op">=</span> <span class="ident">Attrs::new</span>();
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">attrs_type</span> <span class="op">=</span> <span class="ident">AttributeType::None</span>;
+
+        <span class="comment">// Allows to track if relm4 path was already set.</span>
+        <span class="comment">// You can&#39;t set relm4 path twice.</span>
+        <span class="comment">//</span>
+        <span class="comment">// ```rust, ignore</span>
+        <span class="comment">// #[widget(relm4 = ::my::path, relm4 = ::my::other::path ) ]</span>
+        <span class="comment">// ```</span>
+        <span class="comment">// is illegal.</span>
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">relm4_path_set</span> <span class="op">=</span> <span class="bool-val">false</span>;
 
         <span class="kw">let</span> <span class="ident">mixed_use_error_message</span> <span class="op">=</span>
             <span class="string">&quot;You can&#39;t mix named and unnamed arguments while using `relm4_macros::widget`. \n\
@@ -244,12 +240,12 @@
                     <span class="kw">if</span> <span class="kw">let</span> <span class="ident">AttributeType::Unnamed</span> { <span class="ident">span</span> } <span class="op">=</span> <span class="ident">attrs_type</span> {
                         <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::new</span>(<span class="ident">span</span>, <span class="ident">mixed_use_error_message</span>));
                     }
-                    <span class="kw">if</span> <span class="ident">attrs</span>.<span class="ident">relm4_path_set</span> {
+                    <span class="kw">if</span> <span class="ident">relm4_path_set</span> {
                         <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::new</span>(<span class="ident">path</span>.<span class="ident">span</span>(), <span class="string">&quot;You can&#39;t assign relm4 path twice&quot;</span>));
                     }
 
                     <span class="ident">attrs</span>.<span class="ident">relm4_path</span> <span class="op">=</span> <span class="ident">path</span>;
-                    <span class="ident">attrs</span>.<span class="ident">relm4_path_set</span> <span class="op">=</span> <span class="bool-val">true</span>;
+                    <span class="ident">relm4_path_set</span> <span class="op">=</span> <span class="bool-val">true</span>;
                     <span class="ident">attrs_type</span> <span class="op">=</span> <span class="ident">AttributeType::Named</span>;
                 } <span class="kw">else</span> {
                     <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">input</span>

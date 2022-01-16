@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/glib-0.14.8/src/log.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>log.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/glib-0.15.2/src/log.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>log.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
         </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><div>
                                 <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">  1</span>
@@ -776,6 +776,24 @@
 <span id="773">773</span>
 <span id="774">774</span>
 <span id="775">775</span>
+<span id="776">776</span>
+<span id="777">777</span>
+<span id="778">778</span>
+<span id="779">779</span>
+<span id="780">780</span>
+<span id="781">781</span>
+<span id="782">782</span>
+<span id="783">783</span>
+<span id="784">784</span>
+<span id="785">785</span>
+<span id="786">786</span>
+<span id="787">787</span>
+<span id="788">788</span>
+<span id="789">789</span>
+<span id="790">790</span>
+<span id="791">791</span>
+<span id="792">792</span>
+<span id="793">793</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.</span>
 
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::translate</span>::<span class="kw-2">*</span>;
@@ -983,6 +1001,7 @@
 
 <span class="kw">static</span> <span class="ident">PRINT_HANDLER</span>: <span class="ident">Lazy</span><span class="op">&lt;</span><span class="ident">Mutex</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Arc</span><span class="op">&lt;</span><span class="ident">PrintCallback</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Lazy::new</span>(<span class="op">|</span><span class="op">|</span> <span class="ident">Mutex::new</span>(<span class="prelude-val">None</span>));
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// To set back the default print handler, use the [`unset_print_handler`] function.</span>
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;g_set_print_handler&quot;</span>)]</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_print_handler</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">+</span> <span class="ident">Send</span> <span class="op">+</span> <span class="ident">Sync</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(<span class="ident">func</span>: <span class="ident">P</span>) {
@@ -1003,6 +1022,7 @@
     <span class="kw">unsafe</span> { <span class="ident">ffi::g_set_print_handler</span>(<span class="prelude-val">Some</span>(<span class="ident">func_func</span> <span class="kw">as</span> <span class="kw">_</span>)) };
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// To set the default print handler, use the [`set_print_handler`] function.</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">unset_print_handler</span>() {
     <span class="kw-2">*</span><span class="ident">PRINT_HANDLER</span>
@@ -1013,6 +1033,7 @@
 
 <span class="kw">static</span> <span class="ident">PRINTERR_HANDLER</span>: <span class="ident">Lazy</span><span class="op">&lt;</span><span class="ident">Mutex</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Arc</span><span class="op">&lt;</span><span class="ident">PrintCallback</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Lazy::new</span>(<span class="op">|</span><span class="op">|</span> <span class="ident">Mutex::new</span>(<span class="prelude-val">None</span>));
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// To set back the default print handler, use the [`unset_printerr_handler`] function.</span>
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;g_set_printerr_handler&quot;</span>)]</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_printerr_handler</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">+</span> <span class="ident">Send</span> <span class="op">+</span> <span class="ident">Sync</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(<span class="ident">func</span>: <span class="ident">P</span>) {
@@ -1033,6 +1054,7 @@
     <span class="kw">unsafe</span> { <span class="ident">ffi::g_set_printerr_handler</span>(<span class="prelude-val">Some</span>(<span class="ident">func_func</span> <span class="kw">as</span> <span class="kw">_</span>)) };
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// To set the default print handler, use the [`set_printerr_handler`] function.</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">unset_printerr_handler</span>() {
     <span class="kw-2">*</span><span class="ident">PRINTERR_HANDLER</span>
@@ -1045,6 +1067,7 @@
 
 <span class="kw">static</span> <span class="ident">DEFAULT_HANDLER</span>: <span class="ident">Lazy</span><span class="op">&lt;</span><span class="ident">Mutex</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Arc</span><span class="op">&lt;</span><span class="ident">LogCallback</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Lazy::new</span>(<span class="op">|</span><span class="op">|</span> <span class="ident">Mutex::new</span>(<span class="prelude-val">None</span>));
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// To set back the default print handler, use the [`log_unset_default_handler`] function.</span>
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;g_log_set_default_handler&quot;</span>)]</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">log_set_default_handler</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">Fn</span>(<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>, <span class="ident">LogLevel</span>, <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">+</span> <span class="ident">Send</span> <span class="op">+</span> <span class="ident">Sync</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span>(
@@ -1077,6 +1100,7 @@
     <span class="kw">unsafe</span> { <span class="ident">ffi::g_log_set_default_handler</span>(<span class="prelude-val">Some</span>(<span class="ident">func_func</span> <span class="kw">as</span> <span class="kw">_</span>), <span class="ident">std::ptr::null_mut</span>()) };
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// To set the default print handler, use the [`log_set_default_handler`] function.</span>
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;g_log_set_default_handler&quot;</span>)]</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">log_unset_default_handler</span>() {
@@ -1100,6 +1124,59 @@
     }
 }
 
+<span class="attribute">#[<span class="ident">macro_export</span>]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="macro">macro_rules!</span> <span class="ident">g_log_inner</span> {
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_domain</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">literal</span> $(,<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>)<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
+        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::translate</span>::{<span class="ident">IntoGlib</span>, <span class="ident">ToGlibPtr</span>};
+        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::LogLevel</span>;
+        <span class="kw">use</span> <span class="ident">std::fmt</span>::{<span class="self">self</span>, <span class="ident">Write</span>};
+
+        <span class="kw">fn</span> <span class="ident">check_log_args</span>(<span class="ident">_log_level</span>: <span class="ident">LogLevel</span>, <span class="ident">_format</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {}
+
+        <span class="ident">check_log_args</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
+
+        <span class="comment">// Replace literal percentage signs with two so that they are not interpreted as printf</span>
+        <span class="comment">// format specifiers</span>
+        <span class="kw">struct</span> <span class="ident">GWrite</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::GStringBuilder</span>);
+
+        <span class="kw">impl</span> <span class="ident">fmt::Write</span> <span class="kw">for</span> <span class="ident">GWrite</span> {
+            <span class="kw">fn</span> <span class="ident">write_str</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="kw-2">mut</span> <span class="ident">s</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="ident">::std::result::Result</span><span class="op">&lt;</span>(), <span class="ident">fmt::Error</span><span class="op">&gt;</span> {
+                <span class="kw">while</span> <span class="kw">let</span> <span class="prelude-val">Some</span>((<span class="ident">prefix</span>, <span class="ident">suffix</span>)) <span class="op">=</span> <span class="ident">s</span>.<span class="ident">split_once</span>(<span class="string">&#39;%&#39;</span>) {
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append</span>(<span class="ident">prefix</span>);
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append</span>(<span class="string">&quot;%%&quot;</span>);
+                    <span class="ident">s</span> <span class="op">=</span> <span class="ident">suffix</span>;
+                }
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append</span>(<span class="ident">s</span>);
+                <span class="prelude-val">Ok</span>(())
+            }
+
+            <span class="kw">fn</span> <span class="ident">write_char</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">c</span>: <span class="ident">char</span>) -&gt; <span class="ident">fmt::Result</span> {
+                <span class="kw">if</span> <span class="ident">c</span> <span class="op">==</span> <span class="string">&#39;%&#39;</span> {
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append</span>(<span class="string">&quot;%%&quot;</span>);
+                } <span class="kw">else</span> {
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append_c</span>(<span class="ident">c</span>);
+                }
+                <span class="prelude-val">Ok</span>(())
+            }
+        }
+
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">w</span> <span class="op">=</span> <span class="ident">GWrite</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::GStringBuilder::default</span>());
+
+        <span class="comment">// Can&#39;t really happen but better safe than sorry</span>
+        <span class="kw">if</span> <span class="op">!</span><span class="macro">std::write!</span>(<span class="kw-2">&amp;mut</span> <span class="ident">w</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>).<span class="ident">is_err</span>() {
+            <span class="kw">unsafe</span> {
+                <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::ffi::g_log</span>(
+                    <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_domain</span>,
+                    <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>.<span class="ident">into_glib</span>(),
+                    <span class="ident">w</span>.<span class="number">0</span>.<span class="ident">into_string</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                );
+            }
+        }
+    }};
+}
+
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to log using GLib logging system. It uses [g_log].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_log]: https://developer.gnome.org/glib/stable/glib-Message-Logging.html#g-log</span>
@@ -1141,80 +1218,18 @@
 <span class="doccomment">/// ```</span>
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="macro">macro_rules!</span> <span class="ident">g_log</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">literal</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>),<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::translate</span>::{<span class="ident">IntoGlib</span>, <span class="ident">ToGlibPtr</span>};
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::LogLevel</span>;
-
-        <span class="kw">fn</span> <span class="ident">check_log_args</span>(<span class="ident">_log_level</span>: <span class="ident">LogLevel</span>, <span class="ident">_format</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {}
-
-        <span class="ident">check_log_args</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
-        <span class="comment">// to prevent the glib formatter to look for arguments which don&#39;t exist</span>
-        <span class="kw">let</span> <span class="ident">f</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>).<span class="ident">replace</span>(<span class="string">&quot;%&quot;</span>, <span class="string">&quot;%%&quot;</span>);
-        <span class="kw">unsafe</span> {
-            <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::ffi::g_log</span>(
-                <span class="ident">std::ptr::null</span>(),
-                <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>.<span class="ident">into_glib</span>(),
-                <span class="ident">f</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-            );
-        }
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">literal</span> $(,<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>)<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
+        <span class="macro-nonterminal">$</span><span class="macro">crate::g_log_inner!</span>(<span class="macro-nonterminal">std::ptr::null</span>(), <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>);
     }};
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">literal</span> $(,)<span class="question-mark">?</span>) =&gt; {{
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_domain</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">literal</span> $(,<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>)<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
         <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::translate</span>::{<span class="ident">IntoGlib</span>, <span class="ident">ToGlibPtr</span>};
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::LogLevel</span>;
 
-        <span class="kw">fn</span> <span class="ident">check_log_args</span>(<span class="ident">_log_level</span>: <span class="ident">LogLevel</span>, <span class="ident">_format</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {}
-
-        <span class="ident">check_log_args</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
-        <span class="comment">// to prevent the glib formatter to look for arguments which don&#39;t exist</span>
-        <span class="kw">let</span> <span class="ident">f</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>.<span class="ident">replace</span>(<span class="string">&quot;%&quot;</span>, <span class="string">&quot;%%&quot;</span>);
-        <span class="kw">unsafe</span> {
-            <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::ffi::g_log</span>(
-                <span class="ident">std::ptr::null</span>(),
-                <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>.<span class="ident">into_glib</span>(),
-                <span class="ident">f</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-            );
-        }
-    }};
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_domain</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">literal</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>),<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::translate</span>::{<span class="ident">IntoGlib</span>, <span class="ident">ToGlibPtr</span>};
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::LogLevel</span>;
-
-        <span class="kw">fn</span> <span class="ident">check_log_args</span>(<span class="ident">_log_level</span>: <span class="ident">LogLevel</span>, <span class="ident">_format</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {}
-
-        <span class="comment">// the next line is used to enforce the type for the macro checker...</span>
         <span class="kw">let</span> <span class="ident">log_domain</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_domain</span>.<span class="ident">into</span>();
-        <span class="ident">check_log_args</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
-        <span class="comment">// to prevent the glib formatter to look for arguments which don&#39;t exist</span>
-        <span class="kw">let</span> <span class="ident">f</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>).<span class="ident">replace</span>(<span class="string">&quot;%&quot;</span>, <span class="string">&quot;%%&quot;</span>);
-        <span class="kw">unsafe</span> {
-            <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::ffi::g_log</span>(
-                <span class="ident">log_domain</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>.<span class="ident">into_glib</span>(),
-                <span class="ident">f</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-            );
-        }
-    }};
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_domain</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">literal</span> $(,)<span class="question-mark">?</span>) =&gt; {{
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::translate</span>::{<span class="ident">IntoGlib</span>, <span class="ident">ToGlibPtr</span>};
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::LogLevel</span>;
-
-        <span class="kw">fn</span> <span class="ident">check_log_args</span>(<span class="ident">_log_level</span>: <span class="ident">LogLevel</span>, <span class="ident">_format</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {}
-
-        <span class="comment">// the next line is used to enforce the type for the macro checker...</span>
-        <span class="kw">let</span> <span class="ident">log_domain</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_domain</span>.<span class="ident">into</span>();
-        <span class="ident">check_log_args</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
-        <span class="comment">// to prevent the glib formatter to look for arguments which don&#39;t exist</span>
-        <span class="kw">let</span> <span class="ident">f</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>.<span class="ident">replace</span>(<span class="string">&quot;%&quot;</span>, <span class="string">&quot;%%&quot;</span>);
-        <span class="kw">unsafe</span> {
-            <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::ffi::g_log</span>(
-                <span class="ident">log_domain</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>.<span class="ident">into_glib</span>(),
-                <span class="ident">f</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-            );
-        }
+        <span class="macro-nonterminal">$</span><span class="macro">crate::g_log_inner!</span>(<span class="macro-nonterminal">log_domain</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">log_level</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>);
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to log using GLib logging system. It uses [g_log].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_log]: https://developer.gnome.org/glib/stable/glib-Message-Logging.html#g-log</span>
@@ -1251,6 +1266,7 @@
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to log using GLib logging system. It uses [g_log].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_log]: https://developer.gnome.org/glib/stable/glib-Message-Logging.html#g-log</span>
@@ -1287,6 +1303,7 @@
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to log using GLib logging system. It uses [g_log].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_log]: https://developer.gnome.org/glib/stable/glib-Message-Logging.html#g-log</span>
@@ -1323,6 +1340,7 @@
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to log using GLib logging system. It uses [g_log].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_log]: https://developer.gnome.org/glib/stable/glib-Message-Logging.html#g-log</span>
@@ -1359,6 +1377,7 @@
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to log using GLib logging system. It uses [g_log].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_log]: https://developer.gnome.org/glib/stable/glib-Message-Logging.html#g-log</span>
@@ -1395,6 +1414,7 @@
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to log using GLib logging system. It uses [g_log].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_log]: https://developer.gnome.org/glib/stable/glib-Message-Logging.html#g-log</span>
@@ -1434,32 +1454,52 @@
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="macro">macro_rules!</span> <span class="ident">g_print_inner</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">func</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span>) =&gt; {{
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::translate::ToGlibPtr</span>;
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">func</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span> $(, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>)<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
+        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::translate</span>::{<span class="ident">IntoGlib</span>, <span class="ident">ToGlibPtr</span>};
+        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::LogLevel</span>;
+        <span class="kw">use</span> <span class="ident">std::fmt</span>::{<span class="self">self</span>, <span class="ident">Write</span>};
 
         <span class="kw">fn</span> <span class="ident">check_arg</span>(<span class="ident">_format</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {}
 
         <span class="ident">check_arg</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
-        <span class="comment">// to prevent the glib formatter to look for arguments which don&#39;t exist</span>
-        <span class="kw">let</span> <span class="ident">f</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>.<span class="ident">replace</span>(<span class="string">&quot;%&quot;</span>, <span class="string">&quot;%%&quot;</span>);
-        <span class="kw">unsafe</span> {
-            <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::ffi</span>::<span class="macro-nonterminal">$</span><span class="macro-nonterminal">func</span>(<span class="ident">f</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>);
+
+        <span class="comment">// Replace literal percentage signs with two so that they are not interpreted as printf</span>
+        <span class="comment">// format specifiers</span>
+        <span class="kw">struct</span> <span class="ident">GWrite</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::GStringBuilder</span>);
+
+        <span class="kw">impl</span> <span class="ident">fmt::Write</span> <span class="kw">for</span> <span class="ident">GWrite</span> {
+            <span class="kw">fn</span> <span class="ident">write_str</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="kw-2">mut</span> <span class="ident">s</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="ident">::std::result::Result</span><span class="op">&lt;</span>(), <span class="ident">fmt::Error</span><span class="op">&gt;</span> {
+                <span class="kw">while</span> <span class="kw">let</span> <span class="prelude-val">Some</span>((<span class="ident">prefix</span>, <span class="ident">suffix</span>)) <span class="op">=</span> <span class="ident">s</span>.<span class="ident">split_once</span>(<span class="string">&#39;%&#39;</span>) {
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append</span>(<span class="ident">prefix</span>);
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append</span>(<span class="string">&quot;%%&quot;</span>);
+                    <span class="ident">s</span> <span class="op">=</span> <span class="ident">suffix</span>;
+                }
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append</span>(<span class="ident">s</span>);
+                <span class="prelude-val">Ok</span>(())
+            }
+
+            <span class="kw">fn</span> <span class="ident">write_char</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">c</span>: <span class="ident">char</span>) -&gt; <span class="ident">fmt::Result</span> {
+                <span class="kw">if</span> <span class="ident">c</span> <span class="op">==</span> <span class="string">&#39;%&#39;</span> {
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append</span>(<span class="string">&quot;%%&quot;</span>);
+                } <span class="kw">else</span> {
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">append_c</span>(<span class="ident">c</span>);
+                }
+                <span class="prelude-val">Ok</span>(())
+            }
         }
-    }};
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">func</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>),<span class="kw-2">*</span>) =&gt; {{
-        <span class="kw">use</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::translate::ToGlibPtr</span>;
 
-        <span class="kw">fn</span> <span class="ident">check_arg</span>(<span class="ident">_format</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {}
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">w</span> <span class="op">=</span> <span class="ident">GWrite</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::GStringBuilder::default</span>());
 
-        <span class="ident">check_arg</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
-        <span class="comment">// to prevent the glib formatter to look for arguments which don&#39;t exist</span>
-        <span class="kw">let</span> <span class="ident">f</span> <span class="op">=</span> <span class="macro">format!</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>).<span class="ident">replace</span>(<span class="string">&quot;%&quot;</span>, <span class="string">&quot;%%&quot;</span>);
-        <span class="kw">unsafe</span> {
-            <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::ffi</span>::<span class="macro-nonterminal">$</span><span class="macro-nonterminal">func</span>(<span class="ident">f</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>);
+        <span class="comment">// Can&#39;t really happen but better safe than sorry</span>
+        <span class="kw">if</span> <span class="op">!</span><span class="macro">std::write!</span>(<span class="kw-2">&amp;mut</span> <span class="ident">w</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>).<span class="ident">is_err</span>() {
+            <span class="kw">unsafe</span> {
+                <span class="macro-nonterminal">$</span><span class="macro-nonterminal">crate::ffi</span>::<span class="macro-nonterminal">$</span><span class="macro-nonterminal">func</span>(<span class="ident">w</span>.<span class="number">0</span>.<span class="ident">into_string</span>().<span class="ident">to_glib_none</span>().<span class="number">0</span>);
+            }
         }
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to print messages. It uses [g_print].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_print]: https://developer.gnome.org/glib/stable/glib-Warnings-and-Assertions.html#g-print</span>
@@ -1481,14 +1521,12 @@
 <span class="doccomment">/// ```</span>
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="macro">macro_rules!</span> <span class="ident">g_print</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>),<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span> $(,<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>)<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
         <span class="macro-nonterminal">$</span><span class="macro">crate::g_print_inner!</span>(<span class="macro-nonterminal">g_print</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>);
-    }};
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span> $(,)<span class="question-mark">?</span>) =&gt; {{
-        <span class="macro-nonterminal">$</span><span class="macro">crate::g_print_inner!</span>(<span class="macro-nonterminal">g_print</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="doccomment">/// Macro used to print error messages. It uses [g_printerr].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [g_printerr]: https://developer.gnome.org/glib/stable/glib-Warnings-and-Assertions.html#g-printerr</span>
@@ -1510,14 +1548,12 @@
 <span class="doccomment">/// ```</span>
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="macro">macro_rules!</span> <span class="ident">g_printerr</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span> $(,)<span class="question-mark">?</span>) =&gt; {{
-        <span class="macro-nonterminal">$</span><span class="macro">crate::g_print_inner!</span>(<span class="macro-nonterminal">g_printerr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>);
-    }};
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>),<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>:<span class="ident">expr</span> $(, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>:<span class="ident">expr</span>)<span class="op">*</span> $(,)<span class="question-mark">?</span>) =&gt; {{
         <span class="macro-nonterminal">$</span><span class="macro">crate::g_print_inner!</span>(<span class="macro-nonterminal">g_printerr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">format</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">arg</span>),<span class="kw-2">*</span>);
     }};
 }
 
+<span class="comment">// rustdoc-stripper-ignore-next</span>
 <span class="comment">// /// Macro used to log using GLib logging system. It uses [g_log_structured][gls].</span>
 <span class="comment">// ///</span>
 <span class="comment">// /// [gls]: https://developer.gnome.org/glib/stable/glib-Message-Logging.html#g-log-structured)</span>

@@ -10,7 +10,11 @@
 <span id="5">5</span>
 <span id="6">6</span>
 <span id="7">7</span>
-</pre><pre class="rust"><code><span class="doccomment">/// Get the parent window that allows setting the parent window of a dialog with</span>
+<span id="8">8</span>
+<span id="9">9</span>
+</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">relm4::gtk</span>;
+
+<span class="doccomment">/// Get the parent window that allows setting the parent window of a dialog with</span>
 <span class="doccomment">/// [`gtk::prelude::GtkWindowExt::set_transient_for`].</span>
 <span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">ParentWindow</span> {
     <span class="doccomment">/// Returns the parent window that a dialog should use or [`None`] if</span>

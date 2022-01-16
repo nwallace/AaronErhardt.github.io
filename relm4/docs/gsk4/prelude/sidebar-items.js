@@ -1,1 +1,1 @@
-initSidebarItems({"trait":[["RendererExt",""],["RendererExtManual",""]]});
+initSidebarItems({"trait":[["GskRendererExt",""],["IsRenderNode","A common trait implemented by the various `RenderNode` types."]]});

@@ -153,13 +153,12 @@
 <span id="150">150</span>
 <span id="151">151</span>
 <span id="152">152</span>
-<span id="153">153</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">BoxExt</span>, <span class="ident">ButtonExt</span>, <span class="ident">GtkWindowExt</span>, <span class="ident">OrientableExt</span>, <span class="ident">WidgetExt</span>};
 <span class="kw">use</span> <span class="ident">relm4</span>::{
     <span class="ident">actions</span>::{
         <span class="ident">AccelsPlus</span>, <span class="ident">ActionGroupName</span>, <span class="ident">ActionName</span>, <span class="ident">ActionablePlus</span>, <span class="ident">RelmAction</span>, <span class="ident">RelmActionGroup</span>,
     },
-    <span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Sender</span>, <span class="ident">WidgetPlus</span>, <span class="ident">Widgets</span>,
+    <span class="ident">gtk</span>, <span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Sender</span>, <span class="ident">WidgetPlus</span>, <span class="ident">Widgets</span>,
 };
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Default</span>)]</span>
@@ -192,7 +191,7 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">relm4_macros::widget</span>]</span>
+<span class="attribute">#[<span class="ident">relm4::widget</span>]</span>
 <span class="kw">impl</span> <span class="ident">Widgets</span><span class="op">&lt;</span><span class="ident">AppModel</span>, ()<span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">AppWidgets</span> {
     <span class="macro">view!</span> {
         <span class="ident">main_window</span> <span class="op">=</span> <span class="ident">gtk::ApplicationWindow</span> {
@@ -299,7 +298,6 @@
 
 <span class="macro">relm4::new_stateless_action!</span>(<span class="ident">TestAction</span>, <span class="ident">WindowActionGroup</span>, <span class="string">&quot;test&quot;</span>);
 <span class="macro">relm4::new_stateful_action!</span>(<span class="ident">TestU8Action</span>, <span class="ident">WindowActionGroup</span>, <span class="string">&quot;test2&quot;</span>, <span class="ident">u8</span>, <span class="ident">u8</span>);
-
 
 <span class="kw">fn</span> <span class="ident">main</span>() {
     <span class="kw">let</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">AppModel::default</span>();

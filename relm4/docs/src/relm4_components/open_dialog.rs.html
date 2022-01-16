@@ -154,7 +154,7 @@
 <span id="149">149</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Reusable and easily configurable open dialog component.</span>
 <span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">FileChooserExt</span>, <span class="ident">FileExt</span>, <span class="ident">NativeDialogExt</span>};
-<span class="kw">use</span> <span class="ident">relm4</span>::{<span class="ident">send</span>, <span class="ident">ComponentUpdate</span>, <span class="ident">Model</span>, <span class="ident">Sender</span>};
+<span class="kw">use</span> <span class="ident">relm4</span>::{<span class="ident">gtk</span>, <span class="ident">send</span>, <span class="ident">ComponentUpdate</span>, <span class="ident">Model</span>, <span class="ident">Sender</span>};
 
 <span class="kw">use</span> <span class="ident">std::marker::PhantomData</span>;
 <span class="kw">use</span> <span class="ident">std::path::PathBuf</span>;
@@ -263,7 +263,7 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">relm4_macros::widget</span>(<span class="ident">visibility</span> <span class="op">=</span> <span class="kw">pub</span>)]</span>
+<span class="attribute">#[<span class="ident">relm4::widget</span>(<span class="ident">visibility</span> <span class="op">=</span> <span class="kw">pub</span>)]</span>
 <span class="doccomment">/// Widgets of the open dialog component</span>
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">ParentModel</span>, <span class="ident">Conf</span><span class="op">&gt;</span> <span class="ident">relm4::Widgets</span><span class="op">&lt;</span><span class="ident">OpenDialogModel</span><span class="op">&lt;</span><span class="ident">Conf</span><span class="op">&gt;</span>, <span class="ident">ParentModel</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">OpenDialogWidgets</span>
 <span class="kw">where</span>

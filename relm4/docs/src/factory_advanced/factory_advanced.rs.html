@@ -192,44 +192,10 @@
 <span id="189">189</span>
 <span id="190">190</span>
 <span id="191">191</span>
-<span id="192">192</span>
-<span id="193">193</span>
-<span id="194">194</span>
-<span id="195">195</span>
-<span id="196">196</span>
-<span id="197">197</span>
-<span id="198">198</span>
-<span id="199">199</span>
-<span id="200">200</span>
-<span id="201">201</span>
-<span id="202">202</span>
-<span id="203">203</span>
-<span id="204">204</span>
-<span id="205">205</span>
-<span id="206">206</span>
-<span id="207">207</span>
-<span id="208">208</span>
-<span id="209">209</span>
-<span id="210">210</span>
-<span id="211">211</span>
-<span id="212">212</span>
-<span id="213">213</span>
-<span id="214">214</span>
-<span id="215">215</span>
-<span id="216">216</span>
-<span id="217">217</span>
-<span id="218">218</span>
-<span id="219">219</span>
-<span id="220">220</span>
-<span id="221">221</span>
-<span id="222">222</span>
-<span id="223">223</span>
-<span id="224">224</span>
-<span id="225">225</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib::Sender</span>;
-<span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">BoxExt</span>, <span class="ident">ButtonExt</span>, <span class="ident">GtkWindowExt</span>};
+<span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">BoxExt</span>, <span class="ident">ButtonExt</span>, <span class="ident">GtkWindowExt</span>, <span class="ident">OrientableExt</span>};
 <span class="kw">use</span> <span class="ident">relm4::factory</span>::{<span class="ident">DynamicIndex</span>, <span class="ident">Factory</span>, <span class="ident">FactoryPrototype</span>, <span class="ident">FactoryVecDeque</span>, <span class="ident">WeakDynamicIndex</span>};
-<span class="kw">use</span> <span class="ident">relm4</span>::<span class="kw-2">*</span>;
+<span class="kw">use</span> <span class="ident">relm4</span>::{<span class="ident">gtk</span>, <span class="ident">send</span>, <span class="ident">AppUpdate</span>, <span class="ident">Model</span>, <span class="ident">RelmApp</span>, <span class="ident">Widgets</span>};
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
 <span class="kw">enum</span> <span class="ident">AppMsg</span> {
@@ -305,12 +271,7 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
-<span class="kw">struct</span> <span class="ident">FactoryWidgets</span> {
-    <span class="ident">hbox</span>: <span class="ident">gtk::Box</span>,
-    <span class="ident">counter_button</span>: <span class="ident">gtk::Button</span>,
-}
-
+<span class="attribute">#[<span class="ident">relm4::factory_prototype</span>]</span>
 <span class="kw">impl</span> <span class="ident">FactoryPrototype</span> <span class="kw">for</span> <span class="ident">Counter</span> {
     <span class="kw">type</span> <span class="ident">Factory</span> <span class="op">=</span> <span class="ident">FactoryVecDeque</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
     <span class="kw">type</span> <span class="ident">Widgets</span> <span class="op">=</span> <span class="ident">FactoryWidgets</span>;
@@ -318,67 +279,38 @@
     <span class="kw">type</span> <span class="ident">View</span> <span class="op">=</span> <span class="ident">gtk::Box</span>;
     <span class="kw">type</span> <span class="ident">Msg</span> <span class="op">=</span> <span class="ident">AppMsg</span>;
 
-    <span class="kw">fn</span> <span class="ident">generate</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">index</span>: <span class="kw-2">&amp;</span><span class="ident">DynamicIndex</span>, <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident">FactoryWidgets</span> {
-        <span class="kw">let</span> <span class="ident">hbox</span> <span class="op">=</span> <span class="ident">gtk::Box::builder</span>()
-            .<span class="ident">orientation</span>(<span class="ident">gtk::Orientation::Horizontal</span>)
-            .<span class="ident">spacing</span>(<span class="number">5</span>)
-            .<span class="ident">build</span>();
-
-        <span class="kw">let</span> <span class="ident">counter_button</span> <span class="op">=</span> <span class="ident">gtk::Button::with_label</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value</span>.<span class="ident">to_string</span>());
-        <span class="kw">let</span> <span class="ident">index</span>: <span class="ident">DynamicIndex</span> <span class="op">=</span> <span class="ident">index</span>.<span class="ident">clone</span>();
-
-        <span class="kw">let</span> <span class="ident">remove_button</span> <span class="op">=</span> <span class="ident">gtk::Button::with_label</span>(<span class="string">&quot;Remove&quot;</span>);
-        <span class="kw">let</span> <span class="ident">ins_above_button</span> <span class="op">=</span> <span class="ident">gtk::Button::with_label</span>(<span class="string">&quot;Add above&quot;</span>);
-        <span class="kw">let</span> <span class="ident">ins_below_button</span> <span class="op">=</span> <span class="ident">gtk::Button::with_label</span>(<span class="string">&quot;Add below&quot;</span>);
-
-        <span class="ident">hbox</span>.<span class="ident">append</span>(<span class="kw-2">&amp;</span><span class="ident">counter_button</span>);
-        <span class="ident">hbox</span>.<span class="ident">append</span>(<span class="kw-2">&amp;</span><span class="ident">remove_button</span>);
-        <span class="ident">hbox</span>.<span class="ident">append</span>(<span class="kw-2">&amp;</span><span class="ident">ins_above_button</span>);
-        <span class="ident">hbox</span>.<span class="ident">append</span>(<span class="kw-2">&amp;</span><span class="ident">ins_below_button</span>);
-
-        {
-            <span class="kw">let</span> <span class="ident">sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
-            <span class="kw">let</span> <span class="ident">index</span> <span class="op">=</span> <span class="ident">index</span>.<span class="ident">clone</span>();
-            <span class="ident">counter_button</span>.<span class="ident">connect_clicked</span>(<span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
-                <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::CountAt</span>(<span class="ident">index</span>.<span class="ident">downgrade</span>()));
-            });
-        }
-
-        {
-            <span class="kw">let</span> <span class="ident">sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
-            <span class="kw">let</span> <span class="ident">index</span> <span class="op">=</span> <span class="ident">index</span>.<span class="ident">clone</span>();
-            <span class="ident">remove_button</span>.<span class="ident">connect_clicked</span>(<span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
-                <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::RemoveAt</span>(<span class="ident">index</span>.<span class="ident">downgrade</span>()));
-            });
-        }
-
-        {
-            <span class="kw">let</span> <span class="ident">sender</span> <span class="op">=</span> <span class="ident">sender</span>.<span class="ident">clone</span>();
-            <span class="kw">let</span> <span class="ident">index</span> <span class="op">=</span> <span class="ident">index</span>.<span class="ident">clone</span>();
-            <span class="ident">ins_above_button</span>.<span class="ident">connect_clicked</span>(<span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
-                <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::InsertBefore</span>(<span class="ident">index</span>.<span class="ident">downgrade</span>()));
-            });
-        }
-
-        <span class="ident">ins_below_button</span>.<span class="ident">connect_clicked</span>(<span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
-            <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::InsertAfter</span>(<span class="ident">index</span>.<span class="ident">downgrade</span>()));
-        });
-
-        <span class="ident">FactoryWidgets</span> {
-            <span class="ident">hbox</span>,
-            <span class="ident">counter_button</span>,
+    <span class="macro">view!</span> {
+        <span class="ident">gtk::Box</span> {
+            <span class="ident">set_orientation</span>: <span class="ident">gtk::Orientation::Horizontal</span>,
+            <span class="ident">set_spacing</span>: <span class="number">5</span>,
+            <span class="ident">append</span>: <span class="ident">counter_button</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">gtk::Button</span> {
+                <span class="ident">set_label</span>: <span class="macro">watch!</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value</span>.<span class="ident">to_string</span>()),
+                <span class="ident">connect_clicked</span>(<span class="ident">sender</span>, <span class="ident">key</span>) =&gt; <span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
+                    <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::CountAt</span>(<span class="ident">key</span>.<span class="ident">downgrade</span>()));
+                }
+            },
+            <span class="ident">append</span>: <span class="ident">remove_button</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">gtk::Button</span> {
+                <span class="ident">set_label</span>: <span class="string">&quot;Remove&quot;</span>,
+                <span class="ident">connect_clicked</span>(<span class="ident">sender</span>, <span class="ident">key</span>) =&gt; <span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
+                    <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::RemoveAt</span>(<span class="ident">key</span>.<span class="ident">downgrade</span>()));
+                }
+            },
+            <span class="ident">append</span>: <span class="ident">ins_above_button</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">gtk::Button</span> {
+                <span class="ident">set_label</span>: <span class="string">&quot;Add above&quot;</span>,
+                <span class="ident">connect_clicked</span>(<span class="ident">sender</span>, <span class="ident">key</span>) =&gt; <span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
+                    <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::InsertBefore</span>(<span class="ident">key</span>.<span class="ident">downgrade</span>()));
+                }
+            },
+            <span class="ident">append</span>: <span class="ident">ins_below_button</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="ident">gtk::Button</span> {
+                <span class="ident">set_label</span>: <span class="string">&quot;Add below&quot;</span>,
+                <span class="ident">connect_clicked</span>(<span class="ident">key</span>) =&gt; <span class="kw">move</span> <span class="op">|</span><span class="kw">_</span><span class="op">|</span> {
+                    <span class="macro">send!</span>(<span class="ident">sender</span>, <span class="ident">AppMsg::InsertAfter</span>(<span class="ident">key</span>.<span class="ident">downgrade</span>()));
+                }
+            }
         }
     }
 
     <span class="kw">fn</span> <span class="ident">position</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_index</span>: <span class="kw-2">&amp;</span><span class="ident">DynamicIndex</span>) {}
-
-    <span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_index</span>: <span class="kw-2">&amp;</span><span class="ident">DynamicIndex</span>, <span class="ident">widgets</span>: <span class="kw-2">&amp;</span><span class="ident">FactoryWidgets</span>) {
-        <span class="ident">widgets</span>.<span class="ident">counter_button</span>.<span class="ident">set_label</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value</span>.<span class="ident">to_string</span>());
-    }
-
-    <span class="kw">fn</span> <span class="ident">get_root</span>(<span class="ident">widget</span>: <span class="kw-2">&amp;</span><span class="ident">FactoryWidgets</span>) -&gt; <span class="kw-2">&amp;</span><span class="ident">gtk::Box</span> {
-        <span class="kw-2">&amp;</span><span class="ident">widget</span>.<span class="ident">hbox</span>
-    }
 }
 
 <span class="kw">struct</span> <span class="ident">AppWidgets</span> {
@@ -390,7 +322,7 @@
     <span class="kw">type</span> <span class="ident">Root</span> <span class="op">=</span> <span class="ident">gtk::ApplicationWindow</span>;
 
     <span class="kw">fn</span> <span class="ident">init_view</span>(<span class="ident">_model</span>: <span class="kw-2">&amp;</span><span class="ident">AppModel</span>, <span class="ident">_components</span>: <span class="kw-2">&amp;</span>(), <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="self">Self</span> {
-        <span class="kw">let</span> <span class="ident">main</span> <span class="op">=</span> <span class="ident">gtk::ApplicationWindowBuilder::new</span>()
+        <span class="kw">let</span> <span class="ident">main</span> <span class="op">=</span> <span class="ident">gtk::ApplicationWindow::builder</span>()
             .<span class="ident">default_width</span>(<span class="number">300</span>)
             .<span class="ident">default_height</span>(<span class="number">200</span>)
             .<span class="ident">build</span>();

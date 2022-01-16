@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/gobject-sys-0.14.0/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/gobject-sys-0.15.1/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a class="sidebar-logo" href="../../gobject_sys/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
         </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../gobject_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><div>
                                 <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
@@ -2621,6 +2621,30 @@
 <span id="2618">2618</span>
 <span id="2619">2619</span>
 <span id="2620">2620</span>
+<span id="2621">2621</span>
+<span id="2622">2622</span>
+<span id="2623">2623</span>
+<span id="2624">2624</span>
+<span id="2625">2625</span>
+<span id="2626">2626</span>
+<span id="2627">2627</span>
+<span id="2628">2628</span>
+<span id="2629">2629</span>
+<span id="2630">2630</span>
+<span id="2631">2631</span>
+<span id="2632">2632</span>
+<span id="2633">2633</span>
+<span id="2634">2634</span>
+<span id="2635">2635</span>
+<span id="2636">2636</span>
+<span id="2637">2637</span>
+<span id="2638">2638</span>
+<span id="2639">2639</span>
+<span id="2640">2640</span>
+<span id="2641">2641</span>
+<span id="2642">2642</span>
+<span id="2643">2643</span>
+<span id="2644">2644</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)</span>
 <span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files)</span>
 <span class="comment">// DO NOT EDIT</span>
@@ -2634,12 +2658,10 @@
 )]</span>
 <span class="attribute">#![<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">feature</span>(<span class="ident">doc_cfg</span>))]</span>
 
-<span class="kw">use</span> <span class="ident">glib_sys</span> <span class="kw">as</span> <span class="ident">glib</span>;
-
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
 <span class="kw">use</span> <span class="ident">libc</span>::{
     <span class="ident">c_char</span>, <span class="ident">c_double</span>, <span class="ident">c_float</span>, <span class="ident">c_int</span>, <span class="ident">c_long</span>, <span class="ident">c_short</span>, <span class="ident">c_uchar</span>, <span class="ident">c_uint</span>, <span class="ident">c_ulong</span>, <span class="ident">c_ushort</span>, <span class="ident">c_void</span>,
-    <span class="ident">intptr_t</span>, <span class="ident">size_t</span>, <span class="ident">ssize_t</span>, <span class="ident">time_t</span>, <span class="ident">uintptr_t</span>, <span class="ident">FILE</span>,
+    <span class="ident">intptr_t</span>, <span class="ident">size_t</span>, <span class="ident">ssize_t</span>, <span class="ident">uintptr_t</span>, <span class="ident">FILE</span>,
 };
 
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
@@ -2723,6 +2745,7 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_NO_HOOKS</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">64</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MUST_COLLECT</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">128</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_DEPRECATED</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">256</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_ACCUMULATOR_FIRST_RUN</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">131072</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="ident">c_uint</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_ID</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="number">1</span>;
@@ -2742,6 +2765,7 @@
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_ABSTRACT</span>: <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="number">16</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_VALUE_ABSTRACT</span>: <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="number">32</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_FINAL</span>: <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="number">64</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_CLASSED</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="number">1</span>;
@@ -2751,7 +2775,10 @@
 
 <span class="comment">// Unions</span>
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeCValue</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeCValue</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">GTypeCValue</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -2760,8 +2787,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">union</span> <span class="ident">GValue_data</span> {
     <span class="kw">pub</span> <span class="ident">v_int</span>: <span class="ident">c_int</span>,
     <span class="kw">pub</span> <span class="ident">v_uint</span>: <span class="ident">c_uint</span>,
@@ -2790,8 +2817,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">union</span> <span class="ident">GWeakRef_priv</span> {
     <span class="kw">pub</span> <span class="ident">p</span>: <span class="ident">gpointer</span>,
 }
@@ -2876,8 +2903,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GClosureNotifyData</span> {
     <span class="kw">pub</span> <span class="ident">data</span>: <span class="ident">gpointer</span>,
     <span class="kw">pub</span> <span class="ident">notify</span>: <span class="ident">GClosureNotify</span>,
@@ -2892,8 +2919,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GEnumClass</span> {
     <span class="kw">pub</span> <span class="ident">g_type_class</span>: <span class="ident">GTypeClass</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">c_int</span>,
@@ -2914,8 +2941,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GEnumValue</span> {
     <span class="kw">pub</span> <span class="ident">value</span>: <span class="ident">c_int</span>,
     <span class="kw">pub</span> <span class="ident">value_name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
@@ -2932,8 +2959,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GFlagsClass</span> {
     <span class="kw">pub</span> <span class="ident">g_type_class</span>: <span class="ident">GTypeClass</span>,
     <span class="kw">pub</span> <span class="ident">mask</span>: <span class="ident">c_uint</span>,
@@ -2952,8 +2979,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GFlagsValue</span> {
     <span class="kw">pub</span> <span class="ident">value</span>: <span class="ident">c_uint</span>,
     <span class="kw">pub</span> <span class="ident">value_name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
@@ -2970,8 +2997,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GInitiallyUnownedClass</span> {
     <span class="kw">pub</span> <span class="ident">g_type_class</span>: <span class="ident">GTypeClass</span>,
     <span class="kw">pub</span> <span class="ident">construct_properties</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GSList</span>,
@@ -3010,8 +3037,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GInterfaceInfo</span> {
     <span class="kw">pub</span> <span class="ident">interface_init</span>: <span class="ident">GInterfaceInitFunc</span>,
     <span class="kw">pub</span> <span class="ident">interface_finalize</span>: <span class="ident">GInterfaceFinalizeFunc</span>,
@@ -3028,8 +3055,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GObjectClass</span> {
     <span class="kw">pub</span> <span class="ident">g_type_class</span>: <span class="ident">GTypeClass</span>,
     <span class="kw">pub</span> <span class="ident">construct_properties</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GSList</span>,
@@ -3068,8 +3095,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GObjectConstructParam</span> {
     <span class="kw">pub</span> <span class="ident">pspec</span>: <span class="kw-2">*mut</span> <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">value</span>: <span class="kw-2">*mut</span> <span class="ident">GValue</span>,
@@ -3084,8 +3111,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecClass</span> {
     <span class="kw">pub</span> <span class="ident">g_type_class</span>: <span class="ident">GTypeClass</span>,
     <span class="kw">pub</span> <span class="ident">value_type</span>: <span class="ident">GType</span>,
@@ -3111,12 +3138,15 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_GParamSpecPool</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_GParamSpecPool</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GParamSpecPool</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_GParamSpecPool</span>;
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecTypeInfo</span> {
     <span class="kw">pub</span> <span class="ident">instance_size</span>: <span class="ident">u16</span>,
     <span class="kw">pub</span> <span class="ident">n_preallocs</span>: <span class="ident">u16</span>,
@@ -3144,8 +3174,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParameter</span> {
     <span class="kw">pub</span> <span class="ident">name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
     <span class="kw">pub</span> <span class="ident">value</span>: <span class="ident">GValue</span>,
@@ -3160,8 +3190,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GSignalInvocationHint</span> {
     <span class="kw">pub</span> <span class="ident">signal_id</span>: <span class="ident">c_uint</span>,
     <span class="kw">pub</span> <span class="ident">detail</span>: <span class="ident">glib::GQuark</span>,
@@ -3178,8 +3208,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GSignalQuery</span> {
     <span class="kw">pub</span> <span class="ident">signal_id</span>: <span class="ident">c_uint</span>,
     <span class="kw">pub</span> <span class="ident">signal_name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
@@ -3204,8 +3234,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeClass</span> {
     <span class="kw">pub</span> <span class="ident">g_type</span>: <span class="ident">GType</span>,
 }
@@ -3216,8 +3246,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeFundamentalInfo</span> {
     <span class="kw">pub</span> <span class="ident">type_flags</span>: <span class="ident">GTypeFundamentalFlags</span>,
 }
@@ -3230,8 +3260,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeInfo</span> {
     <span class="kw">pub</span> <span class="ident">class_size</span>: <span class="ident">u16</span>,
     <span class="kw">pub</span> <span class="ident">base_init</span>: <span class="ident">GBaseInitFunc</span>,
@@ -3262,8 +3292,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeInstance</span> {
     <span class="kw">pub</span> <span class="ident">g_class</span>: <span class="kw-2">*mut</span> <span class="ident">GTypeClass</span>,
 }
@@ -3275,8 +3305,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeInterface</span> {
     <span class="kw">pub</span> <span class="ident">g_type</span>: <span class="ident">GType</span>,
     <span class="kw">pub</span> <span class="ident">g_instance_type</span>: <span class="ident">GType</span>,
@@ -3289,8 +3319,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeModuleClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">GObjectClass</span>,
     <span class="kw">pub</span> <span class="ident">load</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">GTypeModule</span>) -&gt; <span class="ident">gboolean</span><span class="op">&gt;</span>,
@@ -3315,8 +3345,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypePluginClass</span> {
     <span class="kw">pub</span> <span class="ident">base_iface</span>: <span class="ident">GTypeInterface</span>,
     <span class="kw">pub</span> <span class="ident">use_plugin</span>: <span class="ident">GTypePluginUse</span>,
@@ -3336,8 +3366,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeQuery</span> {
     <span class="kw">pub</span> <span class="ident">type_</span>: <span class="ident">GType</span>,
     <span class="kw">pub</span> <span class="ident">type_name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
@@ -3356,8 +3386,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeValueTable</span> {
     <span class="kw">pub</span> <span class="ident">value_init</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">GValue</span>)<span class="op">&gt;</span>,
     <span class="kw">pub</span> <span class="ident">value_free</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">GValue</span>)<span class="op">&gt;</span>,
@@ -3388,8 +3418,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GValue</span> {
     <span class="kw">pub</span> <span class="ident">g_type</span>: <span class="ident">GType</span>,
     <span class="kw">pub</span> <span class="ident">data</span>: [<span class="ident">GValue_data</span>; <span class="number">2</span>],
@@ -3403,8 +3433,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GValueArray</span> {
     <span class="kw">pub</span> <span class="ident">n_values</span>: <span class="ident">c_uint</span>,
     <span class="kw">pub</span> <span class="ident">values</span>: <span class="kw-2">*mut</span> <span class="ident">GValue</span>,
@@ -3420,8 +3450,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GWeakRef</span> {
     <span class="kw">pub</span> <span class="ident">priv_</span>: <span class="ident">GWeakRef_priv</span>,
 }
@@ -3436,7 +3466,10 @@
 
 <span class="comment">// Classes</span>
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GBinding</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GBinding</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">GBinding</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3444,8 +3477,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GInitiallyUnowned</span> {
     <span class="kw">pub</span> <span class="ident">g_type_instance</span>: <span class="ident">GTypeInstance</span>,
     <span class="kw">pub</span> <span class="ident">ref_count</span>: <span class="ident">c_uint</span>,
@@ -3460,8 +3493,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GObject</span> {
     <span class="kw">pub</span> <span class="ident">g_type_instance</span>: <span class="ident">GTypeInstance</span>,
     <span class="kw">pub</span> <span class="ident">ref_count</span>: <span class="ident">c_uint</span>,
@@ -3476,8 +3509,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpec</span> {
     <span class="kw">pub</span> <span class="ident">g_type_instance</span>: <span class="ident">GTypeInstance</span>,
     <span class="kw">pub</span> <span class="ident">name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
@@ -3503,8 +3536,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecBoolean</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">default_value</span>: <span class="ident">gboolean</span>,
@@ -3519,8 +3552,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecBoxed</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
 }
@@ -3533,8 +3566,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecChar</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">i8</span>,
@@ -3553,8 +3586,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecDouble</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">c_double</span>,
@@ -3575,8 +3608,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecEnum</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">enum_class</span>: <span class="kw-2">*mut</span> <span class="ident">GEnumClass</span>,
@@ -3593,8 +3626,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecFlags</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">flags_class</span>: <span class="kw-2">*mut</span> <span class="ident">GFlagsClass</span>,
@@ -3611,8 +3644,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecFloat</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">c_float</span>,
@@ -3633,8 +3666,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecGType</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">is_a_type</span>: <span class="ident">GType</span>,
@@ -3649,8 +3682,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecInt</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">c_int</span>,
@@ -3669,8 +3702,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecInt64</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">i64</span>,
@@ -3689,8 +3722,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecLong</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">c_long</span>,
@@ -3709,8 +3742,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecObject</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
 }
@@ -3723,8 +3756,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecOverride</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">overridden</span>: <span class="kw-2">*mut</span> <span class="ident">GParamSpec</span>,
@@ -3737,8 +3770,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecParam</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
 }
@@ -3751,8 +3784,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecPointer</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
 }
@@ -3790,8 +3823,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecUChar</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">u8</span>,
@@ -3810,8 +3843,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecUInt</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">c_uint</span>,
@@ -3830,8 +3863,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecUInt64</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">u64</span>,
@@ -3850,8 +3883,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecULong</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">minimum</span>: <span class="ident">c_ulong</span>,
@@ -3870,8 +3903,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecUnichar</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">default_value</span>: <span class="ident">u32</span>,
@@ -3886,8 +3919,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecValueArray</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">element_spec</span>: <span class="kw-2">*mut</span> <span class="ident">GParamSpec</span>,
@@ -3904,8 +3937,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamSpecVariant</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GParamSpec</span>,
     <span class="kw">pub</span> <span class="ident">type_</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GVariantType</span>,
@@ -3923,8 +3956,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeModule</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">GObject</span>,
     <span class="kw">pub</span> <span class="ident">use_count</span>: <span class="ident">c_uint</span>,
@@ -3947,7 +3980,10 @@
 
 <span class="comment">// Interfaces</span>
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypePlugin</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypePlugin</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">GTypePlugin</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -4327,6 +4363,9 @@
         <span class="ident">instance_type</span>: <span class="ident">GType</span>,
         <span class="ident">interface_type</span>: <span class="ident">GType</span>,
     ) -&gt; <span class="kw-2">*mut</span> <span class="ident">GTypePlugin</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_68&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_68&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_interface_instantiatable_prerequisite</span>(<span class="ident">interface_type</span>: <span class="ident">GType</span>) -&gt; <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_interface_peek</span>(<span class="ident">instance_class</span>: <span class="ident">gpointer</span>, <span class="ident">iface_type</span>: <span class="ident">GType</span>) -&gt; <span class="ident">gpointer</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_interface_prerequisites</span>(
         <span class="ident">interface_type</span>: <span class="ident">GType</span>,
@@ -4464,6 +4503,12 @@
     <span class="comment">// GBinding</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_binding_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_68&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_68&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_binding_dup_source</span>(<span class="ident">binding</span>: <span class="kw-2">*mut</span> <span class="ident">GBinding</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">GObject</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_68&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_68&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_binding_dup_target</span>(<span class="ident">binding</span>: <span class="kw-2">*mut</span> <span class="ident">GBinding</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">GObject</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_binding_get_flags</span>(<span class="ident">binding</span>: <span class="kw-2">*mut</span> <span class="ident">GBinding</span>) -&gt; <span class="ident">GBindingFlags</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_binding_get_source</span>(<span class="ident">binding</span>: <span class="kw-2">*mut</span> <span class="ident">GBinding</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">GObject</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_binding_get_source_property</span>(<span class="ident">binding</span>: <span class="kw-2">*mut</span> <span class="ident">GBinding</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
@@ -4626,6 +4671,9 @@
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_steal_data</span>(<span class="ident">object</span>: <span class="kw-2">*mut</span> <span class="ident">GObject</span>, <span class="ident">key</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="ident">gpointer</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_steal_qdata</span>(<span class="ident">object</span>: <span class="kw-2">*mut</span> <span class="ident">GObject</span>, <span class="ident">quark</span>: <span class="ident">glib::GQuark</span>) -&gt; <span class="ident">gpointer</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_take_ref</span>(<span class="ident">object</span>: <span class="kw-2">*mut</span> <span class="ident">GObject</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">GObject</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_thaw_notify</span>(<span class="ident">object</span>: <span class="kw-2">*mut</span> <span class="ident">GObject</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_unref</span>(<span class="ident">object</span>: <span class="kw-2">*mut</span> <span class="ident">GObject</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_watch_closure</span>(<span class="ident">object</span>: <span class="kw-2">*mut</span> <span class="ident">GObject</span>, <span class="ident">closure</span>: <span class="kw-2">*mut</span> <span class="ident">GClosure</span>);

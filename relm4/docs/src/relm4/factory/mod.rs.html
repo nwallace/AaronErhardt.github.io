@@ -154,7 +154,7 @@
     <span class="kw">type</span> <span class="ident">Factory</span>: <span class="ident">Factory</span><span class="op">&lt;</span><span class="self">Self</span>, <span class="ident"><span class="self">Self</span>::View</span><span class="op">&gt;</span>;
 
     <span class="doccomment">/// Type that stores all widgets needed to update them</span>
-    <span class="doccomment">/// in the [`update`](FactoryPrototype::update) function.</span>
+    <span class="doccomment">/// in the [`view`](FactoryPrototype::view) function.</span>
     <span class="kw">type</span> <span class="ident">Widgets</span>: <span class="ident">std::fmt::Debug</span>;
 
     <span class="doccomment">/// Outermost type of the newly created widgets.</span>
@@ -169,7 +169,7 @@
     <span class="kw">type</span> <span class="ident">Msg</span>;
 
     <span class="doccomment">/// Create new widgets when self is inserted into the factory.</span>
-    <span class="kw">fn</span> <span class="ident">generate</span>(
+    <span class="kw">fn</span> <span class="ident">init_view</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">key</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Factory</span> <span class="kw">as</span> <span class="ident">Factory</span><span class="op">&lt;</span><span class="self">Self</span>, <span class="ident"><span class="self">Self</span>::View</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Key</span>,
         <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Msg</span><span class="op">&gt;</span>,
@@ -182,14 +182,14 @@
     ) -&gt; <span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::View</span> <span class="kw">as</span> <span class="ident">FactoryView</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Root</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Position</span>;
 
     <span class="doccomment">/// Function called when self is modified.</span>
-    <span class="kw">fn</span> <span class="ident">update</span>(
+    <span class="kw">fn</span> <span class="ident">view</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">key</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Factory</span> <span class="kw">as</span> <span class="ident">Factory</span><span class="op">&lt;</span><span class="self">Self</span>, <span class="ident"><span class="self">Self</span>::View</span><span class="op">&gt;</span><span class="op">&gt;</span><span class="ident">::Key</span>,
         <span class="ident">widgets</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Widgets</span>,
     );
 
     <span class="doccomment">/// Get the outermost widget from the widgets.</span>
-    <span class="kw">fn</span> <span class="ident">get_root</span>(<span class="ident">widgets</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Widgets</span>) -&gt; <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Root</span>;
+    <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="ident">widgets</span>: <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Widgets</span>) -&gt; <span class="kw-2">&amp;</span><span class="ident"><span class="self">Self</span>::Root</span>;
 }
 
 <span class="doccomment">/// A container that is a able to efficiently update, generate and remove widgets</span>

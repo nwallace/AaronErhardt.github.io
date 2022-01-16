@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/pango-sys-0.14.0/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/pango-sys-0.15.1/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a class="sidebar-logo" href="../../pango_sys/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
         </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../pango_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><div>
                                 <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
@@ -2810,6 +2810,110 @@
 <span id="2807">2807</span>
 <span id="2808">2808</span>
 <span id="2809">2809</span>
+<span id="2810">2810</span>
+<span id="2811">2811</span>
+<span id="2812">2812</span>
+<span id="2813">2813</span>
+<span id="2814">2814</span>
+<span id="2815">2815</span>
+<span id="2816">2816</span>
+<span id="2817">2817</span>
+<span id="2818">2818</span>
+<span id="2819">2819</span>
+<span id="2820">2820</span>
+<span id="2821">2821</span>
+<span id="2822">2822</span>
+<span id="2823">2823</span>
+<span id="2824">2824</span>
+<span id="2825">2825</span>
+<span id="2826">2826</span>
+<span id="2827">2827</span>
+<span id="2828">2828</span>
+<span id="2829">2829</span>
+<span id="2830">2830</span>
+<span id="2831">2831</span>
+<span id="2832">2832</span>
+<span id="2833">2833</span>
+<span id="2834">2834</span>
+<span id="2835">2835</span>
+<span id="2836">2836</span>
+<span id="2837">2837</span>
+<span id="2838">2838</span>
+<span id="2839">2839</span>
+<span id="2840">2840</span>
+<span id="2841">2841</span>
+<span id="2842">2842</span>
+<span id="2843">2843</span>
+<span id="2844">2844</span>
+<span id="2845">2845</span>
+<span id="2846">2846</span>
+<span id="2847">2847</span>
+<span id="2848">2848</span>
+<span id="2849">2849</span>
+<span id="2850">2850</span>
+<span id="2851">2851</span>
+<span id="2852">2852</span>
+<span id="2853">2853</span>
+<span id="2854">2854</span>
+<span id="2855">2855</span>
+<span id="2856">2856</span>
+<span id="2857">2857</span>
+<span id="2858">2858</span>
+<span id="2859">2859</span>
+<span id="2860">2860</span>
+<span id="2861">2861</span>
+<span id="2862">2862</span>
+<span id="2863">2863</span>
+<span id="2864">2864</span>
+<span id="2865">2865</span>
+<span id="2866">2866</span>
+<span id="2867">2867</span>
+<span id="2868">2868</span>
+<span id="2869">2869</span>
+<span id="2870">2870</span>
+<span id="2871">2871</span>
+<span id="2872">2872</span>
+<span id="2873">2873</span>
+<span id="2874">2874</span>
+<span id="2875">2875</span>
+<span id="2876">2876</span>
+<span id="2877">2877</span>
+<span id="2878">2878</span>
+<span id="2879">2879</span>
+<span id="2880">2880</span>
+<span id="2881">2881</span>
+<span id="2882">2882</span>
+<span id="2883">2883</span>
+<span id="2884">2884</span>
+<span id="2885">2885</span>
+<span id="2886">2886</span>
+<span id="2887">2887</span>
+<span id="2888">2888</span>
+<span id="2889">2889</span>
+<span id="2890">2890</span>
+<span id="2891">2891</span>
+<span id="2892">2892</span>
+<span id="2893">2893</span>
+<span id="2894">2894</span>
+<span id="2895">2895</span>
+<span id="2896">2896</span>
+<span id="2897">2897</span>
+<span id="2898">2898</span>
+<span id="2899">2899</span>
+<span id="2900">2900</span>
+<span id="2901">2901</span>
+<span id="2902">2902</span>
+<span id="2903">2903</span>
+<span id="2904">2904</span>
+<span id="2905">2905</span>
+<span id="2906">2906</span>
+<span id="2907">2907</span>
+<span id="2908">2908</span>
+<span id="2909">2909</span>
+<span id="2910">2910</span>
+<span id="2911">2911</span>
+<span id="2912">2912</span>
+<span id="2913">2913</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)</span>
 <span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files)</span>
 <span class="comment">// DO NOT EDIT</span>
@@ -2823,13 +2927,10 @@
 )]</span>
 <span class="attribute">#![<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">feature</span>(<span class="ident">doc_cfg</span>))]</span>
 
-<span class="kw">use</span> <span class="ident">glib_sys</span> <span class="kw">as</span> <span class="ident">glib</span>;
-<span class="kw">use</span> <span class="ident">gobject_sys</span> <span class="kw">as</span> <span class="ident">gobject</span>;
-
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
 <span class="kw">use</span> <span class="ident">libc</span>::{
     <span class="ident">c_char</span>, <span class="ident">c_double</span>, <span class="ident">c_float</span>, <span class="ident">c_int</span>, <span class="ident">c_long</span>, <span class="ident">c_short</span>, <span class="ident">c_uchar</span>, <span class="ident">c_uint</span>, <span class="ident">c_ulong</span>, <span class="ident">c_ushort</span>, <span class="ident">c_void</span>,
-    <span class="ident">intptr_t</span>, <span class="ident">size_t</span>, <span class="ident">ssize_t</span>, <span class="ident">time_t</span>, <span class="ident">uintptr_t</span>, <span class="ident">FILE</span>,
+    <span class="ident">intptr_t</span>, <span class="ident">size_t</span>, <span class="ident">ssize_t</span>, <span class="ident">uintptr_t</span>, <span class="ident">FILE</span>,
 };
 
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
@@ -2878,6 +2979,18 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_INSERT_HYPHENS</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">28</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_OVERLINE</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">29</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_OVERLINE_COLOR</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">30</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_LINE_HEIGHT</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">31</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_ABSOLUTE_LINE_HEIGHT</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">32</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_TEXT_TRANSFORM</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">33</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_WORD</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">34</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_SENTENCE</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">35</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_BASELINE_SHIFT</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">36</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_FONT_SCALE</span>: <span class="ident">PangoAttrType</span> <span class="op">=</span> <span class="number">37</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoBaselineShift</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BASELINE_SHIFT_NONE</span>: <span class="ident">PangoBaselineShift</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BASELINE_SHIFT_SUPERSCRIPT</span>: <span class="ident">PangoBaselineShift</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BASELINE_SHIFT_SUBSCRIPT</span>: <span class="ident">PangoBaselineShift</span> <span class="op">=</span> <span class="number">2</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BIDI_TYPE_L</span>: <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="number">0</span>;
@@ -2899,6 +3012,10 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BIDI_TYPE_S</span>: <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="number">16</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BIDI_TYPE_WS</span>: <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="number">17</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BIDI_TYPE_ON</span>: <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="number">18</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BIDI_TYPE_LRI</span>: <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="number">19</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BIDI_TYPE_RLI</span>: <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="number">20</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BIDI_TYPE_FSI</span>: <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="number">21</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_BIDI_TYPE_PDI</span>: <span class="ident">PangoBidiType</span> <span class="op">=</span> <span class="number">22</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoCoverageLevel</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_COVERAGE_NONE</span>: <span class="ident">PangoCoverageLevel</span> <span class="op">=</span> <span class="number">0</span>;
@@ -2921,6 +3038,12 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ELLIPSIZE_MIDDLE</span>: <span class="ident">PangoEllipsizeMode</span> <span class="op">=</span> <span class="number">2</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ELLIPSIZE_END</span>: <span class="ident">PangoEllipsizeMode</span> <span class="op">=</span> <span class="number">3</span>;
 
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoFontScale</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_FONT_SCALE_NONE</span>: <span class="ident">PangoFontScale</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_FONT_SCALE_SUPERSCRIPT</span>: <span class="ident">PangoFontScale</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_FONT_SCALE_SUBSCRIPT</span>: <span class="ident">PangoFontScale</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_FONT_SCALE_SMALL_CAPS</span>: <span class="ident">PangoFontScale</span> <span class="op">=</span> <span class="number">3</span>;
+
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoGravity</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_GRAVITY_SOUTH</span>: <span class="ident">PangoGravity</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_GRAVITY_EAST</span>: <span class="ident">PangoGravity</span> <span class="op">=</span> <span class="number">1</span>;
@@ -2932,6 +3055,11 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_GRAVITY_HINT_NATURAL</span>: <span class="ident">PangoGravityHint</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_GRAVITY_HINT_STRONG</span>: <span class="ident">PangoGravityHint</span> <span class="op">=</span> <span class="number">1</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_GRAVITY_HINT_LINE</span>: <span class="ident">PangoGravityHint</span> <span class="op">=</span> <span class="number">2</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoLayoutDeserializeError</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_LAYOUT_DESERIALIZE_INVALID</span>: <span class="ident">PangoLayoutDeserializeError</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_LAYOUT_DESERIALIZE_INVALID_VALUE</span>: <span class="ident">PangoLayoutDeserializeError</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_LAYOUT_DESERIALIZE_MISSING_VALUE</span>: <span class="ident">PangoLayoutDeserializeError</span> <span class="op">=</span> <span class="number">2</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoOverline</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_OVERLINE_NONE</span>: <span class="ident">PangoOverline</span> <span class="op">=</span> <span class="number">0</span>;
@@ -3082,6 +3210,15 @@
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoTabAlign</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_TAB_LEFT</span>: <span class="ident">PangoTabAlign</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_TAB_RIGHT</span>: <span class="ident">PangoTabAlign</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_TAB_CENTER</span>: <span class="ident">PangoTabAlign</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_TAB_DECIMAL</span>: <span class="ident">PangoTabAlign</span> <span class="op">=</span> <span class="number">3</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoTextTransform</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_TEXT_TRANSFORM_NONE</span>: <span class="ident">PangoTextTransform</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_TEXT_TRANSFORM_LOWERCASE</span>: <span class="ident">PangoTextTransform</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_TEXT_TRANSFORM_UPPERCASE</span>: <span class="ident">PangoTextTransform</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_TEXT_TRANSFORM_CAPITALIZE</span>: <span class="ident">PangoTextTransform</span> <span class="op">=</span> <span class="number">3</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoUnderline</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_UNDERLINE_NONE</span>: <span class="ident">PangoUnderline</span> <span class="op">=</span> <span class="number">0</span>;
@@ -3096,6 +3233,11 @@
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoVariant</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_VARIANT_NORMAL</span>: <span class="ident">PangoVariant</span> <span class="op">=</span> <span class="number">0</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_VARIANT_SMALL_CAPS</span>: <span class="ident">PangoVariant</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_VARIANT_ALL_SMALL_CAPS</span>: <span class="ident">PangoVariant</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_VARIANT_PETITE_CAPS</span>: <span class="ident">PangoVariant</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_VARIANT_ALL_PETITE_CAPS</span>: <span class="ident">PangoVariant</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_VARIANT_UNICASE</span>: <span class="ident">PangoVariant</span> <span class="op">=</span> <span class="number">5</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_VARIANT_TITLE_CAPS</span>: <span class="ident">PangoVariant</span> <span class="op">=</span> <span class="number">6</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoWeight</span> <span class="op">=</span> <span class="ident">c_int</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_WEIGHT_THIN</span>: <span class="ident">PangoWeight</span> <span class="op">=</span> <span class="number">100</span>;
@@ -3120,20 +3262,12 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ANALYSIS_FLAG_CENTERED_BASELINE</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">1</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ANALYSIS_FLAG_IS_ELLIPSIS</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">2</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ANALYSIS_FLAG_NEED_HYPHEN</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">4</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">0</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ENGINE_TYPE_LANG</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span> <span class="op">=</span>
-    <span class="string">b&quot;PangoEngineLang\0&quot;</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">u8</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ENGINE_TYPE_SHAPE</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span> <span class="op">=</span>
-    <span class="string">b&quot;PangoEngineShape\0&quot;</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">u8</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING</span>: <span class="ident">c_uint</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_ATTR_INDEX_TO_TEXT_END</span>: <span class="ident">c_uint</span> <span class="op">=</span> <span class="number">4294967295</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_GLYPH_EMPTY</span>: <span class="ident">PangoGlyph</span> <span class="op">=</span> <span class="number">268435455</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_GLYPH_INVALID_INPUT</span>: <span class="ident">PangoGlyph</span> <span class="op">=</span> <span class="number">4294967295</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_GLYPH_UNKNOWN_FLAG</span>: <span class="ident">PangoGlyph</span> <span class="op">=</span> <span class="number">268435456</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_RENDER_TYPE_NONE</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span> <span class="op">=</span>
-    <span class="string">b&quot;PangoRenderNone\0&quot;</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">u8</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_SCALE</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">1024</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_UNKNOWN_GLYPH_HEIGHT</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">14</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_UNKNOWN_GLYPH_WIDTH</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">10</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_VERSION_MIN_REQUIRED</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">2</span>;
 
 <span class="comment">// Flags</span>
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoFontMask</span> <span class="op">=</span> <span class="ident">c_uint</span>;
@@ -3145,6 +3279,15 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_FONT_MASK_SIZE</span>: <span class="ident">PangoFontMask</span> <span class="op">=</span> <span class="number">32</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_FONT_MASK_GRAVITY</span>: <span class="ident">PangoFontMask</span> <span class="op">=</span> <span class="number">64</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_FONT_MASK_VARIATIONS</span>: <span class="ident">PangoFontMask</span> <span class="op">=</span> <span class="number">128</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoLayoutDeserializeFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_LAYOUT_DESERIALIZE_DEFAULT</span>: <span class="ident">PangoLayoutDeserializeFlags</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_LAYOUT_DESERIALIZE_CONTEXT</span>: <span class="ident">PangoLayoutDeserializeFlags</span> <span class="op">=</span> <span class="number">1</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoLayoutSerializeFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_LAYOUT_SERIALIZE_DEFAULT</span>: <span class="ident">PangoLayoutSerializeFlags</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_LAYOUT_SERIALIZE_CONTEXT</span>: <span class="ident">PangoLayoutSerializeFlags</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_LAYOUT_SERIALIZE_OUTPUT</span>: <span class="ident">PangoLayoutSerializeFlags</span> <span class="op">=</span> <span class="number">2</span>;
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoShapeFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PANGO_SHAPE_NONE</span>: <span class="ident">PangoShapeFlags</span> <span class="op">=</span> <span class="number">0</span>;
@@ -3164,11 +3307,11 @@
     <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">PangoFontset</span>, <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>, <span class="ident">gpointer</span>) -&gt; <span class="ident">gboolean</span><span class="op">&gt;</span>;
 
 <span class="comment">// Records</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAnalysis</span> {
-    <span class="kw">pub</span> <span class="ident">shape_engine</span>: <span class="kw-2">*mut</span> <span class="ident">PangoEngineShape</span>,
-    <span class="kw">pub</span> <span class="ident">lang_engine</span>: <span class="kw-2">*mut</span> <span class="ident">PangoEngineLang</span>,
+    <span class="kw">pub</span> <span class="ident">shape_engine</span>: <span class="ident">gpointer</span>,
+    <span class="kw">pub</span> <span class="ident">lang_engine</span>: <span class="ident">gpointer</span>,
     <span class="kw">pub</span> <span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>,
     <span class="kw">pub</span> <span class="ident">level</span>: <span class="ident">u8</span>,
     <span class="kw">pub</span> <span class="ident">gravity</span>: <span class="ident">u8</span>,
@@ -3194,8 +3337,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrClass</span> {
     <span class="kw">pub</span> <span class="ident">type_</span>: <span class="ident">PangoAttrType</span>,
     <span class="kw">pub</span> <span class="ident">copy</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*const</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span><span class="op">&gt;</span>,
@@ -3215,8 +3358,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrColor</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">color</span>: <span class="ident">PangoColor</span>,
@@ -3231,8 +3374,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrFloat</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">value</span>: <span class="ident">c_double</span>,
@@ -3247,8 +3390,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrFontDesc</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">desc</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFontDescription</span>,
@@ -3263,8 +3406,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrFontFeatures</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">features</span>: <span class="kw-2">*mut</span> <span class="ident">c_char</span>,
@@ -3279,8 +3422,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrInt</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">value</span>: <span class="ident">c_int</span>,
@@ -3296,7 +3439,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrIterator</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrIterator</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoAttrIterator</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3305,8 +3451,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrLanguage</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">value</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>,
@@ -3322,7 +3468,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrList</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrList</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoAttrList</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3331,8 +3480,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrShape</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">ink_rect</span>: <span class="ident">PangoRectangle</span>,
@@ -3355,8 +3504,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrSize</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">size</span>: <span class="ident">c_int</span>,
@@ -3373,8 +3522,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttrString</span> {
     <span class="kw">pub</span> <span class="ident">attr</span>: <span class="ident">PangoAttribute</span>,
     <span class="kw">pub</span> <span class="ident">value</span>: <span class="kw-2">*mut</span> <span class="ident">c_char</span>,
@@ -3389,8 +3538,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoAttribute</span> {
     <span class="kw">pub</span> <span class="ident">klass</span>: <span class="kw-2">*const</span> <span class="ident">PangoAttrClass</span>,
     <span class="kw">pub</span> <span class="ident">start_index</span>: <span class="ident">c_uint</span>,
@@ -3407,8 +3556,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoColor</span> {
     <span class="kw">pub</span> <span class="ident">red</span>: <span class="ident">u16</span>,
     <span class="kw">pub</span> <span class="ident">green</span>: <span class="ident">u16</span>,
@@ -3426,122 +3575,15 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoContextClass</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoContextClass</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoContextClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_PangoContextClass</span>;
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoEngineClass</span> {
-    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoEngineClass</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoEngineClass @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">finish</span>()
-    }
-}
-
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoEngineInfo</span> {
-    <span class="kw">pub</span> <span class="ident">id</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
-    <span class="kw">pub</span> <span class="ident">engine_type</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
-    <span class="kw">pub</span> <span class="ident">render_type</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
-    <span class="kw">pub</span> <span class="ident">scripts</span>: <span class="kw-2">*mut</span> <span class="ident">PangoEngineScriptInfo</span>,
-    <span class="kw">pub</span> <span class="ident">n_scripts</span>: <span class="ident">c_int</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoEngineInfo</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoEngineInfo @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">field</span>(<span class="string">&quot;id&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">id</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;engine_type&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">engine_type</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;render_type&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">render_type</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;scripts&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">scripts</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;n_scripts&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">n_scripts</span>)
-            .<span class="ident">finish</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoEngineLangClass</span> {
-    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">PangoEngineClass</span>,
-    <span class="kw">pub</span> <span class="ident">script_break</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>
-        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(
-            <span class="kw-2">*mut</span> <span class="ident">PangoEngineLang</span>,
-            <span class="kw-2">*const</span> <span class="ident">c_char</span>,
-            <span class="ident">c_int</span>,
-            <span class="kw-2">*mut</span> <span class="ident">PangoAnalysis</span>,
-            <span class="kw-2">*mut</span> <span class="ident">PangoLogAttr</span>,
-            <span class="ident">c_int</span>,
-        ),
-    <span class="op">&gt;</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoEngineLangClass</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoEngineLangClass @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">field</span>(<span class="string">&quot;script_break&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">script_break</span>)
-            .<span class="ident">finish</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoEngineScriptInfo</span> {
-    <span class="kw">pub</span> <span class="ident">script</span>: <span class="ident">PangoScript</span>,
-    <span class="kw">pub</span> <span class="ident">langs</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoEngineScriptInfo</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoEngineScriptInfo @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">field</span>(<span class="string">&quot;script&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">script</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;langs&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">langs</span>)
-            .<span class="ident">finish</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoEngineShapeClass</span> {
-    <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">PangoEngineClass</span>,
-    <span class="kw">pub</span> <span class="ident">script_shape</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>
-        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(
-            <span class="kw-2">*mut</span> <span class="ident">PangoEngineShape</span>,
-            <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>,
-            <span class="kw-2">*const</span> <span class="ident">c_char</span>,
-            <span class="ident">c_uint</span>,
-            <span class="kw-2">*const</span> <span class="ident">PangoAnalysis</span>,
-            <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>,
-            <span class="kw-2">*const</span> <span class="ident">c_char</span>,
-            <span class="ident">c_uint</span>,
-        ),
-    <span class="op">&gt;</span>,
-    <span class="kw">pub</span> <span class="ident">covers</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>
-        <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(
-            <span class="kw-2">*mut</span> <span class="ident">PangoEngineShape</span>,
-            <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>,
-            <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>,
-            <span class="ident">u32</span>,
-        ) -&gt; <span class="ident">PangoCoverageLevel</span>,
-    <span class="op">&gt;</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoEngineShapeClass</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoEngineShapeClass @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">field</span>(<span class="string">&quot;script_shape&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">script_shape</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;covers&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">covers</span>)
-            .<span class="ident">finish</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
     <span class="kw">pub</span> <span class="ident">describe</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">PangoFont</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoFontDescription</span><span class="op">&gt;</span>,
@@ -3577,7 +3619,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontDescription</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontDescription</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoFontDescription</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3586,8 +3631,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontFaceClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
     <span class="kw">pub</span> <span class="ident">get_face_name</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">PangoFontFace</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span><span class="op">&gt;</span>,
@@ -3614,8 +3659,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontFamilyClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
     <span class="kw">pub</span> <span class="ident">list_faces</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>
@@ -3643,8 +3688,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontMapClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
     <span class="kw">pub</span> <span class="ident">load_font</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>
@@ -3689,8 +3734,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontMetrics</span> {
     <span class="kw">pub</span> <span class="ident">ref_count</span>: <span class="ident">c_uint</span>,
     <span class="kw">pub</span> <span class="ident">ascent</span>: <span class="ident">c_int</span>,
@@ -3711,8 +3756,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontsetClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
     <span class="kw">pub</span> <span class="ident">get_font</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">PangoFontset</span>, <span class="ident">c_uint</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoFont</span><span class="op">&gt;</span>,
@@ -3742,12 +3787,15 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoFontsetSimpleClass</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoFontsetSimpleClass</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoFontsetSimpleClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_PangoFontsetSimpleClass</span>;
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoGlyphGeometry</span> {
     <span class="kw">pub</span> <span class="ident">width</span>: <span class="ident">PangoGlyphUnit</span>,
     <span class="kw">pub</span> <span class="ident">x_offset</span>: <span class="ident">PangoGlyphUnit</span>,
@@ -3764,8 +3812,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoGlyphInfo</span> {
     <span class="kw">pub</span> <span class="ident">glyph</span>: <span class="ident">PangoGlyph</span>,
     <span class="kw">pub</span> <span class="ident">geometry</span>: <span class="ident">PangoGlyphGeometry</span>,
@@ -3782,11 +3830,14 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoGlyphItem</span> {
     <span class="kw">pub</span> <span class="ident">item</span>: <span class="kw-2">*mut</span> <span class="ident">PangoItem</span>,
     <span class="kw">pub</span> <span class="ident">glyphs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>,
+    <span class="kw">pub</span> <span class="ident">y_offset</span>: <span class="ident">c_int</span>,
+    <span class="kw">pub</span> <span class="ident">start_x_offset</span>: <span class="ident">c_int</span>,
+    <span class="kw">pub</span> <span class="ident">end_x_offset</span>: <span class="ident">c_int</span>,
 }
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoGlyphItem</span> {
@@ -3794,12 +3845,15 @@
         <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoGlyphItem @ {:p}&quot;</span>, <span class="self">self</span>))
             .<span class="ident">field</span>(<span class="string">&quot;item&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">item</span>)
             .<span class="ident">field</span>(<span class="string">&quot;glyphs&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">glyphs</span>)
+            .<span class="ident">field</span>(<span class="string">&quot;y_offset&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">y_offset</span>)
+            .<span class="ident">field</span>(<span class="string">&quot;start_x_offset&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">start_x_offset</span>)
+            .<span class="ident">field</span>(<span class="string">&quot;end_x_offset&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">end_x_offset</span>)
             .<span class="ident">finish</span>()
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoGlyphItemIter</span> {
     <span class="kw">pub</span> <span class="ident">glyph_item</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphItem</span>,
     <span class="kw">pub</span> <span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
@@ -3826,8 +3880,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoGlyphString</span> {
     <span class="kw">pub</span> <span class="ident">num_glyphs</span>: <span class="ident">c_int</span>,
     <span class="kw">pub</span> <span class="ident">glyphs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphInfo</span>,
@@ -3845,8 +3899,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoGlyphVisAttr</span> {
     <span class="kw">pub</span> <span class="ident">is_cluster_start</span>: <span class="ident">c_uint</span>,
 }
@@ -3859,28 +3913,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoIncludedModule</span> {
-    <span class="kw">pub</span> <span class="ident">list</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">PangoEngineInfo</span>, <span class="kw-2">*mut</span> <span class="ident">c_int</span>)<span class="op">&gt;</span>,
-    <span class="kw">pub</span> <span class="ident">init</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">gobject::GTypeModule</span>)<span class="op">&gt;</span>,
-    <span class="kw">pub</span> <span class="ident">exit</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>()<span class="op">&gt;</span>,
-    <span class="kw">pub</span> <span class="ident">create</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoEngine</span><span class="op">&gt;</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoIncludedModule</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoIncludedModule @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">field</span>(<span class="string">&quot;list&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">list</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">init</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;exit&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">exit</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;create&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">create</span>)
-            .<span class="ident">finish</span>()
-    }
-}
-
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoItem</span> {
     <span class="kw">pub</span> <span class="ident">offset</span>: <span class="ident">c_int</span>,
     <span class="kw">pub</span> <span class="ident">length</span>: <span class="ident">c_int</span>,
@@ -3900,7 +3934,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoLanguage</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoLanguage</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoLanguage</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3910,12 +3947,18 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoLayoutClass</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoLayoutClass</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoLayoutClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_PangoLayoutClass</span>;
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoLayoutIter</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoLayoutIter</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoLayoutIter</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3962,18 +4005,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoMap</span>(<span class="ident">c_void</span>);
-
-<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoMap</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_PangoMap</span>;
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoMapEntry</span>(<span class="ident">c_void</span>);
-
-<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoMapEntry</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_PangoMapEntry</span>;
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoMatrix</span> {
     <span class="kw">pub</span> <span class="ident">xx</span>: <span class="ident">c_double</span>,
     <span class="kw">pub</span> <span class="ident">xy</span>: <span class="ident">c_double</span>,
@@ -3996,8 +4029,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoRectangle</span> {
     <span class="kw">pub</span> <span class="ident">x</span>: <span class="ident">c_int</span>,
     <span class="kw">pub</span> <span class="ident">y</span>: <span class="ident">c_int</span>,
@@ -4016,8 +4049,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoRendererClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
     <span class="kw">pub</span> <span class="ident">draw_glyphs</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>
@@ -4085,12 +4118,18 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoRendererPrivate</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_PangoRendererPrivate</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">PangoRendererPrivate</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_PangoRendererPrivate</span>;
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoScriptIter</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoScriptIter</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoScriptIter</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -4100,7 +4139,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoTabArray</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoTabArray</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoTabArray</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -4111,7 +4153,10 @@
 
 <span class="comment">// Classes</span>
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoContext</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoContext</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoContext</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -4121,7 +4166,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoCoverage</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoCoverage</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoCoverage</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -4130,48 +4178,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoEngine</span> {
-    <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoEngine</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoEngine @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">finish</span>()
-    }
-}
-
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoEngineLang</span> {
-    <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">PangoEngine</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoEngineLang</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoEngineLang @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">finish</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoEngineShape</span> {
-    <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">PangoEngine</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoEngineShape</span> {
-    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;PangoEngineShape @ {:p}&quot;</span>, <span class="self">self</span>))
-            .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
-            .<span class="ident">finish</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFont</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
 }
@@ -4184,8 +4192,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontFace</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
 }
@@ -4198,8 +4206,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontFamily</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
 }
@@ -4212,8 +4220,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontMap</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
 }
@@ -4226,8 +4234,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontset</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
 }
@@ -4241,7 +4249,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontsetSimple</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoFontsetSimple</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoFontsetSimple</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -4251,7 +4262,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoLayout</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoLayout</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">PangoLayout</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -4260,8 +4274,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PangoRenderer</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
     <span class="kw">pub</span> <span class="ident">underline</span>: <span class="ident">PangoUnderline</span>,
@@ -4295,6 +4309,13 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_type_register</span>(<span class="ident">name</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="ident">PangoAttrType</span>;
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// PangoBaselineShift</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_baseline_shift_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoBidiType</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_bidi_type_get_type</span>() -&gt; <span class="ident">GType</span>;
@@ -4314,6 +4335,13 @@
     <span class="comment">// PangoEllipsizeMode</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_ellipsize_mode_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// PangoFontScale</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_scale_get_type</span>() -&gt; <span class="ident">GType</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoGravity</span>
@@ -4337,6 +4365,16 @@
     <span class="comment">// PangoGravityHint</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_gravity_hint_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// PangoLayoutDeserializeError</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_deserialize_error_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_deserialize_error_quark</span>() -&gt; <span class="ident">glib::GQuark</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoOverline</span>
@@ -4373,6 +4411,13 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_align_get_type</span>() -&gt; <span class="ident">GType</span>;
 
     <span class="comment">//=========================================================================</span>
+    <span class="comment">// PangoTextTransform</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_text_transform_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoUnderline</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_underline_get_type</span>() -&gt; <span class="ident">GType</span>;
@@ -4396,6 +4441,20 @@
     <span class="comment">// PangoFontMask</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_mask_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// PangoLayoutDeserializeFlags</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_deserialize_flags_get_type</span>() -&gt; <span class="ident">GType</span>;
+
+    <span class="comment">//=========================================================================</span>
+    <span class="comment">// PangoLayoutSerializeFlags</span>
+    <span class="comment">//=========================================================================</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_serialize_flags_get_type</span>() -&gt; <span class="ident">GType</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoShapeFlags</span>
@@ -4483,10 +4542,16 @@
         <span class="ident">pos</span>: <span class="ident">c_int</span>,
         <span class="ident">len</span>: <span class="ident">c_int</span>,
     );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_list_to_string</span>(<span class="ident">list</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttrList</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_list_unref</span>(<span class="ident">list</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttrList</span>);
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_list_update</span>(<span class="ident">list</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttrList</span>, <span class="ident">pos</span>: <span class="ident">c_int</span>, <span class="ident">remove</span>: <span class="ident">c_int</span>, <span class="ident">add</span>: <span class="ident">c_int</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_list_from_string</span>(<span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrList</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoAttrShape</span>
@@ -4515,6 +4580,35 @@
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_get_type</span>() -&gt; <span class="ident">GType</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_color</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrColor</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_float</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrFloat</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_font_desc</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrFontDesc</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_font_features</span>(
+        <span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrFontFeatures</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_int</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrInt</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_language</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrLanguage</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_shape</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrShape</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_size</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrSize</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_as_string</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrString</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_copy</span>(<span class="ident">attr</span>: <span class="kw-2">*const</span> <span class="ident">PangoAttribute</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_destroy</span>(<span class="ident">attr</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attribute_equal</span>(
@@ -4732,9 +4826,21 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_glyph_string_get_width</span>(<span class="ident">glyphs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_glyph_string_index_to_x</span>(
         <span class="ident">glyphs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>,
-        <span class="ident">text</span>: <span class="kw-2">*mut</span> <span class="ident">c_char</span>,
+        <span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
         <span class="ident">length</span>: <span class="ident">c_int</span>,
         <span class="ident">analysis</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAnalysis</span>,
+        <span class="ident">index_</span>: <span class="ident">c_int</span>,
+        <span class="ident">trailing</span>: <span class="ident">gboolean</span>,
+        <span class="ident">x_pos</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
+    );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_glyph_string_index_to_x_full</span>(
+        <span class="ident">glyphs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>,
+        <span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
+        <span class="ident">length</span>: <span class="ident">c_int</span>,
+        <span class="ident">analysis</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAnalysis</span>,
+        <span class="ident">attrs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLogAttr</span>,
         <span class="ident">index_</span>: <span class="ident">c_int</span>,
         <span class="ident">trailing</span>: <span class="ident">gboolean</span>,
         <span class="ident">x_pos</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
@@ -4742,7 +4848,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_glyph_string_set_size</span>(<span class="ident">string</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>, <span class="ident">new_len</span>: <span class="ident">c_int</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_glyph_string_x_to_index</span>(
         <span class="ident">glyphs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>,
-        <span class="ident">text</span>: <span class="kw-2">*mut</span> <span class="ident">c_char</span>,
+        <span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
         <span class="ident">length</span>: <span class="ident">c_int</span>,
         <span class="ident">analysis</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAnalysis</span>,
         <span class="ident">x_pos</span>: <span class="ident">c_int</span>,
@@ -4786,6 +4892,9 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_language_to_string</span>(<span class="ident">language</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>) -&gt; <span class="kw-2">*const</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_language_from_string</span>(<span class="ident">language</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_language_get_default</span>() -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_48&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_48&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_language_get_preferred</span>() -&gt; <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoLayoutIter</span>
@@ -4824,6 +4933,9 @@
         <span class="ident">y1_</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_iter_get_run</span>(<span class="ident">iter</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutIter</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLayoutRun</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_iter_get_run_baseline</span>(<span class="ident">iter</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutIter</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_iter_get_run_extents</span>(
         <span class="ident">iter</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutIter</span>,
         <span class="ident">ink_rect</span>: <span class="kw-2">*mut</span> <span class="ident">PangoRectangle</span>,
@@ -4847,11 +4959,20 @@
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_get_height</span>(<span class="ident">line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>, <span class="ident">height</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_get_length</span>(<span class="ident">line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_get_pixel_extents</span>(
         <span class="ident">layout_line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>,
         <span class="ident">ink_rect</span>: <span class="kw-2">*mut</span> <span class="ident">PangoRectangle</span>,
         <span class="ident">logical_rect</span>: <span class="kw-2">*mut</span> <span class="ident">PangoRectangle</span>,
     );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_get_resolved_direction</span>(<span class="ident">line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>) -&gt; <span class="ident">PangoDirection</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_get_start_index</span>(<span class="ident">line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_get_x_ranges</span>(
         <span class="ident">line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>,
         <span class="ident">start_index</span>: <span class="ident">c_int</span>,
@@ -4865,6 +4986,9 @@
         <span class="ident">trailing</span>: <span class="ident">gboolean</span>,
         <span class="ident">x_pos</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
     );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_is_paragraph_start</span>(<span class="ident">line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_ref</span>(<span class="ident">line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_unref</span>(<span class="ident">line</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_line_x_to_index</span>(
@@ -4873,17 +4997,6 @@
         <span class="ident">index_</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
         <span class="ident">trailing</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
     ) -&gt; <span class="ident">gboolean</span>;
-
-    <span class="comment">//=========================================================================</span>
-    <span class="comment">// PangoMap</span>
-    <span class="comment">//=========================================================================</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_map_get_engine</span>(<span class="ident">map</span>: <span class="kw-2">*mut</span> <span class="ident">PangoMap</span>, <span class="ident">script</span>: <span class="ident">PangoScript</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoEngine</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_map_get_engines</span>(
-        <span class="ident">map</span>: <span class="kw-2">*mut</span> <span class="ident">PangoMap</span>,
-        <span class="ident">script</span>: <span class="ident">PangoScript</span>,
-        <span class="ident">exact_engines</span>: <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">glib::GSList</span>,
-        <span class="ident">fallback_engines</span>: <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">glib::GSList</span>,
-    );
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoMatrix</span>
@@ -4898,6 +5011,9 @@
         <span class="ident">xscale</span>: <span class="kw-2">*mut</span> <span class="ident">c_double</span>,
         <span class="ident">yscale</span>: <span class="kw-2">*mut</span> <span class="ident">c_double</span>,
     );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_matrix_get_slant_ratio</span>(<span class="ident">matrix</span>: <span class="kw-2">*const</span> <span class="ident">PangoMatrix</span>) -&gt; <span class="ident">c_double</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_matrix_rotate</span>(<span class="ident">matrix</span>: <span class="kw-2">*mut</span> <span class="ident">PangoMatrix</span>, <span class="ident">degrees</span>: <span class="ident">c_double</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_matrix_scale</span>(<span class="ident">matrix</span>: <span class="kw-2">*mut</span> <span class="ident">PangoMatrix</span>, <span class="ident">scale_x</span>: <span class="ident">c_double</span>, <span class="ident">scale_y</span>: <span class="ident">c_double</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_matrix_transform_distance</span>(
@@ -4950,6 +5066,12 @@
     ) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_copy</span>(<span class="ident">src</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_free</span>(<span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_get_decimal_point</span>(
+        <span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>,
+        <span class="ident">tab_index</span>: <span class="ident">c_int</span>,
+    ) -&gt; <span class="ident">u32</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_get_positions_in_pixels</span>(<span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_get_size</span>(<span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_get_tab</span>(
@@ -4964,12 +5086,34 @@
         <span class="ident">locations</span>: <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_resize</span>(<span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>, <span class="ident">new_size</span>: <span class="ident">c_int</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_set_decimal_point</span>(
+        <span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>,
+        <span class="ident">tab_index</span>: <span class="ident">c_int</span>,
+        <span class="ident">decimal_point</span>: <span class="ident">u32</span>,
+    );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_set_positions_in_pixels</span>(
+        <span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>,
+        <span class="ident">positions_in_pixels</span>: <span class="ident">gboolean</span>,
+    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_set_tab</span>(
         <span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>,
         <span class="ident">tab_index</span>: <span class="ident">c_int</span>,
         <span class="ident">alignment</span>: <span class="ident">PangoTabAlign</span>,
         <span class="ident">location</span>: <span class="ident">c_int</span>,
     );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_sort</span>(<span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_to_string</span>(<span class="ident">tab_array</span>: <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">c_char</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_tab_array_from_string</span>(<span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoTabArray</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoContext</span>
@@ -5052,34 +5196,21 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_coverage_unref</span>(<span class="ident">coverage</span>: <span class="kw-2">*mut</span> <span class="ident">PangoCoverage</span>);
 
     <span class="comment">//=========================================================================</span>
-    <span class="comment">// PangoEngine</span>
-    <span class="comment">//=========================================================================</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_engine_get_type</span>() -&gt; <span class="ident">GType</span>;
-
-    <span class="comment">//=========================================================================</span>
-    <span class="comment">// PangoEngineLang</span>
-    <span class="comment">//=========================================================================</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_engine_lang_get_type</span>() -&gt; <span class="ident">GType</span>;
-
-    <span class="comment">//=========================================================================</span>
-    <span class="comment">// PangoEngineShape</span>
-    <span class="comment">//=========================================================================</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_engine_shape_get_type</span>() -&gt; <span class="ident">GType</span>;
-
-    <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoFont</span>
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_get_type</span>() -&gt; <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_descriptions_free</span>(<span class="ident">descs</span>: <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">PangoFontDescription</span>, <span class="ident">n_descs</span>: <span class="ident">c_int</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_deserialize</span>(
+        <span class="ident">context</span>: <span class="kw-2">*mut</span> <span class="ident">PangoContext</span>,
+        <span class="ident">bytes</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GBytes</span>,
+        <span class="ident">error</span>: <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">glib::GError</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_describe</span>(<span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoFontDescription</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_describe_with_absolute_size</span>(
         <span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>,
     ) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoFontDescription</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_find_shaper</span>(
-        <span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>,
-        <span class="ident">language</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>,
-        <span class="ident">ch</span>: <span class="ident">u32</span>,
-    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoEngineShape</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_get_coverage</span>(
         <span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>,
         <span class="ident">language</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>,
@@ -5105,6 +5236,9 @@
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_get_hb_font</span>(<span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>) -&gt; <span class="ident">gconstpointer</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_get_languages</span>(<span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>) -&gt; <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_get_metrics</span>(
         <span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>,
         <span class="ident">language</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>,
@@ -5112,6 +5246,9 @@
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_has_char</span>(<span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>, <span class="ident">wc</span>: <span class="ident">u32</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_font_serialize</span>(<span class="ident">font</span>: <span class="kw-2">*mut</span> <span class="ident">PangoFont</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">glib::GBytes</span>;
 
     <span class="comment">//=========================================================================</span>
     <span class="comment">// PangoFontFace</span>
@@ -5205,12 +5342,28 @@
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_type</span>() -&gt; <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_new</span>(<span class="ident">context</span>: <span class="kw-2">*mut</span> <span class="ident">PangoContext</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_deserialize</span>(
+        <span class="ident">context</span>: <span class="kw-2">*mut</span> <span class="ident">PangoContext</span>,
+        <span class="ident">bytes</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GBytes</span>,
+        <span class="ident">flags</span>: <span class="ident">PangoLayoutDeserializeFlags</span>,
+        <span class="ident">error</span>: <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">glib::GError</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_context_changed</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_copy</span>(<span class="ident">src</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_alignment</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="ident">PangoAlignment</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_attributes</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttrList</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_auto_dir</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_baseline</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="ident">c_int</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_caret_pos</span>(
+        <span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>,
+        <span class="ident">index_</span>: <span class="ident">c_int</span>,
+        <span class="ident">strong_pos</span>: <span class="kw-2">*mut</span> <span class="ident">PangoRectangle</span>,
+        <span class="ident">weak_pos</span>: <span class="kw-2">*mut</span> <span class="ident">PangoRectangle</span>,
+    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_character_count</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_context</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoContext</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_cursor_pos</span>(
@@ -5235,6 +5388,9 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_indent</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_iter</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLayoutIter</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_justify</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="ident">gboolean</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_justify_last_line</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_line</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">line</span>: <span class="ident">c_int</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoLayoutLine</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_line_count</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>) -&gt; <span class="ident">c_int</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_get_line_readonly</span>(
@@ -5297,6 +5453,12 @@
         <span class="ident">new_index</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
         <span class="ident">new_trailing</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>,
     );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_serialize</span>(
+        <span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>,
+        <span class="ident">flags</span>: <span class="ident">PangoLayoutSerializeFlags</span>,
+    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">glib::GBytes</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_alignment</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">alignment</span>: <span class="ident">PangoAlignment</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_attributes</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">attrs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttrList</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_auto_dir</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">auto_dir</span>: <span class="ident">gboolean</span>);
@@ -5308,6 +5470,9 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_height</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">height</span>: <span class="ident">c_int</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_indent</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">indent</span>: <span class="ident">c_int</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_justify</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">justify</span>: <span class="ident">gboolean</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_justify_last_line</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">justify</span>: <span class="ident">gboolean</span>);
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_line_spacing</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">factor</span>: <span class="ident">c_float</span>);
@@ -5325,6 +5490,14 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_text</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>, <span class="ident">length</span>: <span class="ident">c_int</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_width</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">width</span>: <span class="ident">c_int</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_set_wrap</span>(<span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>, <span class="ident">wrap</span>: <span class="ident">PangoWrapMode</span>);
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_write_to_file</span>(
+        <span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>,
+        <span class="ident">flags</span>: <span class="ident">PangoLayoutSerializeFlags</span>,
+        <span class="ident">filename</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
+        <span class="ident">error</span>: <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">glib::GError</span>,
+    ) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_layout_xy_to_index</span>(
         <span class="ident">layout</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLayout</span>,
         <span class="ident">x</span>: <span class="ident">c_int</span>,
@@ -5426,8 +5599,24 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_allow_breaks_new</span>(<span class="ident">allow_breaks</span>: <span class="ident">gboolean</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_background_alpha_new</span>(<span class="ident">alpha</span>: <span class="ident">u16</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_background_new</span>(<span class="ident">red</span>: <span class="ident">u16</span>, <span class="ident">green</span>: <span class="ident">u16</span>, <span class="ident">blue</span>: <span class="ident">u16</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_baseline_shift_new</span>(<span class="ident">shift</span>: <span class="ident">c_int</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_break</span>(
+        <span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
+        <span class="ident">length</span>: <span class="ident">c_int</span>,
+        <span class="ident">attr_list</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAttrList</span>,
+        <span class="ident">offset</span>: <span class="ident">c_int</span>,
+        <span class="ident">attrs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLogAttr</span>,
+        <span class="ident">attrs_len</span>: <span class="ident">c_int</span>,
+    );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_fallback_new</span>(<span class="ident">enable_fallback</span>: <span class="ident">gboolean</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_family_new</span>(<span class="ident">family</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_font_scale_new</span>(<span class="ident">scale</span>: <span class="ident">PangoFontScale</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_foreground_alpha_new</span>(<span class="ident">alpha</span>: <span class="ident">u16</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_foreground_new</span>(<span class="ident">red</span>: <span class="ident">u16</span>, <span class="ident">green</span>: <span class="ident">u16</span>, <span class="ident">blue</span>: <span class="ident">u16</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_gravity_hint_new</span>(<span class="ident">hint</span>: <span class="ident">PangoGravityHint</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
@@ -5436,6 +5625,12 @@
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_insert_hyphens_new</span>(<span class="ident">insert_hyphens</span>: <span class="ident">gboolean</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_letter_spacing_new</span>(<span class="ident">letter_spacing</span>: <span class="ident">c_int</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_line_height_new</span>(<span class="ident">factor</span>: <span class="ident">c_double</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_line_height_new_absolute</span>(<span class="ident">height</span>: <span class="ident">c_int</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_46&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_46&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_overline_color_new</span>(<span class="ident">red</span>: <span class="ident">u16</span>, <span class="ident">green</span>: <span class="ident">u16</span>, <span class="ident">blue</span>: <span class="ident">u16</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
@@ -5444,6 +5639,9 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_overline_new</span>(<span class="ident">overline</span>: <span class="ident">PangoOverline</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_rise_new</span>(<span class="ident">rise</span>: <span class="ident">c_int</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_scale_new</span>(<span class="ident">scale_factor</span>: <span class="ident">c_double</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_sentence_new</span>() -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_show_new</span>(<span class="ident">flags</span>: <span class="ident">PangoShowFlags</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
@@ -5455,10 +5653,16 @@
     ) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_strikethrough_new</span>(<span class="ident">strikethrough</span>: <span class="ident">gboolean</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_style_new</span>(<span class="ident">style</span>: <span class="ident">PangoStyle</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_text_transform_new</span>(<span class="ident">transform</span>: <span class="ident">PangoTextTransform</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_underline_color_new</span>(<span class="ident">red</span>: <span class="ident">u16</span>, <span class="ident">green</span>: <span class="ident">u16</span>, <span class="ident">blue</span>: <span class="ident">u16</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_underline_new</span>(<span class="ident">underline</span>: <span class="ident">PangoUnderline</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_variant_new</span>(<span class="ident">variant</span>: <span class="ident">PangoVariant</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_weight_new</span>(<span class="ident">weight</span>: <span class="ident">PangoWeight</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_attr_word_new</span>() -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoAttribute</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_break</span>(
         <span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
         <span class="ident">length</span>: <span class="ident">c_int</span>,
@@ -5475,11 +5679,6 @@
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_extents_to_pixels</span>(<span class="ident">inclusive</span>: <span class="kw-2">*mut</span> <span class="ident">PangoRectangle</span>, <span class="ident">nearest</span>: <span class="kw-2">*mut</span> <span class="ident">PangoRectangle</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_find_base_dir</span>(<span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>, <span class="ident">length</span>: <span class="ident">c_int</span>) -&gt; <span class="ident">PangoDirection</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_find_map</span>(
-        <span class="ident">language</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>,
-        <span class="ident">engine_type_id</span>: <span class="ident">c_uint</span>,
-        <span class="ident">render_type_id</span>: <span class="ident">c_uint</span>,
-    ) -&gt; <span class="kw-2">*mut</span> <span class="ident">PangoMap</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_find_paragraph_boundary</span>(
         <span class="ident">text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
         <span class="ident">length</span>: <span class="ident">c_int</span>,
@@ -5491,7 +5690,7 @@
         <span class="ident">length</span>: <span class="ident">c_int</span>,
         <span class="ident">level</span>: <span class="ident">c_int</span>,
         <span class="ident">language</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLanguage</span>,
-        <span class="ident">log_attrs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLogAttr</span>,
+        <span class="ident">attrs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLogAttr</span>,
         <span class="ident">attrs_len</span>: <span class="ident">c_int</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_get_mirror_char</span>(<span class="ident">ch</span>: <span class="ident">u32</span>, <span class="ident">mirrored_ch</span>: <span class="kw-2">*mut</span> <span class="ident">u32</span>) -&gt; <span class="ident">gboolean</span>;
@@ -5526,7 +5725,6 @@
         <span class="ident">error</span>: <span class="kw-2">*mut</span> <span class="kw-2">*mut</span> <span class="ident">glib::GError</span>,
     ) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_markup_parser_new</span>(<span class="ident">accel_marker</span>: <span class="ident">u32</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">glib::GMarkupParseContext</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_module_register</span>(<span class="ident">module</span>: <span class="kw-2">*mut</span> <span class="ident">PangoIncludedModule</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_parse_enum</span>(
         <span class="ident">type_</span>: <span class="ident">GType</span>,
         <span class="ident">str</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
@@ -5565,7 +5763,7 @@
     ) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_quantize_line_geometry</span>(<span class="ident">thickness</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>, <span class="ident">position</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_read_line</span>(<span class="ident">stream</span>: <span class="kw-2">*mut</span> <span class="ident">FILE</span>, <span class="ident">str</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GString</span>) -&gt; <span class="ident">c_int</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_reorder_items</span>(<span class="ident">logical_items</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GList</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">glib::GList</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_reorder_items</span>(<span class="ident">items</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GList</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">glib::GList</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_scan_int</span>(<span class="ident">pos</span>: <span class="kw-2">*mut</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>, <span class="ident">out</span>: <span class="kw-2">*mut</span> <span class="ident">c_int</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_scan_string</span>(<span class="ident">pos</span>: <span class="kw-2">*mut</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>, <span class="ident">out</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GString</span>) -&gt; <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_scan_word</span>(<span class="ident">pos</span>: <span class="kw-2">*mut</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>, <span class="ident">out</span>: <span class="kw-2">*mut</span> <span class="ident">glib::GString</span>) -&gt; <span class="ident">gboolean</span>;
@@ -5582,6 +5780,16 @@
         <span class="ident">paragraph_length</span>: <span class="ident">c_int</span>,
         <span class="ident">analysis</span>: <span class="kw-2">*const</span> <span class="ident">PangoAnalysis</span>,
         <span class="ident">glyphs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>,
+    );
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_50&quot;</span>)))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_shape_item</span>(
+        <span class="ident">item</span>: <span class="kw-2">*mut</span> <span class="ident">PangoItem</span>,
+        <span class="ident">paragraph_text</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>,
+        <span class="ident">paragraph_length</span>: <span class="ident">c_int</span>,
+        <span class="ident">log_attrs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLogAttr</span>,
+        <span class="ident">glyphs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoGlyphString</span>,
+        <span class="ident">flags</span>: <span class="ident">PangoShapeFlags</span>,
     );
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_44&quot;</span>)))]</span>
@@ -5603,8 +5811,8 @@
         <span class="ident">length</span>: <span class="ident">c_int</span>,
         <span class="ident">analysis</span>: <span class="kw-2">*mut</span> <span class="ident">PangoAnalysis</span>,
         <span class="ident">offset</span>: <span class="ident">c_int</span>,
-        <span class="ident">log_attrs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLogAttr</span>,
-        <span class="ident">log_attrs_len</span>: <span class="ident">c_int</span>,
+        <span class="ident">attrs</span>: <span class="kw-2">*mut</span> <span class="ident">PangoLogAttr</span>,
+        <span class="ident">attrs_len</span>: <span class="ident">c_int</span>,
     );
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_trim_string</span>(<span class="ident">str</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span>) -&gt; <span class="kw-2">*mut</span> <span class="ident">c_char</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pango_unichar_direction</span>(<span class="ident">ch</span>: <span class="ident">u32</span>) -&gt; <span class="ident">PangoDirection</span>;

@@ -148,6 +148,14 @@
 <span id="143">143</span>
 <span id="144">144</span>
 <span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2</span>::{<span class="ident">Span</span> <span class="kw">as</span> <span class="ident">Span2</span>, <span class="ident">TokenStream</span> <span class="kw">as</span> <span class="ident">TokenStream2</span>};
 <span class="kw">use</span> <span class="ident">quote</span>::{<span class="ident">quote</span>, <span class="ident">quote_spanned</span>, <span class="ident">ToTokens</span>};
 <span class="kw">use</span> <span class="ident">syn</span>::{<span class="ident">spanned::Spanned</span>, <span class="ident">Error</span>, <span class="ident">Expr</span>, <span class="ident">ExprCall</span>, <span class="ident">ExprField</span>, <span class="ident">Ident</span>, <span class="ident">Member</span>, <span class="ident">Type</span>};
@@ -201,13 +209,21 @@
 }
 
 <span class="kw">impl</span> <span class="ident">Property</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">track_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">stream</span>: <span class="kw-2">&amp;mut</span> <span class="ident">TokenStream2</span>, <span class="ident">w_name</span>: <span class="kw-2">&amp;</span><span class="ident">Ident</span>, <span class="ident">model_type</span>: <span class="kw-2">&amp;</span><span class="ident">Type</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">track_stream</span>(
+        <span class="kw-2">&amp;</span><span class="self">self</span>,
+        <span class="ident">stream</span>: <span class="kw-2">&amp;mut</span> <span class="ident">TokenStream2</span>,
+        <span class="ident">w_name</span>: <span class="kw-2">&amp;</span><span class="ident">Ident</span>,
+        <span class="ident">model_type</span>: <span class="kw-2">&amp;</span><span class="ident">Type</span>,
+        <span class="ident">self_as_widgets</span>: <span class="ident">bool</span>,
+    ) {
         <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>((<span class="ident">bool_stream</span>, <span class="ident">update_stream</span>)) <span class="op">=</span> <span class="self">self</span>.<span class="ident">ty</span>.<span class="ident">track_tokens</span>(<span class="ident">model_type</span>) {
             <span class="kw">let</span> <span class="ident">p_name</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>;
             <span class="kw">let</span> <span class="ident">p_span</span> <span class="op">=</span> <span class="ident">p_name</span>.<span class="ident">span</span>().<span class="ident">unwrap</span>().<span class="ident">into</span>();
 
-            <span class="kw">let</span> <span class="ident">assign_fn</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">name</span>.<span class="ident">self_assign_fn_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">generics</span>, <span class="ident">w_name</span>);
-            <span class="kw">let</span> <span class="ident">self_assign_args</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">name</span>.<span class="ident">self_assign_args_stream</span>(<span class="ident">w_name</span>);
+            <span class="kw">let</span> <span class="ident">assign_fn</span> <span class="op">=</span>
+                <span class="self">self</span>.<span class="ident">name</span>
+                    .<span class="ident">self_assign_fn_stream</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">generics</span>, <span class="ident">w_name</span>, <span class="ident">self_as_widgets</span>);
+            <span class="kw">let</span> <span class="ident">self_assign_args</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">name</span>.<span class="ident">self_assign_args_stream</span>(<span class="ident">w_name</span>, <span class="ident">self_as_widgets</span>);
             <span class="kw">let</span> <span class="ident">args_stream</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">args_stream</span>();
 
             <span class="ident">stream</span>.<span class="ident">extend</span>(<span class="macro">quote_spanned!</span> {

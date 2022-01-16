@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/libadwaita-sys-0.1.0-beta-1/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/libadwaita-sys-0.1.0/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a class="sidebar-logo" href="../../libadwaita_sys/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
         </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../libadwaita_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><div>
                                 <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
@@ -2507,9 +2507,125 @@
 <span id="2504">2504</span>
 <span id="2505">2505</span>
 <span id="2506">2506</span>
-</pre><pre class="rust"><code><span class="comment">// Generated by gir (https://github.com/gtk-rs/gir @ 8891a2f2c34b)</span>
+<span id="2507">2507</span>
+<span id="2508">2508</span>
+<span id="2509">2509</span>
+<span id="2510">2510</span>
+<span id="2511">2511</span>
+<span id="2512">2512</span>
+<span id="2513">2513</span>
+<span id="2514">2514</span>
+<span id="2515">2515</span>
+<span id="2516">2516</span>
+<span id="2517">2517</span>
+<span id="2518">2518</span>
+<span id="2519">2519</span>
+<span id="2520">2520</span>
+<span id="2521">2521</span>
+<span id="2522">2522</span>
+<span id="2523">2523</span>
+<span id="2524">2524</span>
+<span id="2525">2525</span>
+<span id="2526">2526</span>
+<span id="2527">2527</span>
+<span id="2528">2528</span>
+<span id="2529">2529</span>
+<span id="2530">2530</span>
+<span id="2531">2531</span>
+<span id="2532">2532</span>
+<span id="2533">2533</span>
+<span id="2534">2534</span>
+<span id="2535">2535</span>
+<span id="2536">2536</span>
+<span id="2537">2537</span>
+<span id="2538">2538</span>
+<span id="2539">2539</span>
+<span id="2540">2540</span>
+<span id="2541">2541</span>
+<span id="2542">2542</span>
+<span id="2543">2543</span>
+<span id="2544">2544</span>
+<span id="2545">2545</span>
+<span id="2546">2546</span>
+<span id="2547">2547</span>
+<span id="2548">2548</span>
+<span id="2549">2549</span>
+<span id="2550">2550</span>
+<span id="2551">2551</span>
+<span id="2552">2552</span>
+<span id="2553">2553</span>
+<span id="2554">2554</span>
+<span id="2555">2555</span>
+<span id="2556">2556</span>
+<span id="2557">2557</span>
+<span id="2558">2558</span>
+<span id="2559">2559</span>
+<span id="2560">2560</span>
+<span id="2561">2561</span>
+<span id="2562">2562</span>
+<span id="2563">2563</span>
+<span id="2564">2564</span>
+<span id="2565">2565</span>
+<span id="2566">2566</span>
+<span id="2567">2567</span>
+<span id="2568">2568</span>
+<span id="2569">2569</span>
+<span id="2570">2570</span>
+<span id="2571">2571</span>
+<span id="2572">2572</span>
+<span id="2573">2573</span>
+<span id="2574">2574</span>
+<span id="2575">2575</span>
+<span id="2576">2576</span>
+<span id="2577">2577</span>
+<span id="2578">2578</span>
+<span id="2579">2579</span>
+<span id="2580">2580</span>
+<span id="2581">2581</span>
+<span id="2582">2582</span>
+<span id="2583">2583</span>
+<span id="2584">2584</span>
+<span id="2585">2585</span>
+<span id="2586">2586</span>
+<span id="2587">2587</span>
+<span id="2588">2588</span>
+<span id="2589">2589</span>
+<span id="2590">2590</span>
+<span id="2591">2591</span>
+<span id="2592">2592</span>
+<span id="2593">2593</span>
+<span id="2594">2594</span>
+<span id="2595">2595</span>
+<span id="2596">2596</span>
+<span id="2597">2597</span>
+<span id="2598">2598</span>
+<span id="2599">2599</span>
+<span id="2600">2600</span>
+<span id="2601">2601</span>
+<span id="2602">2602</span>
+<span id="2603">2603</span>
+<span id="2604">2604</span>
+<span id="2605">2605</span>
+<span id="2606">2606</span>
+<span id="2607">2607</span>
+<span id="2608">2608</span>
+<span id="2609">2609</span>
+<span id="2610">2610</span>
+<span id="2611">2611</span>
+<span id="2612">2612</span>
+<span id="2613">2613</span>
+<span id="2614">2614</span>
+<span id="2615">2615</span>
+<span id="2616">2616</span>
+<span id="2617">2617</span>
+<span id="2618">2618</span>
+<span id="2619">2619</span>
+<span id="2620">2620</span>
+<span id="2621">2621</span>
+<span id="2622">2622</span>
+</pre><pre class="rust"><code><span class="comment">// Generated by gir (https://github.com/gtk-rs/gir @ ee37253c10af)</span>
 <span class="comment">// from</span>
-<span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git @ 46f24acbe4c2)</span>
+<span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files.git @ 5264fd0c3183)</span>
 <span class="comment">// DO NOT EDIT</span>
 
 <span class="attribute">#![<span class="ident">allow</span>(<span class="ident">non_camel_case_types</span>, <span class="ident">non_upper_case_globals</span>, <span class="ident">non_snake_case</span>)]</span>
@@ -2521,16 +2637,10 @@
 )]</span>
 <span class="attribute">#![<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">feature</span>(<span class="ident">doc_cfg</span>))]</span>
 
-<span class="kw">use</span> <span class="ident">gdk_sys</span> <span class="kw">as</span> <span class="ident">gdk</span>;
-<span class="kw">use</span> <span class="ident">gio_sys</span> <span class="kw">as</span> <span class="ident">gio</span>;
-<span class="kw">use</span> <span class="ident">glib_sys</span> <span class="kw">as</span> <span class="ident">glib</span>;
-<span class="kw">use</span> <span class="ident">gobject_sys</span> <span class="kw">as</span> <span class="ident">gobject</span>;
-<span class="kw">use</span> <span class="ident">gtk_sys</span> <span class="kw">as</span> <span class="ident">gtk</span>;
-
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
 <span class="kw">use</span> <span class="ident">libc</span>::{
     <span class="ident">c_char</span>, <span class="ident">c_double</span>, <span class="ident">c_float</span>, <span class="ident">c_int</span>, <span class="ident">c_long</span>, <span class="ident">c_short</span>, <span class="ident">c_uchar</span>, <span class="ident">c_uint</span>, <span class="ident">c_ulong</span>, <span class="ident">c_ushort</span>, <span class="ident">c_void</span>,
-    <span class="ident">intptr_t</span>, <span class="ident">size_t</span>, <span class="ident">ssize_t</span>, <span class="ident">time_t</span>, <span class="ident">uintptr_t</span>, <span class="ident">FILE</span>,
+    <span class="ident">intptr_t</span>, <span class="ident">size_t</span>, <span class="ident">ssize_t</span>, <span class="ident">uintptr_t</span>, <span class="ident">FILE</span>,
 };
 
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
@@ -2624,17 +2734,13 @@
 
 <span class="comment">// Constants</span>
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_DURATION_INFINITE</span>: <span class="ident">c_uint</span> <span class="op">=</span> <span class="number">4294967295</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MAJOR_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">1</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MICRO_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">0</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_MINOR_VERSION</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">0</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ADW_VERSION_S</span>: <span class="kw-2">*const</span> <span class="ident">c_char</span> <span class="op">=</span> <span class="string">b&quot;1.0.0.beta.1\0&quot;</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">u8</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">c_char</span>;
 
 <span class="comment">// Callbacks</span>
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwAnimationTargetFunc</span> <span class="op">=</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="ident">c_double</span>, <span class="ident">gpointer</span>)<span class="op">&gt;</span>;
 
 <span class="comment">// Records</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwActionRowClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">AdwPreferencesRowClass</span>,
     <span class="kw">pub</span> <span class="ident">activate</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">AdwActionRow</span>)<span class="op">&gt;</span>,
@@ -2651,17 +2757,23 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwAnimationClass</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwAnimationClass</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwAnimationClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwAnimationClass</span>;
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwAnimationTargetClass</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwAnimationTargetClass</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwAnimationTargetClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwAnimationTargetClass</span>;
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwApplicationClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkApplicationClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -2675,8 +2787,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwApplicationWindowClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkApplicationWindowClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -2690,8 +2802,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwAvatarClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2704,8 +2816,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwBinClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2718,8 +2830,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwButtonContentClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2733,12 +2845,15 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwCallbackAnimationTargetClass</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwCallbackAnimationTargetClass</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwCallbackAnimationTargetClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwCallbackAnimationTargetClass</span>;
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarouselClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2751,8 +2866,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarouselIndicatorDotsClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2765,8 +2880,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarouselIndicatorLinesClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2779,8 +2894,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClampClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2793,8 +2908,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClampLayoutClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkLayoutManagerClass</span>,
 }
@@ -2807,8 +2922,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClampScrollableClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2821,8 +2936,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwComboRowClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">AdwActionRowClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -2836,8 +2951,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListItemClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -2850,8 +2965,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListModelClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -2864,8 +2979,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwExpanderRowClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">AdwPreferencesRowClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -2879,8 +2994,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwFlapClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2893,8 +3008,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwHeaderBarClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2907,8 +3022,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwLeafletClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -2921,8 +3036,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwLeafletPageClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -2935,8 +3050,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwPreferencesGroupClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -2950,8 +3065,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwPreferencesPageClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -2965,8 +3080,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwPreferencesRowClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkListBoxRowClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -2980,8 +3095,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwPreferencesWindowClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">AdwWindowClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -2995,8 +3110,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSplitButtonClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3010,12 +3125,18 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwSpringAnimationClass</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwSpringAnimationClass</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwSpringAnimationClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwSpringAnimationClass</span>;
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSpringParams</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSpringParams</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSpringParams</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3024,8 +3145,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezerClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3038,8 +3159,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezerPageClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -3052,8 +3173,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwStatusPageClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3066,8 +3187,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwStyleManagerClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -3080,8 +3201,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSwipeTrackerClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -3094,8 +3215,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSwipeableInterface</span> {
     <span class="kw">pub</span> <span class="ident">parent</span>: <span class="ident">gobject::GTypeInterface</span>,
     <span class="kw">pub</span> <span class="ident">get_distance</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*mut</span> <span class="ident">AdwSwipeable</span>) -&gt; <span class="ident">c_double</span><span class="op">&gt;</span>,
@@ -3127,8 +3248,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabBarClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3141,8 +3262,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabPageClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -3155,8 +3276,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabViewClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3170,12 +3291,15 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwTimedAnimationClass</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">_AdwTimedAnimationClass</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AdwTimedAnimationClass</span> <span class="op">=</span> <span class="kw-2">*mut</span> <span class="ident">_AdwTimedAnimationClass</span>;
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToastClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -3188,8 +3312,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToastOverlayClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3202,8 +3326,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewStackClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3216,8 +3340,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewStackPageClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gobject::GObjectClass</span>,
 }
@@ -3230,8 +3354,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcherBarClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3244,8 +3368,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcherClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3258,8 +3382,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcherTitleClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3272,8 +3396,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwWindowClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWindowClass</span>,
     <span class="kw">pub</span> <span class="ident">padding</span>: [<span class="ident">gpointer</span>; <span class="number">4</span>],
@@ -3287,8 +3411,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwWindowTitleClass</span> {
     <span class="kw">pub</span> <span class="ident">parent_class</span>: <span class="ident">gtk::GtkWidgetClass</span>,
 }
@@ -3302,8 +3426,8 @@
 }
 
 <span class="comment">// Classes</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwActionRow</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">AdwPreferencesRow</span>,
 }
@@ -3316,8 +3440,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwAnimation</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gobject::GObject</span>,
 }
@@ -3331,7 +3455,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwAnimationTarget</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwAnimationTarget</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwAnimationTarget</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3340,8 +3467,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwApplication</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gtk::GtkApplication</span>,
 }
@@ -3354,8 +3481,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwApplicationWindow</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gtk::GtkApplicationWindow</span>,
 }
@@ -3369,7 +3496,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwAvatar</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwAvatar</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwAvatar</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3377,8 +3507,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwBin</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gtk::GtkWidget</span>,
 }
@@ -3392,7 +3522,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwButtonContent</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwButtonContent</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwButtonContent</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3402,7 +3535,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCallbackAnimationTarget</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCallbackAnimationTarget</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwCallbackAnimationTarget</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3412,7 +3548,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarousel</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarousel</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwCarousel</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3422,7 +3561,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarouselIndicatorDots</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarouselIndicatorDots</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwCarouselIndicatorDots</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3432,7 +3574,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarouselIndicatorLines</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwCarouselIndicatorLines</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwCarouselIndicatorLines</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3442,7 +3587,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClamp</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClamp</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwClamp</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3451,7 +3599,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClampLayout</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClampLayout</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwClampLayout</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3461,7 +3612,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClampScrollable</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwClampScrollable</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwClampScrollable</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3470,8 +3624,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwComboRow</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">AdwActionRow</span>,
 }
@@ -3485,7 +3639,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListItem</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListItem</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumListItem</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3495,7 +3652,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListModel</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwEnumListModel</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwEnumListModel</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3504,8 +3664,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwExpanderRow</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">AdwPreferencesRow</span>,
 }
@@ -3519,7 +3679,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwFlap</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwFlap</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwFlap</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3528,7 +3691,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwHeaderBar</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwHeaderBar</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwHeaderBar</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3538,7 +3704,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwLeaflet</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwLeaflet</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwLeaflet</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3547,7 +3716,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwLeafletPage</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwLeafletPage</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwLeafletPage</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3556,8 +3728,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwPreferencesGroup</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gtk::GtkWidget</span>,
 }
@@ -3570,8 +3742,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwPreferencesPage</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gtk::GtkWidget</span>,
 }
@@ -3584,8 +3756,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwPreferencesRow</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gtk::GtkListBoxRow</span>,
 }
@@ -3598,8 +3770,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwPreferencesWindow</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">AdwWindow</span>,
 }
@@ -3613,7 +3785,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSplitButton</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSplitButton</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSplitButton</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3623,7 +3798,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSpringAnimation</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSpringAnimation</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSpringAnimation</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3633,7 +3811,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezer</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezer</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSqueezer</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3643,7 +3824,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezerPage</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSqueezerPage</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSqueezerPage</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3653,7 +3837,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwStatusPage</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwStatusPage</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwStatusPage</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3663,7 +3850,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwStyleManager</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwStyleManager</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwStyleManager</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3673,7 +3863,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSwipeTracker</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSwipeTracker</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSwipeTracker</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3683,7 +3876,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabBar</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabBar</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwTabBar</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3692,7 +3888,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabPage</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabPage</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwTabPage</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3701,7 +3900,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabView</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTabView</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwTabView</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3710,7 +3912,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTimedAnimation</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwTimedAnimation</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwTimedAnimation</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3720,7 +3925,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToast</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToast</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwToast</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3729,7 +3937,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToastOverlay</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwToastOverlay</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwToastOverlay</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3739,7 +3950,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewStack</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewStack</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwViewStack</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3749,7 +3963,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewStackPage</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewStackPage</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwViewStackPage</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3759,7 +3976,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcher</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcher</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwViewSwitcher</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3769,7 +3989,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcherBar</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcherBar</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwViewSwitcherBar</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3779,7 +4002,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcherTitle</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwViewSwitcherTitle</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwViewSwitcherTitle</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3788,8 +4014,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwWindow</span> {
     <span class="kw">pub</span> <span class="ident">parent_instance</span>: <span class="ident">gtk::GtkWindow</span>,
 }
@@ -3803,7 +4029,10 @@
 }
 
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwWindowTitle</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwWindowTitle</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwWindowTitle</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {
@@ -3814,7 +4043,10 @@
 
 <span class="comment">// Interfaces</span>
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSwipeable</span>(<span class="ident">c_void</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AdwSwipeable</span> {
+    <span class="ident">_data</span>: [<span class="ident">u8</span>; <span class="number">0</span>],
+    <span class="ident">_marker</span>: <span class="ident">core::marker::PhantomData</span><span class="op">&lt;</span>(<span class="kw-2">*mut</span> <span class="ident">u8</span>, <span class="ident">core::marker::PhantomPinned</span>)<span class="op">&gt;</span>,
+}
 
 <span class="kw">impl</span> <span class="ident">::std::fmt::Debug</span> <span class="kw">for</span> <span class="ident">AdwSwipeable</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">::std::fmt::Formatter</span>) -&gt; <span class="ident">::std::fmt::Result</span> {

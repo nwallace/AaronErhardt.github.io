@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/gio-0.14.8/src/auto/enums.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>enums.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><script defer src="../../../main.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/gio-0.15.2/src/auto/enums.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>enums.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script src="../../../crates.js"></script><script defer src="../../../main.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a class="sidebar-logo" href="../../../gio/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div>
         </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><div>
                                 <input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
@@ -3646,6 +3646,376 @@
 <span id="3643">3643</span>
 <span id="3644">3644</span>
 <span id="3645">3645</span>
+<span id="3646">3646</span>
+<span id="3647">3647</span>
+<span id="3648">3648</span>
+<span id="3649">3649</span>
+<span id="3650">3650</span>
+<span id="3651">3651</span>
+<span id="3652">3652</span>
+<span id="3653">3653</span>
+<span id="3654">3654</span>
+<span id="3655">3655</span>
+<span id="3656">3656</span>
+<span id="3657">3657</span>
+<span id="3658">3658</span>
+<span id="3659">3659</span>
+<span id="3660">3660</span>
+<span id="3661">3661</span>
+<span id="3662">3662</span>
+<span id="3663">3663</span>
+<span id="3664">3664</span>
+<span id="3665">3665</span>
+<span id="3666">3666</span>
+<span id="3667">3667</span>
+<span id="3668">3668</span>
+<span id="3669">3669</span>
+<span id="3670">3670</span>
+<span id="3671">3671</span>
+<span id="3672">3672</span>
+<span id="3673">3673</span>
+<span id="3674">3674</span>
+<span id="3675">3675</span>
+<span id="3676">3676</span>
+<span id="3677">3677</span>
+<span id="3678">3678</span>
+<span id="3679">3679</span>
+<span id="3680">3680</span>
+<span id="3681">3681</span>
+<span id="3682">3682</span>
+<span id="3683">3683</span>
+<span id="3684">3684</span>
+<span id="3685">3685</span>
+<span id="3686">3686</span>
+<span id="3687">3687</span>
+<span id="3688">3688</span>
+<span id="3689">3689</span>
+<span id="3690">3690</span>
+<span id="3691">3691</span>
+<span id="3692">3692</span>
+<span id="3693">3693</span>
+<span id="3694">3694</span>
+<span id="3695">3695</span>
+<span id="3696">3696</span>
+<span id="3697">3697</span>
+<span id="3698">3698</span>
+<span id="3699">3699</span>
+<span id="3700">3700</span>
+<span id="3701">3701</span>
+<span id="3702">3702</span>
+<span id="3703">3703</span>
+<span id="3704">3704</span>
+<span id="3705">3705</span>
+<span id="3706">3706</span>
+<span id="3707">3707</span>
+<span id="3708">3708</span>
+<span id="3709">3709</span>
+<span id="3710">3710</span>
+<span id="3711">3711</span>
+<span id="3712">3712</span>
+<span id="3713">3713</span>
+<span id="3714">3714</span>
+<span id="3715">3715</span>
+<span id="3716">3716</span>
+<span id="3717">3717</span>
+<span id="3718">3718</span>
+<span id="3719">3719</span>
+<span id="3720">3720</span>
+<span id="3721">3721</span>
+<span id="3722">3722</span>
+<span id="3723">3723</span>
+<span id="3724">3724</span>
+<span id="3725">3725</span>
+<span id="3726">3726</span>
+<span id="3727">3727</span>
+<span id="3728">3728</span>
+<span id="3729">3729</span>
+<span id="3730">3730</span>
+<span id="3731">3731</span>
+<span id="3732">3732</span>
+<span id="3733">3733</span>
+<span id="3734">3734</span>
+<span id="3735">3735</span>
+<span id="3736">3736</span>
+<span id="3737">3737</span>
+<span id="3738">3738</span>
+<span id="3739">3739</span>
+<span id="3740">3740</span>
+<span id="3741">3741</span>
+<span id="3742">3742</span>
+<span id="3743">3743</span>
+<span id="3744">3744</span>
+<span id="3745">3745</span>
+<span id="3746">3746</span>
+<span id="3747">3747</span>
+<span id="3748">3748</span>
+<span id="3749">3749</span>
+<span id="3750">3750</span>
+<span id="3751">3751</span>
+<span id="3752">3752</span>
+<span id="3753">3753</span>
+<span id="3754">3754</span>
+<span id="3755">3755</span>
+<span id="3756">3756</span>
+<span id="3757">3757</span>
+<span id="3758">3758</span>
+<span id="3759">3759</span>
+<span id="3760">3760</span>
+<span id="3761">3761</span>
+<span id="3762">3762</span>
+<span id="3763">3763</span>
+<span id="3764">3764</span>
+<span id="3765">3765</span>
+<span id="3766">3766</span>
+<span id="3767">3767</span>
+<span id="3768">3768</span>
+<span id="3769">3769</span>
+<span id="3770">3770</span>
+<span id="3771">3771</span>
+<span id="3772">3772</span>
+<span id="3773">3773</span>
+<span id="3774">3774</span>
+<span id="3775">3775</span>
+<span id="3776">3776</span>
+<span id="3777">3777</span>
+<span id="3778">3778</span>
+<span id="3779">3779</span>
+<span id="3780">3780</span>
+<span id="3781">3781</span>
+<span id="3782">3782</span>
+<span id="3783">3783</span>
+<span id="3784">3784</span>
+<span id="3785">3785</span>
+<span id="3786">3786</span>
+<span id="3787">3787</span>
+<span id="3788">3788</span>
+<span id="3789">3789</span>
+<span id="3790">3790</span>
+<span id="3791">3791</span>
+<span id="3792">3792</span>
+<span id="3793">3793</span>
+<span id="3794">3794</span>
+<span id="3795">3795</span>
+<span id="3796">3796</span>
+<span id="3797">3797</span>
+<span id="3798">3798</span>
+<span id="3799">3799</span>
+<span id="3800">3800</span>
+<span id="3801">3801</span>
+<span id="3802">3802</span>
+<span id="3803">3803</span>
+<span id="3804">3804</span>
+<span id="3805">3805</span>
+<span id="3806">3806</span>
+<span id="3807">3807</span>
+<span id="3808">3808</span>
+<span id="3809">3809</span>
+<span id="3810">3810</span>
+<span id="3811">3811</span>
+<span id="3812">3812</span>
+<span id="3813">3813</span>
+<span id="3814">3814</span>
+<span id="3815">3815</span>
+<span id="3816">3816</span>
+<span id="3817">3817</span>
+<span id="3818">3818</span>
+<span id="3819">3819</span>
+<span id="3820">3820</span>
+<span id="3821">3821</span>
+<span id="3822">3822</span>
+<span id="3823">3823</span>
+<span id="3824">3824</span>
+<span id="3825">3825</span>
+<span id="3826">3826</span>
+<span id="3827">3827</span>
+<span id="3828">3828</span>
+<span id="3829">3829</span>
+<span id="3830">3830</span>
+<span id="3831">3831</span>
+<span id="3832">3832</span>
+<span id="3833">3833</span>
+<span id="3834">3834</span>
+<span id="3835">3835</span>
+<span id="3836">3836</span>
+<span id="3837">3837</span>
+<span id="3838">3838</span>
+<span id="3839">3839</span>
+<span id="3840">3840</span>
+<span id="3841">3841</span>
+<span id="3842">3842</span>
+<span id="3843">3843</span>
+<span id="3844">3844</span>
+<span id="3845">3845</span>
+<span id="3846">3846</span>
+<span id="3847">3847</span>
+<span id="3848">3848</span>
+<span id="3849">3849</span>
+<span id="3850">3850</span>
+<span id="3851">3851</span>
+<span id="3852">3852</span>
+<span id="3853">3853</span>
+<span id="3854">3854</span>
+<span id="3855">3855</span>
+<span id="3856">3856</span>
+<span id="3857">3857</span>
+<span id="3858">3858</span>
+<span id="3859">3859</span>
+<span id="3860">3860</span>
+<span id="3861">3861</span>
+<span id="3862">3862</span>
+<span id="3863">3863</span>
+<span id="3864">3864</span>
+<span id="3865">3865</span>
+<span id="3866">3866</span>
+<span id="3867">3867</span>
+<span id="3868">3868</span>
+<span id="3869">3869</span>
+<span id="3870">3870</span>
+<span id="3871">3871</span>
+<span id="3872">3872</span>
+<span id="3873">3873</span>
+<span id="3874">3874</span>
+<span id="3875">3875</span>
+<span id="3876">3876</span>
+<span id="3877">3877</span>
+<span id="3878">3878</span>
+<span id="3879">3879</span>
+<span id="3880">3880</span>
+<span id="3881">3881</span>
+<span id="3882">3882</span>
+<span id="3883">3883</span>
+<span id="3884">3884</span>
+<span id="3885">3885</span>
+<span id="3886">3886</span>
+<span id="3887">3887</span>
+<span id="3888">3888</span>
+<span id="3889">3889</span>
+<span id="3890">3890</span>
+<span id="3891">3891</span>
+<span id="3892">3892</span>
+<span id="3893">3893</span>
+<span id="3894">3894</span>
+<span id="3895">3895</span>
+<span id="3896">3896</span>
+<span id="3897">3897</span>
+<span id="3898">3898</span>
+<span id="3899">3899</span>
+<span id="3900">3900</span>
+<span id="3901">3901</span>
+<span id="3902">3902</span>
+<span id="3903">3903</span>
+<span id="3904">3904</span>
+<span id="3905">3905</span>
+<span id="3906">3906</span>
+<span id="3907">3907</span>
+<span id="3908">3908</span>
+<span id="3909">3909</span>
+<span id="3910">3910</span>
+<span id="3911">3911</span>
+<span id="3912">3912</span>
+<span id="3913">3913</span>
+<span id="3914">3914</span>
+<span id="3915">3915</span>
+<span id="3916">3916</span>
+<span id="3917">3917</span>
+<span id="3918">3918</span>
+<span id="3919">3919</span>
+<span id="3920">3920</span>
+<span id="3921">3921</span>
+<span id="3922">3922</span>
+<span id="3923">3923</span>
+<span id="3924">3924</span>
+<span id="3925">3925</span>
+<span id="3926">3926</span>
+<span id="3927">3927</span>
+<span id="3928">3928</span>
+<span id="3929">3929</span>
+<span id="3930">3930</span>
+<span id="3931">3931</span>
+<span id="3932">3932</span>
+<span id="3933">3933</span>
+<span id="3934">3934</span>
+<span id="3935">3935</span>
+<span id="3936">3936</span>
+<span id="3937">3937</span>
+<span id="3938">3938</span>
+<span id="3939">3939</span>
+<span id="3940">3940</span>
+<span id="3941">3941</span>
+<span id="3942">3942</span>
+<span id="3943">3943</span>
+<span id="3944">3944</span>
+<span id="3945">3945</span>
+<span id="3946">3946</span>
+<span id="3947">3947</span>
+<span id="3948">3948</span>
+<span id="3949">3949</span>
+<span id="3950">3950</span>
+<span id="3951">3951</span>
+<span id="3952">3952</span>
+<span id="3953">3953</span>
+<span id="3954">3954</span>
+<span id="3955">3955</span>
+<span id="3956">3956</span>
+<span id="3957">3957</span>
+<span id="3958">3958</span>
+<span id="3959">3959</span>
+<span id="3960">3960</span>
+<span id="3961">3961</span>
+<span id="3962">3962</span>
+<span id="3963">3963</span>
+<span id="3964">3964</span>
+<span id="3965">3965</span>
+<span id="3966">3966</span>
+<span id="3967">3967</span>
+<span id="3968">3968</span>
+<span id="3969">3969</span>
+<span id="3970">3970</span>
+<span id="3971">3971</span>
+<span id="3972">3972</span>
+<span id="3973">3973</span>
+<span id="3974">3974</span>
+<span id="3975">3975</span>
+<span id="3976">3976</span>
+<span id="3977">3977</span>
+<span id="3978">3978</span>
+<span id="3979">3979</span>
+<span id="3980">3980</span>
+<span id="3981">3981</span>
+<span id="3982">3982</span>
+<span id="3983">3983</span>
+<span id="3984">3984</span>
+<span id="3985">3985</span>
+<span id="3986">3986</span>
+<span id="3987">3987</span>
+<span id="3988">3988</span>
+<span id="3989">3989</span>
+<span id="3990">3990</span>
+<span id="3991">3991</span>
+<span id="3992">3992</span>
+<span id="3993">3993</span>
+<span id="3994">3994</span>
+<span id="3995">3995</span>
+<span id="3996">3996</span>
+<span id="3997">3997</span>
+<span id="3998">3998</span>
+<span id="3999">3999</span>
+<span id="4000">4000</span>
+<span id="4001">4001</span>
+<span id="4002">4002</span>
+<span id="4003">4003</span>
+<span id="4004">4004</span>
+<span id="4005">4005</span>
+<span id="4006">4006</span>
+<span id="4007">4007</span>
+<span id="4008">4008</span>
+<span id="4009">4009</span>
+<span id="4010">4010</span>
+<span id="4011">4011</span>
+<span id="4012">4012</span>
+<span id="4013">4013</span>
+<span id="4014">4014</span>
+<span id="4015">4015</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)</span>
 <span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files)</span>
 <span class="comment">// DO NOT EDIT</span>
@@ -5895,6 +6265,112 @@
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
 <span class="attribute">#[<span class="ident">non_exhaustive</span>]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GResolverError&quot;</span>)]</span>
+<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ResolverError</span> {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_RESOLVER_ERROR_NOT_FOUND&quot;</span>)]</span>
+    <span class="ident">NotFound</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_RESOLVER_ERROR_TEMPORARY_FAILURE&quot;</span>)]</span>
+    <span class="ident">TemporaryFailure</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_RESOLVER_ERROR_INTERNAL&quot;</span>)]</span>
+    <span class="ident">Internal</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+    <span class="ident">__Unknown</span>(<span class="ident">i32</span>),
+}
+
+<span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">ResolverError</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
+        <span class="macro">write!</span>(
+            <span class="ident">f</span>,
+            <span class="string">&quot;ResolverError::{}&quot;</span>,
+            <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
+                <span class="ident"><span class="self">Self</span>::NotFound</span> =&gt; <span class="string">&quot;NotFound&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::TemporaryFailure</span> =&gt; <span class="string">&quot;TemporaryFailure&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Internal</span> =&gt; <span class="string">&quot;Internal&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
+            }
+        )
+    }
+}
+
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">ResolverError</span> {
+    <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::GResolverError</span>;
+
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::GResolverError</span> {
+        <span class="kw">match</span> <span class="self">self</span> {
+            <span class="ident"><span class="self">Self</span>::NotFound</span> =&gt; <span class="ident">ffi::G_RESOLVER_ERROR_NOT_FOUND</span>,
+            <span class="ident"><span class="self">Self</span>::TemporaryFailure</span> =&gt; <span class="ident">ffi::G_RESOLVER_ERROR_TEMPORARY_FAILURE</span>,
+            <span class="ident"><span class="self">Self</span>::Internal</span> =&gt; <span class="ident">ffi::G_RESOLVER_ERROR_INTERNAL</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
+        }
+    }
+}
+
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::GResolverError</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">ResolverError</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::GResolverError</span>) -&gt; <span class="self">Self</span> {
+        <span class="kw">match</span> <span class="ident">value</span> {
+            <span class="ident">ffi::G_RESOLVER_ERROR_NOT_FOUND</span> =&gt; <span class="ident"><span class="self">Self</span>::NotFound</span>,
+            <span class="ident">ffi::G_RESOLVER_ERROR_TEMPORARY_FAILURE</span> =&gt; <span class="ident"><span class="self">Self</span>::TemporaryFailure</span>,
+            <span class="ident">ffi::G_RESOLVER_ERROR_INTERNAL</span> =&gt; <span class="ident"><span class="self">Self</span>::Internal</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+        }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">ErrorDomain</span> <span class="kw">for</span> <span class="ident">ResolverError</span> {
+    <span class="kw">fn</span> <span class="ident">domain</span>() -&gt; <span class="ident">Quark</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::g_resolver_error_quark</span>()) }
+    }
+
+    <span class="kw">fn</span> <span class="ident">code</span>(<span class="self">self</span>) -&gt; <span class="ident">i32</span> {
+        <span class="self">self</span>.<span class="ident">into_glib</span>()
+    }
+
+    <span class="kw">fn</span> <span class="ident">from</span>(<span class="ident">code</span>: <span class="ident">i32</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
+        <span class="kw">match</span> <span class="ident">code</span> {
+            <span class="ident">ffi::G_RESOLVER_ERROR_NOT_FOUND</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::NotFound</span>),
+            <span class="ident">ffi::G_RESOLVER_ERROR_TEMPORARY_FAILURE</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::TemporaryFailure</span>),
+            <span class="ident">ffi::G_RESOLVER_ERROR_INTERNAL</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::Internal</span>),
+            <span class="ident">value</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>)),
+        }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">ResolverError</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::g_resolver_error_get_type</span>()) }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">glib::value::ValueType</span> <span class="kw">for</span> <span class="ident">ResolverError</span> {
+    <span class="kw">type</span> <span class="ident">Type</span> <span class="op">=</span> <span class="self">Self</span>;
+}
+
+<span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">ResolverError</span> {
+    <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
+
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
+        <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">ResolverError</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
+        <span class="kw">unsafe</span> {
+            <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
+        }
+        <span class="ident">value</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
+        <span class="ident"><span class="self">Self</span>::static_type</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
+<span class="attribute">#[<span class="ident">non_exhaustive</span>]</span>
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GResolverRecordType&quot;</span>)]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ResolverRecordType</span> {
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_RESOLVER_RECORD_SRV&quot;</span>)]</span>
@@ -6926,6 +7402,142 @@
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
 <span class="attribute">#[<span class="ident">non_exhaustive</span>]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTlsError&quot;</span>)]</span>
+<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">TlsError</span> {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_ERROR_UNAVAILABLE&quot;</span>)]</span>
+    <span class="ident">Unavailable</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_ERROR_MISC&quot;</span>)]</span>
+    <span class="ident">Misc</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_ERROR_BAD_CERTIFICATE&quot;</span>)]</span>
+    <span class="ident">BadCertificate</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_ERROR_NOT_TLS&quot;</span>)]</span>
+    <span class="ident">NotTls</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_ERROR_HANDSHAKE&quot;</span>)]</span>
+    <span class="ident">Handshake</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_ERROR_CERTIFICATE_REQUIRED&quot;</span>)]</span>
+    <span class="ident">CertificateRequired</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_ERROR_EOF&quot;</span>)]</span>
+    <span class="ident">Eof</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_ERROR_INAPPROPRIATE_FALLBACK&quot;</span>)]</span>
+    <span class="ident">InappropriateFallback</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+    <span class="ident">__Unknown</span>(<span class="ident">i32</span>),
+}
+
+<span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">TlsError</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
+        <span class="macro">write!</span>(
+            <span class="ident">f</span>,
+            <span class="string">&quot;TlsError::{}&quot;</span>,
+            <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
+                <span class="ident"><span class="self">Self</span>::Unavailable</span> =&gt; <span class="string">&quot;Unavailable&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Misc</span> =&gt; <span class="string">&quot;Misc&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::BadCertificate</span> =&gt; <span class="string">&quot;BadCertificate&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::NotTls</span> =&gt; <span class="string">&quot;NotTls&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Handshake</span> =&gt; <span class="string">&quot;Handshake&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::CertificateRequired</span> =&gt; <span class="string">&quot;CertificateRequired&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Eof</span> =&gt; <span class="string">&quot;Eof&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::InappropriateFallback</span> =&gt; <span class="string">&quot;InappropriateFallback&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
+            }
+        )
+    }
+}
+
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">TlsError</span> {
+    <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::GTlsError</span>;
+
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::GTlsError</span> {
+        <span class="kw">match</span> <span class="self">self</span> {
+            <span class="ident"><span class="self">Self</span>::Unavailable</span> =&gt; <span class="ident">ffi::G_TLS_ERROR_UNAVAILABLE</span>,
+            <span class="ident"><span class="self">Self</span>::Misc</span> =&gt; <span class="ident">ffi::G_TLS_ERROR_MISC</span>,
+            <span class="ident"><span class="self">Self</span>::BadCertificate</span> =&gt; <span class="ident">ffi::G_TLS_ERROR_BAD_CERTIFICATE</span>,
+            <span class="ident"><span class="self">Self</span>::NotTls</span> =&gt; <span class="ident">ffi::G_TLS_ERROR_NOT_TLS</span>,
+            <span class="ident"><span class="self">Self</span>::Handshake</span> =&gt; <span class="ident">ffi::G_TLS_ERROR_HANDSHAKE</span>,
+            <span class="ident"><span class="self">Self</span>::CertificateRequired</span> =&gt; <span class="ident">ffi::G_TLS_ERROR_CERTIFICATE_REQUIRED</span>,
+            <span class="ident"><span class="self">Self</span>::Eof</span> =&gt; <span class="ident">ffi::G_TLS_ERROR_EOF</span>,
+            <span class="ident"><span class="self">Self</span>::InappropriateFallback</span> =&gt; <span class="ident">ffi::G_TLS_ERROR_INAPPROPRIATE_FALLBACK</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
+        }
+    }
+}
+
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::GTlsError</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">TlsError</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::GTlsError</span>) -&gt; <span class="self">Self</span> {
+        <span class="kw">match</span> <span class="ident">value</span> {
+            <span class="ident">ffi::G_TLS_ERROR_UNAVAILABLE</span> =&gt; <span class="ident"><span class="self">Self</span>::Unavailable</span>,
+            <span class="ident">ffi::G_TLS_ERROR_MISC</span> =&gt; <span class="ident"><span class="self">Self</span>::Misc</span>,
+            <span class="ident">ffi::G_TLS_ERROR_BAD_CERTIFICATE</span> =&gt; <span class="ident"><span class="self">Self</span>::BadCertificate</span>,
+            <span class="ident">ffi::G_TLS_ERROR_NOT_TLS</span> =&gt; <span class="ident"><span class="self">Self</span>::NotTls</span>,
+            <span class="ident">ffi::G_TLS_ERROR_HANDSHAKE</span> =&gt; <span class="ident"><span class="self">Self</span>::Handshake</span>,
+            <span class="ident">ffi::G_TLS_ERROR_CERTIFICATE_REQUIRED</span> =&gt; <span class="ident"><span class="self">Self</span>::CertificateRequired</span>,
+            <span class="ident">ffi::G_TLS_ERROR_EOF</span> =&gt; <span class="ident"><span class="self">Self</span>::Eof</span>,
+            <span class="ident">ffi::G_TLS_ERROR_INAPPROPRIATE_FALLBACK</span> =&gt; <span class="ident"><span class="self">Self</span>::InappropriateFallback</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+        }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">ErrorDomain</span> <span class="kw">for</span> <span class="ident">TlsError</span> {
+    <span class="kw">fn</span> <span class="ident">domain</span>() -&gt; <span class="ident">Quark</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::g_tls_error_quark</span>()) }
+    }
+
+    <span class="kw">fn</span> <span class="ident">code</span>(<span class="self">self</span>) -&gt; <span class="ident">i32</span> {
+        <span class="self">self</span>.<span class="ident">into_glib</span>()
+    }
+
+    <span class="kw">fn</span> <span class="ident">from</span>(<span class="ident">code</span>: <span class="ident">i32</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
+        <span class="kw">match</span> <span class="ident">code</span> {
+            <span class="ident">ffi::G_TLS_ERROR_UNAVAILABLE</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::Unavailable</span>),
+            <span class="ident">ffi::G_TLS_ERROR_MISC</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::Misc</span>),
+            <span class="ident">ffi::G_TLS_ERROR_BAD_CERTIFICATE</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::BadCertificate</span>),
+            <span class="ident">ffi::G_TLS_ERROR_NOT_TLS</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::NotTls</span>),
+            <span class="ident">ffi::G_TLS_ERROR_HANDSHAKE</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::Handshake</span>),
+            <span class="ident">ffi::G_TLS_ERROR_CERTIFICATE_REQUIRED</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::CertificateRequired</span>),
+            <span class="ident">ffi::G_TLS_ERROR_EOF</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::Eof</span>),
+            <span class="ident">ffi::G_TLS_ERROR_INAPPROPRIATE_FALLBACK</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::InappropriateFallback</span>),
+            <span class="ident">value</span> =&gt; <span class="prelude-val">Some</span>(<span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>)),
+        }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">TlsError</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::g_tls_error_get_type</span>()) }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">glib::value::ValueType</span> <span class="kw">for</span> <span class="ident">TlsError</span> {
+    <span class="kw">type</span> <span class="ident">Type</span> <span class="op">=</span> <span class="self">Self</span>;
+}
+
+<span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">TlsError</span> {
+    <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
+
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
+        <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">TlsError</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
+        <span class="kw">unsafe</span> {
+            <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
+        }
+        <span class="ident">value</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
+        <span class="ident"><span class="self">Self</span>::static_type</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
+<span class="attribute">#[<span class="ident">non_exhaustive</span>]</span>
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTlsInteractionResult&quot;</span>)]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">TlsInteractionResult</span> {
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_INTERACTION_UNHANDLED&quot;</span>)]</span>
@@ -6998,6 +7610,134 @@
 }
 
 <span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">TlsInteractionResult</span> {
+    <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
+        <span class="kw">unsafe</span> {
+            <span class="ident">glib::gobject_ffi::g_value_set_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="self">self</span>.<span class="ident">into_glib</span>());
+        }
+        <span class="ident">value</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">value_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Type</span> {
+        <span class="ident"><span class="self">Self</span>::static_type</span>()
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>)]</span>
+<span class="attribute">#[<span class="ident">non_exhaustive</span>]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;GTlsProtocolVersion&quot;</span>)]</span>
+<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">TlsProtocolVersion</span> {
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_PROTOCOL_VERSION_UNKNOWN&quot;</span>)]</span>
+    <span class="ident">Unknown</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_PROTOCOL_VERSION_SSL_3_0&quot;</span>)]</span>
+    <span class="ident">Ssl30</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_0&quot;</span>)]</span>
+    <span class="ident">Tls10</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_1&quot;</span>)]</span>
+    <span class="ident">Tls11</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_2&quot;</span>)]</span>
+    <span class="ident">Tls12</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_3&quot;</span>)]</span>
+    <span class="ident">Tls13</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_PROTOCOL_VERSION_DTLS_1_0&quot;</span>)]</span>
+    <span class="ident">Dtls10</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;G_TLS_PROTOCOL_VERSION_DTLS_1_2&quot;</span>)]</span>
+    <span class="ident">Dtls12</span>,
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+    <span class="ident">__Unknown</span>(<span class="ident">i32</span>),
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">fmt::Display</span> <span class="kw">for</span> <span class="ident">TlsProtocolVersion</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">fmt::Formatter</span>) -&gt; <span class="ident">fmt::Result</span> {
+        <span class="macro">write!</span>(
+            <span class="ident">f</span>,
+            <span class="string">&quot;TlsProtocolVersion::{}&quot;</span>,
+            <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
+                <span class="ident"><span class="self">Self</span>::Unknown</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Ssl30</span> =&gt; <span class="string">&quot;Ssl30&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Tls10</span> =&gt; <span class="string">&quot;Tls10&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Tls11</span> =&gt; <span class="string">&quot;Tls11&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Tls12</span> =&gt; <span class="string">&quot;Tls12&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Tls13</span> =&gt; <span class="string">&quot;Tls13&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Dtls10</span> =&gt; <span class="string">&quot;Dtls10&quot;</span>,
+                <span class="ident"><span class="self">Self</span>::Dtls12</span> =&gt; <span class="string">&quot;Dtls12&quot;</span>,
+                <span class="kw">_</span> =&gt; <span class="string">&quot;Unknown&quot;</span>,
+            }
+        )
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">IntoGlib</span> <span class="kw">for</span> <span class="ident">TlsProtocolVersion</span> {
+    <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">ffi::GTlsProtocolVersion</span>;
+
+    <span class="kw">fn</span> <span class="ident">into_glib</span>(<span class="self">self</span>) -&gt; <span class="ident">ffi::GTlsProtocolVersion</span> {
+        <span class="kw">match</span> <span class="self">self</span> {
+            <span class="ident"><span class="self">Self</span>::Unknown</span> =&gt; <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_UNKNOWN</span>,
+            <span class="ident"><span class="self">Self</span>::Ssl30</span> =&gt; <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_SSL_3_0</span>,
+            <span class="ident"><span class="self">Self</span>::Tls10</span> =&gt; <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_TLS_1_0</span>,
+            <span class="ident"><span class="self">Self</span>::Tls11</span> =&gt; <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_TLS_1_1</span>,
+            <span class="ident"><span class="self">Self</span>::Tls12</span> =&gt; <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_TLS_1_2</span>,
+            <span class="ident"><span class="self">Self</span>::Tls13</span> =&gt; <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_TLS_1_3</span>,
+            <span class="ident"><span class="self">Self</span>::Dtls10</span> =&gt; <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_DTLS_1_0</span>,
+            <span class="ident"><span class="self">Self</span>::Dtls12</span> =&gt; <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_DTLS_1_2</span>,
+            <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>) =&gt; <span class="ident">value</span>,
+        }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
+<span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">ffi::GTlsProtocolVersion</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">TlsProtocolVersion</span> {
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">value</span>: <span class="ident">ffi::GTlsProtocolVersion</span>) -&gt; <span class="self">Self</span> {
+        <span class="kw">match</span> <span class="ident">value</span> {
+            <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_UNKNOWN</span> =&gt; <span class="ident"><span class="self">Self</span>::Unknown</span>,
+            <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_SSL_3_0</span> =&gt; <span class="ident"><span class="self">Self</span>::Ssl30</span>,
+            <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_TLS_1_0</span> =&gt; <span class="ident"><span class="self">Self</span>::Tls10</span>,
+            <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_TLS_1_1</span> =&gt; <span class="ident"><span class="self">Self</span>::Tls11</span>,
+            <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_TLS_1_2</span> =&gt; <span class="ident"><span class="self">Self</span>::Tls12</span>,
+            <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_TLS_1_3</span> =&gt; <span class="ident"><span class="self">Self</span>::Tls13</span>,
+            <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_DTLS_1_0</span> =&gt; <span class="ident"><span class="self">Self</span>::Dtls10</span>,
+            <span class="ident">ffi::G_TLS_PROTOCOL_VERSION_DTLS_1_2</span> =&gt; <span class="ident"><span class="self">Self</span>::Dtls12</span>,
+            <span class="ident">value</span> =&gt; <span class="ident"><span class="self">Self</span>::__Unknown</span>(<span class="ident">value</span>),
+        }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">TlsProtocolVersion</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() -&gt; <span class="ident">Type</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi::g_tls_protocol_version_get_type</span>()) }
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">glib::value::ValueType</span> <span class="kw">for</span> <span class="ident">TlsProtocolVersion</span> {
+    <span class="kw">type</span> <span class="ident">Type</span> <span class="op">=</span> <span class="self">Self</span>;
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+<span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">TlsProtocolVersion</span> {
+    <span class="kw">type</span> <span class="ident">Checker</span> <span class="op">=</span> <span class="ident">glib::value::GenericValueTypeChecker</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
+
+    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib::Value</span>) -&gt; <span class="self">Self</span> {
+        <span class="ident">from_glib</span>(<span class="ident">glib::gobject_ffi::g_value_get_enum</span>(<span class="ident">value</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
+    }
+}
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>, <span class="ident">doc</span>(<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_70&quot;</span>)))]</span>
+<span class="kw">impl</span> <span class="ident">ToValue</span> <span class="kw">for</span> <span class="ident">TlsProtocolVersion</span> {
     <span class="kw">fn</span> <span class="ident">to_value</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">glib::Value</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">glib::Value::for_value_type</span>::<span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>();
         <span class="kw">unsafe</span> {

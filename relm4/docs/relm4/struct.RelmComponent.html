@@ -9,12 +9,12 @@
 and can send messages to its parent and its children components.</p>
 <p>Multiple <a href="struct.RelmComponent.html" title="RelmComponent"><code>RelmComponent</code></a>s that have the same parent are usually bundled in a struct that implements <a href="trait.Components.html" title="Components"><code>Components</code></a>.</p>
 </div></details><h2 id="implementations" class="small-section-header">Implementations<a href="#implementations" class="anchor"></a></h2><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl" class="impl has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/component.rs.html#31-123" title="goto source code">source</a></div><a href="#impl" class="anchor"></a><h3 class="code-header in-band">impl&lt;Model, ParentModel&gt; <a class="struct" href="struct.RelmComponent.html" title="struct relm4::RelmComponent">RelmComponent</a>&lt;Model, ParentModel&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Model::<a class="associatedtype" href="trait.Model.html#associatedtype.Widgets" title="type relm4::Model::Widgets">Widgets</a>: <a class="trait" href="trait.Widgets.html" title="trait relm4::Widgets">WidgetsTrait</a>&lt;Model, ParentModel&gt; + 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;ParentModel: <a class="trait" href="trait.Model.html" title="trait relm4::Model">ModelTrait</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;Model: <a class="trait" href="trait.ComponentUpdate.html" title="trait relm4::ComponentUpdate">ComponentUpdate</a>&lt;ParentModel&gt; + 'static,&nbsp;</span></h3></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.new" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/component.rs.html#38-81" title="goto source code">source</a></div><a href="#method.new" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.new" class="fnname">new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;parent_model: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>ParentModel, <br>&nbsp;&nbsp;&nbsp;&nbsp;parent_sender: <a class="struct" href="struct.Sender.html" title="struct relm4::Sender">Sender</a>&lt;ParentModel::<a class="associatedtype" href="trait.Model.html#associatedtype.Msg" title="type relm4::Model::Msg">Msg</a>&gt;<br>) -&gt; Self</h4></div></summary><div class="docblock"><p>Create a new <a href="struct.RelmComponent.html" title="RelmComponent"><code>RelmComponent</code></a>.</p>
-</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples" class="section-header"><a href="#scraped-examples">Examples found in repository</a></h5><div class="scraped-example expanded" data-locs="[[[2,2],&quot;../src/components_old/components_old.rs.html#144&quot;,&quot;line 144&quot;],[[3,3],&quot;../src/components_old/components_old.rs.html#145&quot;,&quot;line 145&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components_old.rs (<a href="../src/components_old/components_old.rs.html#144">line 144</a>)</div><div class="code-wrapper"><span class="prev">&pr;</span> <span class="next">&sc;</span><div class="example-wrap"><pre class="line-numbers"><span>142</span>
-<span>143</span>
-<span>144</span>
+</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples" class="section-header"><a href="#scraped-examples">Examples found in repository</a></h5><div class="scraped-example expanded" data-locs="[[[2,2],&quot;../src/components_old/components_old.rs.html#146&quot;,&quot;line 146&quot;],[[3,3],&quot;../src/components_old/components_old.rs.html#147&quot;,&quot;line 147&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components_old.rs (<a href="../src/components_old/components_old.rs.html#146">line 146</a>)</div><div class="code-wrapper"><span class="prev">&pr;</span> <span class="next">&sc;</span><div class="example-wrap"><pre class="line-numbers"><span>144</span>
 <span>145</span>
 <span>146</span>
 <span>147</span>
+<span>148</span>
+<span>149</span>
 </pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">init_components</span>(<span class="ident">parent_model</span>: <span class="kw-2">&amp;</span><span class="ident">AppModel</span>, <span class="ident">parent_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">AppComponents</span> {
             <span class="ident">comp1</span>: <span class="highlight focus"><span class="ident">RelmComponent::new</span>(<span class="ident">parent_model</span>, <span class="ident">parent_sender</span>.<span class="ident">clone</span>())</span>,
@@ -22,19 +22,17 @@ and can send messages to its parent and its children components.</p>
         }
     }</code></pre></div>
 </div></div></div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.connect_parent" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/component.rs.html#84-91" title="goto source code">source</a></div><a href="#method.connect_parent" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.connect_parent" class="fnname">connect_parent</a>(&amp;mut self, parent_widgets: &amp;ParentModel::<a class="associatedtype" href="trait.Model.html#associatedtype.Widgets" title="type relm4::Model::Widgets">Widgets</a>)</h4></div></summary><div class="docblock"><p>Connect the widgets to the widgets of the parent widget.</p>
-</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-1" class="section-header"><a href="#scraped-examples-1">Examples found in repository</a></h5><div class="scraped-example expanded" data-locs="[[[1,1],&quot;../src/components_old/components_old.rs.html#150&quot;,&quot;line 150&quot;],[[2,2],&quot;../src/components_old/components_old.rs.html#151&quot;,&quot;line 151&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components_old.rs (<a href="../src/components_old/components_old.rs.html#150">line 150</a>)</div><div class="code-wrapper"><span class="prev">&pr;</span> <span class="next">&sc;</span><div class="example-wrap"><pre class="line-numbers"><span>149</span>
-<span>150</span>
-<span>151</span>
+</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-1" class="section-header"><a href="#scraped-examples-1">Examples found in repository</a></h5><div class="scraped-example expanded" data-locs="[[[1,1],&quot;../src/components_old/components_old.rs.html#152&quot;,&quot;line 152&quot;],[[2,2],&quot;../src/components_old/components_old.rs.html#153&quot;,&quot;line 153&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components_old.rs (<a href="../src/components_old/components_old.rs.html#152">line 152</a>)</div><div class="code-wrapper"><span class="prev">&pr;</span> <span class="next">&sc;</span><div class="example-wrap"><pre class="line-numbers"><span>151</span>
 <span>152</span>
+<span>153</span>
+<span>154</span>
 </pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">connect_parent</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">parent_widgets</span>: <span class="kw-2">&amp;</span><span class="ident">AppWidgets</span>) {
         <span class="self">self</span>.<span class="ident">comp1</span>.<span class="highlight focus"><span class="ident">connect_parent</span>(<span class="ident">parent_widgets</span>)</span>;
         <span class="self">self</span>.<span class="ident">comp2</span>.<span class="highlight"><span class="ident">connect_parent</span>(<span class="ident">parent_widgets</span>)</span>;
     }</code></pre></div>
 </div></div></div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.send" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/component.rs.html#95-97" title="goto source code">source</a></div><a href="#method.send" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.send" class="fnname">send</a>(&amp;self, msg: Model::<a class="associatedtype" href="trait.Model.html#associatedtype.Msg" title="type relm4::Model::Msg">Msg</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/std/sync/mpsc/struct.SendError.html" title="struct std::sync::mpsc::SendError">SendError</a>&lt;Model::<a class="associatedtype" href="trait.Model.html#associatedtype.Msg" title="type relm4::Model::Msg">Msg</a>&gt;&gt;</h4></div></summary><div class="docblock"><p>Send a message to this component.
 This can be used by the parent to send messages to this component.</p>
-</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-2" class="section-header"><a href="#scraped-examples-2">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[6,6],&quot;../src/components/components.rs.html#197&quot;,&quot;line 197&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components.rs (<a href="../src/components/components.rs.html#197">line 197</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>191</span>
-<span>192</span>
-<span>193</span>
+</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-2" class="section-header"><a href="#scraped-examples-2">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[6,6],&quot;../src/components/components.rs.html#199&quot;,&quot;line 199&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components.rs (<a href="../src/components/components.rs.html#199">line 199</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>193</span>
 <span>194</span>
 <span>195</span>
 <span>196</span>
@@ -46,6 +44,8 @@ This can be used by the parent to send messages to this component.</p>
 <span>202</span>
 <span>203</span>
 <span>204</span>
+<span>205</span>
+<span>206</span>
 </pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">AppMsg</span>, <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="ident">AppComponents</span>, <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident">bool</span> {
         <span class="kw">match</span> <span class="ident">msg</span> {
             <span class="ident">AppMsg::SetMode</span>(<span class="ident">mode</span>) =&gt; {
@@ -60,9 +60,7 @@ This can be used by the parent to send messages to this component.</p>
         }
         <span class="bool-val">true</span>
     }</code></pre></div>
-</div></div><details class="rustdoc-toggle more-examples-toggle"><summary class="hideme"><span>More examples</span></summary><div class="more-scraped-examples"><div class="toggle-line"><div class="toggle-line-inner"></div></div><div class="more-scraped-examples-inner"><div class="scraped-example " data-locs="[[[5,5],&quot;../src/components_old/components_old.rs.html#232&quot;,&quot;line 232&quot;],[[8,8],&quot;../src/components_old/components_old.rs.html#235&quot;,&quot;line 235&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components_old.rs (<a href="../src/components_old/components_old.rs.html#232">line 232</a>)</div><div class="code-wrapper"><span class="prev">&pr;</span> <span class="next">&sc;</span><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>227</span>
-<span>228</span>
-<span>229</span>
+</div></div><details class="rustdoc-toggle more-examples-toggle"><summary class="hideme"><span>More examples</span></summary><div class="more-scraped-examples"><div class="toggle-line"><div class="toggle-line-inner"></div></div><div class="more-scraped-examples-inner"><div class="scraped-example " data-locs="[[[5,5],&quot;../src/components_old/components_old.rs.html#234&quot;,&quot;line 234&quot;],[[8,8],&quot;../src/components_old/components_old.rs.html#237&quot;,&quot;line 237&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components_old.rs (<a href="../src/components_old/components_old.rs.html#234">line 234</a>)</div><div class="code-wrapper"><span class="prev">&pr;</span> <span class="next">&sc;</span><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>229</span>
 <span>230</span>
 <span>231</span>
 <span>232</span>
@@ -74,6 +72,8 @@ This can be used by the parent to send messages to this component.</p>
 <span>238</span>
 <span>239</span>
 <span>240</span>
+<span>241</span>
+<span>242</span>
 </pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">AppMsg</span>, <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="ident">AppComponents</span>, <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident">bool</span> {
         <span class="kw">match</span> <span class="ident">msg</span> {
             <span class="ident">AppMsg::Increment</span> =&gt; <span class="self">self</span>.<span class="ident">counter</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">counter</span>.<span class="ident">saturating_add</span>(<span class="number">1</span>),
@@ -190,7 +190,8 @@ This can be used by the parent to send messages to this component.</p>
 
         <span class="bool-val">true</span>
     }</code></pre></div>
-</div></div><div class="scraped-example " data-locs="[[[64,67],&quot;../src/calc_trainer/calc-trainer.rs.html#291-294&quot;,&quot;lines 291-294&quot;]]"><div class="scraped-example-title">relm4-examples/libadwaita/examples/calc-trainer.rs (<a href="../src/calc_trainer/calc-trainer.rs.html#291-294">lines 291-294</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>227</span>
+</div></div><div class="scraped-example " data-locs="[[[64,67],&quot;../src/calc_trainer/calc-trainer.rs.html#290-293&quot;,&quot;lines 290-293&quot;]]"><div class="scraped-example-title">relm4-examples/libadwaita/examples/calc-trainer.rs (<a href="../src/calc_trainer/calc-trainer.rs.html#290-293">lines 290-293</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>226</span>
+<span>227</span>
 <span>228</span>
 <span>229</span>
 <span>230</span>
@@ -264,7 +265,6 @@ This can be used by the parent to send messages to this component.</p>
 <span>298</span>
 <span>299</span>
 <span>300</span>
-<span>301</span>
 </pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">AppMsg</span>, <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="ident">AppComponents</span>, <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident">bool</span> {
         <span class="kw">match</span> <span class="ident">msg</span> {
             <span class="ident">AppMsg::Plus</span>(<span class="ident">v</span>) =&gt; {
@@ -344,9 +344,7 @@ This can be used by the parent to send messages to this component.</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.root_widget" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/component.rs.html#107-109" title="goto source code">source</a></div><a href="#method.root_widget" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.root_widget" class="fnname">root_widget</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self<br>) -&gt; &amp;&lt;Model::<a class="associatedtype" href="trait.Model.html#associatedtype.Widgets" title="type relm4::Model::Widgets">Widgets</a> as <a class="trait" href="trait.Widgets.html" title="trait relm4::Widgets">WidgetsTrait</a>&lt;Model, ParentModel&gt;&gt;::<a class="associatedtype" href="trait.Widgets.html#associatedtype.Root" title="type relm4::Widgets::Root">Root</a></h4></div></summary><div class="docblock"><p>Returns the root widget of this component’s widgets.
 Can be used by the parent to connect the root widget
 to the parent’s widgets.</p>
-</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-3" class="section-header"><a href="#scraped-examples-3">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[29,29],&quot;../src/components_old/components_old.rs.html#211&quot;,&quot;line 211&quot;],[[30,30],&quot;../src/components_old/components_old.rs.html#212&quot;,&quot;line 212&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components_old.rs (<a href="../src/components_old/components_old.rs.html#211">line 211</a>)</div><div class="code-wrapper"><span class="prev">&pr;</span> <span class="next">&sc;</span><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>182</span>
-<span>183</span>
-<span>184</span>
+</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-3" class="section-header"><a href="#scraped-examples-3">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[29,29],&quot;../src/components_old/components_old.rs.html#213&quot;,&quot;line 213&quot;],[[30,30],&quot;../src/components_old/components_old.rs.html#214&quot;,&quot;line 214&quot;]]"><div class="scraped-example-title">relm4-examples/examples/components_old.rs (<a href="../src/components_old/components_old.rs.html#213">line 213</a>)</div><div class="code-wrapper"><span class="prev">&pr;</span> <span class="next">&sc;</span><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>184</span>
 <span>185</span>
 <span>186</span>
 <span>187</span>
@@ -378,9 +376,11 @@ to the parent’s widgets.</p>
 <span>213</span>
 <span>214</span>
 <span>215</span>
+<span>216</span>
+<span>217</span>
 </pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">init_view</span>(<span class="ident">model</span>: <span class="kw-2">&amp;</span><span class="ident">AppModel</span>, <span class="ident">components</span>: <span class="kw-2">&amp;</span><span class="ident">AppComponents</span>, <span class="ident">sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="self">Self</span> {
-        <span class="kw">let</span> <span class="ident">main</span> <span class="op">=</span> <span class="ident">gtk::ApplicationWindowBuilder::new</span>().<span class="ident">build</span>();
-        <span class="kw">let</span> <span class="ident">vbox</span> <span class="op">=</span> <span class="ident">gtk::BoxBuilder::new</span>()
+        <span class="kw">let</span> <span class="ident">main</span> <span class="op">=</span> <span class="ident">gtk::ApplicationWindow::default</span>();
+        <span class="kw">let</span> <span class="ident">vbox</span> <span class="op">=</span> <span class="ident">gtk::Box::builder</span>()
             .<span class="ident">orientation</span>(<span class="ident">gtk::Orientation::Vertical</span>)
             .<span class="ident">spacing</span>(<span class="number">10</span>)
             .<span class="ident">build</span>();

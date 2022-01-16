@@ -1,1 +1,1 @@
-initSidebarItems({"attr":[["widget","Macro that implemements relm4::Widgets and generates the corresponding struct."]],"derive":[["Components",""]],"macro":[["menu",""],["view",""]]});
+initSidebarItems({"attr":[["factory_prototype",""],["micro_widget",""],["widget","Macro that implemements relm4::Widgets and generates the corresponding struct."]],"derive":[["Components",""]],"macro":[["menu",""],["view","The [`view`] macro works allows you to construct your UI easily and cleanly."]]});

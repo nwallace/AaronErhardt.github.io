@@ -7,7 +7,7 @@
     <h1 class="fqn"><span class="in-band">Struct <a href="index.html">relm4</a>::<wbr><a class="struct" href="#">MicroComponent</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></span></h1><span class="out-of-band"><a class="srclink" href="../src/relm4/micro_component.rs.html#54-59" title="goto source code">source</a> · <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span></div><div class="docblock item-decl"><pre class="rust struct"><code>pub struct MicroComponent&lt;Model:&nbsp;<a class="trait" href="trait.MicroModel.html" title="trait relm4::MicroModel">MicroModel</a>&gt; { /* private fields */ }</code></pre></div><details class="rustdoc-toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>MicroComponent is a small component that lives in their parents model, can be modified from their
 parents model but at the same time have their own widgets and update function</p>
 </div></details><h2 id="implementations" class="small-section-header">Implementations<a href="#implementations" class="anchor"></a></h2><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl" class="impl has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#61-159" title="goto source code">source</a></div><a href="#impl" class="anchor"></a><h3 class="code-header in-band">impl&lt;Model&gt; <a class="struct" href="struct.MicroComponent.html" title="struct relm4::MicroComponent">MicroComponent</a>&lt;Model&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Model::<a class="associatedtype" href="trait.MicroModel.html#associatedtype.Widgets" title="type relm4::MicroModel::Widgets">Widgets</a>: <a class="trait" href="trait.MicroWidgets.html" title="trait relm4::MicroWidgets">MicroWidgets</a>&lt;Model&gt; + 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;Model::<a class="associatedtype" href="trait.MicroModel.html#associatedtype.Msg" title="type relm4::MicroModel::Msg">Msg</a>: 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;Model::<a class="associatedtype" href="trait.MicroModel.html#associatedtype.Data" title="type relm4::MicroModel::Data">Data</a>: 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;Model: <a class="trait" href="trait.MicroModel.html" title="trait relm4::MicroModel">MicroModel</a> + 'static,&nbsp;</span></h3></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.new" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#69-108" title="goto source code">source</a></div><a href="#method.new" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.new" class="fnname">new</a>(model: Model, data: Model::<a class="associatedtype" href="trait.MicroModel.html#associatedtype.Data" title="type relm4::MicroModel::Data">Data</a>) -&gt; Self</h4></div></summary><div class="docblock"><p>Creates new <a href="struct.MicroComponent.html" title="MicroComponent"><code>MicroComponent</code></a></p>
-</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples" class="section-header"><a href="#scraped-examples">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[20,20],&quot;../src/micro_components/micro_components.rs.html#110&quot;,&quot;line 110&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components.rs (<a href="../src/micro_components/micro_components.rs.html#110">line 110</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>90</span>
+</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples" class="section-header"><a href="#scraped-examples">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[20,20],&quot;../src/micro_components_manual/micro_components_manual.rs.html#110&quot;,&quot;line 110&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components_manual.rs (<a href="../src/micro_components_manual/micro_components_manual.rs.html#110">line 110</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>90</span>
 <span>91</span>
 <span>92</span>
 <span>93</span>
@@ -57,8 +57,58 @@ parents model but at the same time have their own widgets and update function</p
         }
         <span class="bool-val">true</span>
     }</code></pre></div>
-</div></div></div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.update_view" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#111-118" title="goto source code">source</a></div><a href="#method.update_view" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.update_view" class="fnname">update_view</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="enum" href="enum.MicroComponentError.html" title="enum relm4::MicroComponentError">MicroComponentError</a>&gt;</h4></div></summary><div class="docblock"><p>Updates a view of this <a href="struct.MicroComponent.html" title="MicroComponent"><code>MicroComponent</code></a></p>
-</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-1" class="section-header"><a href="#scraped-examples-1">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[12,12],&quot;../src/micro_components/micro_components.rs.html#102&quot;,&quot;line 102&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components.rs (<a href="../src/micro_components/micro_components.rs.html#102">line 102</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>90</span>
+</div></div><details class="rustdoc-toggle more-examples-toggle"><summary class="hideme"><span>More examples</span></summary><div class="more-scraped-examples"><div class="toggle-line"><div class="toggle-line-inner"></div></div><div class="more-scraped-examples-inner"><div class="scraped-example " data-locs="[[[20,20],&quot;../src/micro_components/micro_components.rs.html#96&quot;,&quot;line 96&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components.rs (<a href="../src/micro_components/micro_components.rs.html#96">line 96</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>76</span>
+<span>77</span>
+<span>78</span>
+<span>79</span>
+<span>80</span>
+<span>81</span>
+<span>82</span>
+<span>83</span>
+<span>84</span>
+<span>85</span>
+<span>86</span>
+<span>87</span>
+<span>88</span>
+<span>89</span>
+<span>90</span>
+<span>91</span>
+<span>92</span>
+<span>93</span>
+<span>94</span>
+<span>95</span>
+<span>96</span>
+<span>97</span>
+<span>98</span>
+<span>99</span>
+<span>100</span>
+</pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">AppMsg</span>, <span class="ident">_components</span>: <span class="kw-2">&amp;</span>(), <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident">bool</span> {
+        <span class="kw">match</span> <span class="ident">msg</span> {
+            <span class="ident">AppMsg::Increment</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">counter</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">counter</span>.<span class="ident">wrapping_add</span>(<span class="number">1</span>);
+
+                <span class="comment">// Also increment the numbers.</span>
+                <span class="kw">for</span> <span class="ident">num</span> <span class="kw">in</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">numbers</span> {
+                    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">num</span>.<span class="ident">model_mut</span>().<span class="ident">unwrap</span>();
+                    <span class="ident">model</span>.<span class="ident">num</span> <span class="op">=</span> <span class="ident">model</span>.<span class="ident">num</span>.<span class="ident">wrapping_add</span>(<span class="number">1</span>);
+
+                    <span class="comment">// Make sure to drop the mutable reference before updating the view</span>
+                    <span class="ident">drop</span>(<span class="ident">model</span>);
+                    <span class="ident">num</span>.<span class="ident">update_view</span>().<span class="ident">unwrap</span>();
+                }
+            }
+            <span class="ident">AppMsg::Decrement</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">counter</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">counter</span>.<span class="ident">wrapping_sub</span>(<span class="number">1</span>);
+            }
+            <span class="ident">AppMsg::AddNumber</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">numbers</span>
+                    .<span class="ident">push</span>(<span class="highlight focus"><span class="ident">MicroComponent::new</span>(<span class="ident">NumberModel</span> { <span class="ident">num</span>: <span class="self">self</span>.<span class="ident">counter</span> }, ())</span>);
+            }
+        }
+        <span class="bool-val">true</span>
+    }</code></pre></div>
+</div></div></div></div></details></div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.update_view" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#111-118" title="goto source code">source</a></div><a href="#method.update_view" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.update_view" class="fnname">update_view</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="enum" href="enum.MicroComponentError.html" title="enum relm4::MicroComponentError">MicroComponentError</a>&gt;</h4></div></summary><div class="docblock"><p>Updates a view of this <a href="struct.MicroComponent.html" title="MicroComponent"><code>MicroComponent</code></a></p>
+</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-1" class="section-header"><a href="#scraped-examples-1">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[12,12],&quot;../src/micro_components_manual/micro_components_manual.rs.html#102&quot;,&quot;line 102&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components_manual.rs (<a href="../src/micro_components_manual/micro_components_manual.rs.html#102">line 102</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>90</span>
 <span>91</span>
 <span>92</span>
 <span>93</span>
@@ -108,12 +158,62 @@ parents model but at the same time have their own widgets and update function</p
         }
         <span class="bool-val">true</span>
     }</code></pre></div>
-</div></div></div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.model" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#123-125" title="goto source code">source</a></div><a href="#method.model" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.model" class="fnname">model</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;'_, Model&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.BorrowError.html" title="struct core::cell::BorrowError">BorrowError</a>&gt;</h4></div></summary><div class="docblock"><p>Returns model for this <a href="struct.MicroComponent.html" title="MicroComponent"><code>MicroComponent</code></a></p>
+</div></div><details class="rustdoc-toggle more-examples-toggle"><summary class="hideme"><span>More examples</span></summary><div class="more-scraped-examples"><div class="toggle-line"><div class="toggle-line-inner"></div></div><div class="more-scraped-examples-inner"><div class="scraped-example " data-locs="[[[12,12],&quot;../src/micro_components/micro_components.rs.html#88&quot;,&quot;line 88&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components.rs (<a href="../src/micro_components/micro_components.rs.html#88">line 88</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>76</span>
+<span>77</span>
+<span>78</span>
+<span>79</span>
+<span>80</span>
+<span>81</span>
+<span>82</span>
+<span>83</span>
+<span>84</span>
+<span>85</span>
+<span>86</span>
+<span>87</span>
+<span>88</span>
+<span>89</span>
+<span>90</span>
+<span>91</span>
+<span>92</span>
+<span>93</span>
+<span>94</span>
+<span>95</span>
+<span>96</span>
+<span>97</span>
+<span>98</span>
+<span>99</span>
+<span>100</span>
+</pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">AppMsg</span>, <span class="ident">_components</span>: <span class="kw-2">&amp;</span>(), <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident">bool</span> {
+        <span class="kw">match</span> <span class="ident">msg</span> {
+            <span class="ident">AppMsg::Increment</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">counter</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">counter</span>.<span class="ident">wrapping_add</span>(<span class="number">1</span>);
+
+                <span class="comment">// Also increment the numbers.</span>
+                <span class="kw">for</span> <span class="ident">num</span> <span class="kw">in</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">numbers</span> {
+                    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">num</span>.<span class="ident">model_mut</span>().<span class="ident">unwrap</span>();
+                    <span class="ident">model</span>.<span class="ident">num</span> <span class="op">=</span> <span class="ident">model</span>.<span class="ident">num</span>.<span class="ident">wrapping_add</span>(<span class="number">1</span>);
+
+                    <span class="comment">// Make sure to drop the mutable reference before updating the view</span>
+                    <span class="ident">drop</span>(<span class="ident">model</span>);
+                    <span class="ident">num</span>.<span class="highlight focus"><span class="ident">update_view</span>()</span>.<span class="ident">unwrap</span>();
+                }
+            }
+            <span class="ident">AppMsg::Decrement</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">counter</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">counter</span>.<span class="ident">wrapping_sub</span>(<span class="number">1</span>);
+            }
+            <span class="ident">AppMsg::AddNumber</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">numbers</span>
+                    .<span class="ident">push</span>(<span class="ident">MicroComponent::new</span>(<span class="ident">NumberModel</span> { <span class="ident">num</span>: <span class="self">self</span>.<span class="ident">counter</span> }, ()));
+            }
+        }
+        <span class="bool-val">true</span>
+    }</code></pre></div>
+</div></div></div></div></details></div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.model" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#123-125" title="goto source code">source</a></div><a href="#method.model" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.model" class="fnname">model</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.Ref.html" title="struct core::cell::Ref">Ref</a>&lt;'_, Model&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.BorrowError.html" title="struct core::cell::BorrowError">BorrowError</a>&gt;</h4></div></summary><div class="docblock"><p>Returns model for this <a href="struct.MicroComponent.html" title="MicroComponent"><code>MicroComponent</code></a></p>
 <p>Use this carefully and make sure reference is dropped. It’s using <a href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="RefCell"><code>RefCell</code></a> internally.</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.model_mut" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#131-133" title="goto source code">source</a></div><a href="#method.model_mut" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.model_mut" class="fnname">model_mut</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefMut.html" title="struct core::cell::RefMut">RefMut</a>&lt;'_, Model&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.BorrowMutError.html" title="struct core::cell::BorrowMutError">BorrowMutError</a>&gt;</h4></div></summary><div class="docblock"><p>Returns mutable reference to model for this <a href="struct.MicroComponent.html" title="MicroComponent"><code>MicroComponent</code></a></p>
 <p>Use this carefully and make sure reference is dropped. It’s using <a href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="RefCell"><code>RefCell</code></a> internally.
 If you don’t drop the reference any call to <a href="struct.MicroComponent.html#method.update_view" title="MicroComponent::update_view"><code>MicroComponent::update_view</code></a> will fail.</p>
-</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-2" class="section-header"><a href="#scraped-examples-2">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[7,7],&quot;../src/micro_components/micro_components.rs.html#97&quot;,&quot;line 97&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components.rs (<a href="../src/micro_components/micro_components.rs.html#97">line 97</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>90</span>
+</div><div class="docblock scraped-example-list"><span></span><h5 id="scraped-examples-2" class="section-header"><a href="#scraped-examples-2">Examples found in repository</a></h5><div class="scraped-example " data-locs="[[[7,7],&quot;../src/micro_components_manual/micro_components_manual.rs.html#97&quot;,&quot;line 97&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components_manual.rs (<a href="../src/micro_components_manual/micro_components_manual.rs.html#97">line 97</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>90</span>
 <span>91</span>
 <span>92</span>
 <span>93</span>
@@ -163,7 +263,57 @@ If you don’t drop the reference any call to <a href="struct.MicroComponent.htm
         }
         <span class="bool-val">true</span>
     }</code></pre></div>
-</div></div></div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.widgets" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#140-142" title="goto source code">source</a></div><a href="#method.widgets" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.widgets" class="fnname">widgets</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefMut.html" title="struct core::cell::RefMut">RefMut</a>&lt;'_, Model::<a class="associatedtype" href="trait.MicroModel.html#associatedtype.Widgets" title="type relm4::MicroModel::Widgets">Widgets</a>&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.BorrowMutError.html" title="struct core::cell::BorrowMutError">BorrowMutError</a>&gt;</h4></div></summary><div class="docblock"><p>Returns a mutable reference to the widgets of this <a href="struct.MicroComponent.html" title="MicroComponent"><code>MicroComponent</code></a> or will fail
+</div></div><details class="rustdoc-toggle more-examples-toggle"><summary class="hideme"><span>More examples</span></summary><div class="more-scraped-examples"><div class="toggle-line"><div class="toggle-line-inner"></div></div><div class="more-scraped-examples-inner"><div class="scraped-example " data-locs="[[[7,7],&quot;../src/micro_components/micro_components.rs.html#83&quot;,&quot;line 83&quot;]]"><div class="scraped-example-title">relm4-examples/examples/micro_components.rs (<a href="../src/micro_components/micro_components.rs.html#83">line 83</a>)</div><div class="code-wrapper"><span class="expand">&varr;</span><div class="example-wrap"><pre class="line-numbers"><span>76</span>
+<span>77</span>
+<span>78</span>
+<span>79</span>
+<span>80</span>
+<span>81</span>
+<span>82</span>
+<span>83</span>
+<span>84</span>
+<span>85</span>
+<span>86</span>
+<span>87</span>
+<span>88</span>
+<span>89</span>
+<span>90</span>
+<span>91</span>
+<span>92</span>
+<span>93</span>
+<span>94</span>
+<span>95</span>
+<span>96</span>
+<span>97</span>
+<span>98</span>
+<span>99</span>
+<span>100</span>
+</pre><pre class="rust"><code><span class="kw">fn</span> <span class="ident">update</span>(<span class="kw-2">&amp;mut</span> <span class="self">self</span>, <span class="ident">msg</span>: <span class="ident">AppMsg</span>, <span class="ident">_components</span>: <span class="kw-2">&amp;</span>(), <span class="ident">_sender</span>: <span class="ident">Sender</span><span class="op">&lt;</span><span class="ident">AppMsg</span><span class="op">&gt;</span>) -&gt; <span class="ident">bool</span> {
+        <span class="kw">match</span> <span class="ident">msg</span> {
+            <span class="ident">AppMsg::Increment</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">counter</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">counter</span>.<span class="ident">wrapping_add</span>(<span class="number">1</span>);
+
+                <span class="comment">// Also increment the numbers.</span>
+                <span class="kw">for</span> <span class="ident">num</span> <span class="kw">in</span> <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">numbers</span> {
+                    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">model</span> <span class="op">=</span> <span class="ident">num</span>.<span class="highlight focus"><span class="ident">model_mut</span>()</span>.<span class="ident">unwrap</span>();
+                    <span class="ident">model</span>.<span class="ident">num</span> <span class="op">=</span> <span class="ident">model</span>.<span class="ident">num</span>.<span class="ident">wrapping_add</span>(<span class="number">1</span>);
+
+                    <span class="comment">// Make sure to drop the mutable reference before updating the view</span>
+                    <span class="ident">drop</span>(<span class="ident">model</span>);
+                    <span class="ident">num</span>.<span class="ident">update_view</span>().<span class="ident">unwrap</span>();
+                }
+            }
+            <span class="ident">AppMsg::Decrement</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">counter</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">counter</span>.<span class="ident">wrapping_sub</span>(<span class="number">1</span>);
+            }
+            <span class="ident">AppMsg::AddNumber</span> =&gt; {
+                <span class="self">self</span>.<span class="ident">numbers</span>
+                    .<span class="ident">push</span>(<span class="ident">MicroComponent::new</span>(<span class="ident">NumberModel</span> { <span class="ident">num</span>: <span class="self">self</span>.<span class="ident">counter</span> }, ()));
+            }
+        }
+        <span class="bool-val">true</span>
+    }</code></pre></div>
+</div></div></div></div></details></div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.widgets" class="method has-srclink"><div class="rightside"><a class="srclink" href="../src/relm4/micro_component.rs.html#140-142" title="goto source code">source</a></div><a href="#method.widgets" class="anchor"></a><h4 class="code-header">pub fn <a href="#method.widgets" class="fnname">widgets</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.RefMut.html" title="struct core::cell::RefMut">RefMut</a>&lt;'_, Model::<a class="associatedtype" href="trait.MicroModel.html#associatedtype.Widgets" title="type relm4::MicroModel::Widgets">Widgets</a>&gt;, <a class="struct" href="https://doc.rust-lang.org/nightly/core/cell/struct.BorrowMutError.html" title="struct core::cell::BorrowMutError">BorrowMutError</a>&gt;</h4></div></summary><div class="docblock"><p>Returns a mutable reference to the widgets of this <a href="struct.MicroComponent.html" title="MicroComponent"><code>MicroComponent</code></a> or will fail
 when you already have a reference to the widgets</p>
 <p>Use this carefully and make sure the reference to the widgets is dropped after use because
 otherwise the view function can’t be called as long you own the widgets (it uses <a href="https://doc.rust-lang.org/nightly/core/cell/struct.RefCell.html" title="RefCell"><code>RefCell</code></a> internally).</p>
