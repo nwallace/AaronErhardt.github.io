@@ -281,6 +281,12 @@
 <span id="276">276</span>
 <span id="277">277</span>
 <span id="278">278</span>
+<span id="279">279</span>
+<span id="280">280</span>
+<span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
 </pre><pre class="rust"><code><span class="attribute">#![<span class="ident">feature</span>(<span class="ident">doc_cfg</span>)]</span>
 <span class="attribute">#![<span class="ident">doc</span>(
     <span class="ident">html_logo_url</span> <span class="op">=</span> <span class="string">&quot;https://raw.githubusercontent.com/AaronErhardt/relm4/main/assets/Relm_logo.svg&quot;</span>
@@ -448,12 +454,15 @@
 
 <span class="doccomment">/// A macro to create menus.</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// # Example:</span>
+<span class="doccomment">/// # Example</span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// ```</span>
+<span class="doccomment">/// // Define some actions</span>
 <span class="doccomment">/// relm4::new_action_group!(WindowActionGroup, &quot;win&quot;);</span>
 <span class="doccomment">/// relm4::new_stateless_action!(TestAction, WindowActionGroup, &quot;test&quot;);</span>
 <span class="doccomment">/// relm4::new_stateful_action!(TestU8Action, WindowActionGroup, &quot;test2&quot;, u8, u8);</span>
 <span class="doccomment">///</span>
+<span class="doccomment">/// // Create a `MenuModel` called `menu_model`</span>
 <span class="doccomment">/// relm4_macros::menu! {</span>
 <span class="doccomment">///     main_menu: {</span>
 <span class="doccomment">///         &quot;Test&quot; =&gt; TestAction,</span>
@@ -484,12 +493,13 @@
 <span class="doccomment">/// It does the same as inside the [`widget`] attribute macro,</span>
 <span class="doccomment">/// but with less features (no factories, components, etc).</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// You can even use `relm4-macros` independently from Relm4 to build your GTK4 UI.</span>
+<span class="doccomment">/// You can even use the `relm4-macros` crate independently from Relm4 to build your GTK4 UI.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// ```no_run</span>
 <span class="doccomment">/// use relm4::gtk;</span>
 <span class="doccomment">/// use gtk::prelude::{BoxExt, ButtonExt};</span>
 <span class="doccomment">///</span>
+<span class="doccomment">/// // Creating a box with a button inside.</span>
 <span class="doccomment">/// relm4_macros::view! {</span>
 <span class="doccomment">///     vbox = gtk::Box {</span>
 <span class="doccomment">///         append = &amp;gtk::Button {</span>
@@ -505,8 +515,10 @@
 <span class="doccomment">/// let spacing = vbox.spacing();</span>
 <span class="doccomment">/// ```</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// Technically, you could even use the macro for other purposes,</span>
-<span class="doccomment">/// but that&#39;s not recommended unless you really know what the macro does.</span>
+<span class="doccomment">/// Also, the macro doesn&#39;t rely on any special gtk4-rs features</span>
+<span class="doccomment">/// so you can even use the macro for other purposes.</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// In this example, we use it to construct a [`Command`](std::process::Command).</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// ```</span>
 <span class="doccomment">/// use std::process::Command;</span>
