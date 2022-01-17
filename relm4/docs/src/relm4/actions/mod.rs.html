@@ -235,6 +235,8 @@
 <span id="230">230</span>
 <span id="231">231</span>
 <span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Action utility.</span>
 
 <span class="kw">use</span> <span class="ident">glib::variant</span>;
@@ -253,7 +255,7 @@
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span>:<span class="ident">vis</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>) =&gt; {
         <span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span> <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
 
-        <span class="kw">impl</span> <span class="ident">ActionGroupName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
+        <span class="kw">impl</span> <span class="ident">relm4::actions::ActionGroupName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
             <span class="kw">fn</span> <span class="ident">group_name</span>() -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span> {
                 <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>
             }
@@ -262,12 +264,12 @@
 }
 
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
-<span class="doccomment">/// Create a new type that implements [`ActionGroupName`].</span>
+<span class="doccomment">/// Create a new type that implements [`ActionName`] without state or target type.</span>
 <span class="macro">macro_rules!</span> <span class="ident">new_stateless_action</span> {
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span>:<span class="ident">vis</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>) =&gt; {
         <span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span> <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
 
-        <span class="kw">impl</span> <span class="ident">ActionName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
+        <span class="kw">impl</span> <span class="ident">relm4::actions::ActionName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
             <span class="kw">type</span> <span class="ident">Group</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>;
             <span class="kw">type</span> <span class="ident">Target</span> <span class="op">=</span> ();
             <span class="kw">type</span> <span class="ident">State</span> <span class="op">=</span> ();
@@ -280,12 +282,14 @@
 }
 
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
-<span class="doccomment">/// Create a new type that implements [`ActionGroupName`].</span>
+<span class="doccomment">/// Create a new type that implements [`ActionName`] with state and target type.</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// The state stores the state of this action and the target type is passed by callers of the action.</span>
 <span class="macro">macro_rules!</span> <span class="ident">new_stateful_action</span> {
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span>:<span class="ident">vis</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>:<span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">expr</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">value</span>:<span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">state</span>:<span class="ident">ty</span>) =&gt; {
         <span class="macro-nonterminal">$</span><span class="macro-nonterminal">vis</span> <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span>;
 
-        <span class="kw">impl</span> <span class="ident">ActionName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
+        <span class="kw">impl</span> <span class="ident">relm4::actions::ActionName</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ty</span> {
             <span class="kw">type</span> <span class="ident">Group</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">group</span>;
             <span class="kw">type</span> <span class="ident">Target</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">value</span>;
             <span class="kw">type</span> <span class="ident">State</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">state</span>;
@@ -468,5 +472,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="relm4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (ec4bcaac4 2022-01-15)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="relm4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (bd3cb5256 2022-01-16)" ></div>
 </body></html>

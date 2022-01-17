@@ -242,6 +242,45 @@
 <span id="237">237</span>
 <span id="238">238</span>
 <span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+<span id="248">248</span>
+<span id="249">249</span>
+<span id="250">250</span>
+<span id="251">251</span>
+<span id="252">252</span>
+<span id="253">253</span>
+<span id="254">254</span>
+<span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
+<span id="275">275</span>
+<span id="276">276</span>
+<span id="277">277</span>
+<span id="278">278</span>
 </pre><pre class="rust"><code><span class="attribute">#![<span class="ident">feature</span>(<span class="ident">doc_cfg</span>)]</span>
 <span class="attribute">#![<span class="ident">doc</span>(
     <span class="ident">html_logo_url</span> <span class="op">=</span> <span class="string">&quot;https://raw.githubusercontent.com/AaronErhardt/relm4/main/assets/Relm_logo.svg&quot;</span>
@@ -279,7 +318,7 @@
 <span class="kw">use</span> <span class="ident">menu::Menus</span>;
 <span class="kw">use</span> <span class="ident">widgets::Widget</span>;
 
-<span class="doccomment">/// Macro that implemements [relm4::Widgets](https://aaronerhardt.github.io/docs/relm4/relm4/trait.Widgets.html) and generates the corresponding struct.</span>
+<span class="doccomment">/// Macro that implements [`relm4::Widgets`](https://aaronerhardt.github.io/docs/relm4/relm4/trait.Widgets.html) and generates the corresponding struct.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// # Attributes</span>
 <span class="doccomment">///</span>
@@ -367,6 +406,9 @@
     <span class="ident">widget_macro::generate_tokens</span>(<span class="ident">visibility</span>, <span class="ident">relm4_path</span>, <span class="ident">data</span>).<span class="ident">into</span>()
 }
 
+<span class="doccomment">/// Macro that implements [`relm4::MicrosWidgets`](https://aaronerhardt.github.io/docs/relm4/relm4/trait.MicroWidgets.html) and generates the corresponding struct.</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// It works very similar to [`widget`].</span>
 <span class="attribute">#[<span class="ident">proc_macro_attribute</span>]</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">micro_widget</span>(<span class="ident">attributes</span>: <span class="ident">TokenStream</span>, <span class="ident">input</span>: <span class="ident">TokenStream</span>) -&gt; <span class="ident">TokenStream</span> {
     <span class="kw">let</span> <span class="ident">Attrs</span> {
@@ -378,6 +420,10 @@
     <span class="ident">micro_widget_macro::generate_tokens</span>(<span class="ident">visibility</span>, <span class="ident">relm4_path</span>, <span class="ident">data</span>).<span class="ident">into</span>()
 }
 
+<span class="doccomment">/// Macro that implements [`relm4::factory::FactoryPrototype`](https://aaronerhardt.github.io/docs/relm4/relm4/factory/trait.FactoryPrototype.html)</span>
+<span class="doccomment">/// and generates the corresponding widget struct.</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// It works very similar to [`widget`].</span>
 <span class="attribute">#[<span class="ident">proc_macro_attribute</span>]</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">factory_prototype</span>(<span class="ident">attributes</span>: <span class="ident">TokenStream</span>, <span class="ident">input</span>: <span class="ident">TokenStream</span>) -&gt; <span class="ident">TokenStream</span> {
     <span class="kw">let</span> <span class="ident">Attrs</span> {
@@ -400,6 +446,31 @@
     }
 }
 
+<span class="doccomment">/// A macro to create menus.</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// # Example:</span>
+<span class="doccomment">/// ```</span>
+<span class="doccomment">/// relm4::new_action_group!(WindowActionGroup, &quot;win&quot;);</span>
+<span class="doccomment">/// relm4::new_stateless_action!(TestAction, WindowActionGroup, &quot;test&quot;);</span>
+<span class="doccomment">/// relm4::new_stateful_action!(TestU8Action, WindowActionGroup, &quot;test2&quot;, u8, u8);</span>
+<span class="doccomment">///</span>
+<span class="doccomment">/// relm4_macros::menu! {</span>
+<span class="doccomment">///     main_menu: {</span>
+<span class="doccomment">///         &quot;Test&quot; =&gt; TestAction,</span>
+<span class="doccomment">///         &quot;Test2&quot; =&gt; TestAction,</span>
+<span class="doccomment">///         &quot;Test toggle&quot; =&gt; TestU8Action(1_u8),</span>
+<span class="doccomment">///         section! {</span>
+<span class="doccomment">///             &quot;Section test&quot; =&gt; TestAction,</span>
+<span class="doccomment">///             &quot;Test toggle&quot; =&gt; TestU8Action(1_u8),</span>
+<span class="doccomment">///         },</span>
+<span class="doccomment">///         section! {</span>
+<span class="doccomment">///             &quot;Test&quot; =&gt; TestAction,</span>
+<span class="doccomment">///             &quot;Test2&quot; =&gt; TestAction,</span>
+<span class="doccomment">///             &quot;Test Value&quot; =&gt; TestU8Action(1_u8),</span>
+<span class="doccomment">///         }</span>
+<span class="doccomment">///     }</span>
+<span class="doccomment">/// };</span>
+<span class="doccomment">/// ```</span>
 <span class="attribute">#[<span class="ident">proc_macro</span>]</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">menu</span>(<span class="ident">input</span>: <span class="ident">TokenStream</span>) -&gt; <span class="ident">TokenStream</span> {
     <span class="kw">let</span> <span class="ident">menus</span> <span class="op">=</span> <span class="macro">parse_macro_input!</span>(<span class="ident">input</span> <span class="kw">as</span> <span class="ident">Menus</span>);
@@ -408,21 +479,25 @@
     <span class="ident">menus</span>.<span class="ident">menus_stream</span>(<span class="kw-2">&amp;</span><span class="ident">default_relm4_path</span>).<span class="ident">into</span>()
 }
 
-<span class="doccomment">/// The [`view`] macro works allows you to construct your UI easily and cleanly.</span>
+<span class="doccomment">/// The [`view`] macro allows you to construct your UI easily and cleanly.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// It does the same as inside the [`widget`] attribute macro,</span>
-<span class="doccomment">/// but with less features of course (no factories, components, etc).</span>
+<span class="doccomment">/// but with less features (no factories, components, etc).</span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// You can even use `relm4-macros` independently from Relm4 to build your GTK4 UI.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// ```no_run</span>
 <span class="doccomment">/// use relm4::gtk;</span>
-<span class="doccomment">/// use gtk::prelude::BoxExt;</span>
+<span class="doccomment">/// use gtk::prelude::{BoxExt, ButtonExt};</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// relm4_macros::view! {</span>
 <span class="doccomment">///     vbox = gtk::Box {</span>
-<span class="doccomment">///         append = &amp;gtk::Label {</span>
-<span class="doccomment">///             set_label: &quot;It works!&quot;,</span>
-<span class="doccomment">///         }</span>
+<span class="doccomment">///         append = &amp;gtk::Button {</span>
+<span class="doccomment">///             set_label: &quot;Click me!&quot;,</span>
+<span class="doccomment">///             connect_clicked =&gt; |_| {</span>
+<span class="doccomment">///                 println!(&quot;Hello world!&quot;);</span>
+<span class="doccomment">///             }</span>
+<span class="doccomment">///         },</span>
 <span class="doccomment">///     }</span>
 <span class="doccomment">/// }</span>
 <span class="doccomment">///</span>
@@ -448,6 +523,7 @@
 <span class="doccomment">///     }</span>
 <span class="doccomment">/// }</span>
 <span class="doccomment">///</span>
+<span class="doccomment">/// // Output of &quot;ls -la&quot; at &quot;/&quot;</span>
 <span class="doccomment">/// dbg!(process.output());</span>
 <span class="doccomment">/// ```</span>
 <span class="attribute">#[<span class="ident">proc_macro</span>]</span>
@@ -471,16 +547,18 @@
         <span class="ident">init_widgets</span>,
         <span class="ident">connect_widgets</span>,
         <span class="ident">init_properties</span>,
+        <span class="ident">connect</span>,
         ..
     } <span class="op">=</span> <span class="ident">streams</span>;
 
     <span class="kw">let</span> <span class="ident">output</span> <span class="op">=</span> <span class="macro">quote!</span> {
         #<span class="ident">init_widgets</span>
         #<span class="ident">init_properties</span>
+        #<span class="ident">connect</span>
         #<span class="ident">connect_widgets</span>
     };
     <span class="ident">output</span>.<span class="ident">into</span>()
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (ec4bcaac4 2022-01-15)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (bd3cb5256 2022-01-16)" ></div>
 </body></html>

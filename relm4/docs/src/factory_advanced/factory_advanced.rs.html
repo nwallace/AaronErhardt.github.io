@@ -191,7 +191,6 @@
 <span id="188">188</span>
 <span id="189">189</span>
 <span id="190">190</span>
-<span id="191">191</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib::Sender</span>;
 <span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">BoxExt</span>, <span class="ident">ButtonExt</span>, <span class="ident">GtkWindowExt</span>, <span class="ident">OrientableExt</span>};
 <span class="kw">use</span> <span class="ident">relm4::factory</span>::{<span class="ident">DynamicIndex</span>, <span class="ident">Factory</span>, <span class="ident">FactoryPrototype</span>, <span class="ident">FactoryVecDeque</span>, <span class="ident">WeakDynamicIndex</span>};
@@ -275,7 +274,6 @@
 <span class="kw">impl</span> <span class="ident">FactoryPrototype</span> <span class="kw">for</span> <span class="ident">Counter</span> {
     <span class="kw">type</span> <span class="ident">Factory</span> <span class="op">=</span> <span class="ident">FactoryVecDeque</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
     <span class="kw">type</span> <span class="ident">Widgets</span> <span class="op">=</span> <span class="ident">FactoryWidgets</span>;
-    <span class="kw">type</span> <span class="ident">Root</span> <span class="op">=</span> <span class="ident">gtk::Box</span>;
     <span class="kw">type</span> <span class="ident">View</span> <span class="op">=</span> <span class="ident">gtk::Box</span>;
     <span class="kw">type</span> <span class="ident">Msg</span> <span class="op">=</span> <span class="ident">AppMsg</span>;
 
@@ -384,5 +382,5 @@
     <span class="ident">relm</span>.<span class="ident">run</span>();
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="factory_advanced" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (ec4bcaac4 2022-01-15)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="factory_advanced" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (bd3cb5256 2022-01-16)" ></div>
 </body></html>
