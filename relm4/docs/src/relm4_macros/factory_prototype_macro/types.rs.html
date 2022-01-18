@@ -78,6 +78,9 @@
 <span id="73">73</span>
 <span id="74">74</span>
 <span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2::Span</span> <span class="kw">as</span> <span class="ident">Span2</span>;
 <span class="kw">use</span> <span class="ident">syn</span>::{<span class="ident">spanned::Spanned</span>, <span class="ident">Error</span>, <span class="ident">Ident</span>, <span class="ident">ImplItemType</span>, <span class="prelude-ty">Result</span>, <span class="ident">Type</span>};
 
@@ -133,7 +136,10 @@
                     <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::new</span>(<span class="ident">ty</span>.<span class="ident">span</span>(), <span class="string">&quot;Expected an Identfier&quot;</span>));
                 }
             } <span class="kw">else</span> {
-                <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::new</span>(<span class="ident">ident</span>.<span class="ident">span</span>(), <span class="string">&quot;Expected a type called `Factory`, `View`, `Msg` or `Widgets`&quot;</span>));
+                <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">Error::new</span>(
+                    <span class="ident">ident</span>.<span class="ident">span</span>(),
+                    <span class="string">&quot;Expected a type called `Factory`, `View`, `Msg` or `Widgets`&quot;</span>,
+                ));
             }
         }
 
@@ -154,5 +160,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (bd3cb5256 2022-01-16)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (ee5d8d37b 2022-01-17)" ></div>
 </body></html>
