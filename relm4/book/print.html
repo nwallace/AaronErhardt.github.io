@@ -979,12 +979,19 @@ fn main() {
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="factory"><a class="header" href="#factory">Factory</a></h1>
-<p>Factories define how to generate widgets from collections of data. They are used inside GTK as well, but Relm4 uses them a bit differently.</p>
+<p>Factories are used to generate widgets from collections of data. 
+If you modify the collection of data, the widgets are generated and updated automatically.
+Also, they make it simple to modify the data from the UI.</p>
+<blockquote>
+<p>GTK has factories, too, yet under the hood they are quite different from Relm4's factories. 
+In most cases, Relm4's factories will be the easier solution but if you need more control, you can always use <a href="https://gtk-rs.org/gtk4-rs/git/book/todo_app_1.html">GTK's factories with gtk4-rs</a>.</p>
+</blockquote>
+<p>The app we will build now will look like this:</p>
 <p><img src="img/screenshots/factory-dark.png" alt="App screenshot dark" /></p>
-<p>This app will have a dynamic number of counters which can be changed by pressing the add or remove buttons.
+<p>It will have a dynamic number of counters which can be changed by pressing the add or remove buttons.
 Clicking on a counter will decrement it.</p>
 <h2 id="factories-in-relm4"><a class="header" href="#factories-in-relm4">Factories in Relm4</a></h2>
-<p>Let's have a look at factories in Relm4. We want to write a simple application that can create and remove many counters. Each counter needs to store its value and display widgets to allow modifying the counter. In this example we will only decrement the counter.</p>
+<p>Let's have a look at factories in Relm4. We want to write this simple application where one can create and remove many counters. Each counter needs to store its value and display widgets to allow modifying the counter. In this example we will only decrement the counter.</p>
 <blockquote>
 <p>The app we will write in this chapter is also available <a href="https://github.com/AaronErhardt/relm4/blob/main/relm4-examples/examples/factory.rs">here</a>. Run <code>cargo run --example factory</code> from the <a href="https://github.com/AaronErhardt/relm4/tree/main/relm4-examples">example directory</a> if you want to see the code in action.</p>
 </blockquote>
