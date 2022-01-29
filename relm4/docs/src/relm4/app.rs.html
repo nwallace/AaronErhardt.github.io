@@ -166,7 +166,7 @@
     <span class="doccomment">/// Create a Relm4 application.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">model</span>: <span class="ident">Model</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">gtk::init</span>().<span class="ident">expect</span>(<span class="string">&quot;Couldn&#39;t initialize GTK&quot;</span>);
-        <span class="kw">let</span> <span class="ident">app</span> <span class="op">=</span> <span class="ident">Application::builder</span>().<span class="ident">build</span>();
+        <span class="kw">let</span> <span class="ident">app</span> <span class="op">=</span> <span class="ident">Application::default</span>();
 
         <span class="ident"><span class="self">Self</span>::with_app</span>(<span class="ident">model</span>, <span class="ident">app</span>)
     }
@@ -218,5 +218,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (21b4a9cfd 2022-01-27)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (e0a55f449 2022-01-28)" ></div>
 </body></html>
