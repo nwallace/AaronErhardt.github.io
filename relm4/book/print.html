@@ -244,7 +244,7 @@ cd relm4-examples
 </blockquote>
 <p>Also, we return <code>true</code> to tell the computer to keep our application alive. If our app should close, we can simply return <code>false</code>.</p>
 <h3 id="the-widgets"><a class="header" href="#the-widgets">The widgets</a></h3>
-<p>The computer is now able to process and remember information, but we still need an interface to for communication with the user.</p>
+<p>The computer is now able to process and remember information, but we still need an interface to communicate with the user.</p>
 <p>GTK4 offers the computer widgets that allow it to take input and to respond. Widgets are simply parts of an UI like buttons, input fields or text areas. To be able to update the widgets in our program, we can put them all into a <code>struct</code>.</p>
 <p>For our app, we use a window with two buttons to increment and decrement the counter and a label to display the counter value. Besides that, we need a box as a container to place our buttons and the label inside because a window can only have one child.</p>
 <pre><code class="language-rust no_run noplayground">struct AppWidgets {
