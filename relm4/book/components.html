@@ -160,7 +160,7 @@
 </ul>
 <p>We will not implement the actual functionality, but use placeholders instead to keep things simple.</p>
 <h3 id="the-model"><a class="header" href="#the-model">The model</a></h3>
-<p>Usually you want to store everything that only affects your component in the state of the component. In this case however, there is no state that can be stored in the component, but only state that affects the root component (app). Therefore, we leave the model empty and only send messages to the root component.</p>
+<p>Usually you want to store everything that only affects your component in the state of the component. In this case however, there is no state that can be stored in the component, but only a state that affects the root component (app). Therefore, we leave the model empty and only send messages to the root component.</p>
 <pre><code class="language-rust no_run noplayground">struct HeaderModel {}
 </code></pre>
 <p>The message type allows us to switch between the modes.</p>
@@ -177,7 +177,7 @@
     type Components = ();
 }
 </code></pre>
-<p>The update function is rather minimal. If our header bar was more complex, storing state in this component would make sense, but because we just handle a few buttons, we can simply forward messages. For that we can use the <code>parent_sender</code>. You can see that the message type of the main application is <code>AppMsg</code> and that there's an enum <code>AppMode</code>. Both were not introduced yet, but will be explained later. For now, we just need to know that this component will send <code>SetMode</code> messages to the app.</p>
+<p>The update function is rather minimal. If our header bar were more complex, storing state in this component would make sense, but because we just handle a few buttons, we can simply forward messages. For that we can use the <code>parent_sender</code>. You can see that the message type of the main application is <code>AppMsg</code> and that there's an enum <code>AppMode</code>. Both were not introduced yet, but will be explained later. For now, we just need to know that this component will send <code>SetMode</code> messages to the app.</p>
 <pre><code class="language-rust no_run noplayground">impl ComponentUpdate&lt;AppModel&gt; for HeaderModel {
     fn init_model(_parent_model: &amp;AppModel) -&gt; Self {
         HeaderModel {}
@@ -315,7 +315,7 @@ impl Widgets&lt;DialogModel, AppModel&gt; for DialogWidgets {
     }
 }
 </code></pre>
-<p>Most notably there is the <code>args!</code> macro. It allows us to pass values to functions that take more than one argument. The macro would otherwise interpret the comma for a second argument as new property, so we need to use <code>args!</code> here.</p>
+<p>Most notably there is the <code>args!</code> macro. It allows us to pass values to functions that take more than one argument. The macro would otherwise interpret the comma for a second argument as a new property, so we need to use <code>args!</code> here.</p>
 <p>Also, we set the <code>set_transient_for</code> property, which actually uses the main window from the parent widgets. So far <code>parent_widgets</code> was an unused argument in our implementations. However in this case, it's neat to have access to the parent widgets. The dialog should set his parent window so that GTK can handle the dialog better. The GTK docs state: &quot;[set_transient_for] allows window managers to e.g. keep the dialog on top of the main window, or center the dialog over the main window&quot;. So we definitely want that and conveniently Relm4 gives us the widgets we need from the parents.</p>
 <h2 id="the-main-app"><a class="header" href="#the-main-app">The main app</a></h2>
 <p>Now all parts come together to form a single app. You might remember that there was a components type we always set to <code>()</code>. Now we actually make use of this type.</p>
@@ -361,7 +361,7 @@ struct AppModel {
     mode: AppMode,
 }
 </code></pre>
-<p>The <code>AppMode</code> struct stores the modes the application can be in. The <code>SetMode</code> message is used by our header bar component to update the state of the main application when someone presses a button in the header bar. The <code>Close</code> message is used by the dialog component to indicate that the window should be closed.</p>
+<p>The <code>AppModel</code> struct stores the modes the application can be in. The <code>SetMode</code> message is used by our header bar component to update the state of the main application when someone presses a button in the header bar. The <code>Close</code> message is used by the dialog component to indicate that the window should be closed.</p>
 <p>And now we finally use the <code>Components</code> type of the <code>Model</code> trait.</p>
 <pre><code class="language-rust no_run noplayground">impl Model for AppModel {
     type Msg = AppMsg;
@@ -410,7 +410,7 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 </code></pre>
 <p>The <code>component!</code> macro is used to interact with components. We just need to get our header bar component in place. Our dialog component does not need to be attached anywhere because the dialog lives in a separate window.</p>
 <blockquote>
-<p>Widgets from components are added <strong>after</strong> everything else. Because Relm4 initializes components after their parents we can only add components after the rest is already in place. This means that you sometimes might have to use methods like <a href="https://gtk-rs.org/gtk4-rs/git/docs/gtk4/prelude/trait.BoxExt.html#tymethod.prepend"><code>prepend</code></a> to keep the right order because with <code>append</code> the a component will always be added at the end. Yet, everything else is initialized in the right order.</p>
+<p>Widgets from components are added <strong>after</strong> everything else. Because Relm4 initializes components after their parents we can only add components after the rest is already in place. This means that you sometimes might have to use methods like <a href="https://gtk-rs.org/gtk4-rs/git/docs/gtk4/prelude/trait.BoxExt.html#tymethod.prepend"><code>prepend</code></a> to keep the right order because with <code>append</code> the component will always be added at the end. Yet, everything else is initialized in the right order.</p>
 </blockquote>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>You now know most of the secrets that Relm4 offers. Components can be powerful and if they are implemented correctly, they are even reusable across different apps. The relm4-components crate offers several reusable components you can use in your applications. In the following chapters, we'll look at an even simpler component type called worker, how to implement reusable components yourself and how to use components with async code and multiple threads.</p>

@@ -197,13 +197,13 @@
 }
 </code></pre>
 <h3 id="the-widgets-trait"><a class="header" href="#the-widgets-trait">The <code>Widgets</code> trait</a></h3>
-<p>The last step we need it to tell the computer how to initialize widgets and how to update them.</p>
+<p>The last step is to tell the computer how to initialize widgets and how to update them.</p>
 <p>In Relm4, the UI represents the memory of the application. All that's left to do is to implement the <code>Widgets</code> trait that tells the computer exactly how its memory should be visualized.</p>
 <p>Let's do this step by step. First, we'll have a look at the beginning of the trait <code>impl</code>.</p>
 <pre><code class="language-rust no_run noplayground">impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
     type Root = gtk::ApplicationWindow;
 </code></pre>
-<p>The two generic parameters are our model and the parent model. We're at the root of our app so don't have parent model and can use <code>()</code> as placeholder.</p>
+<p>The two generic parameters are our model and the parent model. We're at the root of our app so we don't have a parent model and can use <code>()</code> as placeholder.</p>
 <p>The <code>Root</code> type is the outermost widget of the app. Components can choose this type freely, but the main application must use an <code>ApplicationWindow</code>.</p>
 <p>Next up, we want to initialize our UI.</p>
 <blockquote>

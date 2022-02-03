@@ -203,7 +203,7 @@ property_name(value1, value2, ...): name = gtk::Box { ... }
 <p>If the function is associated with a type, you can simply use this syntax. The macro will assume the type of <code>gtk::Box::new()</code> is <code>gtk::Box</code>:</p>
 <pre><code class="language-rust no_run noplayground">property_name = gtk::Box::new() { ... }
 </code></pre>
-<p>For some functions, the macro can't guess the type or might even assume a wrong type. In such a case, add the type your function:</p>
+<p>For some functions, the macro can't guess the type or might even assume a wrong type. In such a case, add the type to your function:</p>
 <pre><code class="language-rust no_run noplayground">property_name = new_box() -&gt; gtk::Box { ... }
 </code></pre>
 <h2 id="connecting-events"><a class="header" href="#connecting-events">Connecting events</a></h2>
