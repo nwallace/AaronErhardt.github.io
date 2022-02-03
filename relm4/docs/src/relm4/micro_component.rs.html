@@ -227,6 +227,9 @@
 <span id="220">220</span>
 <span id="221">221</span>
 <span id="222">222</span>
+<span id="223">223</span>
+<span id="224">224</span>
+<span id="225">225</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">gtk::glib</span>::{<span class="self">self</span>, <span class="ident">Sender</span>};
 <span class="kw">use</span> <span class="ident">gtk::prelude</span>::{<span class="ident">IsA</span>, <span class="ident">WidgetExt</span>};
 
@@ -296,6 +299,9 @@
 {
     <span class="doccomment">/// Creates new [`MicroComponent`]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">model</span>: <span class="ident">Model</span>, <span class="ident">data</span>: <span class="ident">Model::Data</span>) -&gt; <span class="self">Self</span> {
+        <span class="comment">// Make sure GTK is initialized in case this was added to the model.</span>
+        <span class="ident">gtk::init</span>().<span class="ident">unwrap</span>();
+
         <span class="kw">let</span> (<span class="ident">sender</span>, <span class="ident">receiver</span>) <span class="op">=</span> <span class="ident">glib::MainContext::channel</span>(<span class="ident">glib::PRIORITY_DEFAULT</span>);
         <span class="kw">let</span> <span class="ident">widgets</span> <span class="op">=</span> <span class="ident">Model::Widgets::init_view</span>(<span class="kw-2">&amp;</span><span class="ident">model</span>, <span class="ident">sender</span>.<span class="ident">clone</span>());
         <span class="kw">let</span> <span class="ident">root_widget</span> <span class="op">=</span> <span class="ident">widgets</span>.<span class="ident">root_widget</span>();
@@ -400,7 +406,7 @@
         <span class="self">self</span>.<span class="ident">root_widget</span>.<span class="ident">parent</span>().<span class="ident">is_some</span>()
     }
 
-    <span class="doccomment">/// Tries to diconnect the root widget from its parent widget.</span>
+    <span class="doccomment">/// Tries to disconnect the root widget from its parent widget.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// Returns [`true`] of the root widget was disconnected from the parent widget</span>
     <span class="doccomment">/// and [`false`] if nothing was done.</span>
@@ -450,5 +456,5 @@
     <span class="kw">fn</span> <span class="ident">root_widget</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident"><span class="self">Self</span>::Root</span>;
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (2681f253b 2022-02-01)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="relm4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (27f5d830e 2022-02-02)" ></div>
 </body></html>

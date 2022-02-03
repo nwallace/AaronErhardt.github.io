@@ -112,10 +112,10 @@
     <span class="kw">pub</span> <span class="ident">struct_fields</span>: <span class="ident">TokenStream2</span>,
     <span class="doccomment">/// The tokens initializing the widgets.</span>
     <span class="kw">pub</span> <span class="ident">init_widgets</span>: <span class="ident">TokenStream2</span>,
+    <span class="doccomment">/// The tokens initializing the properties.</span>
+    <span class="kw">pub</span> <span class="ident">assign_properties</span>: <span class="ident">TokenStream2</span>,
     <span class="doccomment">/// The tokens connecting widgets.</span>
     <span class="kw">pub</span> <span class="ident">connect_widgets</span>: <span class="ident">TokenStream2</span>,
-    <span class="doccomment">/// The tokens initializing the properties.</span>
-    <span class="kw">pub</span> <span class="ident">init_properties</span>: <span class="ident">TokenStream2</span>,
     <span class="doccomment">/// The tokens for the returned struct fields -&gt; name,</span>
     <span class="kw">pub</span> <span class="ident">return_fields</span>: <span class="ident">TokenStream2</span>,
     <span class="doccomment">/// The view tokens (watch! macro)</span>
@@ -153,7 +153,7 @@
                     );
                 }
             } <span class="kw">else</span> {
-                <span class="ident">prop</span>.<span class="ident">property_init_stream</span>(<span class="kw-2">&amp;mut</span> <span class="ident">streams</span>.<span class="ident">init_properties</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>, <span class="ident">relm4_path</span>);
+                <span class="ident">prop</span>.<span class="ident">property_init_stream</span>(<span class="kw-2">&amp;mut</span> <span class="ident">streams</span>.<span class="ident">assign_properties</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>, <span class="ident">relm4_path</span>);
 
                 <span class="ident">prop</span>.<span class="ident">view_stream</span>(<span class="kw-2">&amp;mut</span> <span class="ident">streams</span>.<span class="ident">view</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>, <span class="ident">relm4_path</span>, <span class="bool-val">true</span>);
                 <span class="ident">prop</span>.<span class="ident">track_stream</span>(<span class="kw-2">&amp;mut</span> <span class="ident">streams</span>.<span class="ident">track</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>, <span class="ident">model_type</span>, <span class="bool-val">true</span>);
@@ -186,7 +186,7 @@
                     <span class="ident">streams</span>, <span class="ident">vis</span>, <span class="ident">model_type</span>, <span class="ident">relm4_path</span>,
                 );
             } <span class="kw">else</span> {
-                <span class="ident">prop</span>.<span class="ident">property_init_stream</span>(<span class="kw-2">&amp;mut</span> <span class="ident">streams</span>.<span class="ident">init_properties</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>, <span class="ident">relm4_path</span>);
+                <span class="ident">prop</span>.<span class="ident">property_init_stream</span>(<span class="kw-2">&amp;mut</span> <span class="ident">streams</span>.<span class="ident">assign_properties</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>, <span class="ident">relm4_path</span>);
                 <span class="ident">prop</span>.<span class="ident">connect_stream</span>(<span class="kw-2">&amp;mut</span> <span class="ident">streams</span>.<span class="ident">connect</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>);
 
                 <span class="ident">prop</span>.<span class="ident">view_stream</span>(<span class="kw-2">&amp;mut</span> <span class="ident">streams</span>.<span class="ident">view</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>, <span class="ident">relm4_path</span>, <span class="bool-val">true</span>);
@@ -198,5 +198,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (2681f253b 2022-02-01)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (27f5d830e 2022-02-02)" ></div>
 </body></html>
