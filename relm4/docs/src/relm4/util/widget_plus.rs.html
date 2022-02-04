@@ -122,8 +122,8 @@
 
     <span class="doccomment">/// Try to remove a widget from a widget.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Returns [`true`] if the removal was successful and</span>
-    <span class="doccomment">/// [`false`] if nothing was done.</span>
+    <span class="doccomment">/// Returns [`true`] if the removal is supported on the type of widget.</span>
+    <span class="doccomment">/// **This doesn&#39;t mean that the widget was actually removed.**</span>
     <span class="kw">fn</span> <span class="ident">try_remove</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">widget</span>: <span class="kw-2">&amp;</span><span class="kw">impl</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Widget</span><span class="op">&gt;</span>) -&gt; <span class="ident">bool</span>;
 }
 
