@@ -62,7 +62,6 @@
 <span id="55">55</span>
 <span id="56">56</span>
 <span id="57">57</span>
-<span id="58">58</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">proc_macro2::TokenStream</span> <span class="kw">as</span> <span class="ident">TokenStream2</span>;
 <span class="kw">use</span> <span class="ident">quote</span>::{<span class="ident">quote</span>, <span class="ident">ToTokens</span>};
 <span class="kw">use</span> <span class="ident">syn</span>::{<span class="ident">Ident</span>, <span class="ident">Path</span>};
@@ -73,7 +72,6 @@
     <span class="kw">fn</span> <span class="ident">init_assign_tokens</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">TokenStream2</span><span class="op">&gt;</span> {
         <span class="kw">match</span> <span class="self">self</span> {
             <span class="ident">PropertyType::Expr</span>(<span class="ident">expr</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">expr</span>.<span class="ident">to_token_stream</span>()),
-            <span class="ident">PropertyType::Value</span>(<span class="ident">lit</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">lit</span>.<span class="ident">to_token_stream</span>()),
             <span class="ident">PropertyType::Watch</span>(<span class="ident">tokens</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">tokens</span>.<span class="ident">to_token_stream</span>()),
             <span class="ident">PropertyType::Args</span>(<span class="ident">args</span>) =&gt; <span class="prelude-val">Some</span>(<span class="ident">args</span>.<span class="ident">to_token_stream</span>()),
             <span class="ident">PropertyType::Track</span>(<span class="ident">Tracker</span> {
@@ -122,5 +120,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (4e8fb743c 2022-02-03)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../../../" data-current-crate="relm4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (71226d717 2022-02-04)" ></div>
 </body></html>
