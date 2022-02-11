@@ -9,7 +9,7 @@ This uses OS-specific linker sections to call a specific function at
 load time.</p>
 <p>Multiple startup functions/statics are supported, but the invocation order is not
 guaranteed.</p>
-<h2 id="examples" class="section-header"><a href="#examples">Examples</a></h2>
+<h2 id="examples"><a href="#examples">Examples</a></h2>
 <p>Print a startup message:</p>
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="attribute">#[<span class="ident">ctor</span>]</span>
@@ -37,7 +37,7 @@ guaranteed.</p>
   <span class="ident">m</span>
 };
 </code></pre></div>
-<h2 id="details" class="section-header"><a href="#details">Details</a></h2>
+<h2 id="details"><a href="#details">Details</a></h2>
 <p>The <code>#[ctor]</code> macro makes use of linker sections to ensure that a
 function is run at startup time.</p>
 <p>The above example translates into the following Rust code (approximately):</p>
@@ -55,5 +55,5 @@ function is run at startup time.</p>
    <span class="kw">extern</span> <span class="kw">fn</span> <span class="ident">foo</span>() { <span class="comment">/* ... */</span> };
    <span class="ident">foo</span>
  };</code></pre></div>
-</div></details></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="ctor" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (e7aca8959 2022-02-09)" ></div>
+</div></details></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="ctor" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (e646f3d2a 2022-02-10)" ></div>
 </body></html>

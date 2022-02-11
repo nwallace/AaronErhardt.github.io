@@ -13,12 +13,12 @@ container. Its type and value are defined at construction and never change.</p>
 numbers, strings, arrays, tuples and dictionaries. See <a href="trait.ToVariant.html#foreign-impls" title="ToVariant"><code>ToVariant</code></a> for
 a full list of supported types. You may also implement <a href="trait.ToVariant.html" title="ToVariant"><code>ToVariant</code></a> and <a href="trait.FromVariant.html" title="FromVariant"><code>FromVariant</code></a>
 manually, or derive them using the <a href="../derive.Variant.html"><code>Variant</code></a> derive macro.</p>
-<h3 id="portability-warning" class="section-header"><a href="#portability-warning">Portability Warning</a></h3>
+<h3 id="portability-warning"><a href="#portability-warning">Portability Warning</a></h3>
 <p>Variant conversion traits are also implemented for certain platform-specific data types from
 the standard library like <a href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html"><code>PathBuf</code></a> and <a href="https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsString.html"><code>OsString</code></a>.
 These types will be serialized to their platform-specific representation and <strong>should not</strong> be
 deserialized on a different machine from where they were serialized.</p>
-<h2 id="examples" class="section-header"><a href="#examples">Examples</a></h2>
+<h2 id="examples"><a href="#examples">Examples</a></h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">glib::prelude</span>::<span class="kw-2">*</span>; <span class="comment">// or `use gtk::prelude::*;`</span>
 <span class="kw">use</span> <span class="ident">glib</span>::{<span class="ident">Variant</span>, <span class="ident">FromVariant</span>, <span class="ident">ToVariant</span>};
 <span class="kw">use</span> <span class="ident">std::collections::HashMap</span>;
@@ -112,5 +112,5 @@ on a <a href="struct.Variant.html"><code>Variant</code></a> when the expected ty
 </div></div><div class="item-row"><div class="item-left module-item"><a class="trait" href="trait.FromVariant.html" title="glib::variant::FromVariant trait">FromVariant</a></div><div class="item-right docblock-short"><p>Extracts a value.</p>
 </div></div><div class="item-row"><div class="item-left module-item"><a class="trait" href="trait.StaticVariantType.html" title="glib::variant::StaticVariantType trait">StaticVariantType</a></div><div class="item-right docblock-short"><p>Returns <code>VariantType</code> of <code>Self</code>.</p>
 </div></div><div class="item-row"><div class="item-left module-item"><a class="trait" href="trait.ToVariant.html" title="glib::variant::ToVariant trait">ToVariant</a></div><div class="item-right docblock-short"><p>Converts to <code>Variant</code>.</p>
-</div></div></div></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (e7aca8959 2022-02-09)" ></div>
+</div></div></div></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (e646f3d2a 2022-02-10)" ></div>
 </body></html>

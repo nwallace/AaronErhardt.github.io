@@ -21,7 +21,7 @@ in a different thread, the destructor will panic.</p>
 it stored in the original thread’s thread local storage.  If it gets dropped
 in the originating thread it gets cleaned up immediately, otherwise it leaks
 until the thread shuts down naturally.</p>
-<h2 id="example-usage" class="section-header"><a href="#example-usage">Example usage</a></h2>
+<h2 id="example-usage"><a href="#example-usage">Example usage</a></h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use</span> <span class="ident">std::thread</span>;
 <span class="kw">use</span> <span class="ident">fragile::Fragile</span>;
 
@@ -35,7 +35,7 @@ until the thread shuts down naturally.</p>
     <span class="macro">assert!</span>(<span class="ident">val</span>.<span class="ident">try_get</span>().<span class="ident">is_err</span>());
 }).<span class="ident">join</span>()
     .<span class="ident">unwrap</span>();</code></pre></div>
-<h2 id="why" class="section-header"><a href="#why">Why?</a></h2>
+<h2 id="why"><a href="#why">Why?</a></h2>
 <p>Most of the time trying to use this crate is going to indicate some code smell.  But
 there are situations where this is useful.  For instance you might have a bunch of
 non <code>Send</code> types but want to work with a <code>Send</code> error type.  In that case the non
@@ -46,5 +46,5 @@ error did not cross a thread boundary yet extra information can be obtained.</p>
 </div></div><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.InvalidThreadAccess.html" title="fragile::InvalidThreadAccess struct">InvalidThreadAccess</a></div><div class="item-right docblock-short"><p>Returned when borrowing fails.</p>
 </div></div><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.SemiSticky.html" title="fragile::SemiSticky struct">SemiSticky</a></div><div class="item-right docblock-short"><p>A <code>SemiSticky&lt;T&gt;</code> keeps a value T stored in a thread if it has a drop.</p>
 </div></div><div class="item-row"><div class="item-left module-item"><a class="struct" href="struct.Sticky.html" title="fragile::Sticky struct">Sticky</a></div><div class="item-right docblock-short"><p>A <code>Sticky&lt;T&gt;</code> keeps a value T stored in a thread.</p>
-</div></div></div></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="fragile" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (e7aca8959 2022-02-09)" ></div>
+</div></div></div></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="fragile" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (e646f3d2a 2022-02-10)" ></div>
 </body></html>
