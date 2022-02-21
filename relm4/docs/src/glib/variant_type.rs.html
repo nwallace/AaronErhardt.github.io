@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/glib-0.15.5/src/variant_type.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>variant_type.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/github/home/.cargo/registry/src/github.com-1ecc6299db9ec823/glib-0.15.6/src/variant_type.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>variant_type.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
     <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
         </a><h2 class="location"></h2>
     </nav>
@@ -905,6 +905,58 @@
 <span id="900">900</span>
 <span id="901">901</span>
 <span id="902">902</span>
+<span id="903">903</span>
+<span id="904">904</span>
+<span id="905">905</span>
+<span id="906">906</span>
+<span id="907">907</span>
+<span id="908">908</span>
+<span id="909">909</span>
+<span id="910">910</span>
+<span id="911">911</span>
+<span id="912">912</span>
+<span id="913">913</span>
+<span id="914">914</span>
+<span id="915">915</span>
+<span id="916">916</span>
+<span id="917">917</span>
+<span id="918">918</span>
+<span id="919">919</span>
+<span id="920">920</span>
+<span id="921">921</span>
+<span id="922">922</span>
+<span id="923">923</span>
+<span id="924">924</span>
+<span id="925">925</span>
+<span id="926">926</span>
+<span id="927">927</span>
+<span id="928">928</span>
+<span id="929">929</span>
+<span id="930">930</span>
+<span id="931">931</span>
+<span id="932">932</span>
+<span id="933">933</span>
+<span id="934">934</span>
+<span id="935">935</span>
+<span id="936">936</span>
+<span id="937">937</span>
+<span id="938">938</span>
+<span id="939">939</span>
+<span id="940">940</span>
+<span id="941">941</span>
+<span id="942">942</span>
+<span id="943">943</span>
+<span id="944">944</span>
+<span id="945">945</span>
+<span id="946">946</span>
+<span id="947">947</span>
+<span id="948">948</span>
+<span id="949">949</span>
+<span id="950">950</span>
+<span id="951">951</span>
+<span id="952">952</span>
+<span id="953">953</span>
+<span id="954">954</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.</span>
 
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::translate</span>::<span class="kw-2">*</span>;
@@ -946,6 +998,47 @@
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next</span>
+    <span class="doccomment">/// Creates a `VariantType` from a key and value type.</span>
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;g_variant_type_new_dict_entry&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_dict_entry</span>(<span class="ident">key_type</span>: <span class="kw-2">&amp;</span><span class="ident">VariantTy</span>, <span class="ident">value_type</span>: <span class="kw-2">&amp;</span><span class="ident">VariantTy</span>) -&gt; <span class="ident">VariantType</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi::g_variant_type_new_dict_entry</span>(
+                <span class="ident">key_type</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                <span class="ident">value_type</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+            ))
+        }
+    }
+
+    <span class="comment">// rustdoc-stripper-ignore-next</span>
+    <span class="doccomment">/// Creates a `VariantType` from an array element type.</span>
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;g_variant_type_new_array&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_array</span>(<span class="ident">elem_type</span>: <span class="kw-2">&amp;</span><span class="ident">VariantTy</span>) -&gt; <span class="ident">VariantType</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi::g_variant_type_new_array</span>(<span class="ident">elem_type</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)) }
+    }
+
+    <span class="comment">// rustdoc-stripper-ignore-next</span>
+    <span class="doccomment">/// Creates a `VariantType` from a maybe element type.</span>
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;g_variant_type_new_maybe&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_maybe</span>(<span class="ident">child_type</span>: <span class="kw-2">&amp;</span><span class="ident">VariantTy</span>) -&gt; <span class="ident">VariantType</span> {
+        <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi::g_variant_type_new_maybe</span>(<span class="ident">child_type</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)) }
+    }
+
+    <span class="comment">// rustdoc-stripper-ignore-next</span>
+    <span class="doccomment">/// Creates a `VariantType` from a maybe element type.</span>
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">alias</span> <span class="op">=</span> <span class="string">&quot;g_variant_type_new_tuple&quot;</span>)]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_tuple</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">AsRef</span><span class="op">&lt;</span><span class="ident">VariantTy</span><span class="op">&gt;</span>, <span class="ident">I</span>: <span class="ident">IntoIterator</span><span class="op">&lt;</span><span class="ident">Item</span> <span class="op">=</span> <span class="ident">T</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="ident">items</span>: <span class="ident">I</span>) -&gt; <span class="ident">VariantType</span> {
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">builder</span> <span class="op">=</span> <span class="ident"><span class="kw">crate</span>::GStringBuilder::new</span>(<span class="string">&quot;(&quot;</span>);
+
+        <span class="kw">for</span> <span class="ident">ty</span> <span class="kw">in</span> <span class="ident">items</span> {
+            <span class="ident">builder</span>.<span class="ident">append</span>(<span class="ident">ty</span>.<span class="ident">as_ref</span>().<span class="ident">as_str</span>());
+        }
+
+        <span class="ident">builder</span>.<span class="ident">append_c</span>(<span class="string">&#39;)&#39;</span>);
+
+        <span class="ident">VariantType::from_string</span>(<span class="ident">builder</span>.<span class="ident">into_string</span>()).<span class="ident">unwrap</span>()
+    }
+
+    <span class="comment">// rustdoc-stripper-ignore-next</span>
     <span class="doccomment">/// Tries to create a `VariantType` from an owned string.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// Returns `Ok` if the string is a valid type string, `Err` otherwise.</span>
@@ -972,6 +1065,12 @@
     }
 }
 
+<span class="kw">impl</span> <span class="ident">AsRef</span><span class="op">&lt;</span><span class="ident">VariantTy</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">VariantType</span> {
+    <span class="kw">fn</span> <span class="ident">as_ref</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="ident">VariantTy</span> {
+        <span class="self">self</span>
+    }
+}
+
 <span class="kw">impl</span> <span class="ident">Borrow</span><span class="op">&lt;</span><span class="ident">VariantTy</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">VariantType</span> {
     <span class="kw">fn</span> <span class="ident">borrow</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="ident">VariantTy</span> {
         <span class="self">self</span>
@@ -993,6 +1092,7 @@
     <span class="kw">type</span> <span class="ident">Target</span> <span class="op">=</span> <span class="ident">VariantTy</span>;
     <span class="kw">fn</span> <span class="ident">deref</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="ident">VariantTy</span> {
         <span class="kw">unsafe</span> {
+            <span class="macro">assert!</span>(<span class="self">self</span>.<span class="ident">len</span> <span class="op">&gt;</span> <span class="number">0</span>);
             <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">slice::from_raw_parts</span>(<span class="self">self</span>.<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">u8</span>, <span class="self">self</span>.<span class="ident">len</span>) <span class="kw">as</span> <span class="kw-2">*const</span> [<span class="ident">u8</span>]
                 <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">VariantTy</span>)
         }
@@ -1295,6 +1395,7 @@
     <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
     <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_ptr</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span>(<span class="ident">ptr</span>: <span class="kw-2">*const</span> <span class="ident">ffi::GVariantType</span>) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">VariantTy</span> {
         <span class="kw">let</span> <span class="ident">len</span> <span class="op">=</span> <span class="ident">ffi::g_variant_type_get_string_length</span>(<span class="ident">ptr</span>) <span class="kw">as</span> <span class="ident">usize</span>;
+        <span class="macro">assert!</span>(<span class="ident">len</span> <span class="op">&gt;</span> <span class="number">0</span>);
         <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">slice::from_raw_parts</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">u8</span>, <span class="ident">len</span>) <span class="kw">as</span> <span class="kw-2">*const</span> [<span class="ident">u8</span>] <span class="kw">as</span> <span class="kw-2">*const</span> <span class="ident">VariantTy</span>)
     }
 
@@ -1482,10 +1583,7 @@
         } <span class="kw">else</span> <span class="kw">if</span> <span class="self">self</span> <span class="op">==</span> <span class="ident">VariantTy::DICT_ENTRY</span> {
             <span class="ident">Cow::Borrowed</span>(<span class="ident">VariantTy::DICTIONARY</span>)
         } <span class="kw">else</span> {
-            <span class="kw">unsafe</span> {
-                <span class="kw">let</span> <span class="ident">ptr</span> <span class="op">=</span> <span class="ident">ffi::g_variant_type_new_array</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>);
-                <span class="ident">Cow::Owned</span>(<span class="ident">VariantType::from_glib_full</span>(<span class="ident">ptr</span>))
-            }
+            <span class="ident">Cow::Owned</span>(<span class="ident">VariantType::new_array</span>(<span class="self">self</span>))
         }
     }
 }
@@ -1510,6 +1608,12 @@
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">From</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">VariantTy</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Cow</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">VariantTy</span><span class="op">&gt;</span> {
     <span class="kw">fn</span> <span class="ident">from</span>(<span class="ident">ty</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">VariantTy</span>) -&gt; <span class="ident">Cow</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">VariantTy</span><span class="op">&gt;</span> {
         <span class="ident">Cow::Borrowed</span>(<span class="ident">ty</span>)
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">AsRef</span><span class="op">&lt;</span><span class="ident">VariantTy</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">VariantTy</span> {
+    <span class="kw">fn</span> <span class="ident">as_ref</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span> {
+        <span class="self">self</span>
     }
 }
 
@@ -1808,5 +1912,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0-nightly (3b348d932 2022-02-19)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0-nightly (45e2c2881 2022-02-20)" ></div>
 </body></html>
