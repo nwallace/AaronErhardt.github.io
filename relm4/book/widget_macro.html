@@ -196,6 +196,22 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 <p>Sometimes we want to use a constructor function to initialize our widgets. For the second button we used the <code>gtk::Button::with_label</code> function. This function returns a new button with the &quot;Decrement&quot; label already set, so we don't have to call <code>set_label</code> afterwards.</p>
 <pre><code class="language-rust no_run noplayground">                append = &amp;gtk::Button::with_label(&quot;Decrement&quot;) {
 </code></pre>
+<h3 id="returned-widget-syntax"><a class="header" href="#returned-widget-syntax">Returned Widget Syntax</a></h3>
+<p>Some methods also return a newly created widget which we want to adjust to our needs.
+E.g. <code>Stack</code>'s <a href="https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/struct.Stack.html#method.add_child"><code>add_child</code></a> method returns a <code>StackPage</code> where we can set if the page needs <a href="https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/struct.StackPage.html#method.needs_attention">special user attention</a>:</p>
+<p><img src="img/stack_switcher.png" alt="App screenshot dark" /></p>
+<p>To enable this, there is an extension of the described syntax, where we can apply additional changes to the returned widget:</p>
+<pre><code class="language-rust no_run noplayground">add_child = &amp;gtk::Label {
+    set_label: &quot;00:00:00&quot;,
+} -&gt; {
+    set_title: &quot;Stopwatch&quot;,
+    set_needs_attention: true,
+    set_batch_number: 3,
+},
+</code></pre>
+<p>Cases when an <code>Option&lt;Widget&gt;</code> is returned can be handled by the following:</p>
+<pre><code class="language-rust no_run noplayground">{ ... } -&gt; ? { ... },
+</code></pre>
 <h3 id="events"><a class="header" href="#events">Events</a></h3>
 <p>To connect events, we use this syntax.</p>
 <pre><code class="language-rust no_run noplayground">method_name(cloned_var1, cloned_var2, ...) =&gt; move |args, ...| { code... }
