@@ -198,7 +198,7 @@ impl Widgets&lt;AppModel, ()&gt; for AppWidgets {
 </code></pre>
 <h3 id="returned-widget-syntax"><a class="header" href="#returned-widget-syntax">Returned Widget Syntax</a></h3>
 <p>Some methods also return a newly created widget which we want to adjust to our needs.
-E.g. <code>Stack</code>'s <a href="https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/struct.Stack.html#method.add_child"><code>add_child</code></a> method returns a <code>StackPage</code> where we can set if the page needs <a href="https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/struct.StackPage.html#method.needs_attention">special user attention</a>:</p>
+E.g. <code>Stack</code>'s <a href="https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/struct.Stack.html#method.add_child"><code>add_child</code></a> method returns a <code>StackPage</code> where we can set if the page needs <a href="https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/struct.StackPage.html#method.set_needs_attention">special user attention</a>:</p>
 <p><img src="img/stack_switcher.png" alt="App screenshot dark" /></p>
 <p>To enable this, there is an extension of the described syntax, where we can apply additional changes to the returned widget:</p>
 <pre><code class="language-rust no_run noplayground">add_child = &amp;gtk::Label {
