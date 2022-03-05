@@ -85,6 +85,13 @@ Let's build a simple app that shows two random icons and allows the user to set 
 
 Before we can select random icons, we need to quickly implement a function that will return us random image names that are available in the default GTK icon theme.
 
+Add the rand library to `Cargo.toml`:
+```toml
+rand = "0.6"
+```
+
+Then implement the function:
+
 ```rust,no_run,noplayground
 {{#include ../examples/tracker.rs:icons }}
 ```
